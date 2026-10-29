@@ -24,6 +24,8 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+      additional_contexts:
+        commerce: ./commerce
     command: alembic upgrade head
     environment:
       - DATABASE_URL=postgresql+pg8000://admin:password@db:5432/trade_ai
@@ -83,6 +85,8 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+      additional_contexts:
+        commerce: ./commerce
     container_name: trade_ai_backend
     environment:
       - DATABASE_URL=postgresql+pg8000://admin:password@db:5432/trade_ai
@@ -180,6 +184,8 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+      additional_contexts:
+        commerce: ./commerce
     container_name: trade_ai_celery_worker
     command: celery -A app.tasks.celery_worker worker --loglevel=info --concurrency=4
     environment:
@@ -333,6 +339,8 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+      additional_contexts:
+        commerce: ./commerce
     container_name: trade_ai_celery_beat
     command: celery -A app.tasks.celery_worker beat --loglevel=info --schedule=/var/lib/celery/celerybeat-schedule
     environment:
@@ -361,6 +369,8 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+      additional_contexts:
+        commerce: ./commerce
     container_name: trade_ai_flower
     command: celery -A app.tasks.celery_worker flower --port=5555
     environment:

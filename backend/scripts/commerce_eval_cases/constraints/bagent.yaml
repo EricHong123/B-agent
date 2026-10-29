@@ -1,0 +1,14 @@
+# Constraint cases for B-agent's buyer assistant over the demo catalog (app/commerce/seed.py),
+# judged at 2026-10-01; scripts/eval_commerce.py runs them with the vendored
+# commerce/scripts/eval_constraints.py, whose docs/metrics.md describes the fields.
+cases:
+  - {id: b2b-01, q: "Stainless vacuum bottles under 5 USD a piece.", query: "vacuum bottle stainless", constraints: {max_price: 5, require: {material: stainless}}}
+  - {id: b2b-02, q: "LED panels with CE certification, at most 12 USD.", query: "LED panel light", constraints: {max_price: 12, require: {certifications: CE}}}
+  - {id: b2b-03, q: "Ceramic mugs made in China under 2.50 USD.", query: "ceramic mug", constraints: {max_price: 2.5, require: {origin: China}}}
+  - {id: b2b-04, q: "Tote bags made in Vietnam.", query: "tote bag", constraints: {require: {origin: Vietnam}}}
+  - {id: b2b-05, q: "LFGB-certified kitchen utensils under 7 USD a set.", query: "silicone kitchen utensil set", constraints: {max_price: 7, require: {certifications: LFGB}}}
+  - {id: b2b-06, q: "LED panels under 9 USD.", query: "LED panel light", constraints: {max_price: 9}}
+  - {id: b2b-07, q: "Drinkware shipped from Ningbo.", query: "drinkware bottle mug", constraints: {require: {port_of_loading: Ningbo}}}
+  - {id: b2b-08, q: "需要带 RoHS 认证的面板灯，单价不超过 15 美元。", query: "LED panel light", constraints: {max_price: 15, require: {certifications: RoHS}}}
+  - {id: b2b-09, q: "Bamboo cutting boards under 3 USD.", query: "bamboo cutting board", constraints: {max_price: 3, require: {title: cutting board}}}
+  - {id: b2b-10, q: "rPET bags shipping from Shenzhen.", query: "rPET tote bag", constraints: {require: {material: rPET, port_of_loading: Shenzhen}}}

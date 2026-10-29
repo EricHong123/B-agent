@@ -170,6 +170,7 @@ class QuotationLineItem(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     product: str = Field(min_length=1, max_length=255)
+    sku: Optional[str] = Field(default=None, max_length=80)
     description: Optional[str] = Field(default=None, max_length=1000)
     hs_code: Optional[str] = Field(default=None, pattern=r"^[0-9.]{4,14}$")
     quantity: Decimal = Field(gt=0, max_digits=14, decimal_places=3)
@@ -1781,6 +1782,7 @@ class FulfillmentService:
             lines.append(
                 {
                     "product": item.product.strip(),
+                    "sku": item.sku,
                     "description": (item.description or "").strip() or None,
                     "hs_code": item.hs_code,
                     "quantity": str(item.quantity),

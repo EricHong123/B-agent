@@ -115,6 +115,27 @@
           </el-menu-item>
         </el-menu-item-group>
 
+        <el-menu-item-group :title="$t('Commerce assistants')">
+          <el-menu-item index="/buyer-assistant">
+            <el-icon><ShoppingCart /></el-icon>
+            <template #title>
+              {{ $t('Buyer assistant') }}
+            </template>
+          </el-menu-item>
+          <el-menu-item index="/operations-assistant">
+            <el-icon><DataAnalysis /></el-icon>
+            <template #title>
+              {{ $t('Operations assistant') }}
+            </template>
+          </el-menu-item>
+          <el-menu-item index="/commerce">
+            <el-icon><Goods /></el-icon>
+            <template #title>
+              {{ $t('Catalog and assistant quality') }}
+            </template>
+          </el-menu-item>
+        </el-menu-item-group>
+
         <el-menu-item index="/analytics">
           <el-icon><TrendCharts /></el-icon>
           <template #title>

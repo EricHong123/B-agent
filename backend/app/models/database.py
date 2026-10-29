@@ -3010,3 +3010,278 @@ class FulfillmentEvent(Base):
         Index("idx_fulfillment_event_opportunity", "opportunity_id", "created_at"),
         Index("idx_fulfillment_event_order", "order_id", "created_at"),
     )
+
+
+class CatalogProduct(Base):
+    """Sellable catalog record: a plain product, an option family, or one of its variants."""
+
+    __tablename__ = "catalog_products"
+
+    id = Column(String(80), primary_key=True)
+    parent_id = Column(
+        String(80),
+        ForeignKey("catalog_products.id", ondelete="CASCADE"),
+    )
+    title = Column(String(255), nullable=False)
+    brand = Column(String(100))
+    category = Column(String(100), index=True)
+    status = Column(String(20), nullable=False, default="active")
+    short_description = Column(String(500))
+    long_description = Column(Text)
+    attributes_json = Column(JSON, nullable=False, default=dict)
+    specs_json = Column(JSON, nullable=False, default=dict)
+    options_json = Column(JSON, nullable=False, default=dict)
+    option_values_json = Column(JSON, nullable=False, default=dict)
+    labels_json = Column(JSON, nullable=False, default=list)
+    price = Column(Numeric(14, 4), nullable=False)
+    currency = Column(String(3), nullable=False, default="USD")
+    unit_cost = Column(Numeric(14, 4))
+    min_price = Column(Numeric(14, 4))
+    moq = Column(Integer, nullable=False, default=1)
+    lead_time_days = Column(Integer)
+    stock = Column(Integer, nullable=False, default=0)
+    reorder_point = Column(Integer, nullable=False, default=0)
+    sales_last_30d = Column(Integer, nullable=False, default=0)
+    image_url = Column(String(1000))
+    version = Column(Integer, nullable=False, default=1)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+    updated_at = Column(
+        DateTime,
+        nullable=False,
+        default=datetime.utcnow,
+        onupdate=datetime.utcnow,
+    )
+
+    variants = relationship(
+        "CatalogProduct",
+        cascade="all, delete-orphan",
+        order_by="CatalogProduct.id",
+        back_populates="parent",
+    )
+    parent = relationship("CatalogProduct", remote_side=[id], back_populates="variants")
+
+    __table_args__ = (
+        Index("idx_catalog_product_parent", "parent_id"),
+        Index("idx_catalog_product_status_category", "status", "category"),
+        CheckConstraint("price >= 0", name="ck_catalog_product_price"),
+        CheckConstraint("moq >= 1", name="ck_catalog_product_moq"),
+    )
+
+
+class TradeTerm(Base):
+    """One versioned trade-terms passage; only the version in force at the clock is quoted."""
+
+    __tablename__ = "trade_terms"
+
+    id = Column(String(80), primary_key=True)
+    source_id = Column(String(80), nullable=False)
+    version = Column(String(20), nullable=False)
+    title = Column(String(255), nullable=False)
+    category = Column(String(50))
+    content = Column(Text, nullable=False)
+    effective_at = Column(DateTime, nullable=False)
+    expires_at = Column(DateTime)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+
+    __table_args__ = (
+        UniqueConstraint("source_id", "version", name="uq_trade_term_source_version"),
+        Index("idx_trade_term_source", "source_id", "effective_at"),
+    )
+
+
+class MarketingCampaign(Base):
+    """Outbound marketing campaign the operations assistant reports on and drafts."""
+
+    __tablename__ = "marketing_campaigns"
+
+    id = Column(String(40), primary_key=True)
+    name = Column(String(80), nullable=False)
+    status = Column(String(20), nullable=False, default="draft")
+    objective = Column(String(200))
+    channel = Column(String(50))
+    audience = Column(String(300))
+    copy_text = Column(String(600))
+    budget = Column(Numeric(14, 2), nullable=False, default=0)
+    spend = Column(Numeric(14, 2))
+    revenue = Column(Numeric(14, 2))
+    currency = Column(String(3), nullable=False, default="USD")
+    starts = Column(Date)
+    ends = Column(Date)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+    updated_at = Column(
+        DateTime,
+        nullable=False,
+        default=datetime.utcnow,
+        onupdate=datetime.utcnow,
+    )
+
+
+class CatalogPromotion(Base):
+    """Approved price promotion over catalog listings."""
+
+    __tablename__ = "catalog_promotions"
+
+    id = Column(String(40), primary_key=True)
+    name = Column(String(80), nullable=False)
+    listing_ids_json = Column(JSON, nullable=False, default=list)
+    discount_pct = Column(Numeric(6, 2), nullable=False)
+    starts = Column(Date, nullable=False)
+    ends = Column(Date, nullable=False)
+    status = Column(String(20), nullable=False, default="scheduled")
+    change_id = Column(String(40))
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+
+
+class CommerceSession(Base):
+    """One assistant conversation: provenance state, transcript and pending app events."""
+
+    __tablename__ = "commerce_sessions"
+
+    id = Column(String(64), primary_key=True)
+    role = Column(String(20), nullable=False)
+    subject_id = Column(String(80), nullable=False)
+    user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"))
+    customer_id = Column(Integer, ForeignKey("customers.id", ondelete="CASCADE"))
+    invite_id = Column(UUID(as_uuid=True), ForeignKey("buyer_portal_invites.id", ondelete="CASCADE"))
+    state_json = Column(JSON, nullable=False, default=dict)
+    pending_app_events_json = Column(JSON, nullable=False, default=list)
+    messages_json = Column(JSON, nullable=False, default=list)
+    version = Column(Integer, nullable=False, default=1)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+    updated_at = Column(
+        DateTime,
+        nullable=False,
+        default=datetime.utcnow,
+        onupdate=datetime.utcnow,
+    )
+
+    __table_args__ = (
+        Index("idx_commerce_session_subject", "role", "subject_id", "updated_at"),
+    )
+
+
+class CommerceCartLine(Base):
+    """A buyer's RFQ basket line, kept per customer across sessions."""
+
+    __tablename__ = "commerce_cart_lines"
+
+    id = Column(Integer, primary_key=True)
+    customer_id = Column(
+        Integer,
+        ForeignKey("customers.id", ondelete="CASCADE"),
+        nullable=False,
+    )
+    product_id = Column(
+        String(80),
+        ForeignKey("catalog_products.id", ondelete="CASCADE"),
+        nullable=False,
+    )
+    quantity = Column(Integer, nullable=False)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+    updated_at = Column(
+        DateTime,
+        nullable=False,
+        default=datetime.utcnow,
+        onupdate=datetime.utcnow,
+    )
+
+    __table_args__ = (
+        UniqueConstraint("customer_id", "product_id", name="uq_commerce_cart_line"),
+        CheckConstraint("quantity >= 1", name="ck_commerce_cart_quantity"),
+    )
+
+
+class CommerceStagedChange(Base):
+    """Durable ledger of operations-assistant changes awaiting operator approval."""
+
+    __tablename__ = "commerce_staged_changes"
+
+    id = Column(String(40), primary_key=True)
+    kind = Column(String(30), nullable=False)
+    status = Column(String(20), nullable=False)
+    document_json = Column(JSON, nullable=False)
+    created_by_user_id = Column(Integer, ForeignKey("users.id"))
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+    updated_at = Column(
+        DateTime,
+        nullable=False,
+        default=datetime.utcnow,
+        onupdate=datetime.utcnow,
+    )
+
+    __table_args__ = (
+        Index("idx_commerce_staged_change_status", "status", "created_at"),
+    )
+
+
+class CommerceMemoryFact(Base):
+    """One remembered buyer or operator fact, validated by the commerce write filter."""
+
+    __tablename__ = "commerce_memory_facts"
+
+    id = Column(Integer, primary_key=True)
+    subject_id = Column(String(80), nullable=False)
+    key = Column(String(64), nullable=False)
+    value = Column(String(200), nullable=False)
+    category = Column(String(20), nullable=False)
+    source_session_id = Column(String(80))
+    updated_at = Column(DateTime)
+
+    __table_args__ = (
+        UniqueConstraint("subject_id", "key", name="uq_commerce_memory_subject_key"),
+    )
+
+
+class CommerceMemoryPurge(Base):
+    """How many times a memory subject was purged; extraction discards stale batches."""
+
+    __tablename__ = "commerce_memory_purges"
+
+    subject_id = Column(String(80), primary_key=True)
+    generation = Column(Integer, nullable=False, default=0)
+
+
+class CommerceOperationEvent(Base):
+    """Operations log line: one turn, vote, handoff ticket, or approval-card action."""
+
+    __tablename__ = "commerce_operation_events"
+
+    id = Column(Integer, primary_key=True)
+    role = Column(String(20), nullable=False)
+    kind = Column(String(20), nullable=False)
+    session_id = Column(String(64))
+    turn_id = Column(String(40))
+    ticket = Column(String(20))
+    record_json = Column(JSON, nullable=False)
+    resolved_at = Column(DateTime)
+    resolved_by_user_id = Column(Integer, ForeignKey("users.id"))
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+
+    __table_args__ = (
+        Index("idx_commerce_operation_kind", "role", "kind", "created_at"),
+        Index("idx_commerce_operation_session", "session_id", "created_at"),
+        Index("idx_commerce_operation_turn", "turn_id"),
+    )
+
+
+class BuyerPortalInvite(Base):
+    """Revocable access link a sales rep issues so a customer can use the buyer assistant."""
+
+    __tablename__ = "buyer_portal_invites"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    customer_id = Column(
+        Integer,
+        ForeignKey("customers.id", ondelete="CASCADE"),
+        nullable=False,
+    )
+    created_by_user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    token_hash = Column(String(64), nullable=False, unique=True)
+    expires_at = Column(DateTime, nullable=False)
+    revoked_at = Column(DateTime)
+    last_used_at = Column(DateTime)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+
+    __table_args__ = (
+        Index("idx_buyer_portal_invite_customer", "customer_id", "created_at"),
+    )

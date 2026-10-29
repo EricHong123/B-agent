@@ -8,6 +8,10 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AlertPanel: typeof import('./../components/Monitor/AlertPanel.vue')['default']
+    AssistantChat: typeof import('./../components/Commerce/AssistantChat.vue')['default']
+    BuyerWorkspace: typeof import('./../components/Commerce/BuyerWorkspace.vue')['default']
+    ChangePreview: typeof import('./../components/Commerce/ChangePreview.vue')['default']
+    CommerceCard: typeof import('./../components/Commerce/CommerceCard.vue')['default']
     ConversationChat: typeof import('./../components/ConversationView/ConversationChat.vue')['default']
     ConversationList: typeof import('./../components/ConversationView/ConversationList.vue')['default']
     ConversionFunnel: typeof import('./../components/Dashboard/ConversionFunnel.vue')['default']
@@ -48,6 +52,7 @@ declare module 'vue' {
     ElRow: typeof import('element-plus/es')['ElRow']
     ElSegmented: typeof import('element-plus/es')['ElSegmented']
     ElSelect: typeof import('element-plus/es')['ElSelect']
+    ElSkeleton: typeof import('element-plus/es')['ElSkeleton']
     ElSlider: typeof import('element-plus/es')['ElSlider']
     ElStep: typeof import('element-plus/es')['ElStep']
     ElSteps: typeof import('element-plus/es')['ElSteps']

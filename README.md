@@ -44,6 +44,7 @@ AI 对话通过 B-agent 后端提交 detached run，并使用持久事件游标�
 - **并发与恢复**：全局、组织、用户、Provider 和 Tool 五级原子并发租约；Agent Run、Tool Run 与 LLM Invocation 使用租约和 fencing token 防止旧 Worker 回写。
 - **AI 路由控制**：支持直连供应商或 OmniRoute；管理员可在设置页热更新固定模型别名、供应商白名单和超时参数。
 - **获客到交付闭环**：采购意图会话一键转商机；商机经需求确认（产品、数量）后进入报价，报价按版本修订，新版本自动作废旧版本；超出金额阈值或低于最低毛利的报价必须由另一名管理员审批。客户接受报价后冻结为订单，并按“定金到账 → 排产（自有工单 / 外包 PO / 混合） → 生产完工 → 出货前检验合格 → 离港且尾款结清 → 全部签收 → 款项结清”逐级门禁推进，任何不满足条件的流转都会返回明确的阻塞原因。全过程写入 append-only 履约时间线，管道总览汇总漏斗、赢单率、订单额、回款以及报价过期、交期风险、生产逾期、检验失败、运输超期等预警。
+- **商务助手（commerce agents）**：引入 [commerce-agents](commerce/README.md) 的采购商助手与运营助手，Prompt、10 个业务 Skill、工具契约与安全门禁原样保留，由 `backend/app/commerce/` 适配 B-agent 数据。采购商助手检索 B2B 目录（变体、MOQ、交期、认证）、对比与规划选品、按生效版本回答贸易条款、填写询价单并一键转为商机和报价草稿，也可查询客户自己的履约订单；客户可通过可撤销的专属门户链接自助使用，销售也可代客操作。运营助手基于真实订单、询盘、报价与回款解读经营表现，处理库存与订单预警，维护产品信息、调价促销与起草营销活动；所有写入先暂存，经护栏、过期与数据漂移校验，由运营或管理员在控制台批准后才写入。每条回复带 AI 标识、👍/👎 与转人工工单，运营指标（解决率、自助率、转人工率等）与 go-live 条款评测、约束违反率评测直接复用上游口径。
 - **人工审批投递**：调研、文案和发送分阶段审批，发送前重新校验联系人、ICP、草稿版本、邮箱状态和额度。
 - **可靠执行**：事务 Outbox、幂等键、Worker 租约、失败分类、死信队列和双管理员异常处置。
 - **邮箱连接**：Gmail 与 Microsoft OAuth，使用 PKCE 和一次性 state；令牌只保存在后端权限为 `0600` 的凭据文件中。
@@ -68,6 +69,7 @@ AI 对话通过 B-agent 后端提交 detached run，并使用持久事件游标�
 |---|---|
 | 已贯通主链路 | AI Chat detached run、durable SSE、fast/deep、DLP 脱敏、并发租约、LLM 审计、企业调研、获客、ICP、审批投递、询盘转商机、报价审批、订单、生产/外包、质检、发运、收款、Outbox、死信处置、视频规划审批、T2V 与单素材 I2V 安全提交/对账 |
 | 已实现工程底座 | 三层持久记忆、版本化知识库、RAG ACL、安全缓存、durable Tool Runtime、Prompt/上下文预算、媒体资产与合规门禁、Persona/项目/Storyboard 快照、媒体 Provider Runtime、加密意图仓、认证回调 inbox、Provider 用量回执、固定账户价格快照、持久 Generation Job/Attempt/Event 与原子预算账本 |
+| 已接入商务助手 | 采购商助手（门户邀请 / 代客模式、询价单 → 商机与报价草稿）、运营助手（暂存变更 + 控制台审批）、版本化贸易条款、目录管理、转人工工单、运营指标、离线 go-live 与约束评测 |
 | 后续产品化重点 | Reference-to-Video/多素材一致性、失败请求账单对账、人工协调 UI、预算管理 UI、数据库字段级加密、Provider/S3 故障注入与压测、开放多租户前的隔离改造 |
 
 当前通用 AI Chat 主链路默认装配 System Prompt 与会话历史。记忆与 RAG 已具备持久化服务、API、迁移和测试，但仍需按调研、报价、跟进等业务流明确接入策略，README 不把“底座存在”等同于“所有对话已自动使用”。
@@ -285,6 +287,7 @@ flowchart LR
 | 数据分析 | `/analytics` | `/api/v1/stats` | 渠道、客户和对话分析 |
 | 运营控制 | `/operations`、`/operations/dead-letters` | `/api/v1/admin` | 网关健康、可靠执行、死信分析与双管理员处置 |
 | 连接器 | `/connectors` | `/api/v1/connectors` | 管理员配置、测试和启停服务端连接器 |
+| 商务助手 | `/buyer-assistant`、`/operations-assistant`、`/commerce`、`/portal` | `/api/v1/commerce` | 采购商助手与门户、运营助手与审批队列、目录 / 条款 / 营销活动、转人工工单与助手指标 |
 | 设置 | `/settings` | `/api/v1/ai/config`、`/api/v1/admin/media/runtime`、`/api/v1/mailboxes` | AI 路由与媒体 Provider 热配置、模型探测、邮箱 OAuth 和浏览器 API 地址 |
 
 ### 前端热加载机制
@@ -352,6 +355,7 @@ flowchart LR
 │   │   ├── styles/          # 全局语义令牌和 Element Plus 主题
 │   │   └── views/           # Agent、Chat、CRM、Operations 等页面
 │   └── tests/               # 页面契约、安全边界与类型检查测试
+├── commerce/                # 引入的 commerce-agents（Apache-2.0，原样保留，见 ADR 0004）
 ├── docs/
 │   ├── adr/                 # 架构决策记录
 │   ├── brand/               # README 产品截图与品牌资产
@@ -496,6 +500,7 @@ alembic current
 | 邮箱 | `GMAIL_REDIRECT_URI`、`OUTLOOK_REDIRECT_URI`、`FRONTEND_BASE_URL` | 使用邮箱 OAuth 时 | 服务端回调和完成后的前端地址 |
 | 邮箱 | `MAILBOX_SECRET_DIR` | 使用邮箱 OAuth 时 | 后端 OAuth 令牌目录 |
 | 履约审批 | `FULFILLMENT_QUOTE_APPROVAL_THRESHOLD`、`FULFILLMENT_QUOTE_MIN_MARGIN_PERCENT`、`FULFILLMENT_QUOTE_EXPIRY_WARNING_DAYS` | 可选 | 报价超过该金额或毛利低于该比例时需另一名管理员审批；报价到期前多少天开始预警 |
+| 商务助手 | `COMMERCE_MODEL_PROVIDER`、`COMMERCE_MODEL_NAME`、`COMMERCE_MODEL_BASE_URL`、`COMMERCE_MODEL_API_KEY`、`COMMERCE_BRAND_NAME`、`COMMERCE_REPORTING_CURRENCY`、`COMMERCE_BUYER_INVITE_DAYS` | 可选 | 默认沿用 B-agent 的 AI 路由（OmniRoute → Anthropic → 直连供应商）；也可单独指定 OpenAI 兼容端点 |
 | 前端 | `VITE_API_BASE_URL`、`VITE_API_PROXY_TARGET` | 按部署方式 | 浏览器 API 地址与开发代理 |
 | HMR | `VITE_HMR_HOST`、`VITE_HMR_CLIENT_PORT`、`VITE_USE_POLLING` | 跨机器或容器开发时 | Vite 热更新连接 |
 | 安全 | `CORS_ORIGINS` | 跨域部署时 | 允许的浏览器来源 |
@@ -525,6 +530,7 @@ http://localhost:8000/api/v1/mailboxes/oauth/callback/outlook
 | AI | `/api/v1/ai` | 热加载配置、探测、模型发现和 AI 对话 |
 | 获客 | `/api/v1/prospecting` | 搜索、导入、批量富化、ICP 评分与复核 |
 | 履约 | `/api/v1/fulfillment` | `pipeline` 总览与预警；`opportunities`（含 `from-conversation/{id}`）；`quotations/{id}/submit\|review\|send\|accept\|decline`；`orders/{id}/transition`、`production-tasks`、`inspections`、`shipments`、`payments`；`events` 时间线 |
+| 商务助手 | `/api/v1/commerce` | `buyer/*`（会话、SSE 对话、询价单、RFQ、订单、记忆、反馈、转人工、门户邀请）；`operations/*`（会话、SSE 对话、概览、暂存变更批准 / 放弃）；`catalog/*`；`handoffs`；`metrics` |
 | 邮箱 | `/api/v1/mailboxes` | OAuth 供应商、授权回调和账号状态 |
 | 连接器 | `/api/v1/connectors` | 管理员连接器目录、测试和启停 |
 | 运维 | `/api/v1/admin` | 网关状态、可靠执行、死信与双人审批 |
@@ -536,6 +542,22 @@ http://localhost:8000/api/v1/mailboxes/oauth/callback/outlook
 | 媒体异常协调 | `/api/v1/admin/media/jobs/{job_id}/submission-unknown/resolution-approvals` | 两名不同超级管理员基于受限证据引用确认未知提交是否真实发生 |
 
 接口字段和当前响应模型以运行中的 <http://localhost:8000/docs> 为准。
+
+## 商务助手
+
+`commerce/` 是原样引入的 commerce-agents 参考实现，`backend/app/commerce/` 是 B-agent 的适配层（见 [ADR 0004](docs/adr/0004-vendored-commerce-agents.md)）。
+
+```bash
+# 载入演示目录、条款与营销活动（管理员）：控制台 “目录与助手质量 → 载入演示目录”，或
+curl -X POST -H "Authorization: Bearer $TOKEN" http://localhost:8000/api/v1/commerce/catalog/seed-demo
+
+# 离线评测（无需模型密钥）；--mode live 使用当前 AI 路由的模型
+cd backend
+python scripts/eval_commerce.py go-live --failures
+python scripts/eval_commerce.py constraints --failures
+```
+
+上游自带的其余能力在 `commerce/` 内独立运行，使用其自带的模拟数据：四个行业演示（零售、旅行、电信、票务）与统一演示站点 `commerce/scripts/start_all.sh --open`；Agent SDK 运行时 `commerce/*/runtime-agent-sdk`；Managed Agents 清单与 MCP Server `commerce/*/managed-agents`；Claude Code 插件 `claude plugin marketplace add <本仓库>` 后安装 `commerce-builder`。上游测试：`cd commerce && pip install -r requirements-dev.txt && pytest && python scripts/check.py`。
 
 ## 测试与质量门禁
 

@@ -11,6 +11,12 @@ const routes: RouteRecordRaw[] = [
     meta: { guest: true },
   },
   {
+    path: '/portal',
+    name: 'BuyerPortal',
+    component: () => import('@/views/BuyerPortal.vue'),
+    meta: { title: 'Buyer portal' },
+  },
+  {
     path: '/',
     component: () => import('@/layouts/MainLayout.vue'),
     redirect: '/agent',
@@ -87,6 +93,24 @@ const routes: RouteRecordRaw[] = [
         name: 'OrderDetail',
         component: () => import('@/views/OrderDetail.vue'),
         meta: { title: 'Order Detail' },
+      },
+      {
+        path: 'buyer-assistant',
+        name: 'BuyerAssistant',
+        component: () => import('@/views/BuyerAssistant.vue'),
+        meta: { title: 'Buyer assistant' },
+      },
+      {
+        path: 'operations-assistant',
+        name: 'OperationsAssistant',
+        component: () => import('@/views/OperationsAssistant.vue'),
+        meta: { title: 'Operations assistant' },
+      },
+      {
+        path: 'commerce',
+        name: 'CommerceAdmin',
+        component: () => import('@/views/CommerceAdmin.vue'),
+        meta: { title: 'Catalog and assistant quality' },
       },
       {
         path: 'conversations',
