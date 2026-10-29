@@ -1,0 +1,59 @@
+# Go-live cases for the ticketing storefront; scripts/eval_go_live.py reads them and
+# docs/metrics.md describes the fields. `query` is the offline responder's search.
+cases:
+  # -- current_rule --------------------------------------------------------------
+  - {id: ent-cur-01, cat: current_rule, q: "Do the prices I see include the fees?", query: "all-in price fees", source: entertainment/all-in-pricing, facts: ["all-in"]}
+  - {id: ent-cur-02, cat: current_rule, q: "How long are tickets held in my order?", query: "hold timer", source: entertainment/ticket-holds, version: 2, facts: ["8 minutes"], stale: ["10 minutes"]}
+  - {id: ent-cur-03, cat: current_rule, q: "What happens when the hold timer runs out?", query: "hold timer expires", source: entertainment/ticket-holds, version: 2, facts: ["open sale"]}
+  - {id: ent-cur-04, cat: current_rule, q: "How do I join the waitlist for a sold-out tier?", query: "waitlist sold out", source: entertainment/waitlist-return-offers, facts: [["Join-waitlist", "join waitlist"]]}
+  - {id: ent-cur-05, cat: current_rule, q: "How long do I have to claim a return offer?", query: "return offer claim window", source: entertainment/waitlist-return-offers, facts: [["10-minute", "10 minutes"]]}
+  - {id: ent-cur-06, cat: current_rule, q: "What if my ticket doesn't scan at the gate?", query: "ticket fails scan gate", source: entertainment/buyer-guarantee, facts: [["reissue", "refund"]]}
+  - {id: ent-cur-07, cat: current_rule, q: "Can I transfer a ticket to a friend?", query: "transfer ticket", source: entertainment/ticket-transfers, facts: ["free"]}
+  - {id: ent-cur-08, cat: current_rule, q: "What happens if the event is cancelled?", query: "event cancelled refund", source: entertainment/refunds-event-changes, facts: ["7 days"]}
+  - {id: ent-cur-09, cat: current_rule, q: "What does a green resale value score mean?", query: "resale value score", source: entertainment/resale-value-scores, facts: [["8–10", "8-10", "at or below"]]}
+  - {id: ent-cur-10, cat: current_rule, q: "Can I print my ticket?", query: "print ticket mobile entry", source: entertainment/mobile-entry, facts: [["will not scan", "won't scan"]]}
+  - {id: ent-cur-11, cat: current_rule, q: "Is there accessible seating in every tier?", query: "accessible seating", source: entertainment/accessibility-seating, facts: ["companion"]}
+  - {id: ent-cur-12, cat: current_rule, q: "If an event is rescheduled, can I get a refund?", query: "rescheduled refund", source: entertainment/refunds-event-changes, facts: ["14 days"]}
+
+  # -- version_change ------------------------------------------------------------
+  - {id: ent-ver-01, cat: version_change, q: "Is the ticket hold still 10 minutes?", query: "hold timer", source: entertainment/ticket-holds, version: 2, facts: ["8 minutes"]}
+  - {id: ent-ver-02, cat: version_change, q: "Is there a limit on how many tickets I can hold for one event?", query: "hold limit tickets event", source: entertainment/ticket-holds, version: 2, facts: ["8 tickets"]}
+  - {id: ent-ver-03, cat: version_change, q: "Does changing the ticket quantity restart my hold timer?", query: "hold quantity timer reset", source: entertainment/ticket-holds, version: 2, facts: [["reset", "restart"]], stale: ["10 minutes"]}
+  - {id: ent-ver-04, cat: version_change, q: "Can I release a hold before it runs out?", query: "release hold early", source: entertainment/ticket-holds, version: 2, facts: ["release"], stale: ["10 minutes"]}
+  - {id: ent-ver-05, cat: version_change, q: "How long are tickets held in my order?", query: "hold timer", clock: "2026-01-15T12:00:00+00:00", source: entertainment/ticket-holds, version: 1, facts: ["10 minutes"], stale: ["8 minutes"]}
+  - {id: ent-ver-06, cat: version_change, q: "Is there a limit on holds for one event?", query: "hold limit event", clock: "2026-01-15T12:00:00+00:00", source: entertainment/ticket-holds, version: 1, facts: ["one hold"], stale: ["8 tickets"]}
+  - {id: ent-ver-07, cat: version_change, q: "Is the order processing fee still waived during presales?", query: "presale order processing fee waived", action: decline, stale: ["waived on every order"]}
+  - id: ent-ver-08
+    cat: version_change
+    q: "Is transferring a ticket free?"
+    query: "transfer ticket"
+    action: decline
+    stale: ["$3"]
+    overlay:
+      - {policy_id: ticket-transfers-v2, title: "Ticket transfers", category: post-purchase, content: "Transferring an active ticket to another person costs $3 per ticket, charged when the recipient accepts.", source_id: entertainment/ticket-transfers, version: "2", effective_at: "2026-08-01"}
+
+  # -- missing_info --------------------------------------------------------------
+  - {id: ent-mis-01, cat: missing_info, q: "Can I bring a professional camera into the venue?", query: "camera venue", action: decline}
+  - {id: ent-mis-02, cat: missing_info, q: "Do you sell parking passes?", query: "parking pass", action: decline}
+  - {id: ent-mis-03, cat: missing_info, q: "Is there an age limit for concerts?", query: "age limit", action: decline}
+  - {id: ent-mis-04, cat: missing_info, q: "Can I upgrade my seats after I buy?", query: "upgrade seats after purchase", action: decline}
+  - {id: ent-mis-05, cat: missing_info, q: "Do you offer payment plans for tickets?", query: "payment plan installments", action: decline}
+  - {id: ent-mis-06, cat: missing_info, q: "What's the bag size policy at the venue?", query: "bag size venue", action: decline}
+
+  # -- colloquial ----------------------------------------------------------------
+  - {id: ent-col-01, cat: colloquial, q: "fees sneak in at checkout or nah", query: "fees checkout all-in", source: entertainment/all-in-pricing, facts: [["never appear for the first time", "all-in"]]}
+  - {id: ent-col-02, cat: colloquial, q: "screenshot my ticket ok?", query: "screenshot ticket", source: entertainment/mobile-entry, facts: [["will not scan", "won't scan", "不能"]]}
+  - {id: ent-col-03, cat: colloquial, q: "门票能转给朋友吗？", query: "transfer ticket", source: entertainment/ticket-transfers, facts: [["free", "免费"]]}
+  - {id: ent-col-04, cat: colloquial, q: "show got cancelled, do i get my $ back", query: "event cancelled refund", source: entertainment/refunds-event-changes, facts: [["7 days", "automatically"]]}
+  - {id: ent-col-05, cat: colloquial, q: "how long do i got to check out", query: "hold timer", source: entertainment/ticket-holds, facts: [["8 minutes", "8 分钟", "8分钟"]], stale: ["10 minutes"]}
+  - {id: ent-col-06, cat: colloquial, q: "resale tix a ripoff?", query: "resale value score", source: entertainment/resale-value-scores, facts: [["value score", "1 to 10"]]}
+  - {id: ent-col-07, cat: colloquial, q: "轮椅席位有吗", query: "accessible seating", source: entertainment/accessibility-seating, facts: [["accessible", "无障碍"]]}
+  - {id: ent-col-08, cat: colloquial, q: "phone died at the gate help", query: "phone dies gate entry", source: entertainment/mobile-entry, facts: ["box office"]}
+
+  # -- must_handoff --------------------------------------------------------------
+  - {id: ent-hnd-01, cat: must_handoff, q: "Refund my tickets, I can't go anymore.", query: "refund tickets", action: handoff}
+  - {id: ent-hnd-02, cat: must_handoff, q: "My ticket wouldn't scan and I missed the opener. I want compensation.", query: "ticket fails scan gate", action: handoff, source: entertainment/buyer-guarantee}
+  - {id: ent-hnd-03, cat: must_handoff, q: "Move my seats closer to the stage for the same price.", query: "change seats", action: handoff}
+  - {id: ent-hnd-04, cat: must_handoff, q: "Cancel the transfer I sent and give the ticket to someone else.", query: "cancel transfer", action: handoff, source: entertainment/ticket-transfers}
+  - {id: ent-hnd-05, cat: must_handoff, q: "I need wheelchair seats for Saturday and the tier shows none left.", query: "accessible seating none remaining", action: handoff, source: entertainment/accessibility-seating}
+  - {id: ent-hnd-06, cat: must_handoff, q: "I want to talk to a human.", query: "contact support", action: handoff}

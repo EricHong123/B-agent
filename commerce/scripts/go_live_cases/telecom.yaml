@@ -1,0 +1,59 @@
+# Go-live cases for the telecom storefront; scripts/eval_go_live.py reads them and
+# docs/metrics.md describes the fields. `query` is the offline responder's search.
+cases:
+  # -- current_rule --------------------------------------------------------------
+  - {id: tel-cur-01, cat: current_rule, q: "Does the advertised plan price include the AutoPay discount?", query: "AutoPay discount plan price", source: telecom/plan-pricing-disclosures, facts: ["$5"]}
+  - {id: tel-cur-02, cat: current_rule, q: "What's the activation fee for a new line?", query: "activation fee", source: telecom/plan-pricing-disclosures, facts: ["$35"]}
+  - {id: tel-cur-03, cat: current_rule, q: "When can I upgrade my phone early?", query: "early upgrade eligibility", source: telecom/upgrade-eligibility, facts: ["month 22"]}
+  - {id: tel-cur-04, cat: current_rule, q: "How much trade-in credit does a tier B phone get?", query: "trade-in credit tier", source: telecom/trade-in-program, facts: ["$200"]}
+  - {id: tel-cur-05, cat: current_rule, q: "Can I finance a tablet, and at what rate?", query: "finance device installments", source: telecom/device-financing, facts: ["0% APR"]}
+  - {id: tel-cur-06, cat: current_rule, q: "Is there a fee to change my plan?", query: "change plan fee", source: telecom/plan-changes, facts: ["no fee"]}
+  - {id: tel-cur-07, cat: current_rule, q: "Do you charge overage fees?", query: "overage fees data", source: telecom/data-top-ups-and-overage, facts: [["never charges overage", "no overage", "doesn't charge overage", "does not charge overage"]]}
+  - {id: tel-cur-08, cat: current_rule, q: "How much is a data top-up?", query: "data top-up price", source: telecom/data-top-ups-and-overage, facts: ["$10"]}
+  - {id: tel-cur-09, cat: current_rule, q: "When can Unlimited plan data get deprioritized?", query: "deprioritized unlimited congestion", source: telecom/network-management-disclosure, facts: ["35GB"]}
+  - {id: tel-cur-10, cat: current_rule, q: "What's the early termination fee on a contract line?", query: "early termination fee", source: telecom/early-termination, facts: ["$175"]}
+  - {id: tel-cur-11, cat: current_rule, q: "How much off is Home Fiber with a phone plan?", query: "bundle discount fiber", source: telecom/bundle-discounts, facts: ["$20"]}
+  - {id: tel-cur-12, cat: current_rule, q: "What's the screen-only repair deductible on a tier A phone?", query: "device protection deductible screen", source: telecom/device-protection-terms, facts: ["$29"]}
+
+  # -- version_change ------------------------------------------------------------
+  - {id: tel-ver-01, cat: version_change, q: "Is the phone return window still 30 days?", query: "return device window", source: telecom/returns-and-cancellation, version: 2, facts: ["14 days"]}
+  - {id: tel-ver-02, cat: version_change, q: "How much is the restocking fee on a returned phone?", query: "restocking fee return phone", source: telecom/returns-and-cancellation, version: 2, facts: ["$55"], stale: ["$35"]}
+  - {id: tel-ver-03, cat: version_change, q: "If I cancel Home Fiber in the first month, what do I get back?", query: "Home Fiber cancel guarantee", source: telecom/returns-and-cancellation, version: 2, facts: [["30-day guarantee", "30 days"]]}
+  - {id: tel-ver-04, cat: version_change, q: "If I return a phone, is the service I used refunded?", query: "return device used service refund", source: telecom/returns-and-cancellation, version: 2, facts: ["not refunded"]}
+  - {id: tel-ver-05, cat: version_change, q: "How long do I have to return a phone?", query: "return device window", clock: "2026-01-15T12:00:00+00:00", source: telecom/returns-and-cancellation, version: 1, facts: ["30 days"], stale: ["14 days"]}
+  - {id: tel-ver-06, cat: version_change, q: "What's the restocking fee on a phone return?", query: "restocking fee return phone", clock: "2026-01-15T12:00:00+00:00", source: telecom/returns-and-cancellation, version: 1, facts: ["$35"], stale: ["$55"]}
+  - {id: tel-ver-07, cat: version_change, q: "Can I still get the switcher credit if I bring my number over?", query: "switcher credit bring number", action: decline, stale: ["$200 bill credit", "two bill cycles"]}
+  - id: tel-ver-08
+    cat: version_change
+    q: "How much does a data top-up cost now?"
+    query: "data top-up price"
+    action: decline
+    stale: ["5GB", "$15"]
+    overlay:
+      - {policy_id: data-top-ups-and-overage-v2, title: "Data top-ups", category: data, content: "A Data Top-Up adds 5GB of full-speed data for $15 and expires at the end of the current billing cycle.", source_id: telecom/data-top-ups-and-overage, version: "2", effective_at: "2026-08-01"}
+
+  # -- missing_info --------------------------------------------------------------
+  - {id: tel-mis-01, cat: missing_info, q: "Do you offer satellite phone service?", query: "satellite phone", action: decline}
+  - {id: tel-mis-02, cat: missing_info, q: "Is international roaming free in every country?", query: "international roaming countries free", action: decline}
+  - {id: tel-mis-03, cat: missing_info, q: "Is there a senior discount?", query: "senior discount", action: decline}
+  - {id: tel-mis-04, cat: missing_info, q: "Is there a military discount?", query: "military discount", action: decline}
+  - {id: tel-mis-05, cat: missing_info, q: "What does a replacement SIM card cost?", query: "SIM replacement fee", action: decline}
+  - {id: tel-mis-06, cat: missing_info, q: "Do you offer family location tracking?", query: "family location tracking", action: decline}
+
+  # -- colloquial ----------------------------------------------------------------
+  - {id: tel-col-01, cat: colloquial, q: "will u charge me if i go over my data", query: "overage data", source: telecom/data-top-ups-and-overage, facts: [["never charges overage", "no overage", "doesn't charge overage", "does not charge overage", "不收"]]}
+  - {id: tel-col-02, cat: colloquial, q: "trade my old phone in, how much $", query: "trade-in credit", source: telecom/trade-in-program, facts: [["$350", "$200", "$80"]]}
+  - {id: tel-col-03, cat: colloquial, q: "提前解约要多少钱？", query: "early termination fee", source: telecom/early-termination, facts: [["$175", "175"]]}
+  - {id: tel-col-04, cat: colloquial, q: "can i ditch autopay", query: "AutoPay discount", source: telecom/plan-pricing-disclosures, facts: ["$5"]}
+  - {id: tel-col-05, cat: colloquial, q: "upgrade when??", query: "upgrade eligibility", source: telecom/upgrade-eligibility, facts: [["month 22", "month 24"]]}
+  - {id: tel-col-06, cat: colloquial, q: "phone cracked, deductible?", query: "device protection deductible screen", source: telecom/device-protection-terms, facts: [["$29", "$99", "$79", "$49"]]}
+  - {id: tel-col-07, cat: colloquial, q: "流量包多少钱", query: "data top-up price", source: telecom/data-top-ups-and-overage, facts: [["$10", "10美元", "10 美元"]]}
+  - {id: tel-col-08, cat: colloquial, q: "bundle w/ internet cheaper?", query: "bundle discount internet", source: telecom/bundle-discounts, facts: ["$20"]}
+
+  # -- must_handoff --------------------------------------------------------------
+  - {id: tel-hnd-01, cat: must_handoff, q: "Cancel my line today.", query: "cancel line", action: handoff}
+  - {id: tel-hnd-02, cat: must_handoff, q: "Port my number out to another carrier for me.", query: "port number out", action: handoff, source: telecom/early-termination}
+  - {id: tel-hnd-03, cat: must_handoff, q: "My phone was stolen. Suspend the line and file the claim now.", query: "stolen phone claim", action: handoff}
+  - {id: tel-hnd-04, cat: must_handoff, q: "Waive my early termination fee.", query: "early termination fee waive", action: handoff}
+  - {id: tel-hnd-05, cat: must_handoff, q: "I was overcharged on my bill. Refund the difference.", query: "bill overcharge refund", action: handoff}
+  - {id: tel-hnd-06, cat: must_handoff, q: "Let me speak to a representative.", query: "contact support", action: handoff}

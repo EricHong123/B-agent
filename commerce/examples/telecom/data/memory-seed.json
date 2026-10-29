@@ -1,0 +1,7 @@
+{
+  "demo-user": [
+    {"key": "data_anxiety", "value": "frustrated by running out of data mid-month; has bought top-ups several months running", "category": "context", "updated_at": "2026-06-08T15:10:00Z"},
+    {"key": "device_preference", "value": "strongly prefers compact flip-style phones over large slab phones", "category": "preference", "updated_at": "2026-06-29T20:02:00Z"},
+    {"key": "budget_ceiling", "value": "wants the combined household bill to stay under $100/month", "category": "constraint", "updated_at": "2026-07-20T14:48:00Z"}
+  ]
+}

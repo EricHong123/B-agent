@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "user_id": "demo-user",
+      "display_name": "Riley",
+      "loyalty_tier": "ACME One member",
+      "default_location": "Springfield",
+      "preferences": {
+        "phone_style": "compact phones, loves the flip form factor",
+        "budget": "wants the combined household bill under $100/month",
+        "usage": "streams podcasts and maps on a long commute, video at home",
+        "household": "two lines today; has been meaning to sort out home internet",
+        "shopping_style": "reads the fine print, allergic to surprise fees"
+      }
+    },
+    {
+      "user_id": "demo-user-2",
+      "display_name": "Casey",
+      "loyalty_tier": "Guest",
+      "default_location": "Springfield",
+      "preferences": {
+        "context": "new to ACME Mobile, comparing carriers before switching",
+        "budget": "value-focused, no interest in flagship phones",
+        "usage": "light data, mostly Wi-Fi, wants no contract"
+      }
+    }
+  ]
+}

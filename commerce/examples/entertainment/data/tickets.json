@@ -1,0 +1,36 @@
+{
+  "tickets": [
+    {
+      "ticket_id": "AT-TKT-7001",
+      "owner_id": "demo-user",
+      "product_id": "AT-TIX-104-GAF",
+      "order_id": "AT-ORD-9001",
+      "seat": "GA Floor",
+      "status": "active"
+    },
+    {
+      "ticket_id": "AT-TKT-7002",
+      "owner_id": "demo-user",
+      "product_id": "AT-TIX-104-GAF",
+      "order_id": "AT-ORD-9001",
+      "seat": "GA Floor",
+      "status": "active"
+    },
+    {
+      "ticket_id": "AT-TKT-7003",
+      "owner_id": "demo-user",
+      "product_id": "AT-TIX-101-LOW",
+      "order_id": "AT-ORD-9002",
+      "seat": "Section 104, Row J, Seat 12",
+      "status": "active"
+    },
+    {
+      "ticket_id": "AT-TKT-7004",
+      "owner_id": "demo-user",
+      "product_id": "AT-TIX-101-LOW",
+      "order_id": "AT-ORD-9002",
+      "seat": "Section 104, Row J, Seat 13",
+      "status": "active"
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "policies": [
+    {
+      "policy_id": "cancellation-refundable",
+      "title": "Cancelling a refundable booking",
+      "category": "cancellations",
+      "content": "Refundable stays and experiences can be cancelled free of charge until 48 hours before check-in or the activity start time; refundable flights can be cancelled until 24 hours before departure. Refunds go back to the original payment method and post within 5-7 business days. A cancellation made after that cutoff (less than 48 hours out) is charged the first night for a stay and 50% of the booking for an experience. Look for the 'Free cancellation' label — items without it follow the non-refundable policy.",
+      "source_id": "travel/cancellation-refundable",
+      "version": "2",
+      "effective_at": "2026-03-01"
+    },
+    {
+      "policy_id": "cancellation-refundable-v1",
+      "title": "Cancelling a refundable booking",
+      "category": "cancellations",
+      "content": "Refundable stays and experiences can be cancelled free of charge until 24 hours before check-in or the activity start time; refundable flights can be cancelled until 24 hours before departure. Refunds go back to the original payment method and post within 10 business days. A cancellation made after that cutoff is charged the first night for a stay and the full booking for an experience.",
+      "source_id": "travel/cancellation-refundable",
+      "version": "1",
+      "effective_at": "2025-06-01",
+      "expires_at": "2026-03-01"
+    },
+    {
+      "policy_id": "cancellation-nonrefundable",
+      "title": "Cancelling a non-refundable booking",
+      "category": "cancellations",
+      "content": "Non-refundable fares and rates are discounted because they cannot be refunded in cash. If you cancel at least 7 days before travel, ACME Travel issues 50% of the amount paid as travel credit valid for 12 months; closer than 7 days, no credit is issued. Every booking, including non-refundable ones, has a 24-hour grace period after purchase for a full refund as long as travel is at least 7 days away.",
+      "source_id": "travel/cancellation-nonrefundable",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "changes-and-rebooking",
+      "title": "Changes and rebooking",
+      "category": "changes",
+      "content": "Date changes on refundable bookings are free until 48 hours before travel — you pay only the difference if the new date costs more. Non-refundable bookings can be changed for a $40 fee per booking plus any fare or rate difference, up to 72 hours before travel. Traveler name corrections (typos, not transfers) are free within 24 hours of booking and $25 afterward. ACME Subscription members never pay change fees on any fare type.",
+      "source_id": "travel/changes-and-rebooking",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "price-revalidation",
+      "title": "Price revalidation at checkout",
+      "category": "pricing",
+      "content": "Travel prices are set by airlines, hotels, and operators in real time, so the price shown in search results is a quote, not a guarantee — the final price is confirmed at checkout. Once you begin checkout, your quoted total is held for 20 minutes. If revalidation finds the total has increased by more than $25 or 2% (whichever is greater), ACME Travel shows you the new total and asks you to confirm before charging anything; if it has dropped, you automatically pay the lower price.",
+      "source_id": "travel/price-revalidation",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "baggage",
+      "title": "Baggage allowances",
+      "category": "baggage",
+      "content": "Every ACME Travel flight includes at least one carry-on and a personal item; checked-bag rules depend on the fare and are listed under each flight's specs before you book. Where a checked bag is not included, adding one at booking costs $18-$45 each way depending on the route — typically 30-50% less than paying at the airport. Premium economy and business fares include two checked bags, and oversized items like ski bags or surfboards can be added to most itineraries during checkout.",
+      "source_id": "travel/baggage",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "travel-documents",
+      "title": "Passports, visas, and entry requirements",
+      "category": "documents",
+      "content": "Most destinations require a passport valid for at least 6 months beyond your return date, and the name on every booking must match the traveler's passport exactly. ACME Travel surfaces known entry requirements — visas, e-authorizations, onward-ticket rules — at checkout, but final responsibility for meeting them rests with the traveler, so confirm with the destination's consulate for anything unusual. Denied boarding due to missing documents is treated as a late cancellation under the fare's normal rules.",
+      "source_id": "travel/travel-documents",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "acme-subscription",
+      "title": "ACME Subscription membership",
+      "category": "membership",
+      "content": "ACME Subscription costs $99/year and includes free changes on every fare type, 5% back in travel credit on stays, price-drop protection that automatically refunds up to $100 per booking if your trip gets cheaper after purchase, and a 24/7 priority support line during travel. New members get a 14-day free trial, and you can cancel anytime for a prorated refund of the unused portion.",
+      "source_id": "travel/acme-subscription",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "payment-and-holds",
+      "title": "Payment timing and card holds",
+      "category": "payments",
+      "content": "Flights and non-refundable bookings are charged in full when the booking is confirmed. Refundable stays are charged 7 days before check-in, and refundable experiences 48 hours before the start time — until then you'll only see a $1 verification hold that drops off within 3 business days. Some hotels additionally take a local incidentals deposit at check-in, which is noted on the stay's detail page when it applies.",
+      "source_id": "travel/payment-and-holds",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "summer-flex",
+      "title": "Summer Flex date changes",
+      "category": "changes",
+      "content": "Summer Flex: date changes on non-refundable bookings are free for trips booked between May 1 and August 31, 2026; you pay only any fare or rate difference.",
+      "source_id": "travel/summer-flex",
+      "version": "1",
+      "effective_at": "2026-05-01",
+      "expires_at": "2026-09-01"
+    }
+  ],
+  "synonyms": {
+    "bail": [
+      "cancel",
+      "cancelled"
+    ],
+    "back out": [
+      "cancel",
+      "cancelled"
+    ],
+    "call off": [
+      "cancel"
+    ],
+    "money back": [
+      "refund"
+    ],
+    "nonrefundable": [
+      "non-refundable"
+    ],
+    "reschedule": [
+      "change",
+      "date"
+    ],
+    "move my dates": [
+      "change",
+      "date"
+    ],
+    "push back": [
+      "change",
+      "date"
+    ],
+    "luggage": [
+      "baggage",
+      "bag"
+    ],
+    "suitcase": [
+      "baggage",
+      "checked bag"
+    ],
+    "price jumped": [
+      "price",
+      "increased",
+      "revalidation"
+    ],
+    "price went up": [
+      "price",
+      "increased",
+      "revalidation"
+    ],
+    "charge my card": [
+      "charged",
+      "payment"
+    ],
+    "pending charge": [
+      "verification",
+      "hold"
+    ],
+    "typo": [
+      "name",
+      "correction"
+    ],
+    "member": [
+      "membership",
+      "subscription"
+    ],
+    "护照": [
+      "passport"
+    ],
+    "签证": [
+      "visa"
+    ],
+    "有效": [
+      "valid"
+    ],
+    "取消": [
+      "cancel"
+    ],
+    "退款": [
+      "refund"
+    ],
+    "改期": [
+      "change",
+      "date"
+    ],
+    "改日期": [
+      "change",
+      "date"
+    ],
+    "行李": [
+      "baggage",
+      "bag"
+    ],
+    "要钱": [
+      "fee"
+    ]
+  }
+}

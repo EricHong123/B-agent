@@ -68,3 +68,6 @@ dist/
 # OS
 Thumbs.db
 .DS_Store
+
+# Vendored commerce-agents web apps keep their sources in lib/
+!commerce/examples/*/*-web/lib/

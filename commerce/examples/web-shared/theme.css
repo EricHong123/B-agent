@@ -1,0 +1,27 @@
+/*
+ * Copyright 2026 Anthropic PBC
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * The look every web app shares: page, card, and bar grounds, text, rules, and shadows, one
+ * light neutral set across the eight apps and the demo hub. A vertical keeps its own accent,
+ * status, and tier colors and its typefaces in its globals.css. `html:root` outranks an app's
+ * `:root`, so these hold wherever the import lands.
+ */
+
+html:root {
+  color-scheme: light;
+  --ground: #f4f5f7; /* page */
+  --surface: #ffffff; /* text on ink */
+  --card: #ffffff; /* cards, panels, rails */
+  --chrome: #ffffff; /* app bar, sidebar */
+  --well: #eef0f3; /* chips, wells, hover ground */
+  --ink: #1d2433; /* text and structure */
+  --ink-2: #3a4356; /* secondary text that still reads as content */
+  --ink-soft: #5d6577; /* labels and metadata */
+  --ink-faint: #9aa0ad; /* hints and placeholders */
+  --line: rgba(29, 36, 51, 0.12);
+  --line-strong: rgba(29, 36, 51, 0.19); /* control borders */
+  --shadow-sm: 0 1px 2px rgba(29, 36, 51, 0.06);
+  --shadow: 0 1px 2px rgba(29, 36, 51, 0.05), 0 8px 24px -10px rgba(29, 36, 51, 0.14);
+  --shadow-lg: 0 18px 48px -14px rgba(29, 36, 51, 0.24), 0 2px 8px rgba(29, 36, 51, 0.06);
+}

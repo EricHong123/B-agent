@@ -1,0 +1,28 @@
+{
+  "orders": [
+    {
+      "user_id": "demo-user",
+      "order_id": "AT-ORD-9001",
+      "status": "delivered",
+      "placed_at": "2026-06-20T18:42:00Z",
+      "items": [
+        {"product_id": "AT-TIX-104-GAF", "title": "The Duo — Autumn Tour · Wed Sep 2 · GA Floor", "quantity": 2, "price": 59.5}
+      ],
+      "total": 119.0,
+      "currency": "USD",
+      "estimated_delivery": "delivered to your ACME Tickets wallet"
+    },
+    {
+      "user_id": "demo-user",
+      "order_id": "AT-ORD-9002",
+      "status": "delivered",
+      "placed_at": "2026-07-01T09:15:00Z",
+      "items": [
+        {"product_id": "AT-TIX-101-LOW", "title": "The Headliner — Summer Tour · Fri Aug 14 · Lower Bowl", "quantity": 2, "price": 89.0}
+      ],
+      "total": 178.0,
+      "currency": "USD",
+      "estimated_delivery": "delivered to your ACME Tickets wallet"
+    }
+  ]
+}

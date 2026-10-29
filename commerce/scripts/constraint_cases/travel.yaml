@@ -1,0 +1,13 @@
+# Constraint cases for the travel storefront, judged at the default clock (Thu 2026-10-01);
+# scripts/eval_constraints.py reads them and docs/metrics.md describes the fields.
+cases:
+  - {id: trv-01, q: "A room in Lisbon on November 12, under $150 a night.", query: "Lisbon stay", constraints: {max_price: 150, available_on: 2026-11-12, require: {category: stays, city: Lisbon}}}
+  - {id: trv-02, q: "A Kyoto stay with breakfast for under $250 a night on December 3.", query: "Kyoto ryokan breakfast", constraints: {max_price: 250, available_on: 2026-12-03, require: {category: stays, city: Kyoto, breakfast_included: "yes"}}}
+  - {id: trv-03, q: "Refundable flight New York to Lisbon on November 20, $600 max.", query: "New York to Lisbon flight", constraints: {max_price: 600, available_on: 2026-11-20, require: {category: flights, origin_city: New York, destination_city: Lisbon, refundable: "yes"}}}
+  - {id: trv-04, q: "Boston to Reykjavik on November 8, please.", query: "Boston to Reykjavik flight", constraints: {available_on: 2026-11-08, require: {category: flights, origin_city: Boston, destination_city: Reykjavik}}}
+  - {id: trv-05, q: "A northern lights tour in Reykjavik on October 10.", query: "northern lights Reykjavik", constraints: {available_on: 2026-10-10, require: {title: Northern Lights, category: experiences, city: Reykjavik}}}
+  - {id: trv-06, q: "Marrakesh riad with breakfast on November 15, under $200 a night.", query: "Marrakesh riad", constraints: {max_price: 200, available_on: 2026-11-15, require: {category: stays, city: Marrakesh, breakfast_included: "yes"}}}
+  - {id: trv-07, q: "Somewhere to stay in Queenstown on January 15 for under $200 a night.", query: "Queenstown stay", constraints: {max_price: 200, available_on: 2027-01-15, require: {category: stays, city: Queenstown}}}
+  - {id: trv-08, q: "A refundable hotel in Mexico City on December 10, $180 a night tops.", query: "Mexico City hotel", constraints: {max_price: 180, available_on: 2026-12-10, require: {category: stays, city: Mexico City, refundable: "yes"}}}
+  - {id: trv-09, q: "The alpine sunrise hike in Queenstown on October 12.", query: "Queenstown alpine sunrise hike", constraints: {available_on: 2026-10-12, require: {title: Alpine Sunrise, category: experiences, city: Queenstown}}}
+  - {id: trv-10, q: "里斯本11月5日有什么60美元以内的体验活动？", query: "Lisbon workshop experience", constraints: {max_price: 60, available_on: 2026-11-05, require: {category: experiences, city: Lisbon}}}

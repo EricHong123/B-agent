@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "shopping-agent-runtime"
+version = "0.1.0.dev0"
+description = "The shopping agent's turn loop on the Messages API."
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+classifiers = ["License :: OSI Approved :: Apache Software License"]
+authors = [{ name = "Anthropic" }]
+# Sibling packages are pinned to this exact dev version: install them together from
+# the repo (scripts/install.sh); a lone install fails instead of resolving a public
+# distribution of the same name.
+dependencies = [
+  "commerce-common==0.1.0.dev0",
+  "shopping-agent-core==0.1.0.dev0",
+  "anthropic>=0.91",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["shopping_agent_runtime"]

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "claude-commerce-agents",
+  "description": "Claude Commerce Agents: the commerce-builder plugin for building shopping and merchant agents on Claude.",
+  "owner": {
+    "name": "Anthropic"
+  },
+  "plugins": [
+    {
+      "name": "commerce-builder",
+      "source": "./plugins/commerce-builder",
+      "description": "Skills and scaffolding commands for building shopping and merchant agents on Claude, covering architecture, prompt caching, UI tools, trust and safety, evals, and merchant operations.",
+      "author": {
+        "name": "Anthropic"
+      }
+    }
+  ]
+}

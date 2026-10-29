@@ -1,0 +1,7 @@
+{
+  "demo-user": [
+    {"key": "camping_experience", "value": "first-time camper — prefers gear that is simple to set up and forgiving to use", "category": "context", "updated_at": "2026-06-21T16:40:00Z"},
+    {"key": "bedding_constraint", "value": "partner sleeps hot — skip heavy comforters and wool bedding", "category": "constraint", "updated_at": "2026-07-03T19:12:00Z"},
+    {"key": "workspace", "value": "works from home three days a week at a desk set up in the bedroom", "category": "context", "updated_at": "2026-07-18T13:05:00Z"}
+  ]
+}

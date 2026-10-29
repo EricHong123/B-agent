@@ -1,0 +1,13 @@
+# Constraint cases for the telecom storefront, judged at the default clock (Thu 2026-10-01);
+# scripts/eval_constraints.py reads them and docs/metrics.md describes the fields.
+cases:
+  - {id: tel-01, q: "A plan under $40 a month with at least 10 GB of data.", query: "phone plan data", constraints: {require: {category: plans}, max_price: 40, min_data_gb: 10}}
+  - {id: tel-02, q: "Unlimited data for under $60 a month?", query: "unlimited plan", constraints: {max_price: 60, require: {category: plans, data_allowance_gb: unlimited}}}
+  - {id: tel-03, q: "I need 20 GB or more, and I won't pay over $55 a month.", query: "phone plan data", constraints: {require: {category: plans}, max_price: 55, min_data_gb: 20}}
+  - {id: tel-04, q: "A new phone, $800 at most.", query: "phone", constraints: {require: {title: Phone, category: devices}, max_price: 800}}
+  - {id: tel-05, q: "The Phone 5 Pro in 512 GB, glacier color.", query: "Phone 5 Pro", constraints: {require: {title: Phone 5 Pro, category: devices, storage_gb: "512", color: glacier}}}
+  - {id: tel-06, q: "A phone with 512 GB of storage, under $1,200.", query: "phone 512 GB", constraints: {max_price: 1200, require: {category: devices, storage_gb: "512"}}}
+  - {id: tel-07, q: "Gigabit home fiber for under $75 a month.", query: "home fiber gig", constraints: {max_price: 75, require: {category: home-internet, speed_tier: 1 Gbps}}}
+  - {id: tel-08, q: "A tablet for under $500.", query: "tablet", constraints: {require: {title: Tablet, category: devices}, max_price: 500}}
+  - {id: tel-09, q: "Extra hotspot data for under $20 a month.", query: "hotspot add-on", constraints: {require: {title: Hotspot, category: add-ons}, max_price: 20}}
+  - {id: tel-10, q: "有没有90美元以内、含国际漫游的套餐？", query: "international roaming plan", constraints: {max_price: 90, require: {category: plans, intl_roaming: included}}}

@@ -1,0 +1,2185 @@
+{
+ "store_name": "ACME",
+ "products": [
+  {
+   "product_id": "AR-1001",
+   "title": "ACME Everyday 12-Cup Programmable Drip Coffee Maker",
+   "brand": "ACME Everyday",
+   "price": 79.0,
+   "rating": 4.5,
+   "review_count": 2841,
+   "category": "home-kitchen",
+   "labels": [
+    "bestseller"
+   ],
+   "attributes": {
+    "capacity": "12 cups",
+    "carafe": "glass",
+    "programmable": "yes",
+    "color": "stainless"
+   },
+   "in_stock": true,
+   "short_description": "Wake-up timer, bold-brew mode, and a keep-warm plate that doesn't scorch the pot."
+  },
+  {
+   "product_id": "AR-1002",
+   "title": "ACME Signature 15-Bar Espresso Machine with Steam Wand",
+   "brand": "ACME Signature",
+   "price": 329.0,
+   "rating": 4.6,
+   "review_count": 1188,
+   "image_url": "/products/AR-1002.webp",
+   "category": "home-kitchen",
+   "labels": [
+    "new"
+   ],
+   "attributes": {
+    "pressure": "15 bar",
+    "steam_wand": "yes",
+    "water_tank": "1.8 L",
+    "color": "matte black"
+   },
+   "in_stock": false,
+   "short_description": "Cafe-style shots and microfoam at home; heats up in under a minute."
+  },
+  {
+   "product_id": "AR-1003",
+   "title": "ACME Signature 8-Inch Forged Chef's Knife",
+   "brand": "ACME Signature",
+   "price": 64.0,
+   "rating": 4.8,
+   "review_count": 3320,
+   "category": "home-kitchen",
+   "labels": [],
+   "attributes": {
+    "blade": "german steel",
+    "length": "8 in",
+    "handle": "laminated wood",
+    "dishwasher_safe": "no"
+   },
+   "in_stock": true,
+   "short_description": "Full-tang forged blade with a comfortable balance point; holds an edge through months of daily prep."
+  },
+  {
+   "product_id": "AR-1004",
+   "title": "ACME Signature 6-Quart Enameled Cast Iron Dutch Oven",
+   "brand": "ACME Signature",
+   "price": 89.0,
+   "rating": 4.7,
+   "review_count": 5102,
+   "category": "home-kitchen",
+   "labels": [
+    "bestseller",
+    "sale"
+   ],
+   "attributes": {
+    "capacity": "6 qt",
+    "material": "enameled cast iron",
+    "oven_safe": "260 C",
+    "color": "dusk blue"
+   },
+   "in_stock": true,
+   "short_description": "Braises, breads, and big-batch soups; goes from stovetop to oven to table."
+  },
+  {
+   "product_id": "AR-1005",
+   "title": "ACME Everyday Ceramic Nonstick 10-Piece Cookware Set",
+   "brand": "ACME Everyday",
+   "price": 149.0,
+   "rating": 4.3,
+   "review_count": 942,
+   "category": "home-kitchen",
+   "labels": [
+    "eco-friendly"
+   ],
+   "attributes": {
+    "pieces": "10",
+    "coating": "ceramic nonstick",
+    "induction_ready": "yes",
+    "pfas_free": "yes"
+   },
+   "in_stock": true,
+   "short_description": "PFAS-free ceramic coating over aluminum; even heat without the babying."
+  },
+  {
+   "product_id": "AR-1006",
+   "title": "ACME Home HEPA Air Purifier for Large Rooms",
+   "brand": "ACME Home",
+   "price": 189.0,
+   "rating": 4.4,
+   "review_count": 1764,
+   "category": "home-kitchen",
+   "labels": [],
+   "attributes": {
+    "coverage": "1100 sq ft",
+    "filter": "true HEPA + carbon",
+    "noise": "24 dB sleep mode",
+    "smart": "app + auto mode"
+   },
+   "in_stock": true,
+   "short_description": "Quiet enough for bedrooms, strong enough for open-plan living rooms; filter alerts in the app."
+  },
+  {
+   "product_id": "AR-1007",
+   "title": "ACME Everyday Robot Vacuum with Self-Empty Base",
+   "brand": "ACME Everyday",
+   "price": 399.0,
+   "rating": 4.2,
+   "review_count": 2210,
+   "category": "home-kitchen",
+   "labels": [
+    "sale"
+   ],
+   "attributes": {
+    "suction": "4000 Pa",
+    "self_empty": "about 8 weeks",
+    "mapping": "lidar",
+    "pet_hair": "tangle-free brush"
+   },
+   "in_stock": true,
+   "short_description": "Lidar mapping, room-by-room schedules, and a base that empties itself for weeks at a time.",
+   "long_description": "It maps your home with lidar on its first run and then cleans room by room on the schedule you set. The tangle-free roller and 4000 Pa suction are tuned for pet hair on both hard floors and rugs, and the self-empty base goes about eight weeks between bag changes. Quiet mode keeps it under 58 dB so it can run while you're on calls. Works with the ACME Home app for no-go zones and per-room suction levels.",
+   "specs": {
+    "suction": "4000 Pa",
+    "runtime": "180 min",
+    "bin": "self-empty base, 2.5 L bag",
+    "height": "9.7 cm",
+    "noise": "58 dB standard / 52 dB quiet",
+    "warranty": "2 years"
+   },
+   "review_highlights": [
+    "Handles a golden retriever's shedding with one pass a day",
+    "Mapping is accurate; no-go zones actually hold",
+    "Base is loud for a few seconds when it empties — schedule it for daytime"
+   ]
+  },
+  {
+   "product_id": "AR-1008",
+   "title": "ACME Rest Weighted Blanket, Queen",
+   "brand": "ACME Rest",
+   "price": 49.0,
+   "rating": 4.6,
+   "review_count": 4310,
+   "category": "home-kitchen",
+   "labels": [
+    "bestseller"
+   ],
+   "attributes": {
+    "size": "queen",
+    "cover": "washable bamboo",
+    "fill": "glass beads"
+   },
+   "in_stock": true,
+   "short_description": "Evenly stitched glass-bead fill with a removable, washable bamboo cover that sleeps cool. Three weights; about a tenth of body weight is the usual pick.",
+   "variants": [
+    {
+     "product_id": "AR-1008-12LB",
+     "option_values": {
+      "weight": "12 lb"
+     },
+     "price": 49.0
+    },
+    {
+     "product_id": "AR-1008-15LB",
+     "option_values": {
+      "weight": "15 lb"
+     },
+     "price": 59.0
+    },
+    {
+     "product_id": "AR-1008-20LB",
+     "option_values": {
+      "weight": "20 lb"
+     },
+     "price": 69.0
+    }
+   ]
+  },
+  {
+   "product_id": "AR-1101",
+   "title": "ACME Select 27\" 4K IPS Monitor with USB-C",
+   "brand": "ACME Select",
+   "price": 349.0,
+   "rating": 4.7,
+   "review_count": 1892,
+   "category": "office-electronics",
+   "labels": [
+    "bestseller"
+   ],
+   "attributes": {
+    "size": "27 in",
+    "resolution": "4K UHD",
+    "panel": "IPS",
+    "ports": "USB-C 90W, HDMI x2, DP",
+    "vesa": "100x100"
+   },
+   "in_stock": true,
+   "short_description": "Factory-calibrated 4K panel with single-cable USB-C power and video for laptops.",
+   "long_description": "A 27-inch 4K IPS panel factory-calibrated to 99% sRGB, with a 90W USB-C port that powers your laptop and carries video over one cable. The stand adjusts for height, tilt, and pivot, and the thin bezels make a clean dual-monitor setup. A built-in KVM switches your keyboard and mouse between two computers, which is handy if you split time between a work laptop and a personal desktop.",
+   "specs": {
+    "resolution": "3840 x 2160",
+    "refresh": "60 Hz",
+    "brightness": "400 nits",
+    "color": "99% sRGB, 95% DCI-P3",
+    "power_delivery": "90 W",
+    "warranty": "3 years"
+   },
+   "review_highlights": [
+    "Text is razor sharp; great for long writing and spreadsheet days",
+    "USB-C single-cable setup cleaned up my whole desk",
+    "Not a gaming monitor — 60 Hz is the trade-off for the price"
+   ]
+  },
+  {
+   "product_id": "AR-1102",
+   "title": "ACME Studio Mesh Office Chair",
+   "brand": "ACME Studio",
+   "price": 289.0,
+   "rating": 4.5,
+   "review_count": 2603,
+   "category": "office-electronics",
+   "labels": [],
+   "attributes": {
+    "lumbar": "adjustable",
+    "armrests": "4D",
+    "recline": "135 degrees",
+    "weight_capacity": "300 lb",
+    "material": "breathable mesh"
+   },
+   "in_stock": true,
+   "short_description": "Adjustable lumbar, 4D armrests, and a breathable mesh back built for full workdays.",
+   "long_description": "The chair is built around an adjustable lumbar support that tracks the curve of your lower back, with a synchronized recline that keeps your feet planted as you lean. The mesh back keeps airflow moving through long afternoons, the seat pan slides forward and back to fit longer legs, and the 4D armrests adjust in height, depth, width, and angle so your shoulders can actually relax. Assembly takes about 20 minutes with the included tools.",
+   "specs": {
+    "seat_height": "17-21 in",
+    "recline": "synchronized, lockable to 135 degrees",
+    "armrests": "4D adjustable",
+    "capacity": "300 lb",
+    "warranty": "5 years"
+   },
+   "review_highlights": [
+    "Back pain after long days basically disappeared after the first week",
+    "Armrests stay where you put them, unlike cheaper chairs",
+    "Headrest is a separate add-on, which is annoying at this price"
+   ]
+  },
+  {
+   "product_id": "AR-1103",
+   "title": "ACME Studio 48\" Electric Standing Desk",
+   "brand": "ACME Studio",
+   "price": 379.0,
+   "rating": 4.4,
+   "review_count": 1320,
+   "category": "office-electronics",
+   "labels": [
+    "new"
+   ],
+   "attributes": {
+    "width": "48 in",
+    "height_range": "28-47 in",
+    "memory_presets": "4",
+    "top": "bamboo"
+   },
+   "in_stock": true,
+   "short_description": "Dual-motor lift with four memory presets and a bamboo top that doesn't wobble at standing height."
+  },
+  {
+   "product_id": "AR-1104",
+   "title": "ACME Select Low-Profile Mechanical Keyboard",
+   "brand": "ACME Select",
+   "price": 99.0,
+   "rating": 4.6,
+   "review_count": 3105,
+   "category": "office-electronics",
+   "labels": [
+    "bestseller"
+   ],
+   "attributes": {
+    "switches": "low-profile tactile",
+    "connectivity": "BT5.1 + 2.4GHz + USB-C",
+    "layout": "75%",
+    "backlight": "white"
+   },
+   "in_stock": true,
+   "short_description": "Quiet tactile switches, three-device Bluetooth, and a battery that lasts about six weeks."
+  },
+  {
+   "product_id": "AR-1105",
+   "title": "ACME Select Noise-Cancelling Headphones",
+   "brand": "ACME Select",
+   "price": 249.0,
+   "rating": 4.5,
+   "review_count": 5530,
+   "category": "office-electronics",
+   "labels": [
+    "sale"
+   ],
+   "attributes": {
+    "anc": "adaptive",
+    "battery": "40 h",
+    "multipoint": "2 devices",
+    "weight": "254 g"
+   },
+   "in_stock": true,
+   "short_description": "Adaptive noise cancelling tuned for open offices and flights, with 40-hour battery life."
+  },
+  {
+   "product_id": "AR-1106",
+   "title": "ACME Select 1080p Webcam with Auto-Framing",
+   "brand": "ACME Select",
+   "price": 69.0,
+   "rating": 4.3,
+   "review_count": 980,
+   "image_url": "/products/AR-1106.webp",
+   "category": "office-electronics",
+   "labels": [],
+   "attributes": {
+    "resolution": "1080p60",
+    "field_of_view": "90 degrees",
+    "auto_framing": "yes",
+    "privacy_shutter": "yes"
+   },
+   "in_stock": true,
+   "short_description": "Sharp low-light image, auto-framing that follows you, and a physical privacy shutter."
+  },
+  {
+   "product_id": "AR-1107",
+   "title": "ACME Studio Adjustable Aluminum Laptop Stand",
+   "brand": "ACME Studio",
+   "price": 39.0,
+   "rating": 4.7,
+   "review_count": 2217,
+   "category": "office-electronics",
+   "labels": [],
+   "attributes": {
+    "material": "aluminum",
+    "height_range": "2-12 in",
+    "max_laptop": "17 in",
+    "foldable": "yes"
+   },
+   "in_stock": true,
+   "short_description": "Raises the screen to eye level and folds flat for a backpack; rock solid even at full height."
+  },
+  {
+   "product_id": "AR-1108",
+   "title": "ACME Select LED Desk Lamp with Wireless Charger",
+   "brand": "ACME Select",
+   "price": 54.0,
+   "rating": 4.4,
+   "review_count": 760,
+   "image_url": "/products/AR-1108.webp",
+   "category": "office-electronics",
+   "labels": [
+    "eco-friendly"
+   ],
+   "attributes": {
+    "color_temp": "2700-6000 K",
+    "brightness": "5 levels",
+    "charger": "10W Qi pad",
+    "usb_port": "yes"
+   },
+   "in_stock": true,
+   "short_description": "Flicker-free light with warm-to-cool presets and a phone charging pad in the base."
+  },
+  {
+   "product_id": "AR-1201",
+   "title": "ACME Basecamp 2-Person Backpacking Tent",
+   "brand": "ACME Basecamp",
+   "price": 149.0,
+   "rating": 4.6,
+   "review_count": 812,
+   "category": "outdoor-camping",
+   "labels": [
+    "bestseller"
+   ],
+   "attributes": {
+    "capacity": "2 person",
+    "weight": "2.1 kg",
+    "season": "3-season",
+    "setup": "freestanding"
+   },
+   "in_stock": true,
+   "short_description": "A 2.1 kg freestanding three-season tent that pitches in about four minutes.",
+   "long_description": "A true two-person backpacking tent that keeps weight at 2.1 kg without giving up livability: two doors, two vestibules, and enough headroom to sit up and play cards through a rainy evening. Color-coded aluminum poles make the first pitch intuitive, the full-coverage rainfly has taped seams, and the mesh body keeps condensation moving on humid nights. Packs down to the size of a loaf of bread.",
+   "specs": {
+    "floor_area": "2.9 sq m",
+    "peak_height": "102 cm",
+    "doors": "2",
+    "packed_size": "46 x 15 cm",
+    "rainfly": "full coverage, taped seams",
+    "warranty": "lifetime"
+   },
+   "review_highlights": [
+    "Survived a windy weekend on an exposed ridge without a shudder",
+    "Genuinely fits two adults plus boots and packs in the vestibules",
+    "Stakes are flimsy — worth swapping for better ones"
+   ]
+  },
+  {
+   "product_id": "AR-1202",
+   "title": "ACME Basecamp 4-Person Family Tent",
+   "brand": "ACME Basecamp",
+   "price": 219.0,
+   "rating": 4.5,
+   "review_count": 1430,
+   "category": "outdoor-camping",
+   "labels": [],
+   "attributes": {
+    "capacity": "4 person",
+    "weight": "7.4 kg",
+    "standing_height": "183 cm",
+    "setup": "8 minutes"
+   },
+   "in_stock": true,
+   "short_description": "Standing-height family tent with a room divider and a porch awning for muddy boots."
+  },
+  {
+   "product_id": "AR-1203",
+   "title": "ACME Basecamp 20°F Insulated Sleeping Bag",
+   "brand": "ACME Basecamp",
+   "price": 89.0,
+   "rating": 4.2,
+   "review_count": 645,
+   "category": "outdoor-camping",
+   "labels": [],
+   "attributes": {
+    "rating": "-7 C / 20 F",
+    "fill": "synthetic",
+    "weight": "1.3 kg",
+    "packed": "compression sack included"
+   },
+   "in_stock": true,
+   "short_description": "Synthetic 20°F bag that stays warm when damp and packs down small."
+  },
+  {
+   "product_id": "AR-1204",
+   "title": "ACME Signature Two-Burner Camp Stove",
+   "brand": "ACME Signature",
+   "price": 64.5,
+   "rating": 4.4,
+   "review_count": 233,
+   "category": "outdoor-camping",
+   "labels": [],
+   "attributes": {
+    "burners": "2 x 10000 BTU",
+    "fuel": "propane",
+    "ignition": "matchless",
+    "wind_panels": "yes"
+   },
+   "in_stock": true,
+   "short_description": "Compact two-burner propane stove with matchless ignition and fold-out wind panels."
+  },
+  {
+   "product_id": "AR-1205",
+   "title": "ACME Journey 45L Hard Cooler",
+   "brand": "ACME Journey",
+   "price": 199.0,
+   "rating": 4.7,
+   "review_count": 1102,
+   "category": "outdoor-camping",
+   "labels": [
+    "sale"
+   ],
+   "attributes": {
+    "capacity": "45 L",
+    "ice_retention": "5 days",
+    "bear_resistant": "certified",
+    "drain": "yes"
+   },
+   "in_stock": true,
+   "short_description": "Keeps ice through a long weekend in summer heat; certified bear-resistant latches."
+  },
+  {
+   "product_id": "AR-1206",
+   "title": "ACME Basecamp 400-Lumen Rechargeable Headlamp",
+   "brand": "ACME Basecamp",
+   "price": 34.0,
+   "rating": 4.5,
+   "review_count": 2098,
+   "category": "outdoor-camping",
+   "labels": [
+    "bestseller"
+   ],
+   "attributes": {
+    "brightness": "400 lumens",
+    "battery": "USB-C rechargeable",
+    "runtime": "up to 40 h",
+    "red_mode": "yes"
+   },
+   "in_stock": true,
+   "short_description": "Bright, light, and USB-C rechargeable, with a red mode that won't wake the tent."
+  },
+  {
+   "product_id": "AR-1207",
+   "title": "ACME Journey 55L Hiking Backpack",
+   "brand": "ACME Journey",
+   "price": 159.0,
+   "rating": 4.4,
+   "review_count": 530,
+   "category": "outdoor-camping",
+   "labels": [],
+   "attributes": {
+    "capacity": "55 L",
+    "frame": "internal aluminum",
+    "fit": "adjustable torso",
+    "rain_cover": "included"
+   },
+   "in_stock": false,
+   "short_description": "Adjustable-torso pack with a supportive hip belt and an included rain cover."
+  },
+  {
+   "product_id": "AR-1208",
+   "title": "ACME Basecamp Gravity Water Filter, 3L",
+   "brand": "ACME Basecamp",
+   "price": 74.0,
+   "rating": 4.6,
+   "review_count": 410,
+   "category": "outdoor-camping",
+   "labels": [
+    "eco-friendly"
+   ],
+   "attributes": {
+    "capacity": "3 L",
+    "flow": "1.5 L/min",
+    "filter_life": "1500 L",
+    "weight": "310 g"
+   },
+   "in_stock": true,
+   "short_description": "Hang it from a branch and let gravity do the filtering — no pumping, 1.5 liters a minute."
+  },
+  {
+   "product_id": "AR-1301",
+   "title": "ACME Fit 6mm Non-Slip Yoga Mat",
+   "brand": "ACME Fit",
+   "price": 42.0,
+   "rating": 4.6,
+   "review_count": 3804,
+   "category": "fitness",
+   "labels": [
+    "eco-friendly",
+    "bestseller"
+   ],
+   "attributes": {
+    "thickness": "6 mm",
+    "material": "natural rubber + cork",
+    "grip": "wet/dry",
+    "weight": "1.9 kg"
+   },
+   "in_stock": true,
+   "short_description": "Cork surface that grips better as you sweat, over cushioned natural rubber."
+  },
+  {
+   "product_id": "AR-1302",
+   "title": "ACME Fit Adjustable Dumbbells, 5-50 lb Pair",
+   "brand": "ACME Fit",
+   "price": 429.0,
+   "rating": 4.7,
+   "review_count": 1511,
+   "category": "fitness",
+   "labels": [
+    "bestseller"
+   ],
+   "attributes": {
+    "range": "5-50 lb each",
+    "increments": "5 lb",
+    "adjustment": "dial",
+    "footprint": "40 x 20 cm per tray"
+   },
+   "in_stock": true,
+   "short_description": "A full dumbbell rack in two trays — dial from 5 to 50 pounds in seconds.",
+   "long_description": "The pair replaces a rack of dumbbells with a dial adjustment that moves from 5 to 50 pounds in 5-pound steps. The plates lock with a reassuring click and don't rattle mid-set, and the contoured handle stays comfortable through high-rep days. They're sized for apartment corners: each tray is about the footprint of a shoebox. Not designed to be dropped from overhead — treat them like the precision tools they are.",
+   "specs": {
+    "weight_range": "5-50 lb per dumbbell",
+    "increments": "5 lb",
+    "handle": "knurled steel",
+    "trays": "included",
+    "warranty": "2 years"
+   },
+   "review_highlights": [
+    "Switching weights mid-superset takes two seconds",
+    "No rattle at all once locked — feels like a fixed dumbbell",
+    "Pricey, but cheaper than the rack of dumbbells it replaced"
+   ]
+  },
+  {
+   "product_id": "AR-1303",
+   "title": "ACME Fit Cast Iron Kettlebell, 35 lb",
+   "brand": "ACME Fit",
+   "price": 54.0,
+   "rating": 4.8,
+   "review_count": 920,
+   "category": "fitness",
+   "labels": [],
+   "attributes": {
+    "weight": "35 lb",
+    "material": "single-cast iron",
+    "coating": "powder coat",
+    "base": "flat"
+   },
+   "in_stock": true,
+   "short_description": "Single-cast iron with a smooth powder coat that's kind to hands and floors."
+  },
+  {
+   "product_id": "AR-1304",
+   "title": "ACME Fit Resistance Band Set with Door Anchor",
+   "brand": "ACME Fit",
+   "price": 29.0,
+   "rating": 4.4,
+   "review_count": 5120,
+   "category": "fitness",
+   "labels": [
+    "sale"
+   ],
+   "attributes": {
+    "bands": "5 (10-50 lb)",
+    "stackable": "to 150 lb",
+    "anchor": "door + ankle straps",
+    "case": "included"
+   },
+   "in_stock": true,
+   "short_description": "Five stackable bands, handles, and a door anchor — a gym that fits in a drawer."
+  },
+  {
+   "product_id": "AR-1305",
+   "title": "ACME Fit High-Density Foam Roller",
+   "brand": "ACME Fit",
+   "price": 24.0,
+   "rating": 4.5,
+   "review_count": 1840,
+   "category": "fitness",
+   "labels": [],
+   "attributes": {
+    "length": "45 cm",
+    "density": "firm",
+    "surface": "textured",
+    "weight_capacity": "300 lb"
+   },
+   "in_stock": true,
+   "short_description": "Firm textured roller that holds its shape; the post-leg-day ritual you'll actually keep."
+  },
+  {
+   "product_id": "AR-1306",
+   "title": "ACME Fit Speed Rope with Ball Bearings",
+   "brand": "ACME Fit",
+   "price": 19.0,
+   "rating": 4.3,
+   "review_count": 3310,
+   "category": "fitness",
+   "labels": [],
+   "attributes": {
+    "cable": "adjustable steel",
+    "bearings": "dual ball",
+    "handles": "aluminum",
+    "spare_cable": "included"
+   },
+   "in_stock": true,
+   "short_description": "Smooth ball-bearing spin and a quick-adjust cable, with a spare cable in the box."
+  },
+  {
+   "product_id": "AR-1307",
+   "title": "ACME Fit Indoor Exercise Bike",
+   "brand": "ACME Fit",
+   "price": 549.0,
+   "rating": 4.2,
+   "review_count": 689,
+   "category": "fitness",
+   "labels": [
+    "new"
+   ],
+   "attributes": {
+    "resistance": "magnetic, 100 levels",
+    "drive": "belt",
+    "console": "bluetooth + app",
+    "footprint": "120 x 55 cm"
+   },
+   "in_stock": true,
+   "short_description": "Near-silent magnetic resistance and a tablet mount; pairs with the usual training apps."
+  },
+  {
+   "product_id": "AR-1308",
+   "title": "ACME Fit Percussion Massage Gun",
+   "brand": "ACME Fit",
+   "price": 119.0,
+   "rating": 4.5,
+   "review_count": 1260,
+   "category": "fitness",
+   "labels": [],
+   "attributes": {
+    "speeds": "5",
+    "heads": "6",
+    "battery": "4 h",
+    "noise": "45 dB"
+   },
+   "in_stock": true,
+   "short_description": "Quiet enough to use on the couch, strong enough to un-knot a long run."
+  },
+  {
+   "product_id": "AR-1401",
+   "title": "ACME Playroom Stacking Wooden Block Set (54 pc)",
+   "brand": "ACME Playroom",
+   "price": 34.0,
+   "rating": 4.8,
+   "review_count": 2940,
+   "image_url": "/products/AR-1401.webp",
+   "category": "toys-games",
+   "labels": [
+    "bestseller"
+   ],
+   "attributes": {
+    "pieces": "54 blocks + 12 idea cards",
+    "material": "beechwood, water-based paint",
+    "age_range": "4-10 years",
+    "storage": "cotton carry sack"
+   },
+   "in_stock": true,
+   "short_description": "Classic beechwood blocks with idea cards that turn a pile into bridges, towers, and towns.",
+   "long_description": "Fifty-four solid beechwood blocks in six shapes and four water-based colors, with a dozen idea cards that step from a first bridge up to a whole town. The blocks are cut chunky for small hands, sanded smooth, and sized to stack true — and the cotton carry sack turns cleanup into the last round of the game.",
+   "specs": {
+    "pieces": "54 blocks, 6 shapes",
+    "colors": "4, water-based paint",
+    "largest": "arch, 12 cm",
+    "idea_cards": "12, bridge to town",
+    "safety": "independently safety-tested for ages 3+"
+   },
+   "review_highlights": [
+    "My 9-year-old builds the tallest tower card, then invents her own",
+    "Paint has held up through a year of rough play",
+    "Carry sack fills fast — cleanup races actually work"
+   ]
+  },
+  {
+   "product_id": "AR-1402",
+   "title": "ACME Makers 540-Piece Building Brick Set",
+   "brand": "ACME Makers",
+   "price": 49.0,
+   "rating": 4.7,
+   "review_count": 1820,
+   "category": "toys-games",
+   "labels": [],
+   "attributes": {
+    "pieces": "540",
+    "age_range": "6-12 years",
+    "compatible": "major brick brands",
+    "ideas_book": "included"
+   },
+   "in_stock": true,
+   "short_description": "540 bricks, an ideas book with 12 builds, and compatibility with the bricks you already own."
+  },
+  {
+   "product_id": "AR-1403",
+   "title": "ACME Makers Coding Robot Kit",
+   "brand": "ACME Makers",
+   "price": 89.0,
+   "rating": 4.5,
+   "review_count": 760,
+   "category": "toys-games",
+   "labels": [
+    "new"
+   ],
+   "attributes": {
+    "age_range": "8-14 years",
+    "coding": "block-based app",
+    "sensors": "line, obstacle, light",
+    "battery": "rechargeable"
+   },
+   "in_stock": true,
+   "short_description": "Build it, then program it to follow lines, dodge obstacles, and patrol the hallway."
+  },
+  {
+   "product_id": "AR-1404",
+   "title": "ACME Playroom Family Trail Board Game",
+   "brand": "ACME Playroom",
+   "price": 32.0,
+   "rating": 4.6,
+   "review_count": 1340,
+   "category": "toys-games",
+   "labels": [],
+   "attributes": {
+    "players": "2-6",
+    "age_range": "8+",
+    "playtime": "45 min",
+    "type": "cooperative strategy"
+   },
+   "in_stock": true,
+   "short_description": "A cooperative trail-building game that adults genuinely want to replay."
+  },
+  {
+   "product_id": "AR-1405",
+   "title": "ACME Makers 86-Piece Art Studio Kit",
+   "brand": "ACME Makers",
+   "price": 27.0,
+   "rating": 4.4,
+   "review_count": 2105,
+   "category": "toys-games",
+   "labels": [
+    "sale"
+   ],
+   "attributes": {
+    "pieces": "86",
+    "age_range": "4-10 years",
+    "includes": "watercolors, pastels, markers, pads",
+    "case": "wooden"
+   },
+   "in_stock": true,
+   "short_description": "Watercolors, pastels, and markers in a fold-out wooden case that keeps the chaos contained."
+  },
+  {
+   "product_id": "AR-1406",
+   "title": "ACME Playroom Otter Plush, 40 cm",
+   "brand": "ACME Playroom",
+   "price": 22.0,
+   "rating": 4.9,
+   "review_count": 3650,
+   "category": "toys-games",
+   "labels": [
+    "bestseller"
+   ],
+   "attributes": {
+    "height": "40 cm",
+    "age_range": "0+",
+    "material": "recycled fill",
+    "washable": "machine"
+   },
+   "in_stock": true,
+   "short_description": "Impossibly soft, machine washable, and stuffed with recycled fill."
+  },
+  {
+   "product_id": "AR-1407",
+   "title": "ACME Playroom National Parks 1000-Piece Puzzle",
+   "brand": "ACME Playroom",
+   "price": 19.0,
+   "rating": 4.5,
+   "review_count": 980,
+   "image_url": "/products/AR-1407.webp",
+   "category": "toys-games",
+   "labels": [
+    "eco-friendly"
+   ],
+   "attributes": {
+    "pieces": "1000",
+    "size": "70 x 50 cm",
+    "material": "recycled board",
+    "poster": "included"
+   },
+   "in_stock": true,
+   "short_description": "Crisp-cut pieces, no dust, and a reference poster so the table stays peaceful."
+  },
+  {
+   "product_id": "AR-1408",
+   "title": "ACME Makers 3-Wheel Kids Scooter",
+   "brand": "ACME Makers",
+   "price": 59.0,
+   "rating": 4.6,
+   "review_count": 1475,
+   "category": "toys-games",
+   "labels": [],
+   "attributes": {
+    "age_range": "3-8 years",
+    "wheels": "light-up PU",
+    "steering": "lean-to-steer",
+    "max_weight": "50 kg"
+   },
+   "in_stock": true,
+   "short_description": "Lean-to-steer stability for new riders, with light-up wheels that make every lap an event."
+  },
+  {
+   "product_id": "AR-1501",
+   "title": "ACME Paws Orthopedic Memory Foam Dog Bed, Large",
+   "brand": "ACME Paws",
+   "price": 79.0,
+   "rating": 4.6,
+   "review_count": 2380,
+   "image_url": "/products/AR-1501.webp",
+   "category": "pet-supplies",
+   "labels": [
+    "bestseller"
+   ],
+   "attributes": {
+    "size": "large (90 x 70 cm)",
+    "foam": "10 cm memory foam",
+    "cover": "removable, washable",
+    "base": "non-slip"
+   },
+   "in_stock": true,
+   "short_description": "Ten centimeters of memory foam for older joints, with a washable cover that survives muddy seasons.",
+   "long_description": "Built for big dogs and aging joints: a 10 cm slab of high-density memory foam that won't flatten into a pancake by month three, wrapped in a water-resistant liner and a machine-washable microsuede cover. The non-slip base keeps it in place on hard floors, and the low front edge makes it easy for stiff-legged seniors to step in. Fits dogs up to about 40 kg comfortably.",
+   "specs": {
+    "dimensions": "90 x 70 x 20 cm",
+    "foam": "high-density memory foam, 10 cm",
+    "cover": "microsuede, machine washable",
+    "liner": "water resistant",
+    "max_dog": "40 kg"
+   },
+   "review_highlights": [
+    "Our 11-year-old shepherd chooses it over the couch now",
+    "Cover has been through the wash a dozen times and still zips fine",
+    "Foam needs a day to expand fully after unboxing"
+   ]
+  },
+  {
+   "product_id": "AR-1502",
+   "title": "ACME Paws 5-Level Cat Tree with Scratching Posts",
+   "brand": "ACME Paws",
+   "price": 119.0,
+   "rating": 4.4,
+   "review_count": 1105,
+   "category": "pet-supplies",
+   "labels": [],
+   "attributes": {
+    "height": "160 cm",
+    "levels": "5",
+    "posts": "sisal-wrapped",
+    "perches": "2 + 1 condo"
+   },
+   "in_stock": true,
+   "short_description": "Five levels, two perches, and a condo — sturdy enough for a determined Maine Coon."
+  },
+  {
+   "product_id": "AR-1503",
+   "title": "ACME Paws Automatic Pet Feeder",
+   "brand": "ACME Paws",
+   "price": 89.0,
+   "rating": 4.3,
+   "review_count": 860,
+   "category": "pet-supplies",
+   "labels": [
+    "new"
+   ],
+   "attributes": {
+    "capacity": "4 L",
+    "meals": "up to 6/day",
+    "app": "wifi + schedule",
+    "backup": "battery"
+   },
+   "in_stock": true,
+   "short_description": "Scheduled portions from the app, a voice-recording call button, and a battery backup for outages."
+  },
+  {
+   "product_id": "AR-1504",
+   "title": "ACME Paws Retractable Leash, 5 m",
+   "brand": "ACME Paws",
+   "price": 24.0,
+   "rating": 4.2,
+   "review_count": 1930,
+   "category": "pet-supplies",
+   "labels": [],
+   "attributes": {
+    "length": "5 m",
+    "max_dog": "50 kg",
+    "brake": "one-touch lock",
+    "tape": "reflective"
+   },
+   "in_stock": true,
+   "short_description": "Reflective tape, a one-touch brake, and a grip that doesn't cramp your hand on long walks."
+  },
+  {
+   "product_id": "AR-1505",
+   "title": "ACME Paws Hooded Litter Box with Carbon Filter",
+   "brand": "ACME Paws",
+   "price": 44.0,
+   "rating": 4.1,
+   "review_count": 740,
+   "category": "pet-supplies",
+   "labels": [],
+   "attributes": {
+    "size": "jumbo",
+    "filter": "carbon",
+    "door": "swing",
+    "scoop": "included"
+   },
+   "in_stock": true,
+   "short_description": "High sides, a carbon filter, and a front swing door that keeps litter (mostly) inside."
+  },
+  {
+   "product_id": "AR-1506",
+   "title": "ACME Paws Insulated Dog Jacket",
+   "brand": "ACME Paws",
+   "price": 39.0,
+   "rating": 4.5,
+   "review_count": 510,
+   "category": "pet-supplies",
+   "labels": [
+    "sale"
+   ],
+   "attributes": {
+    "sizes": "XS-XL",
+    "insulation": "recycled synthetic",
+    "shell": "water resistant",
+    "harness_slot": "yes"
+   },
+   "in_stock": true,
+   "short_description": "Water-resistant shell with a harness slot, for dogs who pretend they don't need it."
+  },
+  {
+   "product_id": "AR-1507",
+   "title": "ACME Paws Interactive Feather Wand Bundle",
+   "brand": "ACME Paws",
+   "price": 16.0,
+   "rating": 4.7,
+   "review_count": 2210,
+   "category": "pet-supplies",
+   "labels": [],
+   "attributes": {
+    "wands": "2",
+    "refills": "6 feather + 2 crinkle",
+    "pole": "telescoping",
+    "storage": "bag included"
+   },
+   "in_stock": true,
+   "short_description": "Two telescoping wands and eight refills, because the first feather never survives the week."
+  },
+  {
+   "product_id": "AR-1508",
+   "title": "ACME Paws 10-Gallon Aquarium Starter Kit",
+   "brand": "ACME Paws",
+   "price": 99.0,
+   "rating": 4.0,
+   "review_count": 430,
+   "image_url": "/products/AR-1508.webp",
+   "category": "pet-supplies",
+   "labels": [],
+   "attributes": {
+    "capacity": "10 gal",
+    "filter": "quiet flow",
+    "light": "LED day/night",
+    "extras": "heater, net, conditioner"
+   },
+   "in_stock": false,
+   "short_description": "Tank, filter, heater, and lighting in one box — just add gravel, water, and patience."
+  },
+  {
+   "product_id": "AR-1601",
+   "title": "ACME Glow Fast-Dry Hair Dryer",
+   "brand": "ACME Glow",
+   "price": 89.0,
+   "rating": 4.5,
+   "review_count": 1980,
+   "category": "beauty-personal-care",
+   "labels": [
+    "bestseller"
+   ],
+   "attributes": {
+    "power": "1600 W high-speed motor",
+    "ionic": "yes",
+    "attachments": "diffuser + 2 concentrators",
+    "weight": "340 g"
+   },
+   "in_stock": true,
+   "short_description": "High-speed motor dries in half the time at half the weight, with heat that won't cook your hair."
+  },
+  {
+   "product_id": "AR-1602",
+   "title": "ACME Daily Sonic Electric Toothbrush, 2-Pack",
+   "brand": "ACME Daily",
+   "price": 69.0,
+   "rating": 4.6,
+   "review_count": 3240,
+   "category": "beauty-personal-care",
+   "labels": [
+    "sale"
+   ],
+   "attributes": {
+    "modes": "5",
+    "timer": "2-min with quad pacing",
+    "battery": "30 days",
+    "heads": "4 included"
+   },
+   "in_stock": true,
+   "short_description": "Two handles, four heads, five modes — the his-and-hers upgrade dentists keep suggesting."
+  },
+  {
+   "product_id": "AR-1603",
+   "title": "ACME Glow Vitamin C Brightening Serum Duo",
+   "brand": "ACME Glow",
+   "price": 48.0,
+   "rating": 4.3,
+   "review_count": 1520,
+   "category": "beauty-personal-care",
+   "labels": [
+    "eco-friendly"
+   ],
+   "attributes": {
+    "actives": "15% vitamin C + E + ferulic",
+    "size": "2 x 30 ml",
+    "fragrance_free": "yes",
+    "cruelty_free": "yes"
+   },
+   "in_stock": true,
+   "short_description": "Fragrance-free vitamin C duo — one for now, one sealed for when the first runs out."
+  },
+  {
+   "product_id": "AR-1604",
+   "title": "ACME Daily Precision Beard Trimmer Kit",
+   "brand": "ACME Daily",
+   "price": 54.0,
+   "rating": 4.4,
+   "review_count": 2090,
+   "category": "beauty-personal-care",
+   "labels": [],
+   "attributes": {
+    "guards": "13",
+    "blade": "self-sharpening steel",
+    "battery": "90 min",
+    "waterproof": "IPX7"
+   },
+   "in_stock": true,
+   "short_description": "Thirteen guards, a steel blade that stays sharp, and a charge that outlasts the month."
+  },
+  {
+   "product_id": "AR-1605",
+   "title": "ACME Glow Mineral SPF 50 Sunscreen, 3-Pack",
+   "brand": "ACME Glow",
+   "price": 36.0,
+   "rating": 4.2,
+   "review_count": 880,
+   "category": "beauty-personal-care",
+   "labels": [],
+   "attributes": {
+    "spf": "50",
+    "type": "mineral (zinc)",
+    "water_resistant": "80 min",
+    "size": "3 x 88 ml"
+   },
+   "in_stock": true,
+   "short_description": "Zinc-based SPF 50 that rubs in without the ghost effect; reef-safer formula."
+  },
+  {
+   "product_id": "AR-1606",
+   "title": "ACME Rest Mulberry Silk Pillowcase",
+   "brand": "ACME Rest",
+   "price": 29.0,
+   "rating": 4.5,
+   "review_count": 1660,
+   "category": "beauty-personal-care",
+   "labels": [],
+   "attributes": {
+    "material": "22-momme mulberry silk",
+    "closure": "hidden zipper"
+   },
+   "in_stock": true,
+   "short_description": "22-momme silk that's kinder to hair and skin than cotton, with a hidden zipper. Standard and king, four colors.",
+   "variants": [
+    {
+     "product_id": "AR-1606-STANDARD-IVORY",
+     "option_values": {
+      "size": "standard",
+      "color": "ivory"
+     },
+     "price": 29.0
+    },
+    {
+     "product_id": "AR-1606-STANDARD-SLATE",
+     "option_values": {
+      "size": "standard",
+      "color": "slate"
+     },
+     "price": 29.0
+    },
+    {
+     "product_id": "AR-1606-STANDARD-BLUSH",
+     "option_values": {
+      "size": "standard",
+      "color": "blush"
+     },
+     "price": 29.0
+    },
+    {
+     "product_id": "AR-1606-STANDARD-SAGE",
+     "option_values": {
+      "size": "standard",
+      "color": "sage"
+     },
+     "price": 29.0
+    },
+    {
+     "product_id": "AR-1606-KING-IVORY",
+     "option_values": {
+      "size": "king",
+      "color": "ivory"
+     },
+     "price": 37.0
+    },
+    {
+     "product_id": "AR-1606-KING-SLATE",
+     "option_values": {
+      "size": "king",
+      "color": "slate"
+     },
+     "price": 37.0
+    },
+    {
+     "product_id": "AR-1606-KING-BLUSH",
+     "option_values": {
+      "size": "king",
+      "color": "blush"
+     },
+     "price": 37.0,
+     "in_stock": false
+    },
+    {
+     "product_id": "AR-1606-KING-SAGE",
+     "option_values": {
+      "size": "king",
+      "color": "sage"
+     },
+     "price": 37.0
+    }
+   ]
+  },
+  {
+   "product_id": "AR-1607",
+   "title": "ACME Daily Salon-Grade Manicure Set, 18 Pieces",
+   "brand": "ACME Daily",
+   "price": 25.0,
+   "rating": 4.6,
+   "review_count": 1140,
+   "category": "beauty-personal-care",
+   "labels": [],
+   "attributes": {
+    "pieces": "18",
+    "material": "stainless steel",
+    "case": "leather travel case",
+    "warranty": "lifetime sharpening"
+   },
+   "in_stock": true,
+   "short_description": "Stainless tools in a zip case, with lifetime sharpening — a quietly great gift."
+  },
+  {
+   "product_id": "AR-1801",
+   "title": "ACME Journey 22\" Carry-On Spinner",
+   "brand": "ACME Journey",
+   "price": 179.0,
+   "rating": 4.7,
+   "review_count": 2450,
+   "category": "travel",
+   "labels": [
+    "bestseller"
+   ],
+   "attributes": {
+    "size": "22 in / 38 L",
+    "shell": "polycarbonate",
+    "wheels": "4 spinner",
+    "weight": "2.9 kg",
+    "warranty": "10 years"
+   },
+   "in_stock": true,
+   "short_description": "A 2.9 kg polycarbonate carry-on that shrugs off baggage handlers and glides on bad pavement.",
+   "long_description": "The carry-on for people who've had a zipper fail in a departures hall. The polycarbonate shell flexes on impact instead of cracking, the heavy-duty zippers are oversized, and the 360-degree wheels keep rolling smoothly on cobblestones and carpet alike. Inside: a full-length compression panel, a zip-off laundry bag, and a security-checkpoint-friendly combination lock built into the shell. Sized to fit most overhead bins at 22 x 14 x 9 inches.",
+   "specs": {
+    "dimensions": "56 x 36 x 23 cm",
+    "volume": "38 L",
+    "weight": "2.9 kg",
+    "shell": "polycarbonate",
+    "lock": "built-in combination",
+    "warranty": "10 years"
+   },
+   "review_highlights": [
+    "Two years, forty flights, still rolls like new",
+    "Compression panel genuinely fits an extra day of clothes",
+    "No external pocket — you'll miss it at security if you carry a laptop"
+   ]
+  },
+  {
+   "product_id": "AR-1802",
+   "title": "ACME Journey 28\" Checked Spinner",
+   "brand": "ACME Journey",
+   "price": 229.0,
+   "rating": 4.5,
+   "review_count": 1310,
+   "category": "travel",
+   "labels": [],
+   "attributes": {
+    "size": "28 in / 95 L",
+    "shell": "polycarbonate",
+    "expansion": "+15%",
+    "weight": "4.3 kg"
+   },
+   "in_stock": true,
+   "short_description": "Big-trip volume with a 15% expansion gusset and the same crack-resistant shell as the carry-on."
+  },
+  {
+   "product_id": "AR-1803",
+   "title": "ACME Journey Compression Packing Cubes, Set of 6",
+   "brand": "ACME Journey",
+   "price": 39.0,
+   "rating": 4.6,
+   "review_count": 2870,
+   "category": "travel",
+   "labels": [
+    "bestseller"
+   ],
+   "attributes": {
+    "pieces": "6",
+    "compression": "double zipper",
+    "material": "ripstop nylon",
+    "shoe_bag": "included"
+   },
+   "in_stock": true,
+   "short_description": "Double-zip compression that buys you a third more space, plus a shoe bag for the gross stuff."
+  },
+  {
+   "product_id": "AR-1804",
+   "title": "ACME Rest Memory Foam Travel Pillow",
+   "brand": "ACME Rest",
+   "price": 32.0,
+   "rating": 4.3,
+   "review_count": 1530,
+   "category": "travel",
+   "labels": [],
+   "attributes": {
+    "fill": "memory foam",
+    "cover": "washable",
+    "clasp": "front snap",
+    "packs_to": "60% with roll bag"
+   },
+   "in_stock": true,
+   "short_description": "Actually supports your chin instead of pushing your head forward; rolls to half its size."
+  },
+  {
+   "product_id": "AR-1805",
+   "title": "ACME Select Universal Travel Adapter with 65W GaN Charging",
+   "brand": "ACME Select",
+   "price": 49.0,
+   "rating": 4.6,
+   "review_count": 1980,
+   "category": "travel",
+   "labels": [
+    "new"
+   ],
+   "attributes": {
+    "regions": "150+ countries",
+    "ports": "2x USB-C + 2x USB-A",
+    "output": "65 W GaN",
+    "fuse": "replaceable"
+   },
+   "in_stock": true,
+   "short_description": "One brick for every outlet shape, fast enough to charge a laptop, with a spare fuse included."
+  },
+  {
+   "product_id": "AR-1806",
+   "title": "ACME Journey Hanging Toiletry Bag",
+   "brand": "ACME Journey",
+   "price": 27.0,
+   "rating": 4.5,
+   "review_count": 2140,
+   "category": "travel",
+   "labels": [],
+   "attributes": {
+    "hook": "swivel",
+    "compartments": "4 + leakproof pocket",
+    "material": "water-resistant ripstop",
+    "size": "25 x 19 x 9 cm"
+   },
+   "in_stock": true,
+   "short_description": "Hangs from any towel bar, opens flat, and quarantines the shampoo that will eventually leak."
+  },
+  {
+   "product_id": "AR-1807",
+   "title": "ACME Select Item Tracker, 4-Pack",
+   "brand": "ACME Select",
+   "price": 79.0,
+   "rating": 4.4,
+   "review_count": 3420,
+   "category": "travel",
+   "labels": [
+    "sale"
+   ],
+   "attributes": {
+    "pack": "4 trackers",
+    "network": "phone finder networks",
+    "battery": "1 year, replaceable",
+    "water": "IP67"
+   },
+   "in_stock": true,
+   "short_description": "Drop one in each bag and stop doing the carousel math — a year of battery, replaceable coin cell."
+  },
+  {
+   "product_id": "AR-2101",
+   "title": "ACME Kids Under-the-Sea Twin Bedding Set",
+   "brand": "ACME Kids",
+   "price": 54.0,
+   "rating": 4.7,
+   "review_count": 1980,
+   "category": "kids-room",
+   "labels": [
+    "bestseller"
+   ],
+   "attributes": {
+    "size": "twin",
+    "pieces": "comforter + sheet + pillowcase",
+    "material": "brushed microfiber",
+    "theme": "ocean"
+   },
+   "in_stock": true,
+   "short_description": "Twin comforter, fitted sheet, and pillowcase in a friendly whale, sea-turtle, and starfish print.",
+   "long_description": "The Under-the-Sea set sends bedtime beneath the waves: whales, sea turtles, and schools of fish drift across a teal-and-navy brushed-microfiber comforter, with a matching fitted sheet and one pillowcase. A year of weekly washes in testing left the colors bright.",
+   "specs": {
+    "size": "twin (68 x 86 in comforter)",
+    "material": "100% brushed microfiber",
+    "care": "machine wash cold"
+   },
+   "review_highlights": [
+    "Still bright after a year of weekly washes",
+    "My son picks out a different sea creature every night",
+    "Softer than sets twice the price"
+   ]
+  },
+  {
+   "product_id": "AR-2102",
+   "title": "ACME Kids Peel-and-Stick Ocean Wall Decals (36 pc)",
+   "brand": "ACME Kids",
+   "price": 24.0,
+   "rating": 4.6,
+   "review_count": 2440,
+   "category": "kids-room",
+   "labels": [],
+   "attributes": {
+    "count": "36 decals",
+    "removable": "yes",
+    "largest": "24 in whale",
+    "theme": "ocean"
+   },
+   "in_stock": true,
+   "short_description": "36 removable ocean decals — a two-foot whale down to palm-size seahorses — that peel off clean.",
+   "long_description": "Thirty-six matte decals: a whale, dolphins, sea turtles, seahorses, and drifts of fish, plus coral and bubbles to scatter between them. Each one repositions without lifting paint, so the reef can be rebuilt whenever inspiration strikes.",
+   "specs": {
+    "count": "36",
+    "largest_decal": "24 in",
+    "surface": "painted walls, doors, furniture",
+    "removal": "peels clean, repositionable"
+   },
+   "review_highlights": [
+    "Went up in twenty minutes and came off our rental walls clean",
+    "The big whale over the bed is the star of the room",
+    "Went up bubble-free — our kid handled half the wall solo"
+   ]
+  },
+  {
+   "product_id": "AR-2103",
+   "title": "ACME Kids Tide-Pool Print Area Rug 4x5 ft",
+   "brand": "ACME Kids",
+   "price": 49.0,
+   "rating": 4.5,
+   "review_count": 860,
+   "category": "kids-room",
+   "labels": [],
+   "attributes": {
+    "size": "4 x 5 ft",
+    "backing": "non-slip",
+    "pile": "low, play-friendly",
+    "theme": "ocean"
+   },
+   "in_stock": true,
+   "short_description": "A low-pile play rug printed as a shoreline map — tide pools, a lighthouse, and a reef to explore.",
+   "long_description": "The rug is half decor, half toy: a printed shoreline runs from a lighthouse past tide pools out to a reef, with channels for boats and figures to travel, and the low pile stays flat under bins and play. Non-slip backing for hard floors.",
+   "specs": {
+    "size": "48 x 60 in",
+    "pile_height": "0.3 in",
+    "backing": "non-slip latex",
+    "care": "spot clean, vacuum"
+   },
+   "review_highlights": [
+    "Flat enough that doors clear it and figures stand on it",
+    "He plays on it more than he plays on the tablet",
+    "Colors match the bedding set perfectly"
+   ]
+  },
+  {
+   "product_id": "AR-2104",
+   "title": "ACME Makers 300-Piece Meadow Puzzle",
+   "brand": "ACME Makers",
+   "price": 27.0,
+   "rating": 4.4,
+   "review_count": 1530,
+   "image_url": "/products/AR-2104.webp",
+   "category": "kids-room",
+   "labels": [],
+   "attributes": {
+    "pieces": "300",
+    "finished_size": "18 x 24 in",
+    "art": "original meadow illustration",
+    "age_range": "8+"
+   },
+   "in_stock": true,
+   "short_description": "An original meadow scene in 300 satisfying pieces — an afternoon at the table with a frame-worthy finish.",
+   "long_description": "An original meadow-at-sunrise illustration cut into 300 crisp-edged pieces — big enough to satisfy, small enough to finish in a weekend of table time. The finished 18 x 24 print is frame-worthy, and the lid doubles as a reference stand while you work.",
+   "specs": {
+    "pieces": "300",
+    "finished_size": "18 x 24 in",
+    "board": "recycled, crisp-cut, low dust",
+    "art": "original commissioned illustration"
+   },
+   "review_highlights": [
+    "We finished it over one rainy weekend and framed it",
+    "Pieces snap in with a satisfying click — no forcing",
+    "The lid-stand for the reference picture is a small genius touch"
+   ]
+  },
+  {
+   "product_id": "AR-2105",
+   "title": "ACME Playroom Storybook Bear (14 in)",
+   "brand": "ACME Playroom",
+   "price": 32.0,
+   "rating": 4.8,
+   "review_count": 2110,
+   "category": "kids-room",
+   "labels": [
+    "bestseller"
+   ],
+   "attributes": {
+    "size": "14 in",
+    "material": "plush, embroidered eyes",
+    "washable": "machine wash, gentle",
+    "age_range": "3+"
+   },
+   "in_stock": true,
+   "short_description": "A softly weighted bear with embroidered eyes — no buttons, no batteries, endlessly loved.",
+   "long_description": "A softly weighted 14-inch bear with embroidered eyes and nose — nothing to chew off — and seams that survive being dragged everywhere. Machine washable on gentle, and the fur comes out of the dryer bag as soft as day one.",
+   "specs": {
+    "size": "14 in seated",
+    "filling": "recycled polyfill, softly weighted",
+    "details": "embroidered eyes and nose",
+    "care": "machine wash gentle, dryer bag"
+   },
+   "review_highlights": [
+    "Has been to two sleepovers and a beach trip and still looks great",
+    "Embroidered details — no parts to lose",
+    "Softer than the boutique ones we paid double for"
+   ]
+  },
+  {
+   "product_id": "AR-2106",
+   "title": "ACME Kids Toy Storage Bins (Set of 3)",
+   "brand": "ACME Kids",
+   "price": 29.0,
+   "rating": 4.5,
+   "review_count": 720,
+   "category": "kids-room",
+   "labels": [],
+   "attributes": {
+    "count": "3 bins",
+    "collapsible": "yes",
+    "labels": "beachcombing icons",
+    "theme": "ocean"
+   },
+   "in_stock": true,
+   "short_description": "Three collapsible fabric bins with beachcombing labels, sized for figures, blocks, and books.",
+   "long_description": "Cleanup turns into a beach walk: each bin wears its own icon (shells, fish, driftwood) so putting toys away is the treasure sort. Reinforced rims keep them open; they fold flat when not needed.",
+   "specs": {
+    "size": "11 in cube each",
+    "material": "felt + canvas",
+    "rims": "reinforced wire"
+   },
+   "review_highlights": [
+    "Cleanup time stopped being a negotiation",
+    "Sturdy rims — they don't slump like cheap bins",
+    "Fits the cube shelf we already had"
+   ]
+  },
+  {
+   "product_id": "AR-2107",
+   "title": "ACME Kids Rocket Table Lamp",
+   "brand": "ACME Kids",
+   "price": 22.0,
+   "rating": 4.3,
+   "review_count": 540,
+   "category": "kids-room",
+   "labels": [],
+   "attributes": {
+    "shade": "rocket silhouette",
+    "dimmable": "3 levels",
+    "power": "USB-C",
+    "theme": "space"
+   },
+   "in_stock": true,
+   "short_description": "A warm three-level lamp with a rocket silhouette shade for the reading corner.",
+   "long_description": "A small desk-or-shelf lamp whose shade throws a soft rocket-and-moon profile on the wall. Three brightness levels — reading, wind-down, and barely-there.",
+   "specs": {
+    "height": "11 in",
+    "brightness": "3 levels, max 400 lm",
+    "power": "USB-C"
+   },
+   "review_highlights": [
+    "Perfect on the bookshelf next to the solar system posters",
+    "The wall silhouette is a sweet touch at night",
+    "Wish the cable were longer — buy an extension"
+   ]
+  },
+  {
+   "product_id": "AR-2108",
+   "title": "ACME Playroom Solar System Poster Set (4 pc)",
+   "brand": "ACME Playroom",
+   "price": 18.0,
+   "rating": 4.6,
+   "review_count": 980,
+   "image_url": "/products/AR-2108.webp",
+   "category": "kids-room",
+   "labels": [],
+   "attributes": {
+    "count": "4 posters",
+    "size": "16 x 20 in",
+    "finish": "matte, glare-free",
+    "theme": "space"
+   },
+   "in_stock": true,
+   "short_description": "Four matte posters mapping the planets, moon phases, distances, and a launch timeline — decor that answers questions.",
+   "long_description": "A four-poster set that turns walls into reference material: a planet size-comparison chart, a solar-system distance map, a moon-phase calendar, and a rocket anatomy print. Matte stock reads clean under a night light.",
+   "specs": {
+    "count": "4",
+    "size": "16 x 20 in each",
+    "finish": "matte",
+    "mounting": "frame or washi tape"
+   },
+   "review_highlights": [
+    "She corrects us from across the room now — citing the wall",
+    "Matte finish means no glare from the lamp",
+    "Looks designed, not licensed-cartoon"
+   ]
+  },
+  {
+   "product_id": "AR-2109",
+   "title": "ACME Kids Deep Sea Blackout Curtains (2 panels)",
+   "brand": "ACME Kids",
+   "price": 36.0,
+   "rating": 4.4,
+   "review_count": 610,
+   "category": "kids-room",
+   "labels": [],
+   "attributes": {
+    "panels": "2",
+    "size": "42 x 63 in each",
+    "blackout": "85%",
+    "theme": "ocean"
+   },
+   "in_stock": true,
+   "short_description": "Two blackout panels with a subtle tone-on-tone wave weave — dark enough for early bedtimes.",
+   "long_description": "Deep Sea panels block about 85% of light behind a quiet tone-on-tone wave pattern — plain navy from across the room, rolling surf up close. Standard rod pocket.",
+   "specs": {
+    "panels": "2",
+    "size": "42 x 63 in",
+    "blackout": "85%",
+    "care": "machine wash cold"
+   },
+   "review_highlights": [
+    "Summer bedtimes finally work",
+    "Print is subtle — the room won't need redoing at age ten",
+    "Hung in ten minutes on the rod we had"
+   ]
+  },
+  {
+   "product_id": "AR-1901",
+   "title": "ACME Sleep Queen Platform Bed Frame",
+   "brand": "ACME Sleep",
+   "price": 379.0,
+   "rating": 4.6,
+   "review_count": 1340,
+   "category": "furniture-bedroom",
+   "labels": [],
+   "attributes": {
+    "size": "queen",
+    "headboard": "upholstered, linen-look",
+    "slats": "no box spring needed",
+    "assembly": "45 min, two people"
+   },
+   "in_stock": true,
+   "short_description": "A queen platform frame with a cushioned linen-look headboard — no box spring, no squeaks.",
+   "long_description": "The ACME Sleep platform frame pairs a softly cushioned headboard with a solid slat base, so the mattress goes straight on. Steel core rails are wrapped to stay silent; under-bed clearance fits storage bins.",
+   "specs": {
+    "size": "queen",
+    "clearance": "9 in under-bed",
+    "weight_capacity": "700 lb",
+    "assembly": "two people, ~45 min"
+   },
+   "review_highlights": [
+    "Zero squeaks six months in",
+    "Assembly was genuinely 45 minutes",
+    "Headboard is comfortable for sitting up reading"
+   ]
+  },
+  {
+   "product_id": "AR-1902",
+   "title": "ACME Sleep Hybrid Mattress",
+   "brand": "ACME Sleep",
+   "price": 349.0,
+   "rating": 4.5,
+   "review_count": 2980,
+   "category": "furniture-bedroom",
+   "labels": [
+    "bestseller"
+   ],
+   "attributes": {
+    "type": "hybrid coil + foam",
+    "firmness": "medium-firm",
+    "trial": "100 nights"
+   },
+   "in_stock": true,
+   "short_description": "A medium-firm hybrid that ships compressed and settles in two days — 100-night trial.",
+   "long_description": "The mattress layers pocketed coils under cooling foam for a medium-firm feel that suits back and side sleepers. Arrives compressed, fully expands in 48 hours, and carries a 100-night home trial. Four sizes; the price steps up with each.",
+   "specs": {
+    "sizes": "twin, full, queen, king",
+    "height": "11 in",
+    "layers": "pocketed coils + gel foam",
+    "trial": "100 nights"
+   },
+   "review_highlights": [
+    "The 48-hour expansion is real — wait before judging",
+    "Sleeps noticeably cooler than our old foam slab",
+    "Edge support is solid for a hybrid at this price"
+   ],
+   "variants": [
+    {
+     "product_id": "AR-1902-TWIN",
+     "option_values": {
+      "size": "twin"
+     },
+     "price": 349.0
+    },
+    {
+     "product_id": "AR-1902-FULL",
+     "option_values": {
+      "size": "full"
+     },
+     "price": 449.0,
+     "in_stock": false
+    },
+    {
+     "product_id": "AR-1902-QUEEN",
+     "option_values": {
+      "size": "queen"
+     },
+     "price": 549.0
+    },
+    {
+     "product_id": "AR-1902-KING",
+     "option_values": {
+      "size": "king"
+     },
+     "price": 699.0
+    }
+   ]
+  },
+  {
+   "product_id": "AR-1903",
+   "title": "ACME Sleep Washed-Cotton Duvet Set, Queen",
+   "brand": "ACME Sleep",
+   "price": 89.0,
+   "rating": 4.4,
+   "review_count": 770,
+   "category": "furniture-bedroom",
+   "labels": [],
+   "attributes": {
+    "size": "queen",
+    "material": "washed cotton",
+    "pieces": "duvet cover + 2 shams",
+    "closure": "hidden buttons"
+   },
+   "in_stock": true,
+   "short_description": "A washed-cotton duvet cover and two shams that look better slightly rumpled.",
+   "long_description": "Garment-washed cotton with a lived-in softness from day one. Hidden button closure and corner ties keep the insert in place.",
+   "specs": {
+    "size": "queen",
+    "material": "100% washed cotton",
+    "pieces": "cover + 2 shams"
+   },
+   "review_highlights": [
+    "Soft immediately, no break-in needed",
+    "The rumpled look hides a multitude of unmade-bed sins",
+    "Corner ties actually hold the insert"
+   ]
+  },
+  {
+   "product_id": "AR-1721",
+   "title": "ACME Beauty Eye Palette",
+   "brand": "ACME Beauty",
+   "price": 34.0,
+   "rating": 4.6,
+   "review_count": 3210,
+   "category": "beauty-personal-care",
+   "labels": [
+    "bestseller"
+   ],
+   "attributes": {
+    "shades": "12",
+    "finish": "8 matte / 4 shimmer",
+    "vegan": "yes"
+   },
+   "in_stock": true,
+   "short_description": "Twelve wearable neutrals — eight mattes, four shimmers — built for five-minute mornings.",
+   "long_description": "The Everyday palette skips the novelty shades: twelve neutrals that blend with fingers in a hurry and layer up for evenings. Vegan formulas, low fallout.",
+   "specs": {
+    "shades": "12",
+    "weight": "14 g",
+    "vegan": "yes",
+    "cruelty_free": "yes"
+   },
+   "review_highlights": [
+    "Every shade is actually usable",
+    "Minimal fallout even with the shimmers",
+    "Replaced three palettes in my drawer"
+   ]
+  },
+  {
+   "product_id": "AR-1722",
+   "title": "ACME Beauty Tinted Moisturizer SPF 30",
+   "brand": "ACME Beauty",
+   "price": 28.0,
+   "rating": 4.5,
+   "review_count": 2540,
+   "category": "beauty-personal-care",
+   "labels": [],
+   "attributes": {
+    "spf": "30",
+    "shades": "6",
+    "finish": "natural, breathable"
+   },
+   "in_stock": true,
+   "short_description": "Sheer, breathable coverage with SPF 30 — skincare that behaves like makeup.",
+   "long_description": "It evens tone without masking it, layers SPF 30 under everything, and wears for a workday without caking. Six shades, lightest to deepest.",
+   "specs": {
+    "spf": "30 broad spectrum",
+    "size": "40 ml",
+    "shades": "6, porcelain to espresso"
+   },
+   "review_highlights": [
+    "The no-makeup makeup everyone asks about",
+    "Doesn't pill under sunscreen reapplication",
+    "Shade match tool got mine right first try"
+   ],
+   "variants": [
+    {
+     "product_id": "AR-1722-PORCELAIN",
+     "option_values": {
+      "shade": "porcelain"
+     }
+    },
+    {
+     "product_id": "AR-1722-SAND",
+     "option_values": {
+      "shade": "sand"
+     }
+    },
+    {
+     "product_id": "AR-1722-HONEY",
+     "option_values": {
+      "shade": "honey"
+     }
+    },
+    {
+     "product_id": "AR-1722-AMBER",
+     "option_values": {
+      "shade": "amber"
+     }
+    },
+    {
+     "product_id": "AR-1722-CHESTNUT",
+     "option_values": {
+      "shade": "chestnut"
+     }
+    },
+    {
+     "product_id": "AR-1722-ESPRESSO",
+     "option_values": {
+      "shade": "espresso"
+     }
+    }
+   ]
+  },
+  {
+   "product_id": "AR-1723",
+   "title": "ACME Beauty Long-Wear Mascara",
+   "brand": "ACME Beauty",
+   "price": 19.0,
+   "rating": 4.4,
+   "review_count": 4120,
+   "category": "beauty-personal-care",
+   "labels": [],
+   "attributes": {
+    "type": "tubing",
+    "removal": "warm water",
+    "smudge": "no"
+   },
+   "in_stock": true,
+   "short_description": "A tubing mascara that survives the day and removes with warm water — no raccoon eyes either way.",
+   "long_description": "It wraps each lash in flexible tubes that don't flake or smudge through a full day, then slide off with warm water and light pressure. No remover needed.",
+   "specs": {
+    "type": "tubing",
+    "wear": "all-day, smudge-proof",
+    "removal": "warm water"
+   },
+   "review_highlights": [
+    "Gym, rain, a wedding cry — still on",
+    "Comes off in the shower with zero scrubbing",
+    "The only mascara that doesn't transfer to my glasses"
+   ]
+  },
+  {
+   "product_id": "AR-2001",
+   "title": "ACME Pantry Atlantic Salmon Fillets (2 lb, frozen)",
+   "brand": "ACME Pantry",
+   "price": 18.0,
+   "rating": 4.6,
+   "review_count": 1890,
+   "category": "grocery",
+   "labels": [],
+   "attributes": {
+    "weight": "2 lb",
+    "portions": "4 fillets",
+    "state": "individually vacuum-sealed, frozen"
+   },
+   "in_stock": true,
+   "short_description": "Four vacuum-sealed salmon fillets — a weeknight dinner that defrosts in twenty minutes.",
+   "long_description": "Individually sealed fillets that go from freezer to pan-ready in a bowl of cold water. Skin-on for crispy-skin searing or easy grilling.",
+   "specs": {
+    "weight": "2 lb (4 x 8 oz)",
+    "prep": "thaw 20 min in cold water",
+    "source": "farm-raised Atlantic"
+   },
+   "review_highlights": [
+    "Restaurant-thickness fillets, not thin tail pieces",
+    "Vacuum seals mean no freezer burn",
+    "Weeknight-fast from frozen"
+   ]
+  },
+  {
+   "product_id": "AR-2002",
+   "title": "ACME Pantry Lemon-Herb Marinade & Glaze",
+   "brand": "ACME Pantry",
+   "price": 6.0,
+   "rating": 4.5,
+   "review_count": 760,
+   "category": "grocery",
+   "labels": [],
+   "attributes": {
+    "size": "12 oz",
+    "use": "fish, chicken, vegetables"
+   },
+   "in_stock": true,
+   "short_description": "A bright lemon-herb marinade that doubles as a finishing glaze for fish or chicken.",
+   "long_description": "Lemon, garlic, and soft herbs in a marinade that works in fifteen minutes and reduces into a pan glaze. One bottle covers two family dinners.",
+   "specs": {
+    "size": "12 oz",
+    "marinade_time": "15-30 min"
+   },
+   "review_highlights": [
+    "Made my salmon taste intentional",
+    "Reduces into a great pan sauce",
+    "Not too salty like most bottled marinades"
+   ]
+  },
+  {
+   "product_id": "AR-2003",
+   "title": "ACME Pantry Weeknight Stir-Fry Dinner Kit",
+   "brand": "ACME Pantry",
+   "price": 12.0,
+   "rating": 4.7,
+   "review_count": 2310,
+   "category": "grocery",
+   "labels": [
+    "bestseller"
+   ],
+   "attributes": {
+    "serves": "5-6",
+    "includes": "noodles, ginger-garlic sauce, crispy topping"
+   },
+   "in_stock": true,
+   "short_description": "Wok noodles, a ginger-garlic sauce, and a crispy topping — add a protein and a bag of frozen veg, done.",
+   "long_description": "The Stir-Fry Dinner Kit bundles quick-cook wok noodles, a ginger-garlic sauce that's savory rather than spicy, and a sesame crunch topping. Bring your own protein and vegetables; one pan does the rest.",
+   "specs": {
+    "serves": "5-6",
+    "noodles": "2 x 8 oz wok noodles",
+    "sauce": "ginger-garlic, mild"
+   },
+   "review_highlights": [
+    "The sauce is kid-approved and adult-respectable",
+    "Noodles don't clump like the cheap ones",
+    "Faster than delivery on a weeknight"
+   ]
+  },
+  {
+   "product_id": "AR-2004",
+   "title": "ACME Pantry 90% Lean Ground Beef (1.5 lb)",
+   "brand": "ACME Pantry",
+   "price": 11.0,
+   "rating": 4.5,
+   "review_count": 1430,
+   "category": "grocery",
+   "labels": [],
+   "attributes": {
+    "weight": "1.5 lb",
+    "lean": "90/10",
+    "state": "fresh, vacuum-packed"
+   },
+   "in_stock": true,
+   "short_description": "Lean vacuum-packed ground beef in a one-dinner portion — brown it for pasta, chili, or burgers.",
+   "long_description": "A 90/10 blend that browns without a grease slick. Vacuum packing keeps it fresh longer in the fridge or drops straight into the freezer.",
+   "specs": {
+    "weight": "1.5 lb",
+    "blend": "90/10"
+   },
+   "review_highlights": [
+    "Browns clean, no draining ceremony",
+    "Right size for one family dinner with leftovers",
+    "Freezes flat for easy stacking"
+   ]
+  },
+  {
+   "product_id": "AR-2005",
+   "title": "ACME Pantry Fresh Pasta Duo — Rigatoni & Fettuccine",
+   "brand": "ACME Pantry",
+   "price": 9.0,
+   "rating": 4.6,
+   "review_count": 980,
+   "category": "grocery",
+   "labels": [],
+   "attributes": {
+    "weight": "2 x 9 oz",
+    "cook_time": "4 minutes",
+    "state": "refrigerated fresh"
+   },
+   "in_stock": true,
+   "short_description": "Two nests of fresh pasta that cook in four minutes — dinner's four-minute head start.",
+   "long_description": "Fresh egg pasta with real bite: rigatoni for chunky sauces, fettuccine for cream or butter-sage. Four minutes in boiling water.",
+   "specs": {
+    "weight": "2 x 9 oz",
+    "cook_time": "4 min"
+   },
+   "review_highlights": [
+    "Tastes like the Italian deli's, half the price",
+    "Four-minute dinner backbone",
+    "Holds sauce way better than dried"
+   ]
+  },
+  {
+   "product_id": "AR-2006",
+   "title": "ACME Pantry Slow-Simmered Tomato-Basil Sauce",
+   "brand": "ACME Pantry",
+   "price": 8.0,
+   "rating": 4.7,
+   "review_count": 1650,
+   "category": "grocery",
+   "labels": [],
+   "attributes": {
+    "size": "24 oz",
+    "ingredients": "8, all pronounceable",
+    "sugar_added": "no"
+   },
+   "in_stock": true,
+   "short_description": "A slow-simmered tomato-basil sauce with eight ingredients and no added sugar.",
+   "long_description": "Crushed tomatoes, basil, olive oil, garlic — simmered down so it tastes like an afternoon you didn't have to spend. One jar coats a pound of pasta.",
+   "specs": {
+    "size": "24 oz",
+    "added_sugar": "none"
+   },
+   "review_highlights": [
+    "The one jarred sauce I don't doctor",
+    "Eight ingredients, all recognizable",
+    "Great over fresh or dried pasta alike"
+   ]
+  },
+  {
+   "product_id": "AR-2007",
+   "title": "ACME Pantry Garlic Brioche Dinner Rolls (8 pc)",
+   "brand": "ACME Pantry",
+   "price": 5.0,
+   "rating": 4.4,
+   "review_count": 690,
+   "category": "grocery",
+   "labels": [],
+   "attributes": {
+    "count": "8 rolls",
+    "prep": "5 min oven refresh"
+   },
+   "in_stock": true,
+   "short_description": "Eight buttery garlic brioche rolls — five minutes in the oven and the table smells like effort.",
+   "long_description": "Par-baked brioche rolls brushed with garlic butter. Five minutes at 350°F finishes them golden.",
+   "specs": {
+    "count": "8",
+    "refresh": "5 min at 350°F"
+   },
+   "review_highlights": [
+    "Disappear before the pasta hits the table",
+    "Tastes bakery-fresh from a bag",
+    "Kids fight over the corner ones"
+   ]
+  },
+  {
+   "product_id": "AR-2008",
+   "title": "ACME Pantry Rainbow Veggie Roasting Mix (2 lb)",
+   "brand": "ACME Pantry",
+   "price": 8.0,
+   "rating": 4.3,
+   "review_count": 540,
+   "category": "grocery",
+   "labels": [],
+   "attributes": {
+    "weight": "2 lb",
+    "contents": "carrots, broccoli, peppers, red onion",
+    "prep": "pre-cut, oven-ready"
+   },
+   "in_stock": true,
+   "short_description": "Pre-cut rainbow vegetables that roast on one sheet pan in 25 minutes.",
+   "long_description": "Carrots, broccoli, sweet peppers, and red onion, cut to roast evenly together. Toss with oil, one pan, 25 minutes — a side that goes with nearly any main.",
+   "specs": {
+    "weight": "2 lb",
+    "roast": "25 min at 425°F"
+   },
+   "review_highlights": [
+    "Every piece cooks in the same time — someone thought about this",
+    "Works next to fish, pasta, or a roast chicken",
+    "No cutting board on a weeknight"
+   ]
+  },
+  {
+   "product_id": "AR-2009",
+   "title": "ACME Pantry Caesar Salad Kit (family size)",
+   "brand": "ACME Pantry",
+   "price": 7.0,
+   "rating": 4.4,
+   "review_count": 880,
+   "category": "grocery",
+   "labels": [],
+   "attributes": {
+    "serves": "4-5",
+    "includes": "romaine, dressing, croutons, parmesan"
+   },
+   "in_stock": true,
+   "short_description": "A family-size Caesar kit — romaine, dressing, croutons, and real shaved parmesan.",
+   "long_description": "Crisp romaine with a garlicky (not gloppy) dressing, sourdough croutons, and shaved parmesan. Tossed in the bag if you're feeling efficient.",
+   "specs": {
+    "serves": "4-5"
+   },
+   "review_highlights": [
+    "Dressing tastes homemade",
+    "Croutons stay crunchy to the bottom of the bowl",
+    "The shaved parm is the upgrade"
+   ]
+  },
+  {
+   "product_id": "AR-2010",
+   "title": "ACME Pantry Weekend Brownie Skillet Kit",
+   "brand": "ACME Pantry",
+   "price": 9.0,
+   "rating": 4.8,
+   "review_count": 1240,
+   "category": "grocery",
+   "labels": [
+    "bestseller"
+   ],
+   "attributes": {
+    "serves": "6",
+    "includes": "mix + chocolate chunks + skillet-ready liner"
+   },
+   "in_stock": true,
+   "short_description": "A skillet brownie kit with proper chocolate chunks — dessert that earns the oven preheat.",
+   "long_description": "Everything for a shareable skillet brownie: rich cocoa mix, dark chocolate chunks, and a parchment liner sized for a 10-inch skillet. Add butter and one egg.",
+   "specs": {
+    "serves": "6",
+    "bake": "22 min at 350°F"
+   },
+   "review_highlights": [
+    "The chunks stay molten — dangerous knowledge",
+    "Easier than boxed mix, tastes pastry-case",
+    "Our weekend ritual closer"
+   ]
+  }
+ ]
+}

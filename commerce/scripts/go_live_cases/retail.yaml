@@ -1,0 +1,59 @@
+# Go-live cases for the retail storefront; scripts/eval_go_live.py reads them and
+# docs/metrics.md describes the fields. `query` is the offline responder's search.
+cases:
+  # -- current_rule --------------------------------------------------------------
+  - {id: rtl-cur-01, cat: current_rule, q: "How long do I have to return a sweater?", query: "return window", source: retail/returns, version: 2, facts: ["30 days"], stale: ["45 days"]}
+  - {id: rtl-cur-02, cat: current_rule, q: "Can I return opened headphones?", query: "return opened electronics", source: retail/returns, version: 2, facts: ["15 days"]}
+  - {id: rtl-cur-03, cat: current_rule, q: "How much is standard shipping?", query: "standard shipping cost", source: retail/shipping, facts: ["$5.99"]}
+  - {id: rtl-cur-04, cat: current_rule, q: "How fast is express shipping?", query: "express shipping", source: retail/shipping, facts: ["2 business days"]}
+  - {id: rtl-cur-05, cat: current_rule, q: "Do you match a lower price from another store?", query: "price match", source: retail/price-match, facts: ["14 days"]}
+  - {id: rtl-cur-06, cat: current_rule, q: "How much does ACME Subscription cost per year?", query: "subscription membership cost", source: retail/membership, facts: ["$79"]}
+  - {id: rtl-cur-07, cat: current_rule, q: "Do your gift cards expire?", query: "gift card expire", source: retail/gift-cards, facts: ["never expire"]}
+  - {id: rtl-cur-08, cat: current_rule, q: "How long after ordering can I still change my order?", query: "modify cancel order", source: retail/order-changes, facts: ["30 minutes"]}
+  - {id: rtl-cur-09, cat: current_rule, q: "My blender arrived broken. How long do I have to report it?", query: "damaged item report", source: retail/damaged-items, facts: ["7 days"]}
+  - {id: rtl-cur-10, cat: current_rule, q: "Once you receive my return, when does the refund post?", query: "refund return warehouse", source: retail/returns, version: 2, facts: ["5 business days"], stale: ["10 business days"]}
+  - {id: rtl-cur-11, cat: current_rule, q: "How long does an ACME Protect plan cover my laptop?", query: "ACME Protect warranty coverage", source: retail/warranty, facts: ["3 years"]}
+  - {id: rtl-cur-12, cat: current_rule, q: "Is there a free trial for the subscription?", query: "subscription free trial", source: retail/membership, facts: ["14-day"]}
+
+  # -- version_change ------------------------------------------------------------
+  - {id: rtl-ver-01, cat: version_change, q: "A friend said returns are 45 days. What is the window now?", query: "return window", source: retail/returns, version: 2, facts: ["30 days"]}
+  - {id: rtl-ver-02, cat: version_change, q: "Do subscription members get free return pickup?", query: "return pickup members", source: retail/returns, version: 2, facts: ["free return pickup"]}
+  - {id: rtl-ver-03, cat: version_change, q: "Last year opened electronics had a month to come back. Still true?", query: "return opened electronics", source: retail/returns, version: 2, facts: ["15 days"]}
+  - {id: rtl-ver-04, cat: version_change, q: "How many business days until a returned item's refund posts?", query: "refund return warehouse", source: retail/returns, version: 2, facts: ["5 business days"], stale: ["10 business days"]}
+  - {id: rtl-ver-05, cat: version_change, q: "How long do I have to return a jacket?", query: "return window", clock: "2026-01-15T12:00:00+00:00", source: retail/returns, version: 1, facts: ["45 days"], stale: ["15 days"]}
+  - {id: rtl-ver-06, cat: version_change, q: "When does a refund post once my return arrives?", query: "refund return warehouse", clock: "2026-01-15T12:00:00+00:00", source: retail/returns, version: 1, facts: ["10 business days"], stale: ["5 business days"]}
+  - {id: rtl-ver-07, cat: version_change, q: "Can I still use the holiday return extension?", query: "holiday return extension", action: decline, stale: ["January 31"]}
+  - id: rtl-ver-08
+    cat: version_change
+    q: "If I find it cheaper elsewhere, do you match the price?"
+    query: "price match"
+    action: decline
+    stale: ["14 days", "21 days"]
+    overlay:
+      - {policy_id: price-match-v2, title: "Price match", category: pricing, content: "We match an identical in-stock item's lower price from a major retailer within 21 days of purchase.", source_id: retail/price-match, version: "2", effective_at: "2026-07-01"}
+
+  # -- missing_info --------------------------------------------------------------
+  - {id: rtl-mis-01, cat: missing_info, q: "Do you ship to research stations in Antarctica?", query: "ship Antarctica", action: decline}
+  - {id: rtl-mis-02, cat: missing_info, q: "Can I pay with cryptocurrency?", query: "pay cryptocurrency", action: decline}
+  - {id: rtl-mis-03, cat: missing_info, q: "Do you offer layaway?", query: "layaway", action: decline}
+  - {id: rtl-mis-04, cat: missing_info, q: "Is there a student discount?", query: "student discount", action: decline}
+  - {id: rtl-mis-05, cat: missing_info, q: "Can I return something I bought abroad to a store in another country?", query: "international return another country", action: decline}
+  - {id: rtl-mis-06, cat: missing_info, q: "Is there a restocking fee on furniture returns?", query: "restocking fee furniture", action: decline}
+
+  # -- colloquial ----------------------------------------------------------------
+  - {id: rtl-col-01, cat: colloquial, q: "yo can i send back stuff i dont like", query: "send back return", source: retail/returns, facts: ["30 days"], stale: ["45 days"]}
+  - {id: rtl-col-02, cat: colloquial, q: "shipping $$?", query: "shipping cost", source: retail/shipping, facts: ["$5.99"]}
+  - {id: rtl-col-03, cat: colloquial, q: "退货期限是多久？", query: "return window", source: retail/returns, facts: [["30 days", "30天", "30 天"]], stale: ["45 days", "45天", "45 天"]}
+  - {id: rtl-col-04, cat: colloquial, q: "free shipping kicks in when", query: "free shipping", source: retail/shipping, facts: [["$49", "49"]]}
+  - {id: rtl-col-05, cat: colloquial, q: "lamp showed up busted lol now what", query: "damaged arrived", source: retail/damaged-items, facts: [["7 days", "7天", "7 天"]]}
+  - {id: rtl-col-06, cat: colloquial, q: "giftcard ever go bad?", query: "gift card expire", source: retail/gift-cards, facts: [["never expire", "don't expire", "do not expire", "不会过期"]]}
+  - {id: rtl-col-07, cat: colloquial, q: "会员一年多少钱？", query: "subscription cost", source: retail/membership, facts: [["$79", "79"]]}
+  - {id: rtl-col-08, cat: colloquial, q: "oops can i undo an order i just placed", query: "modify cancel order", source: retail/order-changes, facts: [["30 minutes", "30分钟", "30 分钟"]]}
+
+  # -- must_handoff --------------------------------------------------------------
+  - {id: rtl-hnd-01, cat: must_handoff, q: "Refund my last order right now.", query: "refund", action: handoff}
+  - {id: rtl-hnd-02, cat: must_handoff, q: "Please cancel my order for me.", query: "cancel order", action: handoff, source: retail/order-changes}
+  - {id: rtl-hnd-03, cat: must_handoff, q: "I want to talk to a real person.", query: "contact support", action: handoff}
+  - {id: rtl-hnd-04, cat: must_handoff, q: "My package was stolen from the porch. I want my money back.", query: "porch theft missing", action: handoff, source: retail/damaged-items}
+  - {id: rtl-hnd-05, cat: must_handoff, q: "Change the delivery address on my order that already shipped.", query: "address change shipped", action: handoff, source: retail/order-changes}
+  - {id: rtl-hnd-06, cat: must_handoff, q: "I was charged twice for one order. Fix it.", query: "charged twice payment", action: handoff}

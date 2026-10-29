@@ -1,0 +1,725 @@
+{
+  "currency": "USD",
+  "daily": [
+    {
+      "date": "2026-04-28",
+      "sales": 2456.55,
+      "orders": 15,
+      "tickets": 33,
+      "traffic": 408,
+      "amphitheater_sales": 1291.67
+    },
+    {
+      "date": "2026-04-29",
+      "sales": 2705.61,
+      "orders": 13,
+      "tickets": 33,
+      "traffic": 418,
+      "amphitheater_sales": 1706.73
+    },
+    {
+      "date": "2026-04-30",
+      "sales": 2580.68,
+      "orders": 16,
+      "tickets": 34,
+      "traffic": 492,
+      "amphitheater_sales": 1350.89
+    },
+    {
+      "date": "2026-05-01",
+      "sales": 3479.57,
+      "orders": 18,
+      "tickets": 45,
+      "traffic": 612,
+      "amphitheater_sales": 1832.24
+    },
+    {
+      "date": "2026-05-02",
+      "sales": 3932.29,
+      "orders": 20,
+      "tickets": 49,
+      "traffic": 583,
+      "amphitheater_sales": 2405.41
+    },
+    {
+      "date": "2026-05-03",
+      "sales": 4021.25,
+      "orders": 18,
+      "tickets": 46,
+      "traffic": 517,
+      "amphitheater_sales": 2203.27
+    },
+    {
+      "date": "2026-05-04",
+      "sales": 2830.56,
+      "orders": 16,
+      "tickets": 37,
+      "traffic": 569,
+      "amphitheater_sales": 1659.01
+    },
+    {
+      "date": "2026-05-05",
+      "sales": 3213.31,
+      "orders": 17,
+      "tickets": 42,
+      "traffic": 553,
+      "amphitheater_sales": 1826.46
+    },
+    {
+      "date": "2026-05-06",
+      "sales": 3251.44,
+      "orders": 16,
+      "tickets": 40,
+      "traffic": 469,
+      "amphitheater_sales": 2034.98
+    },
+    {
+      "date": "2026-05-07",
+      "sales": 3743.83,
+      "orders": 19,
+      "tickets": 44,
+      "traffic": 513,
+      "amphitheater_sales": 1992.5
+    },
+    {
+      "date": "2026-05-08",
+      "sales": 3785.1,
+      "orders": 18,
+      "tickets": 45,
+      "traffic": 614,
+      "amphitheater_sales": 2208.59
+    },
+    {
+      "date": "2026-05-09",
+      "sales": 5030.89,
+      "orders": 24,
+      "tickets": 58,
+      "traffic": 755,
+      "amphitheater_sales": 3016.69
+    },
+    {
+      "date": "2026-05-10",
+      "sales": 3661.65,
+      "orders": 17,
+      "tickets": 43,
+      "traffic": 454,
+      "amphitheater_sales": 2141.77
+    },
+    {
+      "date": "2026-05-11",
+      "sales": 3535.95,
+      "orders": 19,
+      "tickets": 46,
+      "traffic": 539,
+      "amphitheater_sales": 2243.8
+    },
+    {
+      "date": "2026-05-12",
+      "sales": 3950.22,
+      "orders": 19,
+      "tickets": 47,
+      "traffic": 631,
+      "amphitheater_sales": 2551.83
+    },
+    {
+      "date": "2026-05-13",
+      "sales": 4208.78,
+      "orders": 19,
+      "tickets": 48,
+      "traffic": 569,
+      "amphitheater_sales": 2654.52
+    },
+    {
+      "date": "2026-05-14",
+      "sales": 4250.25,
+      "orders": 22,
+      "tickets": 49,
+      "traffic": 602,
+      "amphitheater_sales": 2417.5
+    },
+    {
+      "date": "2026-05-15",
+      "sales": 4329.32,
+      "orders": 25,
+      "tickets": 54,
+      "traffic": 746,
+      "amphitheater_sales": 2716.88
+    },
+    {
+      "date": "2026-05-16",
+      "sales": 4612.66,
+      "orders": 26,
+      "tickets": 62,
+      "traffic": 720,
+      "amphitheater_sales": 2439.95
+    },
+    {
+      "date": "2026-05-17",
+      "sales": 4355.97,
+      "orders": 23,
+      "tickets": 57,
+      "traffic": 734,
+      "amphitheater_sales": 2745.6
+    },
+    {
+      "date": "2026-05-18",
+      "sales": 3651.91,
+      "orders": 22,
+      "tickets": 48,
+      "traffic": 663,
+      "amphitheater_sales": 2268.93
+    },
+    {
+      "date": "2026-05-19",
+      "sales": 4266.21,
+      "orders": 20,
+      "tickets": 51,
+      "traffic": 534,
+      "amphitheater_sales": 2512.63
+    },
+    {
+      "date": "2026-05-20",
+      "sales": 3985.83,
+      "orders": 21,
+      "tickets": 53,
+      "traffic": 695,
+      "amphitheater_sales": 2366.52
+    },
+    {
+      "date": "2026-05-21",
+      "sales": 4631.21,
+      "orders": 24,
+      "tickets": 55,
+      "traffic": 698,
+      "amphitheater_sales": 2747.19
+    },
+    {
+      "date": "2026-05-22",
+      "sales": 14649.29,
+      "orders": 71,
+      "tickets": 179,
+      "traffic": 2282,
+      "amphitheater_sales": 8399.47
+    },
+    {
+      "date": "2026-05-23",
+      "sales": 18707.19,
+      "orders": 86,
+      "tickets": 216,
+      "traffic": 2859,
+      "amphitheater_sales": 11955.91
+    },
+    {
+      "date": "2026-05-24",
+      "sales": 15942.48,
+      "orders": 76,
+      "tickets": 196,
+      "traffic": 2253,
+      "amphitheater_sales": 8738.64
+    },
+    {
+      "date": "2026-05-25",
+      "sales": 4457.44,
+      "orders": 23,
+      "tickets": 55,
+      "traffic": 675,
+      "amphitheater_sales": 2335.19
+    },
+    {
+      "date": "2026-05-26",
+      "sales": 4548.56,
+      "orders": 22,
+      "tickets": 56,
+      "traffic": 687,
+      "amphitheater_sales": 2875.37
+    },
+    {
+      "date": "2026-05-27",
+      "sales": 4286.35,
+      "orders": 22,
+      "tickets": 53,
+      "traffic": 630,
+      "amphitheater_sales": 2268.45
+    },
+    {
+      "date": "2026-05-28",
+      "sales": 4468.4,
+      "orders": 24,
+      "tickets": 56,
+      "traffic": 639,
+      "amphitheater_sales": 2901.24
+    },
+    {
+      "date": "2026-05-29",
+      "sales": 5079.33,
+      "orders": 28,
+      "tickets": 63,
+      "traffic": 957,
+      "amphitheater_sales": 2949.64
+    },
+    {
+      "date": "2026-05-30",
+      "sales": 5542.9,
+      "orders": 26,
+      "tickets": 64,
+      "traffic": 794,
+      "amphitheater_sales": 3128.47
+    },
+    {
+      "date": "2026-05-31",
+      "sales": 5289.63,
+      "orders": 29,
+      "tickets": 64,
+      "traffic": 778,
+      "amphitheater_sales": 2846.48
+    },
+    {
+      "date": "2026-06-01",
+      "sales": 4830.74,
+      "orders": 26,
+      "tickets": 65,
+      "traffic": 868,
+      "amphitheater_sales": 2665.68
+    },
+    {
+      "date": "2026-06-02",
+      "sales": 4946.08,
+      "orders": 26,
+      "tickets": 63,
+      "traffic": 824,
+      "amphitheater_sales": 3001.12
+    },
+    {
+      "date": "2026-06-03",
+      "sales": 5138.18,
+      "orders": 28,
+      "tickets": 61,
+      "traffic": 958,
+      "amphitheater_sales": 3039.06
+    },
+    {
+      "date": "2026-06-04",
+      "sales": 4529.32,
+      "orders": 27,
+      "tickets": 59,
+      "traffic": 811,
+      "amphitheater_sales": 2632.21
+    },
+    {
+      "date": "2026-06-05",
+      "sales": 10053.24,
+      "orders": 55,
+      "tickets": 126,
+      "traffic": 1652,
+      "amphitheater_sales": 5452.5
+    },
+    {
+      "date": "2026-06-06",
+      "sales": 11348.86,
+      "orders": 62,
+      "tickets": 137,
+      "traffic": 1803,
+      "amphitheater_sales": 6742.89
+    },
+    {
+      "date": "2026-06-07",
+      "sales": 9825.11,
+      "orders": 47,
+      "tickets": 119,
+      "traffic": 1285,
+      "amphitheater_sales": 5429.08
+    },
+    {
+      "date": "2026-06-08",
+      "sales": 5803.6,
+      "orders": 28,
+      "tickets": 68,
+      "traffic": 756,
+      "amphitheater_sales": 3274.52
+    },
+    {
+      "date": "2026-06-09",
+      "sales": 5041.29,
+      "orders": 26,
+      "tickets": 58,
+      "traffic": 861,
+      "amphitheater_sales": 3326.09
+    },
+    {
+      "date": "2026-06-10",
+      "sales": 5007.75,
+      "orders": 26,
+      "tickets": 66,
+      "traffic": 855,
+      "amphitheater_sales": 3113.42
+    },
+    {
+      "date": "2026-06-11",
+      "sales": 4446.14,
+      "orders": 26,
+      "tickets": 59,
+      "traffic": 716,
+      "amphitheater_sales": 2574.44
+    },
+    {
+      "date": "2026-06-12",
+      "sales": 5530.78,
+      "orders": 29,
+      "tickets": 73,
+      "traffic": 905,
+      "amphitheater_sales": 3406.57
+    },
+    {
+      "date": "2026-06-13",
+      "sales": 6145.05,
+      "orders": 38,
+      "tickets": 80,
+      "traffic": 1091,
+      "amphitheater_sales": 3979.49
+    },
+    {
+      "date": "2026-06-14",
+      "sales": 5141.87,
+      "orders": 26,
+      "tickets": 68,
+      "traffic": 787,
+      "amphitheater_sales": 3219.54
+    },
+    {
+      "date": "2026-06-15",
+      "sales": 5935.57,
+      "orders": 30,
+      "tickets": 71,
+      "traffic": 1004,
+      "amphitheater_sales": 3145.12
+    },
+    {
+      "date": "2026-06-16",
+      "sales": 5067.64,
+      "orders": 32,
+      "tickets": 68,
+      "traffic": 955,
+      "amphitheater_sales": 3000.43
+    },
+    {
+      "date": "2026-06-17",
+      "sales": 5247.57,
+      "orders": 29,
+      "tickets": 69,
+      "traffic": 972,
+      "amphitheater_sales": 2878.54
+    },
+    {
+      "date": "2026-06-18",
+      "sales": 6589.82,
+      "orders": 30,
+      "tickets": 75,
+      "traffic": 805,
+      "amphitheater_sales": 3514.58
+    },
+    {
+      "date": "2026-06-19",
+      "sales": 6374.43,
+      "orders": 34,
+      "tickets": 73,
+      "traffic": 1042,
+      "amphitheater_sales": 3997.16
+    },
+    {
+      "date": "2026-06-20",
+      "sales": 6281.92,
+      "orders": 34,
+      "tickets": 78,
+      "traffic": 1026,
+      "amphitheater_sales": 3644.84
+    },
+    {
+      "date": "2026-06-21",
+      "sales": 5489.72,
+      "orders": 31,
+      "tickets": 74,
+      "traffic": 885,
+      "amphitheater_sales": 3503.52
+    },
+    {
+      "date": "2026-06-22",
+      "sales": 6107.0,
+      "orders": 35,
+      "tickets": 76,
+      "traffic": 989,
+      "amphitheater_sales": 3522.17
+    },
+    {
+      "date": "2026-06-23",
+      "sales": 5189.15,
+      "orders": 31,
+      "tickets": 68,
+      "traffic": 936,
+      "amphitheater_sales": 2709.56
+    },
+    {
+      "date": "2026-06-24",
+      "sales": 5710.0,
+      "orders": 26,
+      "tickets": 67,
+      "traffic": 742,
+      "amphitheater_sales": 3657.27
+    },
+    {
+      "date": "2026-06-25",
+      "sales": 6373.05,
+      "orders": 33,
+      "tickets": 80,
+      "traffic": 971,
+      "amphitheater_sales": 3763.93
+    },
+    {
+      "date": "2026-06-26",
+      "sales": 7247.74,
+      "orders": 33,
+      "tickets": 85,
+      "traffic": 1079,
+      "amphitheater_sales": 4693.5
+    },
+    {
+      "date": "2026-06-27",
+      "sales": 7725.16,
+      "orders": 37,
+      "tickets": 91,
+      "traffic": 1024,
+      "amphitheater_sales": 4455.79
+    },
+    {
+      "date": "2026-06-28",
+      "sales": 7595.96,
+      "orders": 35,
+      "tickets": 88,
+      "traffic": 1001,
+      "amphitheater_sales": 4765.84
+    },
+    {
+      "date": "2026-06-29",
+      "sales": 5976.03,
+      "orders": 30,
+      "tickets": 75,
+      "traffic": 852,
+      "amphitheater_sales": 3166.56
+    },
+    {
+      "date": "2026-06-30",
+      "sales": 6445.1,
+      "orders": 35,
+      "tickets": 80,
+      "traffic": 1245,
+      "amphitheater_sales": 3672.35
+    },
+    {
+      "date": "2026-07-01",
+      "sales": 5957.01,
+      "orders": 30,
+      "tickets": 72,
+      "traffic": 989,
+      "amphitheater_sales": 3885.49
+    },
+    {
+      "date": "2026-07-02",
+      "sales": 6062.17,
+      "orders": 32,
+      "tickets": 77,
+      "traffic": 925,
+      "amphitheater_sales": 3635.73
+    },
+    {
+      "date": "2026-07-03",
+      "sales": 7309.8,
+      "orders": 39,
+      "tickets": 92,
+      "traffic": 1026,
+      "amphitheater_sales": 4458.37
+    },
+    {
+      "date": "2026-07-04",
+      "sales": 8889.76,
+      "orders": 43,
+      "tickets": 105,
+      "traffic": 1138,
+      "amphitheater_sales": 4651.08
+    },
+    {
+      "date": "2026-07-05",
+      "sales": 7843.91,
+      "orders": 39,
+      "tickets": 93,
+      "traffic": 1276,
+      "amphitheater_sales": 4519.8
+    },
+    {
+      "date": "2026-07-06",
+      "sales": 6215.64,
+      "orders": 38,
+      "tickets": 81,
+      "traffic": 1197,
+      "amphitheater_sales": 3317.8
+    },
+    {
+      "date": "2026-07-07",
+      "sales": 7194.36,
+      "orders": 37,
+      "tickets": 83,
+      "traffic": 1104,
+      "amphitheater_sales": 4252.55
+    },
+    {
+      "date": "2026-07-08",
+      "sales": 6392.23,
+      "orders": 30,
+      "tickets": 78,
+      "traffic": 790,
+      "amphitheater_sales": 3894.92
+    },
+    {
+      "date": "2026-07-09",
+      "sales": 5780.14,
+      "orders": 31,
+      "tickets": 77,
+      "traffic": 912,
+      "amphitheater_sales": 3620.07
+    },
+    {
+      "date": "2026-07-10",
+      "sales": 8006.04,
+      "orders": 43,
+      "tickets": 92,
+      "traffic": 1453,
+      "amphitheater_sales": 4691.91
+    },
+    {
+      "date": "2026-07-11",
+      "sales": 8903.1,
+      "orders": 50,
+      "tickets": 110,
+      "traffic": 1466,
+      "amphitheater_sales": 4702.58
+    },
+    {
+      "date": "2026-07-12",
+      "sales": 7829.21,
+      "orders": 38,
+      "tickets": 98,
+      "traffic": 1142,
+      "amphitheater_sales": 4726.47
+    },
+    {
+      "date": "2026-07-13",
+      "sales": 7098.05,
+      "orders": 40,
+      "tickets": 91,
+      "traffic": 1158,
+      "amphitheater_sales": 4248.11
+    },
+    {
+      "date": "2026-07-14",
+      "sales": 7899.05,
+      "orders": 42,
+      "tickets": 94,
+      "traffic": 1357,
+      "amphitheater_sales": 4123.0
+    },
+    {
+      "date": "2026-07-15",
+      "sales": 6042.51,
+      "orders": 36,
+      "tickets": 81,
+      "traffic": 1218,
+      "amphitheater_sales": 3780.5
+    },
+    {
+      "date": "2026-07-16",
+      "sales": 7098.38,
+      "orders": 36,
+      "tickets": 82,
+      "traffic": 1015,
+      "amphitheater_sales": 3741.0
+    },
+    {
+      "date": "2026-07-17",
+      "sales": 8373.35,
+      "orders": 37,
+      "tickets": 96,
+      "traffic": 1288,
+      "amphitheater_sales": 5415.69
+    },
+    {
+      "date": "2026-07-18",
+      "sales": 8391.4,
+      "orders": 45,
+      "tickets": 104,
+      "traffic": 1193,
+      "amphitheater_sales": 4649.84
+    },
+    {
+      "date": "2026-07-19",
+      "sales": 7928.08,
+      "orders": 39,
+      "tickets": 91,
+      "traffic": 1107,
+      "amphitheater_sales": 4642.44
+    },
+    {
+      "date": "2026-07-20",
+      "sales": 7689.04,
+      "orders": 35,
+      "tickets": 90,
+      "traffic": 1028,
+      "amphitheater_sales": 4122.19
+    },
+    {
+      "date": "2026-07-21",
+      "sales": 7475.31,
+      "orders": 39,
+      "tickets": 93,
+      "traffic": 1298,
+      "amphitheater_sales": 3941.64
+    },
+    {
+      "date": "2026-07-22",
+      "sales": 6816.65,
+      "orders": 38,
+      "tickets": 90,
+      "traffic": 1172,
+      "amphitheater_sales": 4182.05
+    },
+    {
+      "date": "2026-07-23",
+      "sales": 6912.61,
+      "orders": 38,
+      "tickets": 89,
+      "traffic": 1124,
+      "amphitheater_sales": 4000.57
+    },
+    {
+      "date": "2026-07-24",
+      "sales": 8875.95,
+      "orders": 44,
+      "tickets": 109,
+      "traffic": 1159,
+      "amphitheater_sales": 5799.27
+    },
+    {
+      "date": "2026-07-25",
+      "sales": 9667.22,
+      "orders": 51,
+      "tickets": 125,
+      "traffic": 1750,
+      "amphitheater_sales": 6235.14
+    },
+    {
+      "date": "2026-07-26",
+      "sales": 8357.72,
+      "orders": 41,
+      "tickets": 101,
+      "traffic": 1298,
+      "amphitheater_sales": 4663.71
+    }
+  ]
+}

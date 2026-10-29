@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "user_id": "demo-user",
+      "display_name": "Priya",
+      "loyalty_tier": "ACME Subscription member",
+      "default_location": "Springfield",
+      "preferences": {
+        "seating": "window seat, especially on scenic approaches",
+        "stays": "small boutique places over big hotels",
+        "neighborhoods": "walkable, near old town streets and good coffee",
+        "nightly_rate": "usually books stays around 150 a night",
+        "travel_party": "usually travels with partner",
+        "packing": "carry-on only whenever possible"
+      }
+    },
+    {
+      "user_id": "demo-user-2",
+      "display_name": "Sam",
+      "loyalty_tier": "Guest",
+      "default_location": "Springfield",
+      "preferences": {
+        "budget": "value-focused, flexible on dates for a better fare",
+        "interests": "hiking, food markets, photography"
+      }
+    }
+  ]
+}

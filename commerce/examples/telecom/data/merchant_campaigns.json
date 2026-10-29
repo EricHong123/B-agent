@@ -1,0 +1,71 @@
+{
+  "_comment": "Campaign windows are shifted forward by whole weeks at load time, relative to dates_anchored_to (demo_common.merchant_fixtures.load_campaigns), the same shift merchant_metrics.json gets. Author the dates as if dates_anchored_to were today.",
+  "dates_anchored_to": "2026-07-27",
+  "campaigns": [
+    {
+      "campaign_id": "MC-501",
+      "name": "Phone 5 launch trade-in boost",
+      "status": "ended",
+      "objective": "Launch-window trade-in credits on the ACME Phone 5 for new and upgrading lines",
+      "channel": "paid social + storefront banners",
+      "budget": 12000.0,
+      "spend": 12000.0,
+      "revenue": 148400.0,
+      "currency": "USD",
+      "starts": "2026-05-04",
+      "ends": "2026-06-14"
+    },
+    {
+      "campaign_id": "MC-502",
+      "name": "Payoff-eligible upgrade cycle",
+      "status": "active",
+      "objective": "Bring payoff-eligible lines onto a new device agreement before the autumn line-up lands",
+      "channel": "email + app push",
+      "budget": 6000.0,
+      "spend": 2140.0,
+      "revenue": 38900.0,
+      "currency": "USD",
+      "starts": "2026-06-22",
+      "ends": "2026-08-31"
+    },
+    {
+      "campaign_id": "MC-503",
+      "name": "Contract-end save offers",
+      "status": "active",
+      "objective": "Retention offers for device agreements ending within 60 days; a 10% holdout control group measures uplift",
+      "channel": "outbound care + email",
+      "budget": 4500.0,
+      "spend": 1310.0,
+      "revenue": 21700.0,
+      "currency": "USD",
+      "starts": "2026-07-01",
+      "ends": "2026-09-30"
+    },
+    {
+      "campaign_id": "MC-504",
+      "name": "Win-back 90",
+      "status": "paused",
+      "objective": "Win back lines deactivated in the last 90 days with a first-3-months offer",
+      "channel": "email",
+      "budget": 3000.0,
+      "spend": 850.0,
+      "revenue": 5200.0,
+      "currency": "USD",
+      "starts": "2026-06-01",
+      "ends": "2026-08-15"
+    },
+    {
+      "campaign_id": "MC-505",
+      "name": "Essential top-up relief upsell",
+      "status": "draft",
+      "objective": "Move top-up-heavy Essential 5GB lines to Plus 15GB before the next bill cycle",
+      "channel": "app push",
+      "budget": 1500.0,
+      "spend": 0.0,
+      "revenue": 0.0,
+      "currency": "USD",
+      "starts": null,
+      "ends": null
+    }
+  ]
+}

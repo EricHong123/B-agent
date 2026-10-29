@@ -1,0 +1,188 @@
+{
+  "policies": [
+    {
+      "policy_id": "all-in-pricing",
+      "title": "All-in pricing and fee breakdown",
+      "category": "pricing",
+      "content": "Every price on ACME Tickets is the all-in price: the face value plus the service fee, the facility fee, and the order processing fee, shown together from the first search result to checkout. The itemized breakdown for any ticket is always available before you decide (ask for the fee breakdown, or open the ticket's price disclosure). Fees are set per event and per tier and never appear for the first time at checkout. Taxes, where applicable, are included in the all-in price.",
+      "source_id": "entertainment/all-in-pricing",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "ticket-holds",
+      "title": "Ticket holds and the hold timer",
+      "category": "purchasing",
+      "content": "Adding tickets to your order places a hold: the seats are reserved for you for 8 minutes while you review the fee breakdown and check out. The countdown is shown on your order. When the timer runs out the hold expires automatically and the tickets return to open sale — nothing is charged, ever, until you complete purchase on the payment page. Changing the quantity of a held ticket resets the timer. You can release a hold early at any time. Holds are capped at 8 tickets per event per order.",
+      "source_id": "entertainment/ticket-holds",
+      "version": "2",
+      "effective_at": "2026-03-01"
+    },
+    {
+      "policy_id": "ticket-holds-v1",
+      "title": "Ticket holds and the hold timer",
+      "category": "purchasing",
+      "content": "Adding tickets to your order places a hold: the seats are reserved for you for 10 minutes while you review the fee breakdown and check out. When the timer runs out the hold expires automatically and the seats return to sale. One hold per event per account.",
+      "source_id": "entertainment/ticket-holds",
+      "version": "1",
+      "effective_at": "2025-06-01",
+      "expires_at": "2026-03-01"
+    },
+    {
+      "policy_id": "waitlist-return-offers",
+      "title": "Waitlist and return offers",
+      "category": "purchasing",
+      "content": "When a tier is sold out you can join its waitlist from the tier's Join-waitlist button on the event page — that button is the only place a waitlist entry is created; chat and support can explain the waitlist and check your position, but cannot join it for you. The waitlist is first-come, first-served. When a fan returns tickets, the returned quantity is offered to the front of the line as a return offer with a 10-minute claim window. Claiming a return offer places a normal 8-minute hold — you still review the price and fee breakdown before anything is charged. If an offer is not claimed inside its window it passes to the next fan in line. Availability counts shown anywhere on ACME Tickets are live inventory numbers, never marketing copy.",
+      "source_id": "entertainment/waitlist-return-offers",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "buyer-guarantee",
+      "title": "Ticket validity guarantee",
+      "category": "purchasing",
+      "content": "Every ticket sold on ACME Tickets — box office or fan resale — is guaranteed valid for entry, and the all-in price you see is the full price you pay. If a ticket fails to scan at the gate through no fault of yours, the box office will reissue comparable or better seats on the spot or refund the full all-in price. This guarantee covers ticket validity and pricing, not change of mind: outside of it, the refunds policy for cancellations and rescheduled events applies.",
+      "source_id": "entertainment/buyer-guarantee",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "ticket-transfers",
+      "title": "Transferring tickets",
+      "category": "post-purchase",
+      "content": "You can transfer any active ticket you own to another person for free. A transfer is staged: the ticket is parked as transfer-pending the moment you start it, and it completes only when the recipient accepts. Until then you can cancel the transfer and the ticket returns to your wallet unchanged. On completion the barcode is reissued, so the original barcode stops working. Tickets can only be transferred by the account that owns them.",
+      "source_id": "entertainment/ticket-transfers",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "refunds-event-changes",
+      "title": "Refunds, cancellations, and rescheduled events",
+      "category": "post-purchase",
+      "content": "If an event is cancelled, the full all-in price — face value and all fees — is refunded automatically to the original payment method within 7 days; no action is needed. If an event is rescheduled, your tickets stay valid for the new date, and a refund window of at least 14 days opens if you cannot make it. Outside of cancellation or rescheduling, tickets are not refundable, but you can always transfer them or list them for resale.",
+      "source_id": "entertainment/refunds-event-changes",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "resale-value-scores",
+      "title": "Resale listings and the value score",
+      "category": "resale",
+      "content": "Fan resale listings appear alongside box-office tickets, always at all-in prices. Every resale listing carries a value score from 1 to 10, computed by ACME Tickets from the listing price compared to the box-office all-in price for the same tier, adjusted for whether the box office still has inventory. Green (8–10) means at or below box-office pricing, amber (5–7) means a fair premium for a scarce ticket, red (1–4) means the listing is priced well above market. The score, its color, and the box-office comparison price are shown on the resale listing's card wherever the listing appears, so you can judge for yourself.",
+      "source_id": "entertainment/resale-value-scores",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "mobile-entry",
+      "title": "Mobile entry and rotating barcodes",
+      "category": "entry",
+      "content": "Entry is by mobile ticket. Your ticket's barcode rotates every 60 seconds, so screenshots and printouts will not scan at the gate. Your tickets live in your ACME Tickets wallet and work offline once the event is less than 24 hours away. If your phone dies at the gate, the box office can verify your identity and reissue entry.",
+      "source_id": "entertainment/mobile-entry",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "accessibility-seating",
+      "title": "Accessible seating",
+      "category": "seating",
+      "content": "Every venue and every price tier includes accessible seating with companion seats. Accessible inventory is shown in the same live availability counts as all other tickets. If the tier you want shows no accessible seats remaining, the venue box office holds a reserve released case by case — contact support and we will arrange it before the event.",
+      "source_id": "entertainment/accessibility-seating",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "presale-fee-waiver",
+      "title": "Presale order fee waiver",
+      "category": "pricing",
+      "content": "During presales, the order processing fee is waived on every order; the service and facility fees still apply and are included in the all-in price.",
+      "source_id": "entertainment/presale-fee-waiver",
+      "version": "1",
+      "effective_at": "2026-03-01",
+      "expires_at": "2026-06-30"
+    }
+  ],
+  "synonyms": {
+    "tix": [
+      "tickets"
+    ],
+    "screenshot": [
+      "mobile entry",
+      "barcode"
+    ],
+    "print": [
+      "mobile entry",
+      "barcode"
+    ],
+    "phone died": [
+      "mobile entry",
+      "box office"
+    ],
+    "hidden fees": [
+      "all-in",
+      "fee breakdown"
+    ],
+    "sneak": [
+      "all-in",
+      "fee breakdown"
+    ],
+    "ripoff": [
+      "resale",
+      "value score"
+    ],
+    "resell": [
+      "resale"
+    ],
+    "called off": [
+      "cancelled",
+      "refund"
+    ],
+    "postponed": [
+      "rescheduled"
+    ],
+    "money back": [
+      "refund"
+    ],
+    "give away": [
+      "transfer"
+    ],
+    "wheelchair": [
+      "accessible seating"
+    ],
+    "sold out": [
+      "waitlist"
+    ],
+    "fake": [
+      "guarantee",
+      "valid"
+    ],
+    "门票": [
+      "ticket"
+    ],
+    "截图": [
+      "mobile entry",
+      "barcode"
+    ],
+    "转给": [
+      "transfer"
+    ],
+    "转让": [
+      "transfer"
+    ],
+    "轮椅": [
+      "accessible seating"
+    ],
+    "无障碍": [
+      "accessible seating"
+    ],
+    "退款": [
+      "refund"
+    ],
+    "手续费": [
+      "fee"
+    ],
+    "转售": [
+      "resale"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "_comment": "Campaign windows are shifted forward by whole weeks at load time, relative to dates_anchored_to (demo_common.merchant_fixtures.load_campaigns), the same shift merchant_metrics.json gets. Author the dates as if dates_anchored_to were today.",
+  "dates_anchored_to": "2026-06-26",
+  "campaigns": [
+    {
+      "campaign_id": "TC-301",
+      "name": "Lisbon shoulder-season escapes",
+      "status": "active",
+      "objective": "Fill September and October midweek nights across the Lisbon stays",
+      "channel": "marketplace featured placements",
+      "budget": 900.0,
+      "spend": 412.0,
+      "revenue": 5230.0,
+      "currency": "USD",
+      "starts": "2026-06-01",
+      "ends": "2026-08-31"
+    },
+    {
+      "campaign_id": "TC-302",
+      "name": "Alfama summer early-bird",
+      "status": "ended",
+      "objective": "Sell August nights at the Alfama house before the spring rate review",
+      "channel": "email to past guests",
+      "budget": 600.0,
+      "spend": 600.0,
+      "revenue": 7140.0,
+      "currency": "USD",
+      "starts": "2026-04-01",
+      "ends": "2026-05-31"
+    },
+    {
+      "campaign_id": "TC-303",
+      "name": "Condesa courtyard long stays",
+      "status": "active",
+      "objective": "Win 5+ night autumn bookings at the Condesa courtyard sibling",
+      "channel": "email to past guests",
+      "budget": 350.0,
+      "spend": 168.0,
+      "revenue": 1890.0,
+      "currency": "USD",
+      "starts": "2026-06-10",
+      "ends": "2026-07-20"
+    },
+    {
+      "campaign_id": "TC-304",
+      "name": "Rooftop suites weekend retargeting",
+      "status": "paused",
+      "objective": "Re-engage travelers who viewed the Graca rooftop suites in the last 60 days",
+      "channel": "social ads",
+      "budget": 400.0,
+      "spend": 95.0,
+      "revenue": 310.0,
+      "currency": "USD",
+      "starts": "2026-05-15",
+      "ends": "2026-06-30"
+    }
+  ]
+}

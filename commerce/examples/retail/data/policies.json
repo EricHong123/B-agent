@@ -1,0 +1,208 @@
+{
+  "policies": [
+    {
+      "policy_id": "returns",
+      "title": "Returns & refunds",
+      "category": "returns",
+      "content": "Most items can be returned within 30 days of delivery in original condition for a full refund to the original payment method. Opened electronics can be returned within 15 days. Mattresses, bedding, and personal-care items must be unopened. Refunds post within 5 business days of the return arriving at our warehouse. ACME Subscription members get free return pickup; otherwise drop off at any ACME location or use the prepaid label in your order page.",
+      "source_id": "retail/returns",
+      "version": "2",
+      "effective_at": "2026-03-01"
+    },
+    {
+      "policy_id": "returns-v1",
+      "title": "Returns & refunds",
+      "category": "returns",
+      "content": "Most items can be returned within 45 days of delivery in original condition for a full refund to the original payment method. Opened electronics can be returned within 30 days. Mattresses, bedding, and personal-care items must be unopened. Refunds post within 10 business days of the return arriving at our warehouse. Drop off at any ACME location or use the prepaid label in your order page.",
+      "source_id": "retail/returns",
+      "version": "1",
+      "effective_at": "2025-06-01",
+      "expires_at": "2026-03-01"
+    },
+    {
+      "policy_id": "shipping",
+      "title": "Shipping options & timelines",
+      "category": "shipping",
+      "content": "Standard shipping is $5.99, free over $49, and arrives in 3-5 business days. Express arrives in 2 business days and is free for ACME Subscription members on orders over $49, otherwise $9.99. Same-day delivery is available on eligible items in select areas when ordered before 2pm. Oversized items ship freight and include a scheduled delivery window.",
+      "source_id": "retail/shipping",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "price-match",
+      "title": "Price match promise",
+      "category": "pricing",
+      "content": "If you find an identical, in-stock item at a lower price from a major retailer within 14 days of purchase, we will match it and refund the difference. Marketplace sellers, clearance, and doorbuster prices are excluded. Contact support with a link to the competing listing.",
+      "source_id": "retail/price-match",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "warranty",
+      "title": "Warranties & protection plans",
+      "category": "warranty",
+      "content": "Manufacturer warranties apply to most products; the duration is listed on the product page under specs. ACME Protect plans extend coverage to 3 years and cover accidental damage on electronics. Claims are handled in-app and most replacements ship within 2 business days of approval.",
+      "source_id": "retail/warranty",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "membership",
+      "title": "ACME Subscription membership",
+      "category": "membership",
+      "content": "ACME Subscription costs $79/year and includes free express shipping over $49, free return pickup, early access to seasonal sales, and 2% back in store credit. You can cancel anytime and we will prorate the unused portion. There is a 14-day free trial for new members.",
+      "source_id": "retail/membership",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "gift-cards",
+      "title": "Gift cards",
+      "category": "payments",
+      "content": "Digital gift cards are delivered by email within minutes and never expire. Physical gift cards ship free. Gift cards cannot be redeemed for cash except where required by law, and cannot be used to buy other gift cards. Check your balance any time in the app under Payments.",
+      "source_id": "retail/gift-cards",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "order-changes",
+      "title": "Changing or cancelling an order",
+      "category": "orders",
+      "content": "Orders can be modified or cancelled within 30 minutes of being placed from the order page. After that, items that have not entered the packing process can still be cancelled — contact support. Once an order has shipped, use the return process instead. Address changes after shipping are handled by the carrier and are not guaranteed.",
+      "source_id": "retail/order-changes",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "damaged-items",
+      "title": "Damaged or missing items",
+      "category": "returns",
+      "content": "If an item arrives damaged or an order is missing items, report it within 7 days from the order page with a photo. We will send a replacement or refund the affected items — no need to return the damaged product unless we send a pickup label. Porch theft claims are reviewed case by case after the carrier confirms delivery.",
+      "source_id": "retail/damaged-items",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "guide-tents",
+      "title": "Buying guide: choosing a tent",
+      "category": "guide",
+      "content": "A tent's person rating counts sleepers packed shoulder to shoulder, so for comfort size up by one from your head count, and by two if gear or a dog sleeps inside. Decide next how the tent travels: carried in on foot, every gram matters and a low, compact backpacking tent wins; driven to the site, weight barely matters and standing height and floor space matter far more. A 3-season rating covers spring through autumn camping; only winter trips need more. Freestanding tents pitch anywhere and move easily once up; a first tent should pitch in ten minutes or less, and it is worth practising once at home.",
+      "source_id": "retail/guide-tents",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "guide-home-coffee",
+      "title": "Buying guide: drip or espresso at home",
+      "category": "guide",
+      "content": "A drip coffee maker brews a full pot with almost no effort or technique, needs only a rinse between uses, and suits households that drink several cups through the morning. An espresso machine makes concentrated shots and steamed-milk drinks, but each cup takes a few minutes of hands-on work, the machine wants regular descaling and a spot of permanent counter space, and it rewards fresh beans and a little practice. Choose drip if convenience and volume come first; choose espresso only if milk drinks or the ritual itself are the point. Programmable timers and thermal carafes matter more for drip than any brewing spec.",
+      "source_id": "retail/guide-home-coffee",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "guide-desk-ergonomics",
+      "title": "Buying guide: a desk setup that stays comfortable",
+      "category": "guide",
+      "content": "Fix things in this order, because each step matters more than the next. First, the seat: a chair with adjustable lumbar support and adjustable arm height does more for a long day than anything else on the desk. Second, screen height: the top of the screen should sit at about eye level, which a monitor arm or a laptop stand plus a separate keyboard achieves cheaply. Third, and only after those two, a sit-stand desk lets you change posture through the day; look for memory presets so switching is a single tap, and check the height range reaches both your seated and standing elbow height. Lighting and a separate keyboard are inexpensive finishing touches.",
+      "source_id": "retail/guide-desk-ergonomics",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "holiday-returns",
+      "title": "Holiday return extension",
+      "category": "returns",
+      "content": "Items bought between November 1 and December 24, 2025 can be returned until January 31, 2026, in original condition, for a full refund to the original payment method.",
+      "source_id": "retail/holiday-returns",
+      "version": "1",
+      "effective_at": "2025-11-01",
+      "expires_at": "2026-02-01"
+    }
+  ],
+  "synonyms": {
+    "send back": [
+      "return",
+      "returned"
+    ],
+    "take back": [
+      "return"
+    ],
+    "exchange": [
+      "return"
+    ],
+    "swap": [
+      "return"
+    ],
+    "money back": [
+      "refund"
+    ],
+    "busted": [
+      "damaged"
+    ],
+    "broken": [
+      "damaged"
+    ],
+    "cracked": [
+      "damaged"
+    ],
+    "showed up": [
+      "arrive"
+    ],
+    "never came": [
+      "missing"
+    ],
+    "stolen": [
+      "porch theft"
+    ],
+    "delivery": [
+      "shipping"
+    ],
+    "how fast": [
+      "shipping",
+      "arrive"
+    ],
+    "go bad": [
+      "expire"
+    ],
+    "giftcard": [
+      "gift card"
+    ],
+    "member": [
+      "membership",
+      "subscription"
+    ],
+    "undo": [
+      "cancel",
+      "order"
+    ],
+    "cheaper": [
+      "price match",
+      "lower price"
+    ],
+    "退货": [
+      "return",
+      "refund"
+    ],
+    "退款": [
+      "refund"
+    ],
+    "运费": [
+      "shipping"
+    ],
+    "会员": [
+      "membership",
+      "subscription"
+    ],
+    "礼品卡": [
+      "gift card"
+    ],
+    "保修": [
+      "warranty"
+    ],
+    "多少钱": [
+      "cost",
+      "price"
+    ]
+  }
+}

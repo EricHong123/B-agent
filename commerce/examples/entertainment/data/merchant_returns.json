@@ -1,0 +1,27 @@
+{
+  "_comment": "returned_on is shifted forward by whole weeks at load time, relative to dates_anchored_to (demo_common.merchant_fixtures.load_returns), the same shift merchant_messages.json gets. reason is a merchant_agent.types.ReturnReason code; note is the buyer's own text. Author the dates as if dates_anchored_to were today.",
+  "dates_anchored_to": "2026-07-27",
+  "returns": [
+    {"return_id": "ERT-501", "order_id": "AT-ORD-89101", "listing_id": "AT-TIX-105-ORC", "returned_on": "2026-07-21", "reason": "changed_mind", "note": "Our trip moved a week later, so we are returning the Saturday pair."},
+    {"return_id": "ERT-502", "order_id": "AT-ORD-89108", "listing_id": "AT-TIX-105-ORC", "returned_on": "2026-07-22", "reason": "changed_mind"},
+    {"return_id": "ERT-503", "order_id": "AT-ORD-89115", "listing_id": "AT-TIX-105-ORC", "returned_on": "2026-07-23", "reason": "changed_mind", "note": "Travel plans changed."},
+    {"return_id": "ERT-504", "order_id": "AT-ORD-89122", "listing_id": "AT-TIX-105-ORC", "returned_on": "2026-07-10", "reason": "schedule_changed", "note": "The taping start moved to 10pm, too late for us."},
+    {"return_id": "ERT-505", "order_id": "AT-ORD-89129", "listing_id": "AT-TIX-101-TER", "returned_on": "2026-07-02", "reason": "not_as_described", "note": "The seat map shows a clear stage view; the lighting tower blocks half of it."},
+    {"return_id": "ERT-506", "order_id": "AT-ORD-89136", "listing_id": "AT-TIX-101-TER", "returned_on": "2026-07-09", "reason": "not_as_described", "note": "Obstructed view, and nothing on the listing said so."},
+    {"return_id": "ERT-507", "order_id": "AT-ORD-89143", "listing_id": "AT-TIX-101-TER", "returned_on": "2026-07-15", "reason": "not_as_described"},
+    {"return_id": "ERT-508", "order_id": "AT-ORD-89150", "listing_id": "AT-TIX-101-TER", "returned_on": "2026-07-20", "reason": "not_as_described", "note": "We could see the screens but not the stage."},
+    {"return_id": "ERT-509", "order_id": "AT-ORD-89157", "listing_id": "AT-TIX-102-LOW", "returned_on": "2026-07-24", "reason": "arrived_late", "note": "The transferred tickets never reached my sister's app."},
+    {"return_id": "ERT-510", "order_id": "AT-ORD-89164", "listing_id": "AT-TIX-102-LOW", "returned_on": "2026-07-25", "reason": "arrived_late"},
+    {"return_id": "ERT-511", "order_id": "AT-ORD-89171", "listing_id": "AT-TIX-102-LOW", "returned_on": "2026-07-12", "reason": "access_issue", "note": "The tickets would not load at the gate."},
+    {"return_id": "ERT-512", "order_id": "AT-ORD-89178", "listing_id": "AT-TIX-103-PIT", "returned_on": "2026-07-06", "reason": "ticket_transferred"},
+    {"return_id": "ERT-513", "order_id": "AT-ORD-89185", "listing_id": "AT-TIX-103-PIT", "returned_on": "2026-07-14", "reason": "ticket_transferred"},
+    {"return_id": "ERT-514", "order_id": "AT-ORD-89192", "listing_id": "AT-TIX-103-PIT", "returned_on": "2026-07-19", "reason": "ticket_transferred", "note": "Passed them to a friend who can make the date."},
+    {"return_id": "ERT-515", "order_id": "AT-ORD-89199", "listing_id": "AT-TIX-103-PIT", "returned_on": "2026-07-11", "reason": "changed_mind"},
+    {"return_id": "ERT-516", "order_id": "AT-ORD-89206", "listing_id": "AT-RSL-201", "returned_on": "2026-07-08", "reason": "not_as_described", "note": "Listed as a pair together; the seats were two rows apart."},
+    {"return_id": "ERT-517", "order_id": "AT-ORD-89213", "listing_id": "AT-RSL-201", "returned_on": "2026-07-18", "reason": "not_as_described"},
+    {"return_id": "ERT-518", "order_id": "AT-ORD-89220", "listing_id": "AT-TIX-104-MEZ", "returned_on": "2026-07-23", "reason": "schedule_changed", "note": "Our row was closed for repairs, so the seats were refunded."},
+    {"return_id": "ERT-519", "order_id": "AT-ORD-89227", "listing_id": "AT-TIX-106-PRE", "returned_on": "2026-07-16", "reason": "access_issue", "note": "We could not get the accessible companion seat confirmed."},
+    {"return_id": "ERT-520", "order_id": "AT-ORD-89234", "listing_id": "AT-TIX-101-TER", "returned_on": "2026-06-05", "reason": "not_as_described", "note": "Partial view from the terrace."},
+    {"return_id": "ERT-521", "order_id": "AT-ORD-89241", "listing_id": "AT-TIX-103-PIT", "returned_on": "2026-05-30", "reason": "ticket_transferred"}
+  ]
+}

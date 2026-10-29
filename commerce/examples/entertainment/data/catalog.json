@@ -1,0 +1,721 @@
+{
+  "_comment": "Event dates (attributes.event_date and the date in each title) are shifted forward by whole weeks at load time, relative to dates_anchored_to (shift_event_dates in api/mock_ticketing.py); merchant_pacing.json and the order lines that name these shows shift with them. Author the dates as if dates_anchored_to were today.",
+  "dates_anchored_to": "2026-07-27",
+  "store_name": "ACME Tickets",
+  "products": [
+    {
+      "product_id": "AT-TIX-101-PIT",
+      "title": "The Headliner — Summer Tour · Fri Aug 14 · GA Pit",
+      "brand": "The Headliner",
+      "price": 112.0,
+      "currency": "USD",
+      "category": "tickets",
+      "attributes": {
+        "event_id": "AT-EVT-101",
+        "event_name": "The Headliner — Summer Tour",
+        "genre": "indie folk",
+        "venue_id": "AT-VEN-01",
+        "venue": "ACME Amphitheater",
+        "city": "Springfield",
+        "event_date": "2026-08-14",
+        "event_time": "19:30",
+        "tier": "GA Pit",
+        "tier_code": "PIT",
+        "admission": "general",
+        "face_price_usd": "89.00",
+        "service_fee_usd": "14.50",
+        "facility_fee_usd": "6.00",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Standing GA pit at the rail for the Friday ACME Amphitheater show. Price is all-in.",
+      "long_description": "The Summer Tour closes its summer leg with two nights at ACME Amphitheater. The GA pit is standing room directly in front of the stage with its own entrance and rail access on both sides. Doors 18:00, support act 19:30, headline 20:30. All prices shown are all-in: face value plus all fees, itemized before checkout.",
+      "specs": {
+        "doors": "18:00",
+        "support_act": "the support act",
+        "age_policy": "all ages; under 16 with an adult",
+        "entry": "mobile rotating barcode",
+        "curfew": "23:00"
+      },
+      "review_highlights": [
+        "The pit rail at ACME Amphitheater is the best view in the venue — the stage sits low.",
+        "Security walks the pit with water on hot nights; re-entry to the pit is wristbanded."
+      ]
+    },
+    {
+      "product_id": "AT-TIX-101-LOW",
+      "title": "The Headliner — Summer Tour · Fri Aug 14 · Lower Bowl",
+      "brand": "The Headliner",
+      "price": 89.0,
+      "currency": "USD",
+      "category": "tickets",
+      "attributes": {
+        "event_id": "AT-EVT-101",
+        "event_name": "The Headliner — Summer Tour",
+        "genre": "indie folk",
+        "venue_id": "AT-VEN-01",
+        "venue": "ACME Amphitheater",
+        "city": "Springfield",
+        "event_date": "2026-08-14",
+        "event_time": "19:30",
+        "tier": "Lower Bowl",
+        "tier_code": "LOWER",
+        "admission": "reserved",
+        "face_price_usd": "69.00",
+        "service_fee_usd": "11.50",
+        "facility_fee_usd": "6.00",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Reserved seats in the covered lower bowl, Friday night. Price is all-in.",
+      "long_description": "Reserved seating wrapping the pit from section 101 to 108, all under the canopy roof. Best-available assignment within the tier at purchase. All prices shown are all-in: face value plus all fees, itemized before checkout.",
+      "specs": {
+        "doors": "18:00",
+        "support_act": "the support act",
+        "seating": "reserved, best available within tier",
+        "cover": "under canopy",
+        "entry": "mobile rotating barcode"
+      },
+      "review_highlights": [
+        "Sections 103–106 face the stage dead-on; the aisle seats clear out fast at the encore."
+      ]
+    },
+    {
+      "product_id": "AT-TIX-101-TER",
+      "title": "The Headliner — Summer Tour · Fri Aug 14 · Upper Terrace",
+      "brand": "The Headliner",
+      "price": 54.5,
+      "currency": "USD",
+      "category": "tickets",
+      "attributes": {
+        "event_id": "AT-EVT-101",
+        "event_name": "The Headliner — Summer Tour",
+        "genre": "indie folk",
+        "venue_id": "AT-VEN-01",
+        "venue": "ACME Amphitheater",
+        "city": "Springfield",
+        "event_date": "2026-08-14",
+        "event_time": "19:30",
+        "tier": "Upper Terrace",
+        "tier_code": "TERRACE",
+        "admission": "reserved",
+        "face_price_usd": "39.00",
+        "service_fee_usd": "7.00",
+        "facility_fee_usd": "6.00",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Open-air terrace seating with the harbor behind the stage. Price is all-in.",
+      "long_description": "The upper terrace is open-air reserved seating on the hill line, with the harbor visible behind the stage after sunset. Bring a layer — it cools off fast. All prices shown are all-in: face value plus all fees, itemized before checkout.",
+      "specs": {
+        "doors": "18:00",
+        "seating": "reserved, open air",
+        "view": "elevated, full stage",
+        "entry": "mobile rotating barcode"
+      },
+      "review_highlights": [
+        "Sunset behind the stage from the terrace is the venue's postcard shot."
+      ]
+    },
+    {
+      "product_id": "AT-TIX-102-PIT",
+      "title": "The Headliner — Summer Tour · Sat Aug 15 · GA Pit",
+      "brand": "The Headliner",
+      "price": 112.0,
+      "currency": "USD",
+      "category": "tickets",
+      "attributes": {
+        "event_id": "AT-EVT-102",
+        "event_name": "The Headliner — Summer Tour",
+        "genre": "indie folk",
+        "venue_id": "AT-VEN-01",
+        "venue": "ACME Amphitheater",
+        "city": "Springfield",
+        "event_date": "2026-08-15",
+        "event_time": "19:30",
+        "tier": "GA Pit",
+        "tier_code": "PIT",
+        "admission": "general",
+        "face_price_usd": "89.00",
+        "service_fee_usd": "14.50",
+        "facility_fee_usd": "6.00",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Standing GA pit for the Saturday closing night. Price is all-in.",
+      "long_description": "Closing night of the summer leg. The GA pit is standing room directly in front of the stage with rail access on both sides. Doors 18:00, support act 19:30, headline 20:30. All prices shown are all-in.",
+      "specs": {
+        "doors": "18:00",
+        "support_act": "the support act",
+        "age_policy": "all ages; under 16 with an adult",
+        "entry": "mobile rotating barcode",
+        "curfew": "23:00"
+      },
+      "review_highlights": [
+        "Closing nights on this tour have run a longer encore than the posted set."
+      ]
+    },
+    {
+      "product_id": "AT-TIX-102-LOW",
+      "title": "The Headliner — Summer Tour · Sat Aug 15 · Lower Bowl",
+      "brand": "The Headliner",
+      "price": 89.0,
+      "currency": "USD",
+      "category": "tickets",
+      "attributes": {
+        "event_id": "AT-EVT-102",
+        "event_name": "The Headliner — Summer Tour",
+        "genre": "indie folk",
+        "venue_id": "AT-VEN-01",
+        "venue": "ACME Amphitheater",
+        "city": "Springfield",
+        "event_date": "2026-08-15",
+        "event_time": "19:30",
+        "tier": "Lower Bowl",
+        "tier_code": "LOWER",
+        "admission": "reserved",
+        "face_price_usd": "69.00",
+        "service_fee_usd": "11.50",
+        "facility_fee_usd": "6.00",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Reserved covered seats for the Saturday closing night. Price is all-in.",
+      "long_description": "Reserved seating wrapping the pit from section 101 to 108, all under the canopy roof. Best-available assignment within the tier at purchase. All prices shown are all-in.",
+      "specs": {
+        "doors": "18:00",
+        "seating": "reserved, best available within tier",
+        "cover": "under canopy",
+        "entry": "mobile rotating barcode"
+      },
+      "review_highlights": []
+    },
+    {
+      "product_id": "AT-TIX-102-TER",
+      "title": "The Headliner — Summer Tour · Sat Aug 15 · Upper Terrace",
+      "brand": "The Headliner",
+      "price": 54.5,
+      "currency": "USD",
+      "category": "tickets",
+      "attributes": {
+        "event_id": "AT-EVT-102",
+        "event_name": "The Headliner — Summer Tour",
+        "genre": "indie folk",
+        "venue_id": "AT-VEN-01",
+        "venue": "ACME Amphitheater",
+        "city": "Springfield",
+        "event_date": "2026-08-15",
+        "event_time": "19:30",
+        "tier": "Upper Terrace",
+        "tier_code": "TERRACE",
+        "admission": "reserved",
+        "face_price_usd": "39.00",
+        "service_fee_usd": "7.00",
+        "facility_fee_usd": "6.00",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Open-air terrace seating, Saturday closing night. Price is all-in.",
+      "long_description": "The upper terrace is open-air reserved seating on the hill line, with the harbor visible behind the stage after sunset. All prices shown are all-in.",
+      "specs": {
+        "doors": "18:00",
+        "seating": "reserved, open air",
+        "view": "elevated, full stage",
+        "entry": "mobile rotating barcode"
+      },
+      "review_highlights": []
+    },
+    {
+      "product_id": "AT-TIX-103-PIT",
+      "title": "The Synth-Pop Act — Fall Tour · Fri Aug 28 · GA Pit",
+      "brand": "The Synth-Pop Act",
+      "price": 123.5,
+      "currency": "USD",
+      "category": "tickets",
+      "attributes": {
+        "event_id": "AT-EVT-103",
+        "event_name": "The Synth-Pop Act — Fall Tour",
+        "genre": "synth pop",
+        "venue_id": "AT-VEN-01",
+        "venue": "ACME Amphitheater",
+        "city": "Springfield",
+        "event_date": "2026-08-28",
+        "event_time": "20:00",
+        "tier": "GA Pit",
+        "tier_code": "PIT",
+        "admission": "general",
+        "face_price_usd": "99.00",
+        "service_fee_usd": "16.00",
+        "facility_fee_usd": "6.00",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Standing GA pit for the hottest show of the summer. Price is all-in.",
+      "long_description": "Fall Tour sold out ACME Amphitheater in under an hour. The GA pit is standing room at the stage with rail access. The waitlist (join it from the event page) is the honest way in — returns are offered to the line in order, with a claim window. All prices shown are all-in.",
+      "specs": {
+        "doors": "18:30",
+        "support_act": "the support act",
+        "entry": "mobile rotating barcode",
+        "curfew": "23:00"
+      },
+      "review_highlights": [
+        "The light rig on this tour is built for the amphitheater dark — pit or terrace, it lands."
+      ]
+    },
+    {
+      "product_id": "AT-TIX-103-LOW",
+      "title": "The Synth-Pop Act — Fall Tour · Fri Aug 28 · Lower Bowl",
+      "brand": "The Synth-Pop Act",
+      "price": 100.5,
+      "currency": "USD",
+      "category": "tickets",
+      "attributes": {
+        "event_id": "AT-EVT-103",
+        "event_name": "The Synth-Pop Act — Fall Tour",
+        "genre": "synth pop",
+        "venue_id": "AT-VEN-01",
+        "venue": "ACME Amphitheater",
+        "city": "Springfield",
+        "event_date": "2026-08-28",
+        "event_time": "20:00",
+        "tier": "Lower Bowl",
+        "tier_code": "LOWER",
+        "admission": "reserved",
+        "face_price_usd": "79.00",
+        "service_fee_usd": "13.00",
+        "facility_fee_usd": "6.00",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Reserved covered seats for Fall Tour. Sold out — waitlist available.",
+      "long_description": "Reserved seating wrapping the pit under the canopy. Sold out; join the waitlist from the event page and returns are offered in order with a claim window. All prices shown are all-in.",
+      "specs": {
+        "doors": "18:30",
+        "seating": "reserved, best available within tier",
+        "entry": "mobile rotating barcode"
+      },
+      "review_highlights": []
+    },
+    {
+      "product_id": "AT-TIX-103-TER",
+      "title": "The Synth-Pop Act — Fall Tour · Fri Aug 28 · Upper Terrace",
+      "brand": "The Synth-Pop Act",
+      "price": 66.0,
+      "currency": "USD",
+      "category": "tickets",
+      "attributes": {
+        "event_id": "AT-EVT-103",
+        "event_name": "The Synth-Pop Act — Fall Tour",
+        "genre": "synth pop",
+        "venue_id": "AT-VEN-01",
+        "venue": "ACME Amphitheater",
+        "city": "Springfield",
+        "event_date": "2026-08-28",
+        "event_time": "20:00",
+        "tier": "Upper Terrace",
+        "tier_code": "TERRACE",
+        "admission": "reserved",
+        "face_price_usd": "49.00",
+        "service_fee_usd": "8.50",
+        "facility_fee_usd": "6.00",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Open-air terrace for Fall Tour. Sold out — waitlist available.",
+      "long_description": "Open-air reserved seating on the hill line. Sold out; join the waitlist from the event page and returns are offered in order with a claim window. All prices shown are all-in.",
+      "specs": {
+        "doors": "18:30",
+        "seating": "reserved, open air",
+        "entry": "mobile rotating barcode"
+      },
+      "review_highlights": []
+    },
+    {
+      "product_id": "AT-TIX-104-GAF",
+      "title": "The Duo — Autumn Tour · Wed Sep 2 · GA Floor",
+      "brand": "The Duo",
+      "price": 59.5,
+      "currency": "USD",
+      "category": "tickets",
+      "attributes": {
+        "event_id": "AT-EVT-104",
+        "event_name": "The Duo — Autumn Tour",
+        "genre": "folk duo",
+        "venue_id": "AT-VEN-02",
+        "venue": "ACME Hall",
+        "city": "Springfield",
+        "event_date": "2026-09-02",
+        "event_time": "20:00",
+        "tier": "GA Floor",
+        "tier_code": "GAFLOOR",
+        "admission": "general",
+        "face_price_usd": "45.00",
+        "service_fee_usd": "8.00",
+        "facility_fee_usd": "4.00",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Standing floor at the Hall — a 600-cap room, close everywhere. All-in price.",
+      "long_description": "ACME Hall is a converted machine shop with a flat standing floor and a wraparound mezzanine. The Duo play in the round on this tour, so the floor is the room. All prices shown are all-in.",
+      "specs": {
+        "doors": "19:00",
+        "staging": "in the round",
+        "age_policy": "18+",
+        "entry": "mobile rotating barcode"
+      },
+      "review_highlights": [
+        "In-the-round at the Hall means there is no back of the room."
+      ]
+    },
+    {
+      "product_id": "AT-TIX-104-MEZ",
+      "title": "The Duo — Autumn Tour · Wed Sep 2 · Mezzanine",
+      "brand": "The Duo",
+      "price": 75.5,
+      "currency": "USD",
+      "category": "tickets",
+      "attributes": {
+        "event_id": "AT-EVT-104",
+        "event_name": "The Duo — Autumn Tour",
+        "genre": "folk duo",
+        "venue_id": "AT-VEN-02",
+        "venue": "ACME Hall",
+        "city": "Springfield",
+        "event_date": "2026-09-02",
+        "event_time": "20:00",
+        "tier": "Mezzanine",
+        "tier_code": "MEZZ",
+        "admission": "reserved",
+        "face_price_usd": "59.00",
+        "service_fee_usd": "10.00",
+        "facility_fee_usd": "4.00",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Reserved mezzanine rail seats above the floor. All-in price.",
+      "long_description": "The mezzanine wraps the floor on three sides with two reserved rows at the rail. For in-the-round staging it is the best sightline in the building. All prices shown are all-in.",
+      "specs": {
+        "doors": "19:00",
+        "seating": "reserved, rail rows",
+        "age_policy": "18+",
+        "entry": "mobile rotating barcode"
+      },
+      "review_highlights": [
+        "Mezzanine rail is the quiet-listener spot — the room mix is best up there."
+      ]
+    },
+    {
+      "product_id": "AT-TIX-105-ORC",
+      "title": "Jane Doe: Stand-Up Taping · Sat Aug 22 · Orchestra",
+      "brand": "Jane Doe",
+      "price": 74.5,
+      "currency": "USD",
+      "category": "tickets",
+      "attributes": {
+        "event_id": "AT-EVT-105",
+        "event_name": "Jane Doe: Stand-Up Taping",
+        "genre": "comedy",
+        "venue_id": "AT-VEN-03",
+        "venue": "ACME Playhouse",
+        "city": "Springfield",
+        "event_date": "2026-08-22",
+        "event_time": "19:00",
+        "tier": "Orchestra",
+        "tier_code": "ORCH",
+        "admission": "reserved",
+        "face_price_usd": "59.00",
+        "service_fee_usd": "9.50",
+        "facility_fee_usd": "3.50",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Reserved orchestra seats for the taped hour. All-in price.",
+      "long_description": "Stand-Up Taping is being taped at the ACME Playhouse — one show only in Springfield. Orchestra is the flat main floor; phones are pouched at the door. All prices shown are all-in.",
+      "specs": {
+        "runtime": "75 minutes, no opener",
+        "age_policy": "16+",
+        "phones": "pouched at entry (taping)",
+        "entry": "mobile rotating barcode"
+      },
+      "review_highlights": [
+        "Tapings at the Playhouse run tight — doors close at start time, no late seating."
+      ]
+    },
+    {
+      "product_id": "AT-TIX-105-BAL",
+      "title": "Jane Doe: Stand-Up Taping · Sat Aug 22 · Balcony",
+      "brand": "Jane Doe",
+      "price": 47.0,
+      "currency": "USD",
+      "category": "tickets",
+      "attributes": {
+        "event_id": "AT-EVT-105",
+        "event_name": "Jane Doe: Stand-Up Taping",
+        "genre": "comedy",
+        "venue_id": "AT-VEN-03",
+        "venue": "ACME Playhouse",
+        "city": "Springfield",
+        "event_date": "2026-08-22",
+        "event_time": "19:00",
+        "tier": "Balcony",
+        "tier_code": "BALC",
+        "admission": "reserved",
+        "face_price_usd": "35.00",
+        "service_fee_usd": "6.50",
+        "facility_fee_usd": "3.00",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Reserved balcony seats — the playhouse is small enough that nothing is far. All-in price.",
+      "long_description": "The Playhouse's single balcony is steep and close; row A overhangs the orchestra. Phones are pouched at the door for the taping. All prices shown are all-in.",
+      "specs": {
+        "runtime": "75 minutes, no opener",
+        "age_policy": "16+",
+        "phones": "pouched at entry (taping)",
+        "entry": "mobile rotating barcode"
+      },
+      "review_highlights": []
+    },
+    {
+      "product_id": "AT-TIX-106-PRE",
+      "title": "City Philharmonic: Season Opener · Sat Oct 3 · Premium Orchestra",
+      "brand": "City Philharmonic",
+      "price": 117.5,
+      "currency": "USD",
+      "category": "tickets",
+      "attributes": {
+        "event_id": "AT-EVT-106",
+        "event_name": "City Philharmonic: Season Opener",
+        "genre": "orchestral",
+        "venue_id": "AT-VEN-04",
+        "venue": "ACME Concert Hall",
+        "city": "Springfield",
+        "event_date": "2026-10-03",
+        "event_time": "19:30",
+        "tier": "Premium Orchestra",
+        "tier_code": "PREMORCH",
+        "admission": "reserved",
+        "face_price_usd": "95.00",
+        "service_fee_usd": "15.00",
+        "facility_fee_usd": "5.00",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Center orchestra rows D–J for the Season Opener program. All-in price.",
+      "long_description": "The Season Opener program pairs a new commission with two repertoire staples under the hall's projection dome. Premium orchestra is the acoustic sweet spot, rows D through J center. All prices shown are all-in.",
+      "specs": {
+        "program": "one new commission + two repertoire works",
+        "runtime": "1h 50m with interval",
+        "dress": "come as you are",
+        "entry": "mobile rotating barcode"
+      },
+      "review_highlights": [
+        "The projection dome makes this series the one to bring first-timers to."
+      ]
+    },
+    {
+      "product_id": "AT-TIX-106-ORC",
+      "title": "City Philharmonic: Season Opener · Sat Oct 3 · Orchestra",
+      "brand": "City Philharmonic",
+      "price": 83.0,
+      "currency": "USD",
+      "category": "tickets",
+      "attributes": {
+        "event_id": "AT-EVT-106",
+        "event_name": "City Philharmonic: Season Opener",
+        "genre": "orchestral",
+        "venue_id": "AT-VEN-04",
+        "venue": "ACME Concert Hall",
+        "city": "Springfield",
+        "event_date": "2026-10-03",
+        "event_time": "19:30",
+        "tier": "Orchestra",
+        "tier_code": "ORCH",
+        "admission": "reserved",
+        "face_price_usd": "65.00",
+        "service_fee_usd": "10.50",
+        "facility_fee_usd": "5.00",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Reserved orchestra seating outside the premium block. All-in price.",
+      "long_description": "Orchestra seating in the outer blocks and rows K back. The hall has no bad seats — the dome projection reads from everywhere. All prices shown are all-in.",
+      "specs": {
+        "runtime": "1h 50m with interval",
+        "dress": "come as you are",
+        "entry": "mobile rotating barcode"
+      },
+      "review_highlights": []
+    },
+    {
+      "product_id": "AT-TIX-106-BAL",
+      "title": "City Philharmonic: Season Opener · Sat Oct 3 · Balcony",
+      "brand": "City Philharmonic",
+      "price": 52.0,
+      "currency": "USD",
+      "category": "tickets",
+      "attributes": {
+        "event_id": "AT-EVT-106",
+        "event_name": "City Philharmonic: Season Opener",
+        "genre": "orchestral",
+        "venue_id": "AT-VEN-04",
+        "venue": "ACME Concert Hall",
+        "city": "Springfield",
+        "event_date": "2026-10-03",
+        "event_time": "19:30",
+        "tier": "Balcony",
+        "tier_code": "BALC",
+        "admission": "reserved",
+        "face_price_usd": "38.00",
+        "service_fee_usd": "6.50",
+        "facility_fee_usd": "5.00",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Balcony seats under the projection dome — the visual best seat. All-in price.",
+      "long_description": "The balcony sits closest to the projection dome; for the Season Opener visuals many subscribers prefer it to the orchestra. All prices shown are all-in.",
+      "specs": {
+        "runtime": "1h 50m with interval",
+        "dress": "come as you are",
+        "entry": "mobile rotating barcode"
+      },
+      "review_highlights": [
+        "For the dome visuals, the balcony beats the floor."
+      ]
+    },
+    {
+      "product_id": "AT-RSL-201",
+      "title": "Resale · The Synth-Pop Act — Fall Tour · Fri Aug 28 · GA Pit (pair)",
+      "brand": "The Synth-Pop Act",
+      "price": 165.0,
+      "currency": "USD",
+      "category": "resale",
+      "attributes": {
+        "event_id": "AT-EVT-103",
+        "event_name": "The Synth-Pop Act — Fall Tour",
+        "genre": "synth pop",
+        "venue_id": "AT-VEN-01",
+        "venue": "ACME Amphitheater",
+        "city": "Springfield",
+        "event_date": "2026-08-28",
+        "event_time": "20:00",
+        "tier": "GA Pit",
+        "tier_code": "PIT",
+        "admission": "general",
+        "resale_of": "AT-TIX-103-PIT",
+        "seller_note": "pair, sold together",
+        "listing_kind": "fan resale",
+        "price_basis": "per ticket",
+        "sold_together": "2",
+        "seller_price_usd": "142.00",
+        "service_fee_usd": "14.50",
+        "facility_fee_usd": "6.00",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Fan-listed pair of GA pit tickets for the sold-out show. Price per ticket, all-in.",
+      "long_description": "A fan resale listing for two GA pit tickets, sold together. Listed above box-office price — the value score and the box-office comparison are shown before you decide. All prices shown are all-in per ticket.",
+      "specs": {
+        "quantity": "pair, sold together",
+        "delivery": "reissued mobile barcode on purchase"
+      },
+      "review_highlights": []
+    },
+    {
+      "product_id": "AT-RSL-202",
+      "title": "Resale · The Synth-Pop Act — Fall Tour · Fri Aug 28 · Upper Terrace (pair)",
+      "brand": "The Synth-Pop Act",
+      "price": 72.0,
+      "currency": "USD",
+      "category": "resale",
+      "attributes": {
+        "event_id": "AT-EVT-103",
+        "event_name": "The Synth-Pop Act — Fall Tour",
+        "genre": "synth pop",
+        "venue_id": "AT-VEN-01",
+        "venue": "ACME Amphitheater",
+        "city": "Springfield",
+        "event_date": "2026-08-28",
+        "event_time": "20:00",
+        "tier": "Upper Terrace",
+        "tier_code": "TERRACE",
+        "admission": "reserved",
+        "resale_of": "AT-TIX-103-TER",
+        "seller_note": "pair, sold together, aisle-adjacent",
+        "listing_kind": "fan resale",
+        "price_basis": "per ticket",
+        "sold_together": "2",
+        "seller_price_usd": "58.00",
+        "service_fee_usd": "5.50",
+        "facility_fee_usd": "6.00",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Fan-listed terrace pair for the sold-out show, close to box-office price. All-in per ticket.",
+      "long_description": "A fan resale listing for two upper-terrace seats, sold together. Listed near box-office price for a sold-out night. All prices shown are all-in per ticket.",
+      "specs": {
+        "quantity": "pair, sold together",
+        "delivery": "reissued mobile barcode on purchase"
+      },
+      "review_highlights": []
+    },
+    {
+      "product_id": "AT-RSL-203",
+      "title": "Resale · The Headliner — Summer · Fri Aug 14 · Lower Bowl (pair)",
+      "brand": "The Headliner",
+      "price": 64.0,
+      "currency": "USD",
+      "category": "resale",
+      "attributes": {
+        "event_id": "AT-EVT-101",
+        "event_name": "The Headliner — Summer Tour",
+        "genre": "indie folk",
+        "venue_id": "AT-VEN-01",
+        "venue": "ACME Amphitheater",
+        "city": "Springfield",
+        "event_date": "2026-08-14",
+        "event_time": "19:30",
+        "tier": "Lower Bowl",
+        "tier_code": "LOWER",
+        "admission": "reserved",
+        "resale_of": "AT-TIX-101-LOW",
+        "seller_note": "pair, section 105 row F, sold together",
+        "listing_kind": "fan resale",
+        "price_basis": "per ticket",
+        "sold_together": "2",
+        "seller_price_usd": "50.50",
+        "service_fee_usd": "5.00",
+        "facility_fee_usd": "6.00",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Below box-office: fan-listed lower-bowl pair, section 105 row F. All-in per ticket.",
+      "long_description": "A fan resale listing for two lower-bowl seats in section 105 row F, priced below the box-office all-in price. All prices shown are all-in per ticket.",
+      "specs": {
+        "quantity": "pair, sold together",
+        "seats": "section 105, row F",
+        "delivery": "reissued mobile barcode on purchase"
+      },
+      "review_highlights": []
+    },
+    {
+      "product_id": "AT-RSL-204",
+      "title": "Resale · Jane Doe: Stand-Up Taping · Sat Aug 22 · Orchestra (single)",
+      "brand": "Jane Doe",
+      "price": 96.0,
+      "currency": "USD",
+      "category": "resale",
+      "attributes": {
+        "event_id": "AT-EVT-105",
+        "event_name": "Jane Doe: Stand-Up Taping",
+        "genre": "comedy",
+        "venue_id": "AT-VEN-03",
+        "venue": "ACME Playhouse",
+        "city": "Springfield",
+        "event_date": "2026-08-22",
+        "event_time": "19:00",
+        "tier": "Orchestra",
+        "tier_code": "ORCH",
+        "admission": "reserved",
+        "resale_of": "AT-TIX-105-ORC",
+        "seller_note": "single, orchestra row C",
+        "listing_kind": "fan resale",
+        "price_basis": "per ticket",
+        "sold_together": "1",
+        "seller_price_usd": "82.00",
+        "service_fee_usd": "8.00",
+        "facility_fee_usd": "3.50",
+        "processing_fee_usd": "2.50"
+      },
+      "short_description": "Fan-listed single orchestra seat, listed well above box office. All-in.",
+      "long_description": "A fan resale listing for one orchestra seat in row C. The box office still has orchestra inventory at a lower all-in price — the value score reflects that. All prices shown are all-in.",
+      "specs": {
+        "quantity": "single",
+        "seats": "orchestra, row C",
+        "delivery": "reissued mobile barcode on purchase"
+      },
+      "review_highlights": []
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "demo-user": [
+    {"key": "accommodation_preference", "value": "prefers boutique/small hotels over large chain hotels", "category": "preference", "updated_at": "2026-05-30T18:20:00Z"},
+    {"key": "walkable_neighborhood", "value": "prefers walkable neighborhoods when traveling, values exploring on foot", "category": "preference", "updated_at": "2026-06-27T21:45:00Z"},
+    {"key": "experience_preference", "value": "interested in local cultural and food experiences (e.g. fado dining, market walks)", "category": "preference", "updated_at": "2026-07-15T17:30:00Z"}
+  ]
+}

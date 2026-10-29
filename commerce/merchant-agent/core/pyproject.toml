@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "merchant-agent-core"
+version = "0.1.0.dev0"
+description = "The merchant agent's library: types, the MerchantBackend interface, the change ledger, prompt, tool contracts, gates, and the executor every runtime calls."
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+classifiers = ["License :: OSI Approved :: Apache Software License"]
+authors = [{ name = "Anthropic" }]
+# Sibling packages are pinned to this exact dev version: install them together from
+# the repo (scripts/install.sh); a lone install fails instead of resolving a public
+# distribution of the same name.
+dependencies = [
+  "commerce-common==0.1.0.dev0",
+  "pydantic>=2.7",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["merchant_agent"]

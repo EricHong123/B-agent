@@ -1,0 +1,13 @@
+# Constraint cases for the retail storefront, judged at the default clock (Thu 2026-10-01);
+# scripts/eval_constraints.py reads them and docs/metrics.md describes the fields.
+cases:
+  - {id: rtl-01, q: "I need a backpacking tent for two, nothing over $160.", query: "2 person backpacking tent", constraints: {require: {title: Tent, capacity: 2 person}, max_price: 160}}
+  - {id: rtl-02, q: "A queen mattress, and my ceiling is $400.", query: "queen mattress", constraints: {max_price: 400, require: {title: mattress, size: queen}}}
+  - {id: rtl-03, q: "A king silk pillowcase in blush, please.", query: "silk pillowcase", constraints: {require: {title: pillowcase, size: king, color: blush}}}
+  - {id: rtl-04, q: "King silk pillowcase in sage, under $40.", query: "silk pillowcase", constraints: {max_price: 40, require: {size: king, color: sage}}}
+  - {id: rtl-05, q: "A board game for family night this Saturday, under $40. It has to arrive by then.", query: "family board game", constraints: {require: {title: Board Game}, max_price: 40, deliver_by: 2026-10-03}}
+  - {id: rtl-06, q: "I want the 55-liter hiking backpack.", query: "55L hiking backpack", constraints: {require: {title: backpack, capacity: 55 L}}}
+  - {id: rtl-07, q: "Espresso machine under $200?", query: "espresso machine", constraints: {require: {title: espresso}, max_price: 200}}
+  - {id: rtl-08, q: "The weighted blanket in 15 lb, as long as it's under $55.", query: "weighted blanket", constraints: {max_price: 55, require: {title: weighted blanket, weight: 15 lb}}}
+  - {id: rtl-09, q: "Noise-cancelling headphones under $300 that get here by Saturday.", query: "noise cancelling headphones", constraints: {require: {title: headphones}, max_price: 300, deliver_by: 2026-10-03}}
+  - {id: rtl-10, q: "需要一辆儿童滑板车，70美元以内，周一前送到。", query: "kids scooter", constraints: {require: {title: Scooter}, max_price: 70, deliver_by: 2026-10-05}}

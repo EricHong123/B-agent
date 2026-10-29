@@ -1,0 +1,84 @@
+/*
+ * Copyright 2026 Anthropic PBC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+@import "tailwindcss";
+@source "../../../web-shared";
+@source "../components";
+@source "../lib";
+@source "../app";
+@import "../../../web-shared/portal/portal.css";
+
+/*
+ * ACME Tickets design system: the shared light ground, cards, and ink (web-shared/theme.css),
+ * limelight pink for the assistant and approvals, condensed display type for the wordmark
+ * and event names, mono tabular figures for counts.
+ */
+
+:root {
+  /* Page, card, text, rule, and shadow tokens: web-shared/theme.css. */
+  --accent: #ff4d8d; /* limelight: the assistant's mark, hover, focus */
+  --accent-strong: #ff4d8d; /* approve buttons */
+  --accent-soft: rgba(255, 77, 141, 0.12);
+  --accent-ink: #b8155a; /* text on accent-soft */
+  --on-accent: #16101a; /* text on accent */
+  --ok: #128a5e; /* applied, positive change */
+  --ok-soft: rgba(18, 138, 94, 0.11);
+  --warn: #b36b00; /* real scarcity; results held by a safety gate */
+  --warn-soft: rgba(230, 150, 20, 0.15);
+  --danger: #d23a3a; /* under-pacing, negative change, errors */
+  --danger-soft: rgba(210, 58, 58, 0.1);
+  --info: #0a7fbd; /* fan messages, issued */
+  --info-soft: rgba(10, 127, 189, 0.1);
+  --violet: #6a54d6; /* awaiting approval, quoted-as-data */
+  --violet-soft: rgba(106, 84, 214, 0.11);
+  --radius: 7px;
+}
+
+body {
+  font-family: var(--font-body), "Archivo", ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Display face: wordmark, event names, greetings. */
+.page-title,
+.at-display {
+  font-family: var(--font-display), "Big Shoulders", ui-sans-serif, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.015em;
+  line-height: 1.05;
+}
+
+/* Prices, counts, ids, and percentages. */
+.at-mono {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Pulsing dot in the store mark. */
+@keyframes at-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+.at-live {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 8px rgba(255, 77, 141, 0.7);
+  animation: at-pulse 1.9s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .at-live {
+    animation: none;
+  }
+}

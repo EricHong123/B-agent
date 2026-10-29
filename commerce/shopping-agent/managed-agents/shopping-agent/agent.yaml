@@ -1,0 +1,326 @@
+# ACME shopping agent: Managed Agent manifest source. scripts/deploy_managed_agent.sh resolves
+# it into a POST /v1/agents body: `system_file` is inlined, each `skills[].path` is uploaded through
+# the Skills API and replaced with its skill_id, and ${VAR} placeholders come from the
+# environment. Everything else maps onto Agents API fields as written.
+
+name: ACME Shopping Agent
+model: claude-sonnet-5
+description: >-
+  Shopping agent for the fictional ACME store: search and discovery, multi-item
+  planning, purchase research, cart and checkout, customer care, and personalization,
+  with the UI rendered by the host application from presentation tool calls.
+
+# Derived from shopping-agent/core/shopping_agent/prompt.py; see the note at its top.
+system_file: system.md
+
+# The skill directories are the source of truth shared by every path in this repo.
+skills:
+  - path: ../../skills/search-discovery
+  - path: ../../skills/planning-goals
+  - path: ../../skills/purchase-research
+  - path: ../../skills/memory-personalization
+  - path: ../../skills/customer-care
+
+# The storefront's own systems, reached over MCP (see ../storefront-mcp-server). No
+# credentials here: register the server's credential in a vault and pass vault_ids at
+# session creation; it is matched to this entry by exact URL.
+mcp_servers:
+  - type: url
+    name: storefront
+    url: ${STOREFRONT_MCP_URL} # e.g. https://commerce-mcp.storefront.example/mcp
+
+tools:
+  # Skills load through the built-in `read` tool, so it is the one built-in left on;
+  # session creation is rejected without it.
+  - type: agent_toolset_20260401
+    default_config:
+      enabled: false
+    configs:
+      - name: read
+        enabled: true
+        permission_policy: { type: always_allow }
+
+  # Storefront tools are denied unless listed here, so a new tool on the server is
+  # unusable until this manifest is reviewed. Writes pause the session for the host
+  # app's confirmation (always_ask); the server also enforces provenance and caps.
+  - type: mcp_toolset
+    mcp_server_name: storefront
+    default_config:
+      enabled: false
+    configs:
+      # Reads run without confirmation.
+      - name: search_products
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: get_product_details
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: get_cart
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: get_preferences
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: recall_memories
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: get_orders
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: get_order_status
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: search_policies
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: get_fulfillment_options
+        enabled: true
+        permission_policy: { type: always_allow }
+      # Writes pause for host-app confirmation.
+      - name: add_to_cart
+        enabled: true
+        permission_policy: { type: always_ask }
+      - name: update_cart_item
+        enabled: true
+        permission_policy: { type: always_ask }
+      - name: remove_from_cart
+        enabled: true
+        permission_policy: { type: always_ask }
+      - name: save_memory
+        enabled: true
+        permission_policy: { type: always_ask }
+
+
+  # Presentation tools are executed by the host application: it validates the payload,
+  # fills in catalog, cart, and order data by id, renders the component, and returns a
+  # user.custom_tool_result event. Descriptions and schemas are copied from
+  # shopping-agent/core/shopping_agent/tools/registry.py; scripts/check.py compares the
+  # descriptions.
+  - type: custom
+    name: present_products
+    description: >-
+      Show products from this session's results as cards; the UI fills in title,
+      price, and image. Layout: carousel by default, grid to scan many options, list
+      when order matters. Each pick's reason is the one judgment of yours on the
+      card.
+    input_schema:
+      type: object
+      properties:
+        title:
+          type: string
+          maxLength: 80
+          description: "Short heading for the set of cards."
+        layout:
+          type: string
+          enum: [carousel, grid, list]
+          description: "Card layout; carousel when omitted."
+        picks:
+          type: array
+          minItems: 1
+          maxItems: 12
+          description: "Products to show, recommended pick first."
+          items:
+            type: object
+            properties:
+              product_id:
+                type: string
+                description: "product_id returned by a tool this session."
+              reason:
+                type: string
+                maxLength: 140
+                description: "One clause tying the pick to a stated need."
+            required: [product_id]
+            additionalProperties: false
+      required: [picks]
+      additionalProperties: false
+
+  - type: custom
+    name: present_comparison
+    description: >-
+      Compare 2-4 finalists side by side, with pros, cons, and what each is best
+      for. Use it once the customer has narrowed to them or asks how they differ;
+      a fresh shortlist goes through present_products. The UI adds the price
+      delta; your text says what the extra money buys.
+    input_schema:
+      type: object
+      properties:
+        title: { type: string, maxLength: 80, description: "Short heading for the comparison." }
+        entries:
+          type: array
+          minItems: 2
+          maxItems: 4
+          description: "The finalists being compared."
+          items:
+            type: object
+            properties:
+              product_id:
+                type: string
+                description: "product_id returned by a tool this session."
+              pros:
+                type: array
+                items: { type: string }
+                maxItems: 4
+                description: "Short advantages, from tool results."
+              cons:
+                type: array
+                items: { type: string }
+                maxItems: 3
+                description: "Short drawbacks, from tool results."
+              best_for:
+                type: string
+                maxLength: 80
+                description: "Who or what this option suits best."
+            required: [product_id]
+            additionalProperties: false
+        dimensions:
+          type: array
+          items: { type: string }
+          maxItems: 6
+          description: "The dimensions the customer is weighing."
+        recommended_product_id: { type: string, description: "The entry you recommend." }
+      required: [entries]
+      additionalProperties: false
+
+  - type: custom
+    name: present_plan
+    description: >-
+      Show a plan toward the customer's goal as steps with products attached. When
+      no step will ever carry a product, the answer is know-how; use present_guide.
+    input_schema:
+      type: object
+      properties:
+        title: { type: string, maxLength: 80, description: "Short heading for the plan." }
+        intro:
+          type: string
+          maxLength: 240
+          description: "One or two lines of framing, assumptions included."
+        steps:
+          type: array
+          minItems: 1
+          maxItems: 12
+          description: "The plan's steps, in working order."
+          items:
+            type: object
+            properties:
+              label:
+                type: string
+                maxLength: 120
+                description: "Step name in the customer's words."
+              detail:
+                type: string
+                maxLength: 240
+                description: "One line on what the step covers."
+              product_ids:
+                type: array
+                items: { type: string }
+                maxItems: 8
+                description: "Items for this step, your pick first."
+            required: [label]
+            additionalProperties: false
+      required: [title, steps]
+      additionalProperties: false
+
+  - type: custom
+    name: present_guide
+    description: >-
+      Show a how-to, an idea, or an itinerary as a card of short sections. Use for
+      guidance that is not a product plan; list sources when web content informed
+      it, and pass policy_ids when the sections state store terms.
+    input_schema:
+      type: object
+      properties:
+        title: { type: string, maxLength: 80, description: "Short heading for the guide." }
+        sections:
+          type: array
+          minItems: 1
+          maxItems: 8
+          description: "Sections of one to three sentences each."
+          items:
+            type: object
+            properties:
+              heading: { type: string, maxLength: 80, description: "Section heading." }
+              body: { type: string, maxLength: 600, description: "Section text." }
+            required: [heading, body]
+            additionalProperties: false
+        related_product_ids:
+          type: array
+          items: { type: string }
+          maxItems: 8
+          description: "Products from this session the guide relates to."
+        sources:
+          type: array
+          items: { type: string }
+          maxItems: 5
+          description: "Guides or pages the sections were drawn from."
+        policy_ids:
+          type: array
+          items: { type: string }
+          maxItems: 5
+          description: >-
+            policy_id of each search_policies passage the sections state terms from;
+            the card shows its source and version.
+      required: [title, sections]
+      additionalProperties: false
+
+  - type: custom
+    name: present_order_status
+    description: >-
+      Show the status card for one order; the UI fills in the order data. Every
+      answer about where an order stands goes through it. When several orders are in
+      flight, send one card per order in the same round.
+    input_schema:
+      type: object
+      properties:
+        order_id: { type: string, description: "Order id from get_orders or get_order_status." }
+        summary:
+          type: string
+          maxLength: 300
+          description: "Current state and expected date, in a sentence."
+        next_step:
+          type: string
+          maxLength: 200
+          description: "The one concrete thing the customer can do next."
+      required: [order_id, summary]
+      additionalProperties: false
+
+  - type: custom
+    name: checkout
+    description: >-
+      Stage the current cart as an order summary the customer confirms in the app;
+      it places no order and charges nothing. Use only when the customer asks to
+      check out.
+    input_schema:
+      type: object
+      properties:
+        note:
+          type: string
+          maxLength: 300
+          description: "Anything the customer should check before confirming."
+        fulfillment_method:
+          type: string
+          enum: [delivery, pickup, shipping]
+          description: "Method the customer chose, when they chose one."
+      additionalProperties: false
+
+  - type: custom
+    name: present_suggestions
+    description: >-
+      Give the turn its 1-4 chips; it ends the reply. Call it in the same round as
+      the turn's last component, without waiting for that component's result. Alone,
+      after the text, only on a turn with no component (a terms answer, a clarifying
+      question, a confirmed add or save).
+    input_schema:
+      type: object
+      properties:
+        suggestions:
+          type: array
+          items: { type: string }
+          maxItems: 4
+          description: "1-4 chips, each a brief imperative and each a different kind of step; leave out anything this turn already displayed."
+          minItems: 1
+      required: [suggestions]
+      additionalProperties: false
+
+metadata:
+  agent: shopping-agent
+  source: commerce-agents/shopping-agent/managed-agents

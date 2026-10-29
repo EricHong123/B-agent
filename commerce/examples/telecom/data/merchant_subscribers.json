@@ -1,0 +1,758 @@
+{
+  "carrier": "ACME Mobile \u2014 commercial operations",
+  "wholesale": {
+    "mobile_per_gb_usd": 1.55,
+    "mobile_core_per_line_usd": 6.2,
+    "note": "Host-network wholesale rate card: mobile lines cost the per-GB rate on metered usage plus the flat core charge per active line; home-internet tiers carry a flat wholesale cost per line."
+  },
+  "plans": [
+    {
+      "plan_id": "AM-PLAN-101",
+      "kind": "mobile",
+      "subscribers": 12400,
+      "avg_usage_gb": 4.6,
+      "wholesale_cost_per_line_usd": 13.33,
+      "weeks": [
+        {
+          "week_start": "2026-04-27",
+          "subscribers": 12682,
+          "churn_rate_pct": 1.46,
+          "arpu": 38.08
+        },
+        {
+          "week_start": "2026-05-04",
+          "subscribers": 12632,
+          "churn_rate_pct": 1.51,
+          "arpu": 37.97
+        },
+        {
+          "week_start": "2026-05-11",
+          "subscribers": 12605,
+          "churn_rate_pct": 1.52,
+          "arpu": 37.84
+        },
+        {
+          "week_start": "2026-05-18",
+          "subscribers": 12618,
+          "churn_rate_pct": 1.49,
+          "arpu": 37.9
+        },
+        {
+          "week_start": "2026-05-25",
+          "subscribers": 12592,
+          "churn_rate_pct": 1.61,
+          "arpu": 37.95
+        },
+        {
+          "week_start": "2026-06-01",
+          "subscribers": 12547,
+          "churn_rate_pct": 1.62,
+          "arpu": 38.39
+        },
+        {
+          "week_start": "2026-06-08",
+          "subscribers": 12558,
+          "churn_rate_pct": 1.64,
+          "arpu": 38.44
+        },
+        {
+          "week_start": "2026-06-15",
+          "subscribers": 12479,
+          "churn_rate_pct": 1.75,
+          "arpu": 38.13
+        },
+        {
+          "week_start": "2026-06-22",
+          "subscribers": 12464,
+          "churn_rate_pct": 1.72,
+          "arpu": 38.17
+        },
+        {
+          "week_start": "2026-06-29",
+          "subscribers": 12507,
+          "churn_rate_pct": 1.8,
+          "arpu": 38.34
+        },
+        {
+          "week_start": "2026-07-06",
+          "subscribers": 12464,
+          "churn_rate_pct": 1.9,
+          "arpu": 38.36
+        },
+        {
+          "week_start": "2026-07-13",
+          "subscribers": 12381,
+          "churn_rate_pct": 1.95,
+          "arpu": 38.22
+        },
+        {
+          "week_start": "2026-07-20",
+          "subscribers": 12400,
+          "churn_rate_pct": 2.1,
+          "arpu": 38.4
+        }
+      ]
+    },
+    {
+      "plan_id": "AM-PLAN-102",
+      "kind": "mobile",
+      "subscribers": 9800,
+      "avg_usage_gb": 11.2,
+      "wholesale_cost_per_line_usd": 23.56,
+      "weeks": [
+        {
+          "week_start": "2026-04-27",
+          "subscribers": 9657,
+          "churn_rate_pct": 1.09,
+          "arpu": 50.7
+        },
+        {
+          "week_start": "2026-05-04",
+          "subscribers": 9685,
+          "churn_rate_pct": 1.12,
+          "arpu": 50.69
+        },
+        {
+          "week_start": "2026-05-11",
+          "subscribers": 9681,
+          "churn_rate_pct": 1.1,
+          "arpu": 51.02
+        },
+        {
+          "week_start": "2026-05-18",
+          "subscribers": 9705,
+          "churn_rate_pct": 1.07,
+          "arpu": 51.09
+        },
+        {
+          "week_start": "2026-05-25",
+          "subscribers": 9671,
+          "churn_rate_pct": 1.09,
+          "arpu": 51.0
+        },
+        {
+          "week_start": "2026-06-01",
+          "subscribers": 9686,
+          "churn_rate_pct": 1.1,
+          "arpu": 50.65
+        },
+        {
+          "week_start": "2026-06-08",
+          "subscribers": 9738,
+          "churn_rate_pct": 1.13,
+          "arpu": 50.94
+        },
+        {
+          "week_start": "2026-06-15",
+          "subscribers": 9766,
+          "churn_rate_pct": 1.08,
+          "arpu": 51.01
+        },
+        {
+          "week_start": "2026-06-22",
+          "subscribers": 9757,
+          "churn_rate_pct": 1.11,
+          "arpu": 50.91
+        },
+        {
+          "week_start": "2026-06-29",
+          "subscribers": 9789,
+          "churn_rate_pct": 1.15,
+          "arpu": 50.94
+        },
+        {
+          "week_start": "2026-07-06",
+          "subscribers": 9788,
+          "churn_rate_pct": 1.05,
+          "arpu": 51.07
+        },
+        {
+          "week_start": "2026-07-13",
+          "subscribers": 9799,
+          "churn_rate_pct": 1.16,
+          "arpu": 51.14
+        },
+        {
+          "week_start": "2026-07-20",
+          "subscribers": 9800,
+          "churn_rate_pct": 1.1,
+          "arpu": 51.0
+        }
+      ]
+    },
+    {
+      "plan_id": "AM-PLAN-103",
+      "kind": "mobile",
+      "subscribers": 11900,
+      "avg_usage_gb": 24.0,
+      "wholesale_cost_per_line_usd": 43.4,
+      "weeks": [
+        {
+          "week_start": "2026-04-27",
+          "subscribers": 11606,
+          "churn_rate_pct": 0.8,
+          "arpu": 65.53
+        },
+        {
+          "week_start": "2026-05-04",
+          "subscribers": 11635,
+          "churn_rate_pct": 0.75,
+          "arpu": 65.86
+        },
+        {
+          "week_start": "2026-05-11",
+          "subscribers": 11657,
+          "churn_rate_pct": 0.77,
+          "arpu": 65.7
+        },
+        {
+          "week_start": "2026-05-18",
+          "subscribers": 11747,
+          "churn_rate_pct": 0.75,
+          "arpu": 65.75
+        },
+        {
+          "week_start": "2026-05-25",
+          "subscribers": 11738,
+          "churn_rate_pct": 0.85,
+          "arpu": 65.96
+        },
+        {
+          "week_start": "2026-06-01",
+          "subscribers": 11788,
+          "churn_rate_pct": 0.77,
+          "arpu": 65.78
+        },
+        {
+          "week_start": "2026-06-08",
+          "subscribers": 11762,
+          "churn_rate_pct": 0.85,
+          "arpu": 66.08
+        },
+        {
+          "week_start": "2026-06-15",
+          "subscribers": 11763,
+          "churn_rate_pct": 0.76,
+          "arpu": 65.74
+        },
+        {
+          "week_start": "2026-06-22",
+          "subscribers": 11792,
+          "churn_rate_pct": 0.8,
+          "arpu": 65.94
+        },
+        {
+          "week_start": "2026-06-29",
+          "subscribers": 11815,
+          "churn_rate_pct": 0.74,
+          "arpu": 65.88
+        },
+        {
+          "week_start": "2026-07-06",
+          "subscribers": 11846,
+          "churn_rate_pct": 0.81,
+          "arpu": 66.18
+        },
+        {
+          "week_start": "2026-07-13",
+          "subscribers": 11897,
+          "churn_rate_pct": 0.8,
+          "arpu": 66.03
+        },
+        {
+          "week_start": "2026-07-20",
+          "subscribers": 11900,
+          "churn_rate_pct": 0.8,
+          "arpu": 66.0
+        }
+      ]
+    },
+    {
+      "plan_id": "AM-PLAN-104",
+      "kind": "mobile",
+      "subscribers": 4300,
+      "avg_usage_gb": 38.0,
+      "wholesale_cost_per_line_usd": 65.1,
+      "weeks": [
+        {
+          "week_start": "2026-04-27",
+          "subscribers": 4159,
+          "churn_rate_pct": 0.64,
+          "arpu": 86.35
+        },
+        {
+          "week_start": "2026-05-04",
+          "subscribers": 4159,
+          "churn_rate_pct": 0.59,
+          "arpu": 86.07
+        },
+        {
+          "week_start": "2026-05-11",
+          "subscribers": 4179,
+          "churn_rate_pct": 0.55,
+          "arpu": 86.12
+        },
+        {
+          "week_start": "2026-05-18",
+          "subscribers": 4178,
+          "churn_rate_pct": 0.56,
+          "arpu": 86.32
+        },
+        {
+          "week_start": "2026-05-25",
+          "subscribers": 4185,
+          "churn_rate_pct": 0.54,
+          "arpu": 86.29
+        },
+        {
+          "week_start": "2026-06-01",
+          "subscribers": 4199,
+          "churn_rate_pct": 0.58,
+          "arpu": 86.3
+        },
+        {
+          "week_start": "2026-06-08",
+          "subscribers": 4237,
+          "churn_rate_pct": 0.61,
+          "arpu": 86.42
+        },
+        {
+          "week_start": "2026-06-15",
+          "subscribers": 4229,
+          "churn_rate_pct": 0.58,
+          "arpu": 86.6
+        },
+        {
+          "week_start": "2026-06-22",
+          "subscribers": 4237,
+          "churn_rate_pct": 0.64,
+          "arpu": 86.98
+        },
+        {
+          "week_start": "2026-06-29",
+          "subscribers": 4261,
+          "churn_rate_pct": 0.6,
+          "arpu": 86.59
+        },
+        {
+          "week_start": "2026-07-06",
+          "subscribers": 4262,
+          "churn_rate_pct": 0.58,
+          "arpu": 86.75
+        },
+        {
+          "week_start": "2026-07-13",
+          "subscribers": 4298,
+          "churn_rate_pct": 0.56,
+          "arpu": 86.69
+        },
+        {
+          "week_start": "2026-07-20",
+          "subscribers": 4300,
+          "churn_rate_pct": 0.6,
+          "arpu": 87.0
+        }
+      ]
+    },
+    {
+      "plan_id": "AM-PLAN-105",
+      "kind": "mobile",
+      "subscribers": 6200,
+      "avg_usage_gb": 8.1,
+      "wholesale_cost_per_line_usd": 18.75,
+      "weeks": [
+        {
+          "week_start": "2026-04-27",
+          "subscribers": 6152,
+          "churn_rate_pct": 2.84,
+          "arpu": 25.81
+        },
+        {
+          "week_start": "2026-05-04",
+          "subscribers": 6178,
+          "churn_rate_pct": 2.94,
+          "arpu": 25.91
+        },
+        {
+          "week_start": "2026-05-11",
+          "subscribers": 6147,
+          "churn_rate_pct": 2.88,
+          "arpu": 25.67
+        },
+        {
+          "week_start": "2026-05-18",
+          "subscribers": 6176,
+          "churn_rate_pct": 2.9,
+          "arpu": 25.99
+        },
+        {
+          "week_start": "2026-05-25",
+          "subscribers": 6158,
+          "churn_rate_pct": 2.87,
+          "arpu": 26.02
+        },
+        {
+          "week_start": "2026-06-01",
+          "subscribers": 6195,
+          "churn_rate_pct": 2.94,
+          "arpu": 26.04
+        },
+        {
+          "week_start": "2026-06-08",
+          "subscribers": 6191,
+          "churn_rate_pct": 2.93,
+          "arpu": 25.76
+        },
+        {
+          "week_start": "2026-06-15",
+          "subscribers": 6180,
+          "churn_rate_pct": 2.88,
+          "arpu": 25.68
+        },
+        {
+          "week_start": "2026-06-22",
+          "subscribers": 6160,
+          "churn_rate_pct": 2.87,
+          "arpu": 25.81
+        },
+        {
+          "week_start": "2026-06-29",
+          "subscribers": 6197,
+          "churn_rate_pct": 2.95,
+          "arpu": 25.92
+        },
+        {
+          "week_start": "2026-07-06",
+          "subscribers": 6213,
+          "churn_rate_pct": 2.96,
+          "arpu": 26.19
+        },
+        {
+          "week_start": "2026-07-13",
+          "subscribers": 6189,
+          "churn_rate_pct": 2.87,
+          "arpu": 25.85
+        },
+        {
+          "week_start": "2026-07-20",
+          "subscribers": 6200,
+          "churn_rate_pct": 2.9,
+          "arpu": 26.0
+        }
+      ]
+    },
+    {
+      "plan_id": "AM-NET-301",
+      "kind": "home-internet",
+      "subscribers": 2900,
+      "avg_usage_gb": null,
+      "wholesale_cost_per_line_usd": 27.0,
+      "weeks": [
+        {
+          "week_start": "2026-04-27",
+          "subscribers": 2819,
+          "churn_rate_pct": 0.94,
+          "arpu": 49.99
+        },
+        {
+          "week_start": "2026-05-04",
+          "subscribers": 2821,
+          "churn_rate_pct": 0.94,
+          "arpu": 49.79
+        },
+        {
+          "week_start": "2026-05-11",
+          "subscribers": 2829,
+          "churn_rate_pct": 0.95,
+          "arpu": 50.14
+        },
+        {
+          "week_start": "2026-05-18",
+          "subscribers": 2838,
+          "churn_rate_pct": 0.9,
+          "arpu": 49.84
+        },
+        {
+          "week_start": "2026-05-25",
+          "subscribers": 2846,
+          "churn_rate_pct": 0.88,
+          "arpu": 50.15
+        },
+        {
+          "week_start": "2026-06-01",
+          "subscribers": 2858,
+          "churn_rate_pct": 0.89,
+          "arpu": 49.95
+        },
+        {
+          "week_start": "2026-06-08",
+          "subscribers": 2865,
+          "churn_rate_pct": 0.93,
+          "arpu": 49.84
+        },
+        {
+          "week_start": "2026-06-15",
+          "subscribers": 2854,
+          "churn_rate_pct": 0.86,
+          "arpu": 50.2
+        },
+        {
+          "week_start": "2026-06-22",
+          "subscribers": 2877,
+          "churn_rate_pct": 0.86,
+          "arpu": 50.16
+        },
+        {
+          "week_start": "2026-06-29",
+          "subscribers": 2888,
+          "churn_rate_pct": 0.92,
+          "arpu": 49.93
+        },
+        {
+          "week_start": "2026-07-06",
+          "subscribers": 2886,
+          "churn_rate_pct": 0.86,
+          "arpu": 49.76
+        },
+        {
+          "week_start": "2026-07-13",
+          "subscribers": 2903,
+          "churn_rate_pct": 0.92,
+          "arpu": 50.01
+        },
+        {
+          "week_start": "2026-07-20",
+          "subscribers": 2900,
+          "churn_rate_pct": 0.9,
+          "arpu": 50.0
+        }
+      ]
+    },
+    {
+      "plan_id": "AM-NET-302",
+      "kind": "home-internet",
+      "subscribers": 1700,
+      "avg_usage_gb": null,
+      "wholesale_cost_per_line_usd": 38.0,
+      "weeks": [
+        {
+          "week_start": "2026-04-27",
+          "subscribers": 1624,
+          "churn_rate_pct": 0.67,
+          "arpu": 69.88
+        },
+        {
+          "week_start": "2026-05-04",
+          "subscribers": 1624,
+          "churn_rate_pct": 0.67,
+          "arpu": 70.04
+        },
+        {
+          "week_start": "2026-05-11",
+          "subscribers": 1630,
+          "churn_rate_pct": 0.69,
+          "arpu": 69.82
+        },
+        {
+          "week_start": "2026-05-18",
+          "subscribers": 1645,
+          "churn_rate_pct": 0.68,
+          "arpu": 69.98
+        },
+        {
+          "week_start": "2026-05-25",
+          "subscribers": 1648,
+          "churn_rate_pct": 0.75,
+          "arpu": 69.96
+        },
+        {
+          "week_start": "2026-06-01",
+          "subscribers": 1659,
+          "churn_rate_pct": 0.7,
+          "arpu": 70.02
+        },
+        {
+          "week_start": "2026-06-08",
+          "subscribers": 1660,
+          "churn_rate_pct": 0.64,
+          "arpu": 69.97
+        },
+        {
+          "week_start": "2026-06-15",
+          "subscribers": 1663,
+          "churn_rate_pct": 0.64,
+          "arpu": 70.15
+        },
+        {
+          "week_start": "2026-06-22",
+          "subscribers": 1669,
+          "churn_rate_pct": 0.7,
+          "arpu": 70.11
+        },
+        {
+          "week_start": "2026-06-29",
+          "subscribers": 1681,
+          "churn_rate_pct": 0.68,
+          "arpu": 70.01
+        },
+        {
+          "week_start": "2026-07-06",
+          "subscribers": 1687,
+          "churn_rate_pct": 0.73,
+          "arpu": 69.8
+        },
+        {
+          "week_start": "2026-07-13",
+          "subscribers": 1694,
+          "churn_rate_pct": 0.67,
+          "arpu": 69.89
+        },
+        {
+          "week_start": "2026-07-20",
+          "subscribers": 1700,
+          "churn_rate_pct": 0.7,
+          "arpu": 70.0
+        }
+      ]
+    },
+    {
+      "plan_id": "AM-NET-303",
+      "kind": "home-internet",
+      "subscribers": 420,
+      "avg_usage_gb": null,
+      "wholesale_cost_per_line_usd": 55.0,
+      "weeks": [
+        {
+          "week_start": "2026-04-27",
+          "subscribers": 386,
+          "churn_rate_pct": 0.65,
+          "arpu": 94.97
+        },
+        {
+          "week_start": "2026-05-04",
+          "subscribers": 388,
+          "churn_rate_pct": 0.6,
+          "arpu": 95.01
+        },
+        {
+          "week_start": "2026-05-11",
+          "subscribers": 391,
+          "churn_rate_pct": 0.59,
+          "arpu": 95.02
+        },
+        {
+          "week_start": "2026-05-18",
+          "subscribers": 394,
+          "churn_rate_pct": 0.65,
+          "arpu": 95.1
+        },
+        {
+          "week_start": "2026-05-25",
+          "subscribers": 398,
+          "churn_rate_pct": 0.65,
+          "arpu": 94.88
+        },
+        {
+          "week_start": "2026-06-01",
+          "subscribers": 400,
+          "churn_rate_pct": 0.65,
+          "arpu": 95.17
+        },
+        {
+          "week_start": "2026-06-08",
+          "subscribers": 401,
+          "churn_rate_pct": 0.55,
+          "arpu": 94.97
+        },
+        {
+          "week_start": "2026-06-15",
+          "subscribers": 404,
+          "churn_rate_pct": 0.57,
+          "arpu": 94.79
+        },
+        {
+          "week_start": "2026-06-22",
+          "subscribers": 409,
+          "churn_rate_pct": 0.63,
+          "arpu": 95.2
+        },
+        {
+          "week_start": "2026-06-29",
+          "subscribers": 410,
+          "churn_rate_pct": 0.63,
+          "arpu": 95.08
+        },
+        {
+          "week_start": "2026-07-06",
+          "subscribers": 413,
+          "churn_rate_pct": 0.65,
+          "arpu": 95.23
+        },
+        {
+          "week_start": "2026-07-13",
+          "subscribers": 416,
+          "churn_rate_pct": 0.65,
+          "arpu": 94.95
+        },
+        {
+          "week_start": "2026-07-20",
+          "subscribers": 420,
+          "churn_rate_pct": 0.6,
+          "arpu": 95.0
+        }
+      ]
+    }
+  ],
+  "cohorts": [
+    {
+      "cohort_id": "contract-ending-60d",
+      "label": "Device agreements ending within 60 days",
+      "definition": "Lines whose 24-month device agreement completes within the next 60 days and that have not accepted a retention or upgrade offer this cycle.",
+      "size": 1840,
+      "plan_ids": [
+        "AM-PLAN-101",
+        "AM-PLAN-102",
+        "AM-PLAN-103",
+        "AM-PLAN-104"
+      ]
+    },
+    {
+      "cohort_id": "usage-declining-30d",
+      "label": "Usage down more than 40% over 30 days",
+      "definition": "Lines whose data usage over the last 30 days fell more than 40% against their trailing 90-day average \u2014 an early disengagement signal.",
+      "size": 920,
+      "plan_ids": [
+        "AM-PLAN-101",
+        "AM-PLAN-102",
+        "AM-PLAN-103"
+      ]
+    },
+    {
+      "cohort_id": "top-up-heavy",
+      "label": "Essential lines buying 2+ top-ups per cycle",
+      "definition": "Essential 5GB lines that bought two or more Data Top-Up 5GB add-ons in each of the last two bill cycles \u2014 paying more than Plus 15GB would cost.",
+      "size": 1310,
+      "plan_ids": [
+        "AM-PLAN-101"
+      ]
+    },
+    {
+      "cohort_id": "payoff-eligible",
+      "label": "Device paid off, no upgrade in 60+ days",
+      "definition": "Lines whose device installment schedule is complete and that have not started a new device agreement in over 60 days.",
+      "size": 2470,
+      "plan_ids": [
+        "AM-PLAN-102",
+        "AM-PLAN-103",
+        "AM-PLAN-104"
+      ]
+    },
+    {
+      "cohort_id": "winback-90d",
+      "label": "Deactivated within the last 90 days",
+      "definition": "Lines deactivated in the last 90 days that have not ported back in \u2014 the win-back campaign audience.",
+      "size": 610,
+      "plan_ids": []
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "inventory": [
+    {"product_id": "AT-TIX-101-PIT", "capacity": 350, "sold": 344},
+    {"product_id": "AT-TIX-101-LOW", "capacity": 1200, "sold": 815},
+    {"product_id": "AT-TIX-101-TER", "capacity": 900, "sold": 348},
+    {"product_id": "AT-TIX-102-PIT", "capacity": 350, "sold": 281},
+    {"product_id": "AT-TIX-102-LOW", "capacity": 1200, "sold": 677},
+    {"product_id": "AT-TIX-102-TER", "capacity": 900, "sold": 512},
+    {"product_id": "AT-TIX-103-PIT", "capacity": 350, "sold": 350},
+    {"product_id": "AT-TIX-103-LOW", "capacity": 1200, "sold": 1200, "waitlist_sim": 2},
+    {"product_id": "AT-TIX-103-TER", "capacity": 900, "sold": 900},
+    {"product_id": "AT-TIX-104-GAF", "capacity": 420, "sold": 396},
+    {"product_id": "AT-TIX-104-MEZ", "capacity": 180, "sold": 174},
+    {"product_id": "AT-TIX-105-ORC", "capacity": 520, "sold": 318},
+    {"product_id": "AT-TIX-105-BAL", "capacity": 260, "sold": 97},
+    {"product_id": "AT-TIX-106-PRE", "capacity": 140, "sold": 126},
+    {"product_id": "AT-TIX-106-ORC", "capacity": 480, "sold": 205},
+    {"product_id": "AT-TIX-106-BAL", "capacity": 320, "sold": 88},
+    {"product_id": "AT-RSL-201", "capacity": 2, "sold": 0},
+    {"product_id": "AT-RSL-202", "capacity": 2, "sold": 0},
+    {"product_id": "AT-RSL-203", "capacity": 2, "sold": 0},
+    {"product_id": "AT-RSL-204", "capacity": 1, "sold": 0}
+  ]
+}

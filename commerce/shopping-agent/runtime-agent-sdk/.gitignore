@@ -1,0 +1,4 @@
+# Materialized at runtime by shopping_agent_sdk.agent.ensure_project_skills():
+# symlinks (or copies) of the repo's shopping-agent/skills/ dirs so the Agent SDK can discover
+# them as project Agent Skills. Never edit these — edit shopping-agent/skills/ instead.
+.claude/

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "merchant-agent-sdk"
+version = "0.1.0.dev0"
+description = "The merchant agent on the Claude Agent SDK."
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+classifiers = ["License :: OSI Approved :: Apache Software License"]
+authors = [{ name = "Anthropic" }]
+# Sibling packages are pinned to this exact dev version: install them together from
+# the repo (scripts/install.sh); a lone install fails instead of resolving a public
+# distribution of the same name.
+dependencies = [
+  "commerce-common==0.1.0.dev0",
+  "merchant-agent-core==0.1.0.dev0",
+  "claude-agent-sdk>=0.2.139",
+  "mcp>=1.2",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["merchant_agent_sdk"]
