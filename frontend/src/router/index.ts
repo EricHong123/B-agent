@@ -77,6 +77,18 @@ const routes: RouteRecordRaw[] = [
         meta: { title: 'Customer Detail' },
       },
       {
+        path: 'fulfillment',
+        name: 'Fulfillment',
+        component: () => import('@/views/Fulfillment.vue'),
+        meta: { title: 'Fulfillment' },
+      },
+      {
+        path: 'orders/:id',
+        name: 'OrderDetail',
+        component: () => import('@/views/OrderDetail.vue'),
+        meta: { title: 'Order Detail' },
+      },
+      {
         path: 'conversations',
         name: 'Conversations',
         component: () => import('@/views/Conversations.vue'),

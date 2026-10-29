@@ -2641,3 +2641,372 @@ class StatsDaily(Base):
     __table_args__ = (
         UniqueConstraint('user_id', 'date', name='uq_stats_user_date'),
     )
+
+
+class SalesOpportunity(Base):
+    """Qualified inquiry that carries a lead from conversation to a won order."""
+
+    __tablename__ = "sales_opportunities"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    customer_id = Column(
+        Integer,
+        ForeignKey("customers.id", ondelete="CASCADE"),
+        nullable=False,
+    )
+    conversation_id = Column(
+        UUID(as_uuid=True),
+        ForeignKey("conversations.id", ondelete="SET NULL"),
+    )
+    title = Column(String(255), nullable=False)
+    source = Column(String(30), nullable=False, default="manual")
+    stage = Column(String(30), nullable=False, default="inquiry")
+    inquiry_summary = Column(Text)
+    requirements_json = Column(JSON, nullable=False, default=dict)
+    estimated_value = Column(Numeric(14, 2))
+    currency = Column(String(3), nullable=False, default="USD")
+    expected_close_date = Column(Date)
+    lost_reason = Column(Text)
+    won_at = Column(DateTime)
+    closed_at = Column(DateTime)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+    updated_at = Column(
+        DateTime,
+        nullable=False,
+        default=datetime.utcnow,
+        onupdate=datetime.utcnow,
+    )
+
+    customer = relationship("Customer")
+    quotations = relationship(
+        "SalesQuotation",
+        back_populates="opportunity",
+        cascade="all, delete-orphan",
+        order_by="SalesQuotation.revision",
+    )
+
+    __table_args__ = (
+        Index("idx_sales_opportunity_user_stage", "user_id", "stage", "updated_at"),
+        Index("idx_sales_opportunity_customer", "customer_id"),
+    )
+
+
+class SalesQuotation(Base):
+    """Immutable-once-submitted quotation revision; acceptance creates the order."""
+
+    __tablename__ = "sales_quotations"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    opportunity_id = Column(
+        UUID(as_uuid=True),
+        ForeignKey("sales_opportunities.id", ondelete="CASCADE"),
+        nullable=False,
+    )
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    quote_number = Column(String(40), nullable=False, unique=True)
+    revision = Column(Integer, nullable=False)
+    status = Column(String(30), nullable=False, default="draft")
+    currency = Column(String(3), nullable=False)
+    incoterm = Column(String(10), nullable=False)
+    payment_terms = Column(String(255), nullable=False)
+    deposit_percent = Column(Integer, nullable=False, default=30)
+    lead_time_days = Column(Integer, nullable=False)
+    valid_until = Column(Date, nullable=False)
+    line_items_json = Column(JSON, nullable=False, default=list)
+    subtotal = Column(Numeric(14, 2), nullable=False)
+    freight_amount = Column(Numeric(14, 2), nullable=False, default=0)
+    discount_amount = Column(Numeric(14, 2), nullable=False, default=0)
+    total = Column(Numeric(14, 2), nullable=False)
+    total_cost = Column(Numeric(14, 2))
+    margin_percent = Column(Numeric(7, 2))
+    notes = Column(Text)
+    review_reason = Column(Text)
+    reviewed_by_user_id = Column(Integer, ForeignKey("users.id"))
+    reviewed_at = Column(DateTime)
+    sent_at = Column(DateTime)
+    sent_channel = Column(String(30))
+    accepted_at = Column(DateTime)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+    updated_at = Column(
+        DateTime,
+        nullable=False,
+        default=datetime.utcnow,
+        onupdate=datetime.utcnow,
+    )
+
+    opportunity = relationship("SalesOpportunity", back_populates="quotations")
+
+    __table_args__ = (
+        UniqueConstraint(
+            "opportunity_id",
+            "revision",
+            name="uq_sales_quotation_revision",
+        ),
+        Index("idx_sales_quotation_status", "status", "valid_until"),
+        CheckConstraint(
+            "deposit_percent >= 0 AND deposit_percent <= 100",
+            name="ck_sales_quotation_deposit_percent",
+        ),
+    )
+
+
+class SalesOrder(Base):
+    """Confirmed order snapshot frozen from one accepted quotation."""
+
+    __tablename__ = "sales_orders"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    customer_id = Column(
+        Integer,
+        ForeignKey("customers.id", ondelete="CASCADE"),
+        nullable=False,
+    )
+    opportunity_id = Column(
+        UUID(as_uuid=True),
+        ForeignKey("sales_opportunities.id"),
+        nullable=False,
+    )
+    quotation_id = Column(
+        UUID(as_uuid=True),
+        ForeignKey("sales_quotations.id"),
+        nullable=False,
+        unique=True,
+    )
+    order_number = Column(String(40), nullable=False, unique=True)
+    customer_po_number = Column(String(100))
+    status = Column(String(30), nullable=False, default="awaiting_deposit")
+    fulfillment_mode = Column(String(20), nullable=False, default="in_house")
+    currency = Column(String(3), nullable=False)
+    incoterm = Column(String(10), nullable=False)
+    payment_terms = Column(String(255), nullable=False)
+    line_items_json = Column(JSON, nullable=False, default=list)
+    total = Column(Numeric(14, 2), nullable=False)
+    deposit_required = Column(Numeric(14, 2), nullable=False)
+    balance_before_shipment = Column(Boolean, nullable=False, default=True)
+    required_ship_date = Column(Date)
+    shipping_address = Column(Text)
+    cancel_reason = Column(Text)
+    production_started_at = Column(DateTime)
+    shipped_at = Column(DateTime)
+    delivered_at = Column(DateTime)
+    completed_at = Column(DateTime)
+    version = Column(Integer, nullable=False, default=1)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+    updated_at = Column(
+        DateTime,
+        nullable=False,
+        default=datetime.utcnow,
+        onupdate=datetime.utcnow,
+    )
+
+    customer = relationship("Customer")
+    production_tasks = relationship(
+        "ProductionTask",
+        back_populates="order",
+        cascade="all, delete-orphan",
+        order_by="ProductionTask.created_at",
+    )
+    inspections = relationship(
+        "QualityInspection",
+        back_populates="order",
+        cascade="all, delete-orphan",
+        order_by="QualityInspection.created_at",
+    )
+    shipments = relationship(
+        "OrderShipment",
+        back_populates="order",
+        cascade="all, delete-orphan",
+        order_by="OrderShipment.created_at",
+    )
+    payments = relationship(
+        "OrderPayment",
+        back_populates="order",
+        cascade="all, delete-orphan",
+        order_by="OrderPayment.received_at",
+    )
+
+    __table_args__ = (
+        Index("idx_sales_order_user_status", "user_id", "status", "updated_at"),
+        Index("idx_sales_order_ship_date", "status", "required_ship_date"),
+    )
+
+
+class ProductionTask(Base):
+    """In-house work order or outsourced supplier purchase order for an order."""
+
+    __tablename__ = "production_tasks"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    order_id = Column(
+        UUID(as_uuid=True),
+        ForeignKey("sales_orders.id", ondelete="CASCADE"),
+        nullable=False,
+    )
+    kind = Column(String(20), nullable=False)
+    reference_number = Column(String(40), nullable=False, unique=True)
+    description = Column(String(500), nullable=False)
+    supplier_name = Column(String(255))
+    production_line = Column(String(100))
+    quantity = Column(Numeric(14, 3), nullable=False)
+    unit = Column(String(20), nullable=False, default="pcs")
+    status = Column(String(30), nullable=False, default="planned")
+    progress_percent = Column(Integer, nullable=False, default=0)
+    planned_start = Column(Date)
+    planned_finish = Column(Date)
+    actual_start = Column(DateTime)
+    actual_finish = Column(DateTime)
+    notes = Column(Text)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+    updated_at = Column(
+        DateTime,
+        nullable=False,
+        default=datetime.utcnow,
+        onupdate=datetime.utcnow,
+    )
+
+    order = relationship("SalesOrder", back_populates="production_tasks")
+
+    __table_args__ = (
+        Index("idx_production_task_order_status", "order_id", "status"),
+        Index("idx_production_task_finish", "status", "planned_finish"),
+        CheckConstraint(
+            "progress_percent >= 0 AND progress_percent <= 100",
+            name="ck_production_task_progress",
+        ),
+    )
+
+
+class QualityInspection(Base):
+    """Recorded QC result; a passed final inspection gates shipment."""
+
+    __tablename__ = "quality_inspections"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    order_id = Column(
+        UUID(as_uuid=True),
+        ForeignKey("sales_orders.id", ondelete="CASCADE"),
+        nullable=False,
+    )
+    production_task_id = Column(
+        UUID(as_uuid=True),
+        ForeignKey("production_tasks.id", ondelete="SET NULL"),
+    )
+    stage = Column(String(30), nullable=False)
+    result = Column(String(20), nullable=False)
+    inspector = Column(String(255), nullable=False)
+    sample_size = Column(Integer)
+    defects_json = Column(JSON, nullable=False, default=list)
+    report_url = Column(String(1000))
+    notes = Column(Text)
+    inspected_at = Column(DateTime, nullable=False)
+    recorded_by_user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+
+    order = relationship("SalesOrder", back_populates="inspections")
+
+    __table_args__ = (
+        Index("idx_quality_inspection_order", "order_id", "stage", "inspected_at"),
+    )
+
+
+class OrderShipment(Base):
+    """Shipment booking and carrier tracking for an order."""
+
+    __tablename__ = "order_shipments"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    order_id = Column(
+        UUID(as_uuid=True),
+        ForeignKey("sales_orders.id", ondelete="CASCADE"),
+        nullable=False,
+    )
+    shipment_number = Column(String(40), nullable=False, unique=True)
+    status = Column(String(30), nullable=False, default="booked")
+    transport_mode = Column(String(20), nullable=False)
+    carrier = Column(String(255), nullable=False)
+    tracking_number = Column(String(255))
+    bill_of_lading = Column(String(255))
+    container_number = Column(String(100))
+    port_of_loading = Column(String(255))
+    port_of_discharge = Column(String(255))
+    etd = Column(Date)
+    eta = Column(Date)
+    departed_at = Column(DateTime)
+    delivered_at = Column(DateTime)
+    notes = Column(Text)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+    updated_at = Column(
+        DateTime,
+        nullable=False,
+        default=datetime.utcnow,
+        onupdate=datetime.utcnow,
+    )
+
+    order = relationship("SalesOrder", back_populates="shipments")
+
+    __table_args__ = (
+        Index("idx_order_shipment_order_status", "order_id", "status"),
+    )
+
+
+class OrderPayment(Base):
+    """Received customer payment; payments gate production and shipment."""
+
+    __tablename__ = "order_payments"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    order_id = Column(
+        UUID(as_uuid=True),
+        ForeignKey("sales_orders.id", ondelete="CASCADE"),
+        nullable=False,
+    )
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    idempotency_key = Column(String(255), nullable=False)
+    kind = Column(String(20), nullable=False)
+    amount = Column(Numeric(14, 2), nullable=False)
+    currency = Column(String(3), nullable=False)
+    method = Column(String(30), nullable=False)
+    reference = Column(String(255))
+    received_at = Column(DateTime, nullable=False)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+
+    order = relationship("SalesOrder", back_populates="payments")
+
+    __table_args__ = (
+        UniqueConstraint(
+            "order_id",
+            "idempotency_key",
+            name="uq_order_payment_idempotency",
+        ),
+        CheckConstraint("amount > 0", name="ck_order_payment_amount_positive"),
+    )
+
+
+class FulfillmentEvent(Base):
+    """Append-only lead-to-delivery timeline across opportunities and orders."""
+
+    __tablename__ = "fulfillment_events"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    opportunity_id = Column(
+        UUID(as_uuid=True),
+        ForeignKey("sales_opportunities.id", ondelete="CASCADE"),
+        nullable=False,
+    )
+    order_id = Column(
+        UUID(as_uuid=True),
+        ForeignKey("sales_orders.id", ondelete="CASCADE"),
+    )
+    actor_user_id = Column(Integer, ForeignKey("users.id"))
+    event_type = Column(String(60), nullable=False)
+    from_status = Column(String(30))
+    to_status = Column(String(30))
+    payload_json = Column(JSON, nullable=False, default=dict)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+
+    __table_args__ = (
+        Index("idx_fulfillment_event_opportunity", "opportunity_id", "created_at"),
+        Index("idx_fulfillment_event_order", "order_id", "created_at"),
+    )

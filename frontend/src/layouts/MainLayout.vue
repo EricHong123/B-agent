@@ -107,6 +107,12 @@
               {{ $t('Conversations') }}
             </template>
           </el-menu-item>
+          <el-menu-item index="/fulfillment">
+            <el-icon><Box /></el-icon>
+            <template #title>
+              {{ $t('Fulfillment') }}
+            </template>
+          </el-menu-item>
         </el-menu-item-group>
 
         <el-menu-item index="/analytics">
@@ -258,7 +264,7 @@ const themeStore = useThemeStore()
 const isCollapsed = ref(false)
 const mobileOpen = ref(false)
 
-const activeMenu = computed(() => route.path)
+const activeMenu = computed(() => route.path.startsWith('/orders/') ? '/fulfillment' : route.path)
 const currentTitle = computed(() => translate(String(route.meta.title || 'B-agent')))
 const isDark = computed(() => themeStore.isDark)
 const userInitial = computed(() => authStore.user?.username?.charAt(0).toUpperCase() || 'U')

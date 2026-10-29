@@ -43,6 +43,7 @@ AI 对话通过 B-agent 后端提交 detached run，并使用持久事件游标�
 - **企业 RAG 底座**：知识文档版本、组织命名空间、ACL 后置复核、敏感级别过滤、证据快照、安全缓存和独立知识检索 API。
 - **并发与恢复**：全局、组织、用户、Provider 和 Tool 五级原子并发租约；Agent Run、Tool Run 与 LLM Invocation 使用租约和 fencing token 防止旧 Worker 回写。
 - **AI 路由控制**：支持直连供应商或 OmniRoute；管理员可在设置页热更新固定模型别名、供应商白名单和超时参数。
+- **获客到交付闭环**：采购意图会话一键转商机；商机经需求确认（产品、数量）后进入报价，报价按版本修订，新版本自动作废旧版本；超出金额阈值或低于最低毛利的报价必须由另一名管理员审批。客户接受报价后冻结为订单，并按“定金到账 → 排产（自有工单 / 外包 PO / 混合） → 生产完工 → 出货前检验合格 → 离港且尾款结清 → 全部签收 → 款项结清”逐级门禁推进，任何不满足条件的流转都会返回明确的阻塞原因。全过程写入 append-only 履约时间线，管道总览汇总漏斗、赢单率、订单额、回款以及报价过期、交期风险、生产逾期、检验失败、运输超期等预警。
 - **人工审批投递**：调研、文案和发送分阶段审批，发送前重新校验联系人、ICP、草稿版本、邮箱状态和额度。
 - **可靠执行**：事务 Outbox、幂等键、Worker 租约、失败分类、死信队列和双管理员异常处置。
 - **邮箱连接**：Gmail 与 Microsoft OAuth，使用 PKCE 和一次性 state；令牌只保存在后端权限为 `0600` 的凭据文件中。
@@ -65,7 +66,7 @@ AI 对话通过 B-agent 后端提交 detached run，并使用持久事件游标�
 
 | 状态 | 范围 |
 |---|---|
-| 已贯通主链路 | AI Chat detached run、durable SSE、fast/deep、DLP 脱敏、并发租约、LLM 审计、企业调研、获客、ICP、审批投递、Outbox、死信处置、视频规划审批、T2V 与单素材 I2V 安全提交/对账 |
+| 已贯通主链路 | AI Chat detached run、durable SSE、fast/deep、DLP 脱敏、并发租约、LLM 审计、企业调研、获客、ICP、审批投递、询盘转商机、报价审批、订单、生产/外包、质检、发运、收款、Outbox、死信处置、视频规划审批、T2V 与单素材 I2V 安全提交/对账 |
 | 已实现工程底座 | 三层持久记忆、版本化知识库、RAG ACL、安全缓存、durable Tool Runtime、Prompt/上下文预算、媒体资产与合规门禁、Persona/项目/Storyboard 快照、媒体 Provider Runtime、加密意图仓、认证回调 inbox、Provider 用量回执、固定账户价格快照、持久 Generation Job/Attempt/Event 与原子预算账本 |
 | 后续产品化重点 | Reference-to-Video/多素材一致性、失败请求账单对账、人工协调 UI、预算管理 UI、数据库字段级加密、Provider/S3 故障注入与压测、开放多租户前的隔离改造 |
 
@@ -279,7 +280,8 @@ flowchart LR
 | 经营总览 | `/dashboard` | `/api/v1/stats` | 客户、会话、转化和执行指标 |
 | 工作流与 Skill | `/workflows`、`/skills` | `/api/v1/workflows`、`/api/v1/skills` | 编排业务流程并查看已注册能力 |
 | 智能获客 | `/prospecting` | `/api/v1/prospecting` | 域名搜索、联系人查找、批量富化、ICP 评分与人工复核 |
-| 客户与会话 | `/customers`、`/conversations` | `/api/v1/customers`、`/api/v1/conversations` | 客户档案、沟通记录和详情追踪 |
+| 客户与会话 | `/customers`、`/conversations` | `/api/v1/customers`、`/api/v1/conversations` | 客户档案、沟通记录和详情追踪；会话可一键转为商机 |
+| 履约中心 | `/fulfillment`、`/orders/:id` | `/api/v1/fulfillment` | 获客到交付漏斗、预警、商机与报价审批、订单门禁推进、排产/外包、质检、发运、收款与时间线 |
 | 数据分析 | `/analytics` | `/api/v1/stats` | 渠道、客户和对话分析 |
 | 运营控制 | `/operations`、`/operations/dead-letters` | `/api/v1/admin` | 网关健康、可靠执行、死信分析与双管理员处置 |
 | 连接器 | `/connectors` | `/api/v1/connectors` | 管理员配置、测试和启停服务端连接器 |
@@ -493,6 +495,7 @@ alembic current
 | 邮箱 | `OUTLOOK_CLIENT_ID`、`OUTLOOK_CLIENT_SECRET`、`OUTLOOK_TENANT_ID` | 连接 Microsoft 时 | Microsoft OAuth 客户端与租户 |
 | 邮箱 | `GMAIL_REDIRECT_URI`、`OUTLOOK_REDIRECT_URI`、`FRONTEND_BASE_URL` | 使用邮箱 OAuth 时 | 服务端回调和完成后的前端地址 |
 | 邮箱 | `MAILBOX_SECRET_DIR` | 使用邮箱 OAuth 时 | 后端 OAuth 令牌目录 |
+| 履约审批 | `FULFILLMENT_QUOTE_APPROVAL_THRESHOLD`、`FULFILLMENT_QUOTE_MIN_MARGIN_PERCENT`、`FULFILLMENT_QUOTE_EXPIRY_WARNING_DAYS` | 可选 | 报价超过该金额或毛利低于该比例时需另一名管理员审批；报价到期前多少天开始预警 |
 | 前端 | `VITE_API_BASE_URL`、`VITE_API_PROXY_TARGET` | 按部署方式 | 浏览器 API 地址与开发代理 |
 | HMR | `VITE_HMR_HOST`、`VITE_HMR_CLIENT_PORT`、`VITE_USE_POLLING` | 跨机器或容器开发时 | Vite 热更新连接 |
 | 安全 | `CORS_ORIGINS` | 跨域部署时 | 允许的浏览器来源 |
@@ -521,6 +524,7 @@ http://localhost:8000/api/v1/mailboxes/oauth/callback/outlook
 | Agent | `/api/v1/agent` | 运行时、知识检索、可恢复 Run/事件、调研、证据、草稿、审批和投递 |
 | AI | `/api/v1/ai` | 热加载配置、探测、模型发现和 AI 对话 |
 | 获客 | `/api/v1/prospecting` | 搜索、导入、批量富化、ICP 评分与复核 |
+| 履约 | `/api/v1/fulfillment` | `pipeline` 总览与预警；`opportunities`（含 `from-conversation/{id}`）；`quotations/{id}/submit\|review\|send\|accept\|decline`；`orders/{id}/transition`、`production-tasks`、`inspections`、`shipments`、`payments`；`events` 时间线 |
 | 邮箱 | `/api/v1/mailboxes` | OAuth 供应商、授权回调和账号状态 |
 | 连接器 | `/api/v1/connectors` | 管理员连接器目录、测试和启停 |
 | 运维 | `/api/v1/admin` | 网关状态、可靠执行、死信与双人审批 |

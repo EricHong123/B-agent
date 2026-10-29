@@ -48,6 +48,11 @@ class Settings(BaseSettings):
     AGENT_FAST_PATH_MAX_HISTORY_MESSAGES: int = Field(default=6, ge=1, le=20)
     AGENT_FAST_PATH_MAX_OUTPUT_TOKENS: int = Field(default=800, ge=256, le=1600)
 
+    # Quotations above this total or below this margin need a second, admin approver.
+    FULFILLMENT_QUOTE_APPROVAL_THRESHOLD: float = Field(default=50_000, ge=0)
+    FULFILLMENT_QUOTE_MIN_MARGIN_PERCENT: float = Field(default=15, ge=0, le=100)
+    FULFILLMENT_QUOTE_EXPIRY_WARNING_DAYS: int = Field(default=3, ge=0, le=90)
+
     # Media production remains fail-closed until each plane is explicitly enabled.
     MEDIA_UPLOAD_ENABLED: bool = False
     MEDIA_PLANNING_ENABLED: bool = False

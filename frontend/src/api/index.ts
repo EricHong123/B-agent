@@ -44,7 +44,12 @@ api.interceptors.response.use(
       }
 
       // Show error message
-      const message = data?.detail || data?.error || data?.message || 'An error occurred'
+      const detail = data?.detail
+      const message = (typeof detail === 'string' ? detail : detail?.message)
+        || (Array.isArray(detail) ? detail.map((item: { msg?: string }) => item.msg).filter(Boolean).join('; ') : '')
+        || data?.error
+        || data?.message
+        || 'An error occurred'
       ElMessage.error(message)
 
       return Promise.reject(error)

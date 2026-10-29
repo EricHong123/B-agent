@@ -85,7 +85,7 @@ async def root():
 
 
 # Import routers
-from app.api.v1 import agent, ai, auth, workflow, skill, customer, conversation, stats, admin, connectors, mailboxes, media_runtime, media_webhooks, prospecting, video
+from app.api.v1 import agent, ai, auth, workflow, skill, customer, conversation, stats, admin, connectors, fulfillment, mailboxes, media_runtime, media_webhooks, prospecting, video
 
 # Include routers
 app.include_router(auth.router, prefix="/api/v1/auth", tags=["Authentication"])
@@ -105,6 +105,7 @@ app.include_router(
 app.include_router(connectors.router, prefix="/api/v1/connectors", tags=["Connectors"])
 app.include_router(mailboxes.router, prefix="/api/v1/mailboxes", tags=["Mailboxes"])
 app.include_router(prospecting.router, prefix="/api/v1/prospecting", tags=["Prospecting"])
+app.include_router(fulfillment.router, prefix="/api/v1/fulfillment", tags=["Fulfillment"])
 app.include_router(video.router, prefix="/api/v1/video", tags=["Video Studio"])
 app.include_router(
     media_webhooks.router,
