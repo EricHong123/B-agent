@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Node / Next.js (vertical example frontends)
+node_modules/
+.next/
+next-env.d.ts
+examples/*/*-web/AGENTS.md
+examples/*/*-web/CLAUDE.md
+out/
+*.tsbuildinfo
+npm-debug.log*
+
+
+# Example runtime state. The memory files hold whatever a local demo
+# remembered — personal data in a real deployment — and are never committed.
+examples/*/data/.memory-*.json
+# The ports each running vertical records for the demo hub (scripts/run_demo.py).
+examples/hub/runtime/
+
+# Model settings the web apps' settings panel saves (demo_common/model_provider.py); holds a key.
+.model-settings.json
+.model-settings.json.tmp
+
+# The operations log (demo_common/analytics.py): ids, tool names, and counts per turn.
+examples/*/data/.analytics/
+shopping-agent/managed-agents/storefront-mcp-server/.storefront_memory.json
+merchant-agent/managed-agents/merchant-mcp-server/.merchant_memory.json
+
+# OS / editor / local tooling
+.DS_Store
+.idea/
+.vscode/
+.claude/
+pyrightconfig.json

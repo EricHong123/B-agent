@@ -1,0 +1,22 @@
+# Repo-wide lint policy; packaging is per-package (one pyproject.toml per package).
+line-length = 100
+target-version = "py311"
+# Markdown code blocks are written for reading (aligned comments); ruff 0.16+ would reformat them.
+exclude = ["*.md"]
+src = [
+    "commerce-common",
+    "shopping-agent/core",
+    "shopping-agent/runtime-messages-api",
+    "shopping-agent/runtime-agent-sdk",
+    "shopping-agent/managed-agents",
+    "merchant-agent/core",
+    "merchant-agent/runtime-messages-api",
+    "merchant-agent/runtime-agent-sdk",
+    "merchant-agent/managed-agents",
+    "examples",
+    "scripts",
+]
+
+[lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "W291", "W293"]
+ignore = ["E501"]

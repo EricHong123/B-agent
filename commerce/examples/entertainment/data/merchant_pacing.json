@@ -1,0 +1,1040 @@
+{
+  "_comment": "Every event_date, on_sale_date, and week_start moves with catalog.json's dates_anchored_to at load time (api/mock_merchant.py). Author the book as if that day were today.",
+  "promoter": "ACME Tickets \u2014 venue portfolio",
+  "baselines": {
+    "amphitheater": [
+      [
+        120,
+        10
+      ],
+      [
+        90,
+        22
+      ],
+      [
+        60,
+        38
+      ],
+      [
+        45,
+        48
+      ],
+      [
+        30,
+        60
+      ],
+      [
+        21,
+        68
+      ],
+      [
+        14,
+        76
+      ],
+      [
+        7,
+        88
+      ],
+      [
+        3,
+        95
+      ],
+      [
+        0,
+        100
+      ]
+    ],
+    "club": [
+      [
+        120,
+        6
+      ],
+      [
+        90,
+        14
+      ],
+      [
+        60,
+        26
+      ],
+      [
+        45,
+        36
+      ],
+      [
+        30,
+        50
+      ],
+      [
+        21,
+        62
+      ],
+      [
+        14,
+        72
+      ],
+      [
+        7,
+        86
+      ],
+      [
+        3,
+        94
+      ],
+      [
+        0,
+        100
+      ]
+    ],
+    "theater": [
+      [
+        120,
+        12
+      ],
+      [
+        90,
+        24
+      ],
+      [
+        60,
+        40
+      ],
+      [
+        45,
+        52
+      ],
+      [
+        30,
+        64
+      ],
+      [
+        21,
+        72
+      ],
+      [
+        14,
+        80
+      ],
+      [
+        7,
+        90
+      ],
+      [
+        3,
+        96
+      ],
+      [
+        0,
+        100
+      ]
+    ],
+    "concert-hall": [
+      [
+        120,
+        15
+      ],
+      [
+        90,
+        28
+      ],
+      [
+        60,
+        45
+      ],
+      [
+        45,
+        56
+      ],
+      [
+        30,
+        66
+      ],
+      [
+        21,
+        74
+      ],
+      [
+        14,
+        82
+      ],
+      [
+        7,
+        92
+      ],
+      [
+        3,
+        97
+      ],
+      [
+        0,
+        100
+      ]
+    ]
+  },
+  "events": [
+    {
+      "event_id": "AT-EVT-101",
+      "event_date": "2026-08-14",
+      "on_sale_date": "2026-05-08",
+      "baseline_kind": "amphitheater",
+      "tiers": [
+        {
+          "product_id": "AT-TIX-101-PIT",
+          "weekly_sold_cum": [
+            {
+              "week_start": "2026-05-04",
+              "sold_cum": 5
+            },
+            {
+              "week_start": "2026-05-11",
+              "sold_cum": 25
+            },
+            {
+              "week_start": "2026-05-18",
+              "sold_cum": 51
+            },
+            {
+              "week_start": "2026-05-25",
+              "sold_cum": 75
+            },
+            {
+              "week_start": "2026-06-01",
+              "sold_cum": 100
+            },
+            {
+              "week_start": "2026-06-08",
+              "sold_cum": 125
+            },
+            {
+              "week_start": "2026-06-15",
+              "sold_cum": 152
+            },
+            {
+              "week_start": "2026-06-22",
+              "sold_cum": 186
+            },
+            {
+              "week_start": "2026-06-29",
+              "sold_cum": 224
+            },
+            {
+              "week_start": "2026-07-06",
+              "sold_cum": 264
+            },
+            {
+              "week_start": "2026-07-13",
+              "sold_cum": 292
+            },
+            {
+              "week_start": "2026-07-20",
+              "sold_cum": 344
+            }
+          ],
+          "allocations": {
+            "promoter_hold": 8,
+            "production_hold": 6,
+            "comps": 8,
+            "kills": 0
+          },
+          "sold_at_authoring": 344,
+          "capacity_at_authoring": 350
+        },
+        {
+          "product_id": "AT-TIX-101-LOW",
+          "weekly_sold_cum": [
+            {
+              "week_start": "2026-05-04",
+              "sold_cum": 12
+            },
+            {
+              "week_start": "2026-05-11",
+              "sold_cum": 60
+            },
+            {
+              "week_start": "2026-05-18",
+              "sold_cum": 120
+            },
+            {
+              "week_start": "2026-05-25",
+              "sold_cum": 172
+            },
+            {
+              "week_start": "2026-06-01",
+              "sold_cum": 243
+            },
+            {
+              "week_start": "2026-06-08",
+              "sold_cum": 304
+            },
+            {
+              "week_start": "2026-06-15",
+              "sold_cum": 371
+            },
+            {
+              "week_start": "2026-06-22",
+              "sold_cum": 444
+            },
+            {
+              "week_start": "2026-06-29",
+              "sold_cum": 515
+            },
+            {
+              "week_start": "2026-07-06",
+              "sold_cum": 596
+            },
+            {
+              "week_start": "2026-07-13",
+              "sold_cum": 710
+            },
+            {
+              "week_start": "2026-07-20",
+              "sold_cum": 815
+            }
+          ],
+          "allocations": {
+            "promoter_hold": 60,
+            "production_hold": 24,
+            "comps": 18,
+            "kills": 0
+          },
+          "sold_at_authoring": 815,
+          "capacity_at_authoring": 1200
+        },
+        {
+          "product_id": "AT-TIX-101-TER",
+          "weekly_sold_cum": [
+            {
+              "week_start": "2026-05-04",
+              "sold_cum": 5
+            },
+            {
+              "week_start": "2026-05-11",
+              "sold_cum": 25
+            },
+            {
+              "week_start": "2026-05-18",
+              "sold_cum": 49
+            },
+            {
+              "week_start": "2026-05-25",
+              "sold_cum": 76
+            },
+            {
+              "week_start": "2026-06-01",
+              "sold_cum": 101
+            },
+            {
+              "week_start": "2026-06-08",
+              "sold_cum": 129
+            },
+            {
+              "week_start": "2026-06-15",
+              "sold_cum": 157
+            },
+            {
+              "week_start": "2026-06-22",
+              "sold_cum": 190
+            },
+            {
+              "week_start": "2026-06-29",
+              "sold_cum": 224
+            },
+            {
+              "week_start": "2026-07-06",
+              "sold_cum": 265
+            },
+            {
+              "week_start": "2026-07-13",
+              "sold_cum": 302
+            },
+            {
+              "week_start": "2026-07-20",
+              "sold_cum": 348
+            }
+          ],
+          "allocations": {
+            "promoter_hold": 90,
+            "production_hold": 0,
+            "comps": 10,
+            "kills": 40
+          },
+          "sold_at_authoring": 348,
+          "capacity_at_authoring": 900
+        }
+      ]
+    },
+    {
+      "event_id": "AT-EVT-102",
+      "event_date": "2026-08-15",
+      "on_sale_date": "2026-05-08",
+      "baseline_kind": "amphitheater",
+      "tiers": [
+        {
+          "product_id": "AT-TIX-102-PIT",
+          "weekly_sold_cum": [
+            {
+              "week_start": "2026-05-04",
+              "sold_cum": 5
+            },
+            {
+              "week_start": "2026-05-11",
+              "sold_cum": 21
+            },
+            {
+              "week_start": "2026-05-18",
+              "sold_cum": 41
+            },
+            {
+              "week_start": "2026-05-25",
+              "sold_cum": 62
+            },
+            {
+              "week_start": "2026-06-01",
+              "sold_cum": 81
+            },
+            {
+              "week_start": "2026-06-08",
+              "sold_cum": 101
+            },
+            {
+              "week_start": "2026-06-15",
+              "sold_cum": 125
+            },
+            {
+              "week_start": "2026-06-22",
+              "sold_cum": 149
+            },
+            {
+              "week_start": "2026-06-29",
+              "sold_cum": 185
+            },
+            {
+              "week_start": "2026-07-06",
+              "sold_cum": 211
+            },
+            {
+              "week_start": "2026-07-13",
+              "sold_cum": 250
+            },
+            {
+              "week_start": "2026-07-20",
+              "sold_cum": 281
+            }
+          ],
+          "allocations": {
+            "promoter_hold": 8,
+            "production_hold": 6,
+            "comps": 8,
+            "kills": 0
+          },
+          "sold_at_authoring": 281,
+          "capacity_at_authoring": 350
+        },
+        {
+          "product_id": "AT-TIX-102-LOW",
+          "weekly_sold_cum": [
+            {
+              "week_start": "2026-05-04",
+              "sold_cum": 11
+            },
+            {
+              "week_start": "2026-05-11",
+              "sold_cum": 49
+            },
+            {
+              "week_start": "2026-05-18",
+              "sold_cum": 95
+            },
+            {
+              "week_start": "2026-05-25",
+              "sold_cum": 145
+            },
+            {
+              "week_start": "2026-06-01",
+              "sold_cum": 202
+            },
+            {
+              "week_start": "2026-06-08",
+              "sold_cum": 247
+            },
+            {
+              "week_start": "2026-06-15",
+              "sold_cum": 315
+            },
+            {
+              "week_start": "2026-06-22",
+              "sold_cum": 366
+            },
+            {
+              "week_start": "2026-06-29",
+              "sold_cum": 426
+            },
+            {
+              "week_start": "2026-07-06",
+              "sold_cum": 516
+            },
+            {
+              "week_start": "2026-07-13",
+              "sold_cum": 600
+            },
+            {
+              "week_start": "2026-07-20",
+              "sold_cum": 677
+            }
+          ],
+          "allocations": {
+            "promoter_hold": 40,
+            "production_hold": 24,
+            "comps": 12,
+            "kills": 0
+          },
+          "sold_at_authoring": 677,
+          "capacity_at_authoring": 1200
+        },
+        {
+          "product_id": "AT-TIX-102-TER",
+          "weekly_sold_cum": [
+            {
+              "week_start": "2026-05-04",
+              "sold_cum": 8
+            },
+            {
+              "week_start": "2026-05-11",
+              "sold_cum": 36
+            },
+            {
+              "week_start": "2026-05-18",
+              "sold_cum": 76
+            },
+            {
+              "week_start": "2026-05-25",
+              "sold_cum": 113
+            },
+            {
+              "week_start": "2026-06-01",
+              "sold_cum": 146
+            },
+            {
+              "week_start": "2026-06-08",
+              "sold_cum": 184
+            },
+            {
+              "week_start": "2026-06-15",
+              "sold_cum": 226
+            },
+            {
+              "week_start": "2026-06-22",
+              "sold_cum": 271
+            },
+            {
+              "week_start": "2026-06-29",
+              "sold_cum": 337
+            },
+            {
+              "week_start": "2026-07-06",
+              "sold_cum": 380
+            },
+            {
+              "week_start": "2026-07-13",
+              "sold_cum": 448
+            },
+            {
+              "week_start": "2026-07-20",
+              "sold_cum": 512
+            }
+          ],
+          "allocations": {
+            "promoter_hold": 60,
+            "production_hold": 0,
+            "comps": 10,
+            "kills": 40
+          },
+          "sold_at_authoring": 512,
+          "capacity_at_authoring": 900
+        }
+      ]
+    },
+    {
+      "event_id": "AT-EVT-103",
+      "event_date": "2026-08-28",
+      "on_sale_date": "2026-05-22",
+      "baseline_kind": "amphitheater",
+      "tiers": [
+        {
+          "product_id": "AT-TIX-103-PIT",
+          "weekly_sold_cum": [
+            {
+              "week_start": "2026-05-18",
+              "sold_cum": 7
+            },
+            {
+              "week_start": "2026-05-25",
+              "sold_cum": 34
+            },
+            {
+              "week_start": "2026-06-01",
+              "sold_cum": 66
+            },
+            {
+              "week_start": "2026-06-08",
+              "sold_cum": 102
+            },
+            {
+              "week_start": "2026-06-15",
+              "sold_cum": 132
+            },
+            {
+              "week_start": "2026-06-22",
+              "sold_cum": 168
+            },
+            {
+              "week_start": "2026-06-29",
+              "sold_cum": 206
+            },
+            {
+              "week_start": "2026-07-06",
+              "sold_cum": 248
+            },
+            {
+              "week_start": "2026-07-13",
+              "sold_cum": 308
+            },
+            {
+              "week_start": "2026-07-20",
+              "sold_cum": 350
+            }
+          ],
+          "allocations": {
+            "promoter_hold": 0,
+            "production_hold": 12,
+            "comps": 6,
+            "kills": 0
+          },
+          "sold_at_authoring": 350,
+          "capacity_at_authoring": 350
+        },
+        {
+          "product_id": "AT-TIX-103-LOW",
+          "weekly_sold_cum": [
+            {
+              "week_start": "2026-05-18",
+              "sold_cum": 24
+            },
+            {
+              "week_start": "2026-05-25",
+              "sold_cum": 118
+            },
+            {
+              "week_start": "2026-06-01",
+              "sold_cum": 227
+            },
+            {
+              "week_start": "2026-06-08",
+              "sold_cum": 344
+            },
+            {
+              "week_start": "2026-06-15",
+              "sold_cum": 472
+            },
+            {
+              "week_start": "2026-06-22",
+              "sold_cum": 582
+            },
+            {
+              "week_start": "2026-06-29",
+              "sold_cum": 700
+            },
+            {
+              "week_start": "2026-07-06",
+              "sold_cum": 887
+            },
+            {
+              "week_start": "2026-07-13",
+              "sold_cum": 1009
+            },
+            {
+              "week_start": "2026-07-20",
+              "sold_cum": 1200
+            }
+          ],
+          "allocations": {
+            "promoter_hold": 0,
+            "production_hold": 30,
+            "comps": 10,
+            "kills": 0
+          },
+          "sold_at_authoring": 1200,
+          "capacity_at_authoring": 1200
+        },
+        {
+          "product_id": "AT-TIX-103-TER",
+          "weekly_sold_cum": [
+            {
+              "week_start": "2026-05-18",
+              "sold_cum": 19
+            },
+            {
+              "week_start": "2026-05-25",
+              "sold_cum": 86
+            },
+            {
+              "week_start": "2026-06-01",
+              "sold_cum": 171
+            },
+            {
+              "week_start": "2026-06-08",
+              "sold_cum": 253
+            },
+            {
+              "week_start": "2026-06-15",
+              "sold_cum": 338
+            },
+            {
+              "week_start": "2026-06-22",
+              "sold_cum": 435
+            },
+            {
+              "week_start": "2026-06-29",
+              "sold_cum": 530
+            },
+            {
+              "week_start": "2026-07-06",
+              "sold_cum": 650
+            },
+            {
+              "week_start": "2026-07-13",
+              "sold_cum": 764
+            },
+            {
+              "week_start": "2026-07-20",
+              "sold_cum": 900
+            }
+          ],
+          "allocations": {
+            "promoter_hold": 0,
+            "production_hold": 24,
+            "comps": 8,
+            "kills": 0
+          },
+          "sold_at_authoring": 900,
+          "capacity_at_authoring": 900
+        }
+      ]
+    },
+    {
+      "event_id": "AT-EVT-104",
+      "event_date": "2026-09-02",
+      "on_sale_date": "2026-06-05",
+      "baseline_kind": "club",
+      "tiers": [
+        {
+          "product_id": "AT-TIX-104-GAF",
+          "weekly_sold_cum": [
+            {
+              "week_start": "2026-06-01",
+              "sold_cum": 12
+            },
+            {
+              "week_start": "2026-06-08",
+              "sold_cum": 51
+            },
+            {
+              "week_start": "2026-06-15",
+              "sold_cum": 90
+            },
+            {
+              "week_start": "2026-06-22",
+              "sold_cum": 132
+            },
+            {
+              "week_start": "2026-06-29",
+              "sold_cum": 169
+            },
+            {
+              "week_start": "2026-07-06",
+              "sold_cum": 233
+            },
+            {
+              "week_start": "2026-07-13",
+              "sold_cum": 311
+            },
+            {
+              "week_start": "2026-07-20",
+              "sold_cum": 396
+            }
+          ],
+          "allocations": {
+            "promoter_hold": 10,
+            "production_hold": 8,
+            "comps": 6,
+            "kills": 0
+          },
+          "sold_at_authoring": 396,
+          "capacity_at_authoring": 420
+        },
+        {
+          "product_id": "AT-TIX-104-MEZ",
+          "weekly_sold_cum": [
+            {
+              "week_start": "2026-06-01",
+              "sold_cum": 5
+            },
+            {
+              "week_start": "2026-06-08",
+              "sold_cum": 22
+            },
+            {
+              "week_start": "2026-06-15",
+              "sold_cum": 40
+            },
+            {
+              "week_start": "2026-06-22",
+              "sold_cum": 58
+            },
+            {
+              "week_start": "2026-06-29",
+              "sold_cum": 74
+            },
+            {
+              "week_start": "2026-07-06",
+              "sold_cum": 108
+            },
+            {
+              "week_start": "2026-07-13",
+              "sold_cum": 137
+            },
+            {
+              "week_start": "2026-07-20",
+              "sold_cum": 174
+            }
+          ],
+          "allocations": {
+            "promoter_hold": 4,
+            "production_hold": 2,
+            "comps": 4,
+            "kills": 6
+          },
+          "sold_at_authoring": 174,
+          "capacity_at_authoring": 180
+        }
+      ]
+    },
+    {
+      "event_id": "AT-EVT-105",
+      "event_date": "2026-08-22",
+      "on_sale_date": "2026-06-01",
+      "baseline_kind": "theater",
+      "tiers": [
+        {
+          "product_id": "AT-TIX-105-ORC",
+          "weekly_sold_cum": [
+            {
+              "week_start": "2026-06-01",
+              "sold_cum": 26
+            },
+            {
+              "week_start": "2026-06-08",
+              "sold_cum": 56
+            },
+            {
+              "week_start": "2026-06-15",
+              "sold_cum": 86
+            },
+            {
+              "week_start": "2026-06-22",
+              "sold_cum": 134
+            },
+            {
+              "week_start": "2026-06-29",
+              "sold_cum": 174
+            },
+            {
+              "week_start": "2026-07-06",
+              "sold_cum": 226
+            },
+            {
+              "week_start": "2026-07-13",
+              "sold_cum": 265
+            },
+            {
+              "week_start": "2026-07-20",
+              "sold_cum": 318
+            }
+          ],
+          "allocations": {
+            "promoter_hold": 30,
+            "production_hold": 10,
+            "comps": 12,
+            "kills": 0
+          },
+          "sold_at_authoring": 318,
+          "capacity_at_authoring": 520
+        },
+        {
+          "product_id": "AT-TIX-105-BAL",
+          "weekly_sold_cum": [
+            {
+              "week_start": "2026-06-01",
+              "sold_cum": 8
+            },
+            {
+              "week_start": "2026-06-08",
+              "sold_cum": 17
+            },
+            {
+              "week_start": "2026-06-15",
+              "sold_cum": 26
+            },
+            {
+              "week_start": "2026-06-22",
+              "sold_cum": 40
+            },
+            {
+              "week_start": "2026-06-29",
+              "sold_cum": 52
+            },
+            {
+              "week_start": "2026-07-06",
+              "sold_cum": 67
+            },
+            {
+              "week_start": "2026-07-13",
+              "sold_cum": 82
+            },
+            {
+              "week_start": "2026-07-20",
+              "sold_cum": 97
+            }
+          ],
+          "allocations": {
+            "promoter_hold": 20,
+            "production_hold": 0,
+            "comps": 6,
+            "kills": 0
+          },
+          "sold_at_authoring": 97,
+          "capacity_at_authoring": 260
+        }
+      ]
+    },
+    {
+      "event_id": "AT-EVT-106",
+      "event_date": "2026-10-03",
+      "on_sale_date": "2026-06-19",
+      "baseline_kind": "concert-hall",
+      "tiers": [
+        {
+          "product_id": "AT-TIX-106-PRE",
+          "weekly_sold_cum": [
+            {
+              "week_start": "2026-06-15",
+              "sold_cum": 6
+            },
+            {
+              "week_start": "2026-06-22",
+              "sold_cum": 26
+            },
+            {
+              "week_start": "2026-06-29",
+              "sold_cum": 48
+            },
+            {
+              "week_start": "2026-07-06",
+              "sold_cum": 72
+            },
+            {
+              "week_start": "2026-07-13",
+              "sold_cum": 97
+            },
+            {
+              "week_start": "2026-07-20",
+              "sold_cum": 126
+            }
+          ],
+          "allocations": {
+            "promoter_hold": 6,
+            "production_hold": 4,
+            "comps": 6,
+            "kills": 0
+          },
+          "sold_at_authoring": 126,
+          "capacity_at_authoring": 140
+        },
+        {
+          "product_id": "AT-TIX-106-ORC",
+          "weekly_sold_cum": [
+            {
+              "week_start": "2026-06-15",
+              "sold_cum": 9
+            },
+            {
+              "week_start": "2026-06-22",
+              "sold_cum": 41
+            },
+            {
+              "week_start": "2026-06-29",
+              "sold_cum": 74
+            },
+            {
+              "week_start": "2026-07-06",
+              "sold_cum": 118
+            },
+            {
+              "week_start": "2026-07-13",
+              "sold_cum": 163
+            },
+            {
+              "week_start": "2026-07-20",
+              "sold_cum": 205
+            }
+          ],
+          "allocations": {
+            "promoter_hold": 40,
+            "production_hold": 12,
+            "comps": 10,
+            "kills": 0
+          },
+          "sold_at_authoring": 205,
+          "capacity_at_authoring": 480
+        },
+        {
+          "product_id": "AT-TIX-106-BAL",
+          "weekly_sold_cum": [
+            {
+              "week_start": "2026-06-15",
+              "sold_cum": 4
+            },
+            {
+              "week_start": "2026-06-22",
+              "sold_cum": 19
+            },
+            {
+              "week_start": "2026-06-29",
+              "sold_cum": 33
+            },
+            {
+              "week_start": "2026-07-06",
+              "sold_cum": 51
+            },
+            {
+              "week_start": "2026-07-13",
+              "sold_cum": 70
+            },
+            {
+              "week_start": "2026-07-20",
+              "sold_cum": 88
+            }
+          ],
+          "allocations": {
+            "promoter_hold": 24,
+            "production_hold": 0,
+            "comps": 8,
+            "kills": 0
+          },
+          "sold_at_authoring": 88,
+          "capacity_at_authoring": 320
+        }
+      ]
+    }
+  ]
+}

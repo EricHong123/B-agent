@@ -1,0 +1,14 @@
+# Constraint cases for the ticketing storefront, judged at the default clock (Thu 2026-10-01),
+# when the shows fall from Oct 16 to Dec 5; scripts/eval_constraints.py reads them and
+# docs/metrics.md describes the fields.
+cases:
+  - {id: ent-01, q: "Tickets for The Headliner on Saturday the 17th, under $60 each.", query: "Headliner Summer Tour", constraints: {require: {event_name: Headliner}, max_price: 60, event_on: 2026-10-17}}
+  - {id: ent-02, q: "Two tickets for The Synth-Pop Act on the 30th, under $100 each.", query: "Synth-Pop Act Fall Tour", constraints: {require: {event_name: Synth-Pop}, max_price: 100, event_on: 2026-10-30, min_quantity: 2}}
+  - {id: ent-03, q: "GA pit for The Synth-Pop Act, $130 a ticket at most.", query: "Synth-Pop Act GA pit", constraints: {max_price: 130, require: {event_name: Synth-Pop, tier: GA Pit}}}
+  - {id: ent-04, q: "Eight of us want the GA pit at The Headliner on Friday the 16th.", query: "Headliner GA pit", constraints: {event_on: 2026-10-16, min_quantity: 8, require: {tier: GA Pit}}}
+  - {id: ent-05, q: "A comedy show for under $50 a seat.", query: "comedy stand-up", constraints: {require: {genre: comedy}, max_price: 50}}
+  - {id: ent-06, q: "Any concert before the 20th for under $60?", query: "concert tour", constraints: {max_price: 60, event_by: 2026-10-19}}
+  - {id: ent-07, q: "Premium orchestra seats for the Philharmonic, under $100.", query: "Philharmonic premium orchestra", constraints: {max_price: 100, require: {tier: Premium Orchestra}}}
+  - {id: ent-08, q: "Four mezzanine seats for The Duo.", query: "Duo mezzanine", constraints: {min_quantity: 4, require: {event_name: Duo, tier: Mezzanine}}}
+  - {id: ent-09, q: "Is there a show this week, by the 7th?", query: "concert show", constraints: {event_by: 2026-10-07}}
+  - {id: ent-10, q: "单口喜剧录制，两张池座票，每张80美元以内。", query: "comedy taping orchestra", constraints: {max_price: 80, min_quantity: 2, require: {event_name: Stand-Up, tier: Orchestra}}}

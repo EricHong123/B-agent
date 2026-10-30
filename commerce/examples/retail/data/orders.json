@@ -1,0 +1,136 @@
+{
+ "_comment": "In-flight orders (processing/shipped/delayed) are re-dated at load time relative to dates_anchored_to (demo_common.storefront_fixtures.redate_in_flight_orders), so estimates always read current. Author their dates as if dates_anchored_to were today.",
+ "dates_anchored_to": "2026-06-24",
+ "orders": [
+  {
+   "order_id": "AR-78214",
+   "user_id": "demo-user",
+   "status": "shipped",
+   "placed_at": "2026-06-16T14:32:00Z",
+   "items": [
+    {
+     "product_id": "AR-1104",
+     "title": "ACME Select Low-Profile Mechanical Keyboard",
+     "quantity": 1,
+     "price": 99.0
+    },
+    {
+     "product_id": "AR-1107",
+     "title": "ACME Studio Adjustable Aluminum Laptop Stand",
+     "quantity": 1,
+     "price": 39.0
+    }
+   ],
+   "total": 138.0,
+   "estimated_delivery": "2026-06-25",
+   "tracking_url": "https://track.example.com/AR-78214"
+  },
+  {
+   "order_id": "AR-77903",
+   "user_id": "demo-user",
+   "status": "delayed",
+   "placed_at": "2026-06-10T09:05:00Z",
+   "items": [
+    {
+     "product_id": "AR-1501",
+     "title": "ACME Paws Orthopedic Memory Foam Dog Bed, Large",
+     "quantity": 1,
+     "price": 79.0
+    }
+   ],
+   "total": 79.0,
+   "estimated_delivery": "2026-06-27 (updated after a carrier delay; the original 2026-06-21 estimate was missed)",
+   "tracking_url": "https://track.example.com/AR-77903"
+  },
+  {
+   "order_id": "AR-77410",
+   "user_id": "demo-user",
+   "status": "delivered",
+   "placed_at": "2026-06-01T19:47:00Z",
+   "items": [
+    {
+     "product_id": "AR-1301",
+     "title": "ACME Fit 6mm Non-Slip Yoga Mat",
+     "quantity": 1,
+     "price": 42.0
+    },
+    {
+     "product_id": "AR-1304",
+     "title": "ACME Fit Resistance Band Set with Door Anchor",
+     "quantity": 1,
+     "price": 24.0
+    }
+   ],
+   "total": 66.0,
+   "estimated_delivery": "2026-06-05",
+   "tracking_url": "https://track.example.com/AR-77410"
+  },
+  {
+   "order_id": "AR-76988",
+   "user_id": "demo-user-2",
+   "status": "processing",
+   "placed_at": "2026-06-21T08:12:00Z",
+   "items": [
+    {
+     "product_id": "AR-1206",
+     "title": "ACME Basecamp 400-Lumen Rechargeable Headlamp",
+     "quantity": 2,
+     "price": 34.0
+    }
+   ],
+   "total": 68.0,
+   "estimated_delivery": "2026-06-28",
+   "tracking_url": "https://track.example.com/AR-76988"
+  },
+  {
+   "order_id": "AR-79102",
+   "user_id": "demo-user",
+   "status": "delayed",
+   "placed_at": "2026-06-04T18:40:00Z",
+   "items": [
+    {
+     "product_id": "AR-1901",
+     "title": "ACME Sleep Queen Platform Bed Frame",
+     "quantity": 1,
+     "price": 379.0
+    },
+    {
+     "product_id": "AR-1902-QUEEN",
+     "title": "ACME Sleep Hybrid Mattress",
+     "quantity": 1,
+     "price": 549.0,
+     "option_values": {
+      "size": "queen"
+     },
+     "variant_of": "AR-1902"
+    }
+   ],
+   "total": 928.0,
+   "estimated_delivery": "2026-06-25 (updated after a warehouse delay; the original 2026-06-12 estimate was missed)",
+   "tracking_url": "https://track.example.com/AR-79102"
+  },
+  {
+   "order_id": "AR-79236",
+   "user_id": "demo-user",
+   "status": "shipped",
+   "placed_at": "2026-06-22T21:15:00Z",
+   "items": [
+    {
+     "product_id": "AR-1721",
+     "title": "ACME Beauty Eye Palette",
+     "quantity": 1,
+     "price": 34.0
+    },
+    {
+     "product_id": "AR-1723",
+     "title": "ACME Beauty Long-Wear Mascara",
+     "quantity": 1,
+     "price": 19.0
+    }
+   ],
+   "total": 53.0,
+   "estimated_delivery": "2026-06-30",
+   "tracking_url": "https://track.example.com/AR-79236"
+  }
+ ]
+}

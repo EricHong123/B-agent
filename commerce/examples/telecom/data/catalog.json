@@ -1,0 +1,926 @@
+{
+  "store_name": "ACME Mobile",
+  "products": [
+    {
+      "product_id": "AM-PLAN-101",
+      "title": "Essential 5GB",
+      "brand": "ACME Mobile",
+      "price": 35.0,
+      "currency": "USD",
+      "rating": 4.1,
+      "review_count": 1840,
+      "category": "plans",
+      "labels": ["Our lowest postpaid price"],
+      "attributes": {
+        "price_unit": "per_month",
+        "price_qualifier": "+ taxes & fees \u00b7 incl. $5 AutoPay discount",
+        "data_allowance_gb": "5",
+        "hotspot_gb": "0",
+        "video_quality": "480p",
+        "intl_roaming": "pay-per-day",
+        "contract_term": "none",
+        "network_priority": "standard",
+        "deprioritization_threshold_gb": "5",
+        "streaming_perk": "none",
+        "price_guarantee": "1-year price guarantee"
+      },
+      "in_stock": true,
+      "short_description": "A clean starter plan: 5GB of high-speed data, unlimited talk and text, and nothing you didn't ask for.",
+      "long_description": "Essential 5GB is the right plan for light data users — people on Wi-Fi most of the day who want a predictable bill. After 5GB, data keeps working at reduced speed instead of charging overage. If you find yourself buying top-ups more than once in a while, a bigger plan usually costs less than the habit.",
+      "specs": {
+        "talk_and_text": "unlimited nationwide",
+        "after_allowance": "512 Kbps, no overage charges",
+        "5g_access": "included on standard priority",
+        "lines": "per line; multi-line discounts apply"
+      },
+      "review_highlights": [
+        "Bill is the same every month, which is all I wanted",
+        "Fine on Wi-Fi, but I burned through 5GB fast the month I traveled",
+        "Switching in took ten minutes with the eSIM"
+      ]
+    },
+    {
+      "product_id": "AM-PLAN-102",
+      "title": "Plus 15GB",
+      "brand": "ACME Mobile",
+      "price": 50.0,
+      "currency": "USD",
+      "rating": 4.4,
+      "review_count": 2210,
+      "category": "plans",
+      "labels": ["Fits most people"],
+      "attributes": {
+        "price_unit": "per_month",
+        "price_qualifier": "+ taxes & fees \u00b7 incl. $5 AutoPay discount",
+        "data_allowance_gb": "15",
+        "hotspot_gb": "10",
+        "video_quality": "1080p",
+        "intl_roaming": "pay-per-day",
+        "contract_term": "none",
+        "network_priority": "standard",
+        "deprioritization_threshold_gb": "15",
+        "streaming_perk": "none",
+        "price_guarantee": "2-year price guarantee"
+      },
+      "in_stock": true,
+      "short_description": "15GB of high-speed data with 10GB of hotspot — the sweet spot for commuters and podcast people.",
+      "long_description": "Plus 15GB covers a normal month of streaming, maps, and tethering a laptop in a pinch, without paying for unlimited you won't use. Video streams at 1080p and the 10GB hotspot allowance is enough for a travel day or an outage afternoon. After 15GB, speeds reduce rather than charging overage.",
+      "specs": {
+        "talk_and_text": "unlimited nationwide",
+        "after_allowance": "512 Kbps, no overage charges",
+        "hotspot": "10GB high-speed, then 600 Kbps",
+        "5g_access": "included on standard priority"
+      },
+      "review_highlights": [
+        "15GB turned out to be exactly my month, the usage chart proved it",
+        "Hotspot saved a client demo when the office internet died",
+        "Wish the price guarantee matched the top plans"
+      ]
+    },
+    {
+      "product_id": "AM-PLAN-103",
+      "title": "Unlimited",
+      "brand": "ACME Mobile",
+      "price": 65.0,
+      "currency": "USD",
+      "rating": 4.6,
+      "review_count": 5320,
+      "category": "plans",
+      "labels": ["Most popular"],
+      "attributes": {
+        "price_unit": "per_month",
+        "price_qualifier": "+ taxes & fees \u00b7 incl. $5 AutoPay discount",
+        "data_allowance_gb": "unlimited",
+        "hotspot_gb": "25",
+        "video_quality": "1080p",
+        "intl_roaming": "Canada & Mexico included",
+        "contract_term": "none",
+        "network_priority": "standard",
+        "deprioritization_threshold_gb": "35",
+        "streaming_perk": "none",
+        "price_guarantee": "3-year price guarantee"
+      },
+      "in_stock": true,
+      "short_description": "Unlimited data with 25GB of hotspot and a 3-year price guarantee — the plan most ACME Mobile customers land on.",
+      "long_description": "Unlimited is the stop-thinking-about-it plan: no allowance to watch, 25GB of high-speed hotspot, and Canada & Mexico roaming included. During congestion, usage past 35GB in a month may be temporarily deprioritized — most customers never notice. The monthly price is locked for three years from activation.",
+      "specs": {
+        "talk_and_text": "unlimited nationwide",
+        "premium_data": "35GB before any deprioritization",
+        "hotspot": "25GB high-speed, then 600 Kbps",
+        "roaming": "Canada & Mexico at no extra cost",
+        "5g_access": "included on standard priority"
+      },
+      "review_highlights": [
+        "Came over from a 5GB plan after months of top-ups — should have done it sooner",
+        "The price lock was the deciding factor for me",
+        "Deprioritization is real at stadium events, invisible otherwise"
+      ]
+    },
+    {
+      "product_id": "AM-PLAN-104",
+      "title": "Unlimited Plus",
+      "brand": "ACME Mobile",
+      "price": 85.0,
+      "currency": "USD",
+      "rating": 4.7,
+      "review_count": 3105,
+      "category": "plans",
+      "labels": ["Best for heavy data + perks"],
+      "attributes": {
+        "price_unit": "per_month",
+        "price_qualifier": "+ taxes & fees \u00b7 incl. $5 AutoPay discount",
+        "data_allowance_gb": "unlimited",
+        "hotspot_gb": "60",
+        "video_quality": "4K",
+        "intl_roaming": "90+ countries included",
+        "contract_term": "none",
+        "network_priority": "premium",
+        "deprioritization_threshold_gb": "60",
+        "streaming_perk": "ACME Streaming included",
+        "price_guarantee": "3-year price guarantee"
+      },
+      "in_stock": true,
+      "short_description": "Everything turned up: premium network priority, 60GB hotspot, 4K streaming, 90+ country roaming, and ACME Streaming on us.",
+      "long_description": "Unlimited Plus is for people whose phone is their office and their cinema. Premium priority means you keep full speed even on a crowded network until 60GB; the hotspot allowance genuinely replaces hotel Wi-Fi; and international roaming works in 90+ countries without a day pass. The ACME Streaming subscription is included for as long as you keep the plan.",
+      "specs": {
+        "talk_and_text": "unlimited nationwide",
+        "premium_data": "60GB at premium priority",
+        "hotspot": "60GB high-speed, then 600 Kbps",
+        "roaming": "90+ countries included",
+        "streaming": "ACME Streaming subscription included",
+        "video": "up to 4K UHD"
+      },
+      "review_highlights": [
+        "I work off the hotspot three days a week and it holds up",
+        "Roaming just worked in four countries on one trip — no passes, no bill shock",
+        "It's the expensive plan but the included streaming covers part of the gap"
+      ]
+    },
+    {
+      "product_id": "AM-PLAN-105",
+      "title": "Prepaid 10GB",
+      "brand": "ACME Mobile",
+      "price": 25.0,
+      "currency": "USD",
+      "rating": 4.2,
+      "review_count": 980,
+      "category": "plans",
+      "labels": ["No credit check", "Our lowest price"],
+      "attributes": {
+        "price_unit": "per_month",
+        "price_qualifier": "+ taxes & fees \u00b7 incl. $5 AutoPay discount",
+        "data_allowance_gb": "10",
+        "hotspot_gb": "5",
+        "video_quality": "480p",
+        "intl_roaming": "pay-per-day",
+        "contract_term": "none",
+        "network_priority": "standard",
+        "deprioritization_threshold_gb": "10",
+        "streaming_perk": "none",
+        "price_guarantee": "none"
+      },
+      "in_stock": true,
+      "short_description": "Pay-as-you-go: 10GB for $25, no credit check, no contract, cancel any month.",
+      "long_description": "Prepaid is the commitment-free way onto the ACME Mobile network. Pay for a month, get 10GB at full speed with 5GB of hotspot, and walk away whenever — your number stays yours. There's no credit check and no device financing on prepaid, which keeps it simple and keeps it $25.",
+      "specs": {
+        "talk_and_text": "unlimited nationwide",
+        "after_allowance": "256 Kbps, no overage charges",
+        "payment": "prepaid, auto-renew optional",
+        "device_financing": "not available on prepaid"
+      },
+      "review_highlights": [
+        "Perfect for my semester abroad gap — paused it and came back",
+        "Same network as the expensive plans as far as I can tell",
+        "No frills and that's the point"
+      ]
+    },
+    {
+      "product_id": "AM-DEV-201",
+      "title": "ACME Phone 4",
+      "brand": "ACME",
+      "price": 699.0,
+      "currency": "USD",
+      "rating": 4.3,
+      "review_count": 2870,
+      "category": "devices",
+      "labels": ["Compact flip"],
+      "attributes": {
+        "price_unit": "one_time",
+        "storage_gb": "128",
+        "screen_in": "6.6 unfolded / 3.2 cover",
+        "battery_hours": "21",
+        "connectivity": "5G",
+        "monthly_installment": "29.13 for 24 months",
+        "upgrade_program_eligible": "yes",
+        "bundle_eligible": "yes",
+        "trade_in_tier": "B"
+      },
+      "in_stock": true,
+      "short_description": "The flip that made pocket phones cool again — last year's model, still quick, now at a friendlier price.",
+      "long_description": "The ACME Phone 4 folds a full 6.6-inch screen into half the pocket space, with a cover display big enough for replies and music without opening the phone. It's the previous generation, which mostly means you save money: day-to-day speed is still excellent, and the hinge is rated for five years of flipping.",
+      "specs": {
+        "display": "6.6\" foldable OLED, 120Hz",
+        "cover_display": "3.2\" OLED",
+        "camera": "50MP main + 12MP ultrawide",
+        "battery": "3,800 mAh, 21h mixed use",
+        "water_resistance": "IPX8"
+      },
+      "review_highlights": [
+        "Still my favorite phone shape — it disappears in a jacket pocket",
+        "Battery is the one thing that ages — heavy days need a top-up by 9pm",
+        "Cover screen handles half my notifications without unfolding"
+      ]
+    },
+    {
+      "product_id": "AM-DEV-202",
+      "title": "ACME Phone 5",
+      "brand": "ACME",
+      "price": 949.0,
+      "currency": "USD",
+      "rating": 4.7,
+      "review_count": 1640,
+      "category": "devices",
+      "labels": ["New", "Top trade-in value"],
+      "attributes": {
+        "price_unit": "one_time",
+        "storage_gb": "256",
+        "screen_in": "6.7 unfolded / 4.0 cover",
+        "battery_hours": "29",
+        "connectivity": "5G",
+        "monthly_installment": "39.54 for 24 months",
+        "upgrade_program_eligible": "yes",
+        "bundle_eligible": "yes",
+        "trade_in_tier": "A"
+      },
+      "in_stock": true,
+      "short_description": "The new Phone: bigger cover screen, two more hours of battery than anything ACME has made, same pocketability.",
+      "long_description": "The Phone 5 fixes the two things Phone 4 owners asked about: battery and the cover display. The 4-inch cover screen now runs full apps — maps, messages, payments — so the phone stays folded most of the day, which is exactly why the battery now clears a heavy day with room to spare. If you're coming from a Phone 4, it feels like the same idea finished.",
+      "specs": {
+        "display": "6.7\" foldable OLED, 120Hz",
+        "cover_display": "4.0\" OLED, full apps",
+        "camera": "50MP main + 12MP ultrawide, half-folded video",
+        "battery": "4,300 mAh, 29h mixed use",
+        "water_resistance": "IPX8"
+      },
+      "review_highlights": [
+        "Upgraded from the Phone 4 and the battery difference is night and day",
+        "I use the cover screen so much the main screen feels like a bonus",
+        "Trade-in credit made this an easy call"
+      ]
+    },
+    {
+      "product_id": "AM-DEV-203",
+      "title": "ACME Phone 5 Pro",
+      "brand": "ACME",
+      "price": 1099.0,
+      "currency": "USD",
+      "rating": 4.8,
+      "review_count": 2230,
+      "category": "devices",
+      "labels": ["Flagship camera"],
+      "attributes": {
+        "price_unit": "one_time",
+        "screen_in": "6.8",
+        "battery_hours": "31",
+        "connectivity": "5G",
+        "monthly_installment": "45.79 for 24 months",
+        "upgrade_program_eligible": "yes",
+        "bundle_eligible": "yes",
+        "trade_in_tier": "A"
+      },
+      "in_stock": true,
+      "short_description": "ACME's slab flagship: the best camera system in the lineup and a battery that ignores the day.",
+      "long_description": "The Phone 5 Pro is the conventional shape done unusually well — a bright 6.8-inch display, a 5x periscope telephoto that makes concert photos look intentional, and a 31-hour battery. It's the phone for people who want the best of everything and don't need it to fold. Sold in 256 GB and 512 GB, in graphite or glacier.",
+      "specs": {
+        "display": "6.8\" OLED, 120Hz, 2600 nits peak",
+        "camera": "50MP main + 5x telephoto + ultrawide",
+        "battery": "5,100 mAh, 31h mixed use",
+        "build": "titanium frame, IP68",
+        "storage": "256 GB or 512 GB"
+      },
+      "review_highlights": [
+        "The zoom is the feature I show people first",
+        "Two-day battery if I'm not pushing it",
+        "Big phone — try the grip before committing"
+      ],
+      "variants": [
+        {
+          "product_id": "AM-DEV-203-256-GRAPHITE",
+          "option_values": {
+            "storage": "256 GB",
+            "color": "graphite"
+          },
+          "price": 1099.0,
+          "attributes": {
+            "storage_gb": "256",
+            "monthly_installment": "45.79 for 24 months"
+          }
+        },
+        {
+          "product_id": "AM-DEV-203-256-GLACIER",
+          "option_values": {
+            "storage": "256 GB",
+            "color": "glacier"
+          },
+          "price": 1099.0,
+          "attributes": {
+            "storage_gb": "256",
+            "monthly_installment": "45.79 for 24 months"
+          }
+        },
+        {
+          "product_id": "AM-DEV-203-512-GRAPHITE",
+          "option_values": {
+            "storage": "512 GB",
+            "color": "graphite"
+          },
+          "price": 1249.0,
+          "attributes": {
+            "storage_gb": "512",
+            "monthly_installment": "52.04 for 24 months"
+          }
+        },
+        {
+          "product_id": "AM-DEV-203-512-GLACIER",
+          "option_values": {
+            "storage": "512 GB",
+            "color": "glacier"
+          },
+          "price": 1249.0,
+          "attributes": {
+            "storage_gb": "512",
+            "monthly_installment": "52.04 for 24 months"
+          },
+          "in_stock": false
+        }
+      ]
+    },
+    {
+      "product_id": "AM-DEV-204",
+      "title": "ACME Phone 5 Lite",
+      "brand": "ACME",
+      "price": 799.0,
+      "currency": "USD",
+      "rating": 4.5,
+      "review_count": 1985,
+      "category": "devices",
+      "labels": [],
+      "attributes": {
+        "price_unit": "one_time",
+        "storage_gb": "128",
+        "screen_in": "6.4",
+        "battery_hours": "26",
+        "connectivity": "5G",
+        "monthly_installment": "33.29 for 24 months",
+        "upgrade_program_eligible": "yes",
+        "bundle_eligible": "yes",
+        "trade_in_tier": "B"
+      },
+      "in_stock": true,
+      "short_description": "The sensible flagship: clean software, seven years of updates, and a camera that just gets it right.",
+      "long_description": "The ACME Phone 5 Lite doesn't chase spec sheets — it chases not annoying you. The software is uncluttered, updates are promised for seven years, and the camera's processing makes ordinary light look good without filters. The 6.4-inch size hits the increasingly rare middle ground between phablet and tiny.",
+      "specs": {
+        "display": "6.4\" OLED, 120Hz",
+        "camera": "50MP main + ultrawide, night mode",
+        "battery": "4,600 mAh, 26h mixed use",
+        "updates": "7 years OS + security"
+      },
+      "review_highlights": [
+        "Seven years of updates is why I'm here",
+        "Camera point-and-shoot results beat phones costing more",
+        "Charging is fine but not fast by 2026 standards"
+      ]
+    },
+    {
+      "product_id": "AM-DEV-205",
+      "title": "ACME Phone 5 Max",
+      "brand": "ACME",
+      "price": 1199.0,
+      "currency": "USD",
+      "rating": 4.7,
+      "review_count": 1410,
+      "category": "devices",
+      "labels": ["Biggest screen"],
+      "attributes": {
+        "price_unit": "one_time",
+        "storage_gb": "512",
+        "screen_in": "6.9",
+        "battery_hours": "30",
+        "connectivity": "5G",
+        "monthly_installment": "49.96 for 24 months",
+        "upgrade_program_eligible": "yes",
+        "bundle_eligible": "yes",
+        "trade_in_tier": "A"
+      },
+      "in_stock": true,
+      "short_description": "ACME's everything phone: 6.9-inch display, 512GB standard, and the same seven-year update promise.",
+      "long_description": "The Phone 5 Max is for people who watch, edit, and read on their phone more than on anything else they own. The 6.9-inch panel is the best ACME has shipped, storage starts at 512GB so the photo library question never comes up, and it keeps the clean-software, long-updates philosophy of the Phone 5 Lite.",
+      "specs": {
+        "display": "6.9\" OLED, 120Hz, anti-reflective",
+        "camera": "200MP main + 5x telephoto + ultrawide",
+        "battery": "5,000 mAh, 30h mixed use",
+        "storage": "512GB, no card slot",
+        "updates": "7 years OS + security"
+      },
+      "review_highlights": [
+        "Replaced my tablet entirely",
+        "Heavy, but you stop noticing in a week",
+        "The anti-reflective screen is shockingly good outdoors"
+      ]
+    },
+    {
+      "product_id": "AM-DEV-206",
+      "title": "ACME Phone 3",
+      "brand": "ACME",
+      "price": 249.0,
+      "currency": "USD",
+      "rating": 4.2,
+      "review_count": 3320,
+      "category": "devices",
+      "labels": ["Best under $250"],
+      "attributes": {
+        "price_unit": "one_time",
+        "storage_gb": "128",
+        "screen_in": "6.5",
+        "battery_hours": "33",
+        "connectivity": "5G",
+        "monthly_installment": "10.38 for 24 months",
+        "upgrade_program_eligible": "no",
+        "bundle_eligible": "yes",
+        "trade_in_tier": "C"
+      },
+      "in_stock": true,
+      "short_description": "The budget phone that quietly does 90% of what flagships do, with the longest battery in the store.",
+      "long_description": "The ACME Phone 3 is what happens when a manufacturer skips the glamour features and spends the budget on what people actually notice: a big bright screen, a 33-hour battery, and 5G. The camera is good in daylight and honest about its limits at night. For a first phone, a backup, or a no-drama daily driver, it's the easy answer.",
+      "specs": {
+        "display": "6.5\" LCD, 90Hz",
+        "camera": "48MP main",
+        "battery": "5,500 mAh, 33h mixed use",
+        "extras": "headphone jack, expandable storage"
+      },
+      "review_highlights": [
+        "Two full days of battery, not marketing days, actual days",
+        "Bought one for each kid — zero complaints",
+        "It has a headphone jack. Instant five stars."
+      ]
+    },
+    {
+      "product_id": "AM-DEV-207",
+      "title": "ACME Tablet 11",
+      "brand": "ACME",
+      "price": 549.0,
+      "currency": "USD",
+      "rating": 4.5,
+      "review_count": 890,
+      "category": "devices",
+      "labels": [],
+      "attributes": {
+        "price_unit": "one_time",
+        "storage_gb": "256",
+        "screen_in": "11",
+        "battery_hours": "14",
+        "connectivity": "5G + Wi-Fi",
+        "monthly_installment": "22.88 for 24 months",
+        "upgrade_program_eligible": "no",
+        "bundle_eligible": "yes",
+        "trade_in_tier": "C"
+      },
+      "in_stock": true,
+      "short_description": "An 11-inch 5G tablet that turns a parked car, a flight, or a couch into a second office or first cinema.",
+      "long_description": "The ACME Tablet 11 is the cellular tablet for people who got tired of hotspotting. With its own 5G connection (pair it with a data line), it's always online — notes in the field, shows on the train, video calls that don't depend on whatever Wi-Fi is nearby. The keyboard folio sold separately turns it into a credible laptop stand-in.",
+      "specs": {
+        "display": "11\" LCD, 120Hz",
+        "battery": "8,000 mAh, 14h video",
+        "connectivity": "5G (data line required) + Wi-Fi 6E",
+        "accessories": "keyboard folio and pen sold separately"
+      },
+      "review_highlights": [
+        "The always-connected part changes how much I use it",
+        "Great screen for the price tier",
+        "Buy the folio with it, you'll want it"
+      ]
+    },
+    {
+      "product_id": "AM-DEV-208",
+      "title": "ACME Watch",
+      "brand": "ACME",
+      "price": 329.0,
+      "currency": "USD",
+      "rating": 4.4,
+      "review_count": 1230,
+      "category": "devices",
+      "labels": [],
+      "attributes": {
+        "price_unit": "one_time",
+        "storage_gb": "32",
+        "screen_in": "1.4",
+        "battery_hours": "48",
+        "connectivity": "LTE",
+        "monthly_installment": "13.71 for 24 months",
+        "upgrade_program_eligible": "no",
+        "bundle_eligible": "yes",
+        "trade_in_tier": "C"
+      },
+      "in_stock": true,
+      "short_description": "A cellular smartwatch that lets the phone stay home — calls, texts, maps, and payments from the wrist.",
+      "long_description": "With its own LTE connection (add a smartwatch line), the ACME Watch covers runs, errands, and pool days phone-free. Two-day battery, real fitness tracking, and call quality that surprises people. It pairs with any recent ACME phone.",
+      "specs": {
+        "display": "1.4\" AMOLED, always-on",
+        "battery": "48h typical",
+        "sensors": "heart rate, SpO2, GPS",
+        "water_resistance": "5ATM"
+      },
+      "review_highlights": [
+        "Left my phone at home for a half marathon — flawless",
+        "Battery does a weekend trip",
+        "The smartwatch line add-on is cheap enough to not think about"
+      ]
+    },
+    {
+      "product_id": "AM-DEV-209",
+      "title": "ACME Hotspot Hub",
+      "brand": "ACME",
+      "price": 199.0,
+      "currency": "USD",
+      "rating": 4.3,
+      "review_count": 760,
+      "category": "devices",
+      "labels": [],
+      "attributes": {
+        "price_unit": "one_time",
+        "storage_gb": "0",
+        "screen_in": "2.4",
+        "battery_hours": "13",
+        "connectivity": "5G",
+        "monthly_installment": "8.29 for 24 months",
+        "upgrade_program_eligible": "no",
+        "bundle_eligible": "no",
+        "trade_in_tier": "C"
+      },
+      "in_stock": true,
+      "short_description": "A dedicated 5G hotspot that connects 32 devices for 13 hours — the RV, job site, and power-outage box.",
+      "long_description": "The Hotspot Hub does one job: turn 5G into Wi-Fi, all day, for everything you own. It runs 13 hours on battery, takes 32 connections without wheezing, and the small screen shows exactly how much data the crew has burned. Pair it with a data line or a Hotspot Add-On.",
+      "specs": {
+        "wifi": "Wi-Fi 6, 32 devices",
+        "battery": "6,400 mAh, 13h; USB-C powered",
+        "display": "2.4\" status screen",
+        "ports": "USB-C, ethernet out"
+      },
+      "review_highlights": [
+        "Ran a tiny office from a campsite for a week",
+        "Better signal than my phone's hotspot in the same spot",
+        "Ethernet port is a quiet killer feature"
+      ]
+    },
+    {
+      "product_id": "AM-NET-301",
+      "title": "Home Fiber 300",
+      "brand": "ACME Mobile",
+      "price": 50.0,
+      "currency": "USD",
+      "rating": 4.5,
+      "review_count": 2140,
+      "category": "home-internet",
+      "labels": ["Self-install in 15 minutes"],
+      "attributes": {
+        "price_unit": "per_month",
+        "price_qualifier": "+ taxes & fees \u00b7 incl. $5 AutoPay discount",
+        "speed_tier": "300 Mbps symmetric",
+        "typical_download_mbps": "320",
+        "typical_upload_mbps": "310",
+        "typical_latency_ms": "12",
+        "data_cap": "none",
+        "equipment_fee": "0",
+        "install": "self-install kit or technician",
+        "bundle_eligible": "yes",
+        "contract_term": "none",
+        "price_guarantee": "2-year price guarantee"
+      },
+      "in_stock": true,
+      "short_description": "Symmetric 300 Mbps fiber with no data cap, no equipment fee, and no contract — plenty for streaming households.",
+      "long_description": "Home Fiber 300 covers the normal house: a few 4K streams, video calls, gaming, and smart-home chatter, all at once, with upload speed that matches download — which is what makes video calls actually good. The router is included with no monthly equipment fee, the self-install kit takes about 15 minutes, and there's no annual contract.",
+      "specs": {
+        "speed": "300 Mbps down / 300 Mbps up",
+        "router": "Wi-Fi 6 gateway included",
+        "cap": "no data cap",
+        "install": "free self-install kit, or technician visit"
+      },
+      "review_highlights": [
+        "Upload speed ended my 'you're frozen' era on calls",
+        "Self-install really was 15 minutes",
+        "Price hasn't moved in the year I've had it"
+      ]
+    },
+    {
+      "product_id": "AM-NET-302",
+      "title": "Home Fiber 1 Gig",
+      "brand": "ACME Mobile",
+      "price": 70.0,
+      "currency": "USD",
+      "rating": 4.7,
+      "review_count": 1880,
+      "category": "home-internet",
+      "labels": ["Most popular fiber tier"],
+      "attributes": {
+        "price_unit": "per_month",
+        "price_qualifier": "+ taxes & fees \u00b7 incl. $5 AutoPay discount",
+        "speed_tier": "1 Gbps symmetric",
+        "typical_download_mbps": "940",
+        "typical_upload_mbps": "880",
+        "typical_latency_ms": "11",
+        "data_cap": "none",
+        "equipment_fee": "0",
+        "install": "self-install kit or technician",
+        "bundle_eligible": "yes",
+        "contract_term": "none",
+        "price_guarantee": "2-year price guarantee"
+      },
+      "in_stock": true,
+      "short_description": "Gigabit fiber for households where everyone is online at once — work, cloud backups, game downloads, no queue.",
+      "long_description": "Home Fiber 1 Gig is the tier where the internet stops being a shared resource anyone notices. Two people on calls, a console pulling a 100GB download, cameras backing up — simultaneously, without negotiation. Symmetric upload makes it the work-from-home pick, and like all ACME fiber tiers there's no cap, no equipment fee, and no contract.",
+      "specs": {
+        "speed": "1 Gbps down / 1 Gbps up",
+        "router": "Wi-Fi 6E gateway included",
+        "cap": "no data cap",
+        "install": "free self-install kit, or technician visit"
+      },
+      "review_highlights": [
+        "Whole family online and nobody can tell",
+        "Measured 940 down on a weeknight — matches what they advertise as typical",
+        "Bundle discount with our phone plans made it cheaper than cable"
+      ]
+    },
+    {
+      "product_id": "AM-NET-303",
+      "title": "Home Fiber 2 Gig",
+      "brand": "ACME Mobile",
+      "price": 95.0,
+      "currency": "USD",
+      "rating": 4.6,
+      "review_count": 540,
+      "category": "home-internet",
+      "labels": ["Fastest tier"],
+      "attributes": {
+        "price_unit": "per_month",
+        "price_qualifier": "+ taxes & fees \u00b7 incl. $5 AutoPay discount",
+        "speed_tier": "2 Gbps symmetric",
+        "typical_download_mbps": "2050",
+        "typical_upload_mbps": "2000",
+        "typical_latency_ms": "9",
+        "data_cap": "none",
+        "equipment_fee": "0",
+        "install": "technician install included",
+        "bundle_eligible": "yes",
+        "contract_term": "none",
+        "price_guarantee": "2-year price guarantee"
+      },
+      "in_stock": true,
+      "short_description": "2 Gbps symmetric fiber for creators, big households, and people who upload as hard as they download.",
+      "long_description": "Home Fiber 2 Gig is overkill in the best way: multi-gig wired backbone for a studio or server closet, headroom for the 10-person household, and uploads that move raw footage in minutes. Technician install is included at this tier so the wired side gets done right.",
+      "specs": {
+        "speed": "2 Gbps down / 2 Gbps up",
+        "router": "Wi-Fi 7 gateway included, 2.5GbE ports",
+        "cap": "no data cap",
+        "install": "technician install included"
+      },
+      "review_highlights": [
+        "Video uploads went from coffee breaks to blinks",
+        "You need wired gear to feel it — Wi-Fi alone won't show 2 gig",
+        "The included Wi-Fi 7 router is genuinely high-end"
+      ]
+    },
+    {
+      "product_id": "AM-ADD-401",
+      "title": "Data Top-Up 5GB",
+      "brand": "ACME Mobile",
+      "price": 10.0,
+      "currency": "USD",
+      "rating": 3.9,
+      "review_count": 4210,
+      "category": "add-ons",
+      "labels": [],
+      "attributes": {
+        "price_unit": "one_time",
+        "applies_to": "any capped plan",
+        "expires": "end of billing cycle"
+      },
+      "in_stock": true,
+      "short_description": "5GB of full-speed data, right now, gone at the end of the cycle — the month-rescue button.",
+      "long_description": "A Data Top-Up restores full-speed data instantly when you've hit your plan's allowance. It's the right tool for an unusual month — a trip, a move, a hotspot emergency. If you're buying one most months, do the math against the next plan tier: three top-ups costs more than the upgrade.",
+      "specs": {
+        "amount": "5GB at full speed",
+        "activation": "instant",
+        "expiry": "end of current billing cycle, no rollover"
+      },
+      "review_highlights": [
+        "Saved a road trip, twice",
+        "Wish unused gigs rolled over",
+        "The app literally told me to upgrade plans instead of buying a fourth one — fair"
+      ]
+    },
+    {
+      "product_id": "AM-ADD-402",
+      "title": "Roaming Day Pass",
+      "brand": "ACME Mobile",
+      "price": 9.0,
+      "currency": "USD",
+      "rating": 4.4,
+      "review_count": 1530,
+      "category": "add-ons",
+      "labels": [],
+      "attributes": {
+        "price_unit": "one_time",
+        "applies_to": "plans without included roaming",
+        "coverage": "140+ countries",
+        "expires": "midnight local time on the day of first use"
+      },
+      "in_stock": true,
+      "short_description": "Your plan's data, talk, and text in 140+ countries, each pass good until midnight local time — only charged on days you actually use it.",
+      "long_description": "The Roaming Day Pass extends your normal plan abroad: same data allowance, unlimited talk and text, from the first time your phone uses the network that day until midnight local time. No use, no charge. Unlimited Plus customers don't need this — 90+ countries are already included in that plan.",
+      "specs": {
+        "coverage": "140+ countries",
+        "window": "first network use until midnight local time",
+        "billing": "charged only on days used"
+      },
+      "review_highlights": [
+        "Landed, phone worked, $9, done",
+        "Loved that lazy hotel days cost nothing",
+        "Check if your plan already includes your destination first"
+      ]
+    },
+    {
+      "product_id": "AM-ADD-403",
+      "title": "Hotspot Add-On 20GB",
+      "brand": "ACME Mobile",
+      "price": 15.0,
+      "currency": "USD",
+      "rating": 4.1,
+      "review_count": 620,
+      "category": "add-ons",
+      "labels": [],
+      "attributes": {
+        "price_unit": "per_month",
+        "applies_to": "any postpaid plan",
+        "stacking": "adds to plan hotspot allowance"
+      },
+      "in_stock": true,
+      "short_description": "20 extra gigabytes of high-speed hotspot every month, stacked on top of whatever your plan includes.",
+      "long_description": "Hotspot Add-On is for the laptop-on-the-go months: contract work from cafés, a semester of train commutes, an RV summer. It adds 20GB of full-speed tethering to your plan's existing allowance and can be removed any month, so it flexes with the season.",
+      "specs": {
+        "amount": "20GB/month high-speed hotspot",
+        "stacking": "adds to plan allowance",
+        "term": "month to month, remove anytime"
+      },
+      "review_highlights": [
+        "Added it for a three-month contract gig, removed it after — exactly as advertised",
+        "Cheaper than the coffee I was buying for the Wi-Fi",
+        "Pairs well with the Hotspot Hub"
+      ]
+    },
+    {
+      "product_id": "AM-ADD-404",
+      "title": "Device Protection",
+      "brand": "ACME Mobile",
+      "price": 14.0,
+      "currency": "USD",
+      "rating": 4.0,
+      "review_count": 2950,
+      "category": "add-ons",
+      "labels": [],
+      "attributes": {
+        "price_unit": "per_month",
+        "applies_to": "phones and tablets on installment",
+        "claims": "up to 3 per 12 months"
+      },
+      "in_stock": true,
+      "short_description": "Cracked screen, lost phone, sad story — covered. Same-day screen repairs and next-day replacements.",
+      "long_description": "Device Protection covers accidental damage, loss, and theft for phones and tablets, with same-day screen repair in most metro areas and next-day replacement shipping everywhere else. Deductibles vary by device tier and are always shown before you confirm a claim.",
+      "specs": {
+        "coverage": "damage, loss, theft, post-warranty failures",
+        "screen_repair": "same-day in most metros",
+        "claims": "up to 3 per rolling 12 months"
+      },
+      "review_highlights": [
+        "Screen fixed in a mall kiosk during lunch",
+        "Deductible stung less than a new phone",
+        "Read the tier table so the deductible isn't a surprise"
+      ]
+    },
+    {
+      "product_id": "AM-ADD-405",
+      "title": "ACME Streaming Bundle",
+      "brand": "ACME Mobile",
+      "price": 10.0,
+      "currency": "USD",
+      "rating": 4.3,
+      "review_count": 1120,
+      "category": "add-ons",
+      "labels": ["Included free with Unlimited Plus"],
+      "attributes": {
+        "price_unit": "per_month",
+        "applies_to": "any postpaid plan",
+        "note": "already included with Unlimited Plus"
+      },
+      "in_stock": true,
+      "short_description": "The ACME Streaming subscription at a line-level discount — movies, series, and live channels on any plan.",
+      "long_description": "ACME Streaming normally runs more on its own; as a line add-on it's $10/month with billing folded into your phone bill. One subscription covers four concurrent streams. If you're on Unlimited Plus, don't add this — it's already included with your plan.",
+      "specs": {
+        "streams": "4 concurrent",
+        "quality": "up to 4K where the plan's video tier allows",
+        "billing": "on your ACME Mobile bill"
+      },
+      "review_highlights": [
+        "One bill for phone and streaming is tidier than I expected to care about",
+        "Almost double-paid — it's already included with Unlimited Plus, check your plan first",
+        "Decent catalog and the live channels surprised me"
+      ]
+    },
+    {
+      "product_id": "AM-ADD-406",
+      "title": "Extra Line",
+      "brand": "ACME Mobile",
+      "price": 30.0,
+      "currency": "USD",
+      "rating": 4.5,
+      "review_count": 1740,
+      "category": "add-ons",
+      "labels": ["Multi-line savings"],
+      "attributes": {
+        "price_unit": "per_month",
+        "applies_to": "any postpaid plan",
+        "note": "per-line price drops with each added line"
+      },
+      "in_stock": true,
+      "short_description": "Add a line to your account — partner, kid, or grandparent — and watch the per-line math get friendlier.",
+      "long_description": "Additional lines share your account and bill but keep their own number and data allowance. Per the multi-line schedule, the second line is discounted and the third and beyond are discounted further — a family of four on Unlimited pays meaningfully less per person than four solo accounts.",
+      "specs": {
+        "billing": "one account, one bill",
+        "discounts": "2nd line -$10/mo, 3rd+ lines -$15/mo each",
+        "management": "per-line controls and limits in the app"
+      },
+      "review_highlights": [
+        "Moved my parents onto our account, everyone's bill dropped",
+        "Per-line controls are great for the kids' phones",
+        "The math really does favor more lines"
+      ]
+    },
+    {
+      "product_id": "AM-ADD-407",
+      "title": "Smartwatch Line",
+      "brand": "ACME Mobile",
+      "price": 12.0,
+      "currency": "USD",
+      "rating": 4.2,
+      "review_count": 680,
+      "category": "add-ons",
+      "labels": [],
+      "attributes": {
+        "price_unit": "per_month",
+        "applies_to": "cellular smartwatches",
+        "note": "shares your phone number"
+      },
+      "in_stock": true,
+      "short_description": "Give a cellular watch its own connection — same number as your phone, works when the phone stays home.",
+      "long_description": "A Smartwatch Line puts your cellular watch on the network with the same number as your phone: calls and texts ring both, and the watch carries the conversation when you leave the phone behind. Data for maps, music, and payments is included in the line price.",
+      "specs": {
+        "number": "shares your phone number",
+        "data": "included for watch apps",
+        "compatibility": "ACME Watch and other cellular watches"
+      },
+      "review_highlights": [
+        "Runs without the phone are why I bought the watch at all",
+        "Setup was one screen in the app",
+        "Battery on LTE is the watch's problem, not the line's"
+      ]
+    },
+    {
+      "product_id": "AM-ADD-408",
+      "title": "Mesh Wi-Fi Extender",
+      "brand": "ACME Mobile",
+      "price": 5.0,
+      "currency": "USD",
+      "rating": 4.4,
+      "review_count": 980,
+      "category": "add-ons",
+      "labels": [],
+      "attributes": {
+        "price_unit": "per_month",
+        "applies_to": "Home Fiber plans",
+        "note": "rented, swap or return anytime"
+      },
+      "in_stock": true,
+      "short_description": "A mesh node for the dead-zone bedroom or the garage office, matched to your Home Fiber gateway.",
+      "long_description": "The Mesh Wi-Fi Extender pairs with your Home Fiber router to push full-speed coverage into the corners the main unit can't reach. It's a rental, so it's always the current hardware generation — swap it free when the gateway line upgrades, return it when you move.",
+      "specs": {
+        "coverage": "+1,500 sq ft per node",
+        "backhaul": "dedicated wireless or ethernet",
+        "term": "monthly rental, return anytime"
+      },
+      "review_highlights": [
+        "Garage office went from one bar to flawless",
+        "Plugged it in, app found it, done",
+        "Renting beats the box of obsolete routers in my closet"
+      ]
+    }
+  ]
+}

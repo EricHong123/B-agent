@@ -1,0 +1,141 @@
+{
+  "items": [
+    {
+      "product_id": "AM-DEV-201",
+      "stock": 62,
+      "threshold": 25,
+      "sales_last_30d": 84,
+      "unit_cost": 455.0,
+      "content_quality": "good",
+      "missing_attributes": []
+    },
+    {
+      "product_id": "AM-DEV-202",
+      "stock": 18,
+      "threshold": 40,
+      "sales_last_30d": 176,
+      "unit_cost": 640.0,
+      "content_quality": "good",
+      "missing_attributes": []
+    },
+    {
+      "product_id": "AM-DEV-203-256-GRAPHITE",
+      "stock": 18,
+      "threshold": 12,
+      "sales_last_30d": 40,
+      "unit_cost": 760.0,
+      "content_quality": "good",
+      "missing_attributes": []
+    },
+    {
+      "product_id": "AM-DEV-203-256-GLACIER",
+      "stock": 14,
+      "threshold": 12,
+      "sales_last_30d": 29,
+      "unit_cost": 760.0,
+      "content_quality": "good",
+      "missing_attributes": []
+    },
+    {
+      "product_id": "AM-DEV-203-512-GRAPHITE",
+      "stock": 14,
+      "threshold": 10,
+      "sales_last_30d": 17,
+      "unit_cost": 865.0,
+      "content_quality": "good",
+      "missing_attributes": []
+    },
+    {
+      "product_id": "AM-DEV-203-512-GLACIER",
+      "stock": 0,
+      "threshold": 6,
+      "sales_last_30d": 6,
+      "unit_cost": 865.0,
+      "content_quality": "good",
+      "missing_attributes": []
+    },
+    {
+      "product_id": "AM-DEV-204",
+      "stock": 57,
+      "threshold": 25,
+      "sales_last_30d": 66,
+      "unit_cost": 540.0,
+      "content_quality": "good",
+      "missing_attributes": []
+    },
+    {
+      "product_id": "AM-DEV-205",
+      "stock": 33,
+      "threshold": 15,
+      "sales_last_30d": 48,
+      "unit_cost": 830.0,
+      "content_quality": "good",
+      "missing_attributes": []
+    },
+    {
+      "product_id": "AM-DEV-206",
+      "stock": 210,
+      "threshold": 30,
+      "sales_last_30d": 22,
+      "unit_cost": 168.0,
+      "content_quality": "needs_work",
+      "missing_attributes": [
+        "band_support",
+        "warranty_term"
+      ]
+    },
+    {
+      "product_id": "AM-DEV-207",
+      "stock": 46,
+      "threshold": 15,
+      "sales_last_30d": 19,
+      "unit_cost": 385.0,
+      "content_quality": "good",
+      "missing_attributes": []
+    },
+    {
+      "product_id": "AM-DEV-208",
+      "stock": 74,
+      "threshold": 20,
+      "sales_last_30d": 41,
+      "unit_cost": 218.0,
+      "content_quality": "good",
+      "missing_attributes": []
+    },
+    {
+      "product_id": "AM-DEV-209",
+      "stock": 28,
+      "threshold": 12,
+      "sales_last_30d": 17,
+      "unit_cost": 126.0,
+      "content_quality": "good",
+      "missing_attributes": []
+    },
+    {
+      "product_id": "AM-ADD-408",
+      "stock": 9,
+      "threshold": 15,
+      "sales_last_30d": 33,
+      "unit_cost": 2.75,
+      "content_quality": "good",
+      "missing_attributes": []
+    }
+  ],
+  "service_content": [
+    {
+      "product_id": "AM-ADD-402",
+      "content_quality": "needs_work",
+      "missing_attributes": [
+        "coverage_countries",
+        "speed_cap_note"
+      ]
+    },
+    {
+      "product_id": "AM-NET-303",
+      "content_quality": "needs_work",
+      "missing_attributes": [
+        "router_model"
+      ]
+    }
+  ]
+}

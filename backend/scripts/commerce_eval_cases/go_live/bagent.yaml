@@ -1,0 +1,54 @@
+# Go-live cases for B-agent's buyer assistant over the demo trade terms
+# (app/commerce/seed.py), judged at 2026-10-01; scripts/eval_commerce.py runs them with
+# the vendored commerce/scripts/eval_go_live.py, whose docs/metrics.md describes the fields.
+cases:
+  # -- current_rule --------------------------------------------------------------
+  - {id: b2b-cur-01, cat: current_rule, q: "What deposit do you need before production starts?", query: "deposit before production", source: terms/payment, version: 2, facts: ["30%"], stale: ["40%"]}
+  - {id: b2b-cur-02, cat: current_rule, q: "When is the balance due?", query: "balance payment", source: terms/payment, version: 2, facts: ["before shipment"], stale: ["copy of the bill of lading"]}
+  - {id: b2b-cur-03, cat: current_rule, q: "Do you accept a letter of credit?", query: "L/C sight payment", source: terms/payment, version: 2, facts: [["L/C", "letter of credit"], ["30,000", "30000"]]}
+  - {id: b2b-cur-04, cat: current_rule, q: "Are samples free?", query: "free samples", source: terms/samples, facts: [["three", "3"]]}
+  - {id: b2b-cur-05, cat: current_rule, q: "How much is a sample with our logo?", query: "custom logo samples cost", source: terms/samples, facts: ["50"]}
+  - {id: b2b-cur-06, cat: current_rule, q: "Can we order less than the MOQ?", query: "below MOQ orders", source: terms/samples, facts: [["surcharge", "case by case"]]}
+  - {id: b2b-cur-07, cat: current_rule, q: "Which inspection standard do you ship to?", query: "pre-shipment inspection AQL", source: terms/quality, facts: ["AQL 2.5"]}
+  - {id: b2b-cur-08, cat: current_rule, q: "How long do we have to file a claim for defects?", query: "claims defects arrival", source: terms/quality, facts: ["30 days"]}
+  - {id: b2b-cur-09, cat: current_rule, q: "Are your prices FOB or CIF?", query: "Incoterms FOB prices", source: terms/shipping, facts: ["FOB"]}
+  - {id: b2b-cur-10, cat: current_rule, q: "From when does the lead time count?", query: "lead time deposit artwork", source: terms/shipping, facts: [["artwork approval", "artwork"]]}
+
+  # -- version_change ------------------------------------------------------------
+  - {id: b2b-ver-01, cat: version_change, q: "Last year it was a 40% deposit. Is that still the case?", query: "deposit payment terms", source: terms/payment, version: 2, facts: ["30%"]}
+  - {id: b2b-ver-02, cat: version_change, q: "Can we still pay the balance against a copy of the B/L?", query: "balance bill lading payment", source: terms/payment, version: 2, facts: ["before shipment"]}
+  - {id: b2b-ver-03, cat: version_change, q: "What deposit do you require?", query: "deposit payment terms", clock: "2025-10-01T12:00:00+00:00", source: terms/payment, version: 1, facts: ["40%"], stale: ["30%"]}
+  - id: b2b-ver-04
+    cat: version_change
+    q: "How much deposit is needed for a new order?"
+    query: "deposit payment terms"
+    source: terms/payment
+    version: 2
+    facts: ["30%"]
+    stale: ["20%"]
+    overlay:
+      - {policy_id: "terms/payment@3", title: "Payment terms", category: payment, content: "20% T/T deposit with the order and 80% balance before shipment.", source_id: terms/payment, version: "3", effective_at: "2026-12-01"}
+  - id: b2b-ver-05
+    cat: version_change
+    q: "How long do we have to report a defect?"
+    query: "claims defects arrival"
+    action: decline
+    stale: ["30 days", "14 days"]
+    overlay:
+      - {policy_id: "terms/quality@2", title: "Quality inspection and claims", category: quality, content: "Claims for defects must reach us within 14 days of arrival with photos.", source_id: terms/quality, version: "2", effective_at: "2026-03-01"}
+
+  # -- missing_info --------------------------------------------------------------
+  - {id: b2b-mis-01, cat: missing_info, q: "Can we pay in Bitcoin?", query: "pay bitcoin cryptocurrency", action: decline}
+  - {id: b2b-mis-02, cat: missing_info, q: "Do you hold consignment stock in our warehouse?", query: "consignment stock warehouse", action: decline}
+  - {id: b2b-mis-03, cat: missing_info, q: "Is there a rebate for annual volume?", query: "annual volume rebate", action: decline}
+  - {id: b2b-mis-04, cat: missing_info, q: "Can you provide FSC certificates for the cartons?", query: "FSC certificate cartons", action: decline}
+
+  # -- colloquial ----------------------------------------------------------------
+  - {id: b2b-col-01, cat: colloquial, q: "how much upfront before u start making my stuff?", query: "deposit before production", source: terms/payment, version: 2, facts: ["30%"], stale: ["40%"]}
+  - {id: b2b-col-02, cat: colloquial, q: "can i get a couple samples to check quality, free??", query: "free samples", source: terms/samples, facts: [["three", "3"]]}
+  - {id: b2b-col-03, cat: colloquial, q: "定金要付多少？", query: "deposit payment terms", source: terms/payment, version: 2, facts: ["30%"], stale: ["40%"]}
+  - {id: b2b-col-04, cat: colloquial, q: "if stuff arrives broken how long to complain", query: "claims defects arrival", source: terms/quality, facts: ["30 days"]}
+
+  # -- must_handoff --------------------------------------------------------------
+  - {id: b2b-hof-01, cat: must_handoff, q: "Cancel order SO-20261001-A1B2C3 and refund our deposit now.", query: "cancel order refund deposit", action: handoff}
+  - {id: b2b-hof-02, cat: must_handoff, q: "Our container was short-shipped by 200 cartons and we need compensation.", query: "short shipment compensation", action: handoff}

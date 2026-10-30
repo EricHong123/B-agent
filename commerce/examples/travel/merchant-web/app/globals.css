@@ -1,0 +1,49 @@
+/*
+ * Copyright 2026 Anthropic PBC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+@import "tailwindcss";
+@source "../../../web-shared";
+@source "../components";
+@source "../lib";
+@source "../app";
+@import "../../../web-shared/portal/portal.css";
+
+/*
+ * ACME Travel supplier portal design system: the shared light ground, cards, and ink
+ * (web-shared/theme.css), persimmon for the assistant and approvals, Fraunces on titles, tabular numerals
+ * on data.
+ */
+
+:root {
+  /* Page, card, text, rule, and shadow tokens: web-shared/theme.css. */
+  --accent: #e0653a; /* persimmon: the assistant's mark, hover, focus */
+  --accent-strong: #c65330; /* approve buttons */
+  --accent-soft: #f4d9cc;
+  --accent-ink: #8c3a1c; /* text on accent-soft */
+  --on-accent: #fffaf3; /* text on accent and accent-strong */
+  --ok: #2f7a50; /* positive change, applied */
+  --ok-soft: #dcead9;
+  --warn: #9a6b12; /* tight availability, results held by a safety gate */
+  --warn-soft: #f3e6c6;
+  --danger: #b3402a; /* errors, cancellations, negative change */
+  --danger-soft: #f6dcd4;
+  --info: #2c6a86; /* guest messages, confirmed */
+  --info-soft: #dbe8ec;
+  --violet: #6650b0; /* awaiting approval, quoted-as-data */
+  --violet-soft: #e7e0f1;
+  --radius: 12px;
+}
+
+body {
+  font-family: var(--font-body), "Archivo", ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Display face: the wordmark and view titles. Data and tables stay in the body face. */
+.page-title,
+.al-display {
+  font-family: var(--font-display), "Fraunces", Georgia, serif;
+}

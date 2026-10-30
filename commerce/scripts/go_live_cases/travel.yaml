@@ -1,0 +1,59 @@
+# Go-live cases for the travel storefront; scripts/eval_go_live.py reads them and
+# docs/metrics.md describes the fields. `query` is the offline responder's search.
+cases:
+  # -- current_rule --------------------------------------------------------------
+  - {id: trv-cur-01, cat: current_rule, q: "Until when can I cancel a refundable hotel for free?", query: "cancel refundable stay free", source: travel/cancellation-refundable, version: 2, facts: ["48 hours"], stale: ["10 business days"]}
+  - {id: trv-cur-02, cat: current_rule, q: "How late can I cancel a refundable flight?", query: "cancel refundable flight", source: travel/cancellation-refundable, version: 2, facts: ["24 hours"]}
+  - {id: trv-cur-03, cat: current_rule, q: "What do I get back if I cancel a non-refundable booking ten days out?", query: "cancel non-refundable credit", source: travel/cancellation-nonrefundable, facts: ["50%", "travel credit"]}
+  - {id: trv-cur-04, cat: current_rule, q: "What's the fee to change dates on a non-refundable booking?", query: "change non-refundable fee", source: travel/changes-and-rebooking, facts: ["$40"]}
+  - {id: trv-cur-05, cat: current_rule, q: "How long is my quoted price held once I start checkout?", query: "price held checkout", source: travel/price-revalidation, facts: ["20 minutes"]}
+  - {id: trv-cur-06, cat: current_rule, q: "How much is a checked bag when the fare doesn't include one?", query: "checked bag cost", source: travel/baggage, facts: ["$18"]}
+  - {id: trv-cur-07, cat: current_rule, q: "How long does my passport need to be valid?", query: "passport valid", source: travel/travel-documents, facts: ["6 months"]}
+  - {id: trv-cur-08, cat: current_rule, q: "What does ACME Subscription cost?", query: "subscription cost", source: travel/acme-subscription, facts: ["$99"]}
+  - {id: trv-cur-09, cat: current_rule, q: "When is a refundable stay charged to my card?", query: "refundable stay charged", source: travel/payment-and-holds, facts: ["7 days before check-in"]}
+  - {id: trv-cur-10, cat: current_rule, q: "Is there a grace period right after I book?", query: "grace period booking", source: travel/cancellation-nonrefundable, facts: [["24-hour", "24 hour"]]}
+  - {id: trv-cur-11, cat: current_rule, q: "What does it cost to fix a typo in a traveler's name after the first day?", query: "name correction", source: travel/changes-and-rebooking, facts: ["$25"]}
+  - {id: trv-cur-12, cat: current_rule, q: "Do business fares include checked bags?", query: "business fare checked bags", source: travel/baggage, facts: ["two checked bags"]}
+
+  # -- version_change ------------------------------------------------------------
+  - {id: trv-ver-01, cat: version_change, q: "I remember free cancellation up to 24 hours before check-in. Is that still the rule for hotels?", query: "cancel refundable stay free", source: travel/cancellation-refundable, version: 2, facts: ["48 hours"]}
+  - {id: trv-ver-02, cat: version_change, q: "How long until my refund posts after cancelling a refundable stay?", query: "refund refundable cancel posts", source: travel/cancellation-refundable, version: 2, facts: ["5-7 business days"], stale: ["10 business days"]}
+  - {id: trv-ver-03, cat: version_change, q: "If I cancel a refundable experience late, how much am I charged?", query: "cancel refundable experience late charge", source: travel/cancellation-refundable, version: 2, facts: ["50%"], stale: ["full booking"]}
+  - {id: trv-ver-04, cat: version_change, q: "What's the free-cancellation cutoff for refundable stays these days?", query: "free cancellation cutoff refundable", source: travel/cancellation-refundable, version: 2, facts: ["48 hours"]}
+  - {id: trv-ver-05, cat: version_change, q: "Until when can I cancel a refundable hotel for free?", query: "cancel refundable stay free", clock: "2026-01-15T12:00:00+00:00", source: travel/cancellation-refundable, version: 1, facts: ["24 hours"], stale: ["48 hours"]}
+  - {id: trv-ver-06, cat: version_change, q: "How long until a refund posts after I cancel a refundable stay?", query: "refund refundable cancel posts", clock: "2026-01-15T12:00:00+00:00", source: travel/cancellation-refundable, version: 1, facts: ["10 business days"], stale: ["5-7 business days"]}
+  - {id: trv-ver-07, cat: version_change, q: "Is Summer Flex still on? Can I change my non-refundable trip for free?", query: "Summer Flex free date change", action: decline, stale: ["August 31"]}
+  - id: trv-ver-08
+    cat: version_change
+    q: "How much does it cost to change a non-refundable booking?"
+    query: "change non-refundable fee"
+    action: decline
+    stale: ["$40", "$60"]
+    overlay:
+      - {policy_id: changes-and-rebooking-v2, title: "Changes and rebooking", category: changes, content: "Non-refundable bookings can be changed for a $60 fee per booking plus any fare or rate difference.", source_id: travel/changes-and-rebooking, version: "2", effective_at: "2026-08-01"}
+
+  # -- missing_info --------------------------------------------------------------
+  - {id: trv-mis-01, cat: missing_info, q: "Can I bring my pet snake in the cabin?", query: "pet cabin", action: decline}
+  - {id: trv-mis-02, cat: missing_info, q: "Do you sell travel insurance?", query: "travel insurance", action: decline}
+  - {id: trv-mis-03, cat: missing_info, q: "Do flights earn loyalty points?", query: "loyalty points flights", action: decline}
+  - {id: trv-mis-04, cat: missing_info, q: "Can you arrange wheelchair assistance at the airport?", query: "wheelchair assistance airport", action: decline}
+  - {id: trv-mis-05, cat: missing_info, q: "Can I pay for a trip in monthly installments?", query: "monthly installments pay", action: decline}
+  - {id: trv-mis-06, cat: missing_info, q: "Is there a child discount on flights?", query: "child discount", action: decline}
+
+  # -- colloquial ----------------------------------------------------------------
+  - {id: trv-col-01, cat: colloquial, q: "can i bail on my hotel for free??", query: "cancel hotel free", source: travel/cancellation-refundable, facts: ["48 hours"], stale: ["10 business days"]}
+  - {id: trv-col-02, cat: colloquial, q: "bags - what do i get without paying extra", query: "carry-on included bag", source: travel/baggage, facts: [["carry-on", "carry on"]]}
+  - {id: trv-col-03, cat: colloquial, q: "护照要有效多久？", query: "passport valid", source: travel/travel-documents, facts: [["6 months", "6个月", "6 个月", "六个月"]]}
+  - {id: trv-col-04, cat: colloquial, q: "nonrefundable = zero money back?", query: "non-refundable cancel", source: travel/cancellation-nonrefundable, facts: [["travel credit", "50%"]]}
+  - {id: trv-col-05, cat: colloquial, q: "改日期要钱吗", query: "change date fee", source: travel/changes-and-rebooking, facts: [["$40", "40"]]}
+  - {id: trv-col-06, cat: colloquial, q: "price jumped at checkout?? what gives", query: "price increase checkout", source: travel/price-revalidation, facts: [["$25", "2%"]]}
+  - {id: trv-col-07, cat: colloquial, q: "subscription - how much tho", query: "subscription cost", source: travel/acme-subscription, facts: [["$99", "99"]]}
+  - {id: trv-col-08, cat: colloquial, q: "when do u actually charge my card", query: "charged booking confirmed", source: travel/payment-and-holds, facts: [["charged in full", "7 days before"]]}
+
+  # -- must_handoff --------------------------------------------------------------
+  - {id: trv-hnd-01, cat: must_handoff, q: "Cancel my hotel booking right now.", query: "cancel booking", action: handoff}
+  - {id: trv-hnd-02, cat: must_handoff, q: "I missed my flight. Rebook me on the next one.", query: "rebook missed flight", action: handoff}
+  - {id: trv-hnd-03, cat: must_handoff, q: "The hotel refused to check me in. I need someone to sort this out now.", query: "denied check-in", action: handoff}
+  - {id: trv-hnd-04, cat: must_handoff, q: "Refund my non-refundable fare, the trip was awful.", query: "refund non-refundable", action: handoff}
+  - {id: trv-hnd-05, cat: must_handoff, q: "Change the traveler on my booking to my sister.", query: "name change transfer traveler", action: handoff, source: travel/changes-and-rebooking}
+  - {id: trv-hnd-06, cat: must_handoff, q: "I need a human agent, please.", query: "contact support", action: handoff}

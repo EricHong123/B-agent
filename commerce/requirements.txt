@@ -1,0 +1,58 @@
+# Copyright 2026 Anthropic PBC
+# SPDX-License-Identifier: Apache-2.0
+#
+# The seven packages of this repository, editable from their directories, and every
+# third-party package they need at run time, pinned to the versions the release was
+# tested against. Install with `pip install -r requirements.txt` inside a virtualenv;
+# `scripts/install.sh` runs that line. Nothing here resolves a repository package from
+# the package index: the seven names are unregistered there, and each pyproject pins its
+# sibling dependencies to a version no index carries. To move a pin, edit it here and in
+# the pyproject that declares the range, then run the verify line in the README.
+
+-e ./commerce-common[examples]
+-e ./shopping-agent/core
+-e ./shopping-agent/runtime-messages-api
+-e ./shopping-agent/runtime-agent-sdk
+-e ./merchant-agent/core
+-e ./merchant-agent/runtime-messages-api
+-e ./merchant-agent/runtime-agent-sdk
+
+annotated-doc==0.0.5
+annotated-types==0.8.0
+anthropic==0.122.0
+anyio==4.14.2
+attrs==26.1.0
+certifi==2026.7.22
+cffi==2.1.1
+claude-agent-sdk==0.2.139
+click==8.4.2
+cryptography==50.0.0
+distro==1.9.0
+docstring-parser==0.18.0
+fastapi==0.141.1
+h11==0.16.0
+httpcore==1.0.9
+httpx==0.28.1
+httpx-sse==0.4.3
+idna==3.18
+jiter==0.16.0
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+mcp==1.29.0
+pycparser==3.0
+pydantic==2.13.4
+pydantic-core==2.46.4
+pydantic-settings==2.15.0
+pyjwt==2.13.0
+python-dotenv==1.2.2
+python-multipart==0.0.32
+pyyaml==6.0.3
+referencing==0.37.0
+rpds-py==2026.6.3
+sniffio==1.3.1
+sse-starlette==3.4.8
+starlette==1.6.0
+typing-extensions==4.16.0
+typing-inspection==0.4.4
+uvicorn==0.52.3
+watchfiles==1.3.0

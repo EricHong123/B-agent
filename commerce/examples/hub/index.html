@@ -1,0 +1,452 @@
+<!doctype html>
+<!-- Copyright 2026 Anthropic PBC -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!--
+  The demo hub: every vertical's storefront and merchant portal in one page. Each app runs
+  whole in its own frame (sessions, chat, cart, approvals, model settings), and a frame is never
+  moved, so it stays alive while others are shown. Three views: an overview grid of the apps
+  you pick, one app, or a vertical's storefront and portal side by side. scripts/start_all.sh
+  serves this directory; the ports come from runtime/<vertical>.json, which
+  scripts/run_demo.py writes once a vertical is up.
+-->
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ACME Demo Hub</title>
+    <style>
+      /* The apps' shared look (web-shared/theme.css). */
+      :root {
+        color-scheme: light;
+        --ground: #f4f5f7;
+        --card: #ffffff;
+        --ink: #1d2433;
+        --ink-soft: #5d6577;
+        --ink-faint: #9aa0ad;
+        --line: rgba(29, 36, 51, 0.12);
+        --well: #eef0f3;
+        --ok: #1f8f5f;
+        --off: #c9cbd1;
+        --shadow: 0 1px 2px rgba(29, 36, 51, 0.05), 0 8px 24px -10px rgba(29, 36, 51, 0.14);
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; margin: 0; }
+      body {
+        background: var(--ground);
+        color: var(--ink);
+        font: 14px/1.4 ui-sans-serif, -apple-system, "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+        display: grid;
+        grid-template-columns: 236px 1fr;
+        grid-template-rows: 52px 1fr;
+        grid-template-areas: "bar bar" "side main";
+      }
+      header {
+        grid-area: bar; display: flex; align-items: center; gap: 10px; padding: 0 14px;
+        border-bottom: 1px solid var(--line); background: var(--card); min-width: 0;
+      }
+      .brand { display: flex; align-items: center; gap: 9px; font-weight: 700; letter-spacing: -0.01em; white-space: nowrap; }
+      .mark {
+        display: grid; place-items: center; width: 26px; height: 26px; border-radius: 7px;
+        background: var(--ink); color: var(--card); font-size: 13px; font-weight: 800;
+      }
+      .current { margin-left: 6px; color: var(--ink-soft); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+      .tools { margin-left: auto; display: flex; gap: 6px; align-items: center; }
+      button, .linkbtn, select {
+        font: inherit; font-size: 13px; color: var(--ink); background: var(--card);
+        border: 1px solid var(--line); border-radius: 8px; padding: 5px 10px; cursor: pointer;
+        text-decoration: none; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+      }
+      button:hover, .linkbtn:hover { background: var(--well); }
+      .views { display: inline-flex; border: 1px solid var(--line); border-radius: 9px; padding: 2px; background: var(--card); }
+      .views button { border: 0; padding: 4px 10px; border-radius: 7px; }
+      .views button[aria-pressed="true"] { background: var(--ink); color: var(--card); }
+      .linkbtn[hidden], select[hidden] { display: none; }
+      nav {
+        grid-area: side; overflow-y: auto; padding: 12px 10px; border-right: 1px solid var(--line);
+        background: var(--card);
+      }
+      .hint { margin: 0 6px 12px; font-size: 12px; color: var(--ink-soft); line-height: 1.5; }
+      .hint[hidden] { display: none; }
+      .group { margin-bottom: 14px; }
+      .group h2 {
+        margin: 0 0 4px; padding: 0 8px; font-size: 11.5px; font-weight: 600; color: var(--ink-faint);
+        text-transform: uppercase; letter-spacing: 0.04em;
+      }
+      .app {
+        width: 100%; display: flex; align-items: center; gap: 9px; border: 0; border-radius: 8px;
+        padding: 7px 8px; background: transparent; text-align: left;
+      }
+      .app:hover { background: var(--well); }
+      .app[aria-current="true"] { background: var(--well); font-weight: 600; }
+      .check {
+        width: 15px; height: 15px; border-radius: 4px; border: 1.5px solid var(--ink-faint); flex: none;
+        display: grid; place-items: center; font-size: 11px; line-height: 1; color: var(--card);
+      }
+      .check.on { background: var(--ink); border-color: var(--ink); }
+      .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--off); flex: none; }
+      .dot.on { background: var(--ok); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ok) 20%, transparent); }
+      .app .port { margin-left: auto; color: var(--ink-faint); font-size: 12px; font-variant-numeric: tabular-nums; }
+      main { grid-area: main; position: relative; padding: 10px; min-width: 0; min-height: 0; }
+      .stage {
+        --z: 1; display: grid; gap: 10px; height: 100%;
+        grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-rows: minmax(0, 1fr);
+      }
+      .pane {
+        position: relative; min-width: 0; min-height: 0; border-radius: 12px; overflow: hidden;
+        background: var(--card); box-shadow: var(--shadow); border: 1px solid var(--line);
+        --top: 0px;
+      }
+      .pane.titled { --top: 30px; }
+      .pane[hidden] { display: none; }
+      .pane .label {
+        position: absolute; top: 0; left: 0; right: 0; height: 30px; z-index: 2; display: flex;
+        align-items: center; gap: 10px; padding: 0 10px; font-size: 12px; font-weight: 600;
+        color: var(--ink-soft); background: var(--well); border-bottom: 1px solid var(--line);
+      }
+      .pane .label .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .pane .label .actions { margin-left: auto; display: flex; gap: 10px; flex: none; }
+      .pane .label a { font-weight: 400; color: var(--ink-soft); text-decoration: none; cursor: pointer; }
+      .pane .label a:hover { color: var(--ink); text-decoration: underline; }
+      .pane:not(.titled) .label { display: none; }
+      /* A zoomed frame renders at 1/z of the pane and is scaled back down, so a small grid
+         cell still shows the app's desktop layout; clicks land where they look. */
+      iframe {
+        position: absolute; left: 0; top: var(--top); border: 0; background: var(--card);
+        width: calc(100% / var(--z)); height: calc((100% - var(--top)) / var(--z));
+        transform: scale(var(--z)); transform-origin: 0 0;
+      }
+      .offline {
+        position: absolute; left: 0; right: 0; bottom: 0; top: var(--top); display: grid; place-items: center;
+        text-align: center; color: var(--ink-soft); padding: 24px; z-index: 1; background: var(--card);
+      }
+      .offline[hidden] { display: none; }
+      .offline code { background: var(--well); padding: 2px 6px; border-radius: 6px; }
+      @media (max-width: 860px) {
+        body { grid-template-columns: 1fr; grid-template-rows: auto auto 1fr; grid-template-areas: "bar" "side" "main"; }
+        header { flex-wrap: wrap; padding: 8px 10px; }
+        nav { border-right: 0; border-bottom: 1px solid var(--line); display: flex; gap: 6px; overflow-x: auto; padding: 8px; }
+        .hint { display: none; }
+        .group { margin: 0; display: flex; gap: 4px; align-items: center; }
+        .group h2 { display: none; }
+        .app { width: auto; white-space: nowrap; }
+        .app .port, .current { display: none; }
+        main { overflow-y: auto; }
+        .stage { height: auto; grid-template-columns: 1fr !important; grid-auto-rows: 75vh; grid-template-rows: none !important; }
+        .stage.single { height: 100%; grid-auto-rows: 1fr; }
+        .pane { grid-column: auto !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="brand"><span class="mark">A</span><span data-t="hub">演示中心</span></div>
+      <span class="current" id="current"></span>
+      <div class="tools">
+        <div class="views" role="group" aria-label="View">
+          <button type="button" data-view="grid" data-t="grid">总览</button>
+          <button type="button" data-view="single" data-t="single">单个</button>
+          <button type="button" data-view="split" data-t="split">并排</button>
+        </div>
+        <select id="zoom" aria-label="Zoom">
+          <option value="1">100%</option>
+          <option value="0.8">80%</option>
+          <option value="0.67">67%</option>
+          <option value="0.5">50%</option>
+        </select>
+        <button id="reload" type="button" data-t="reload">刷新</button>
+        <a id="newtab" class="linkbtn" target="_blank" rel="noopener" data-t="newtab">新标签页打开</a>
+        <button id="lang" type="button" title="Switch language">EN</button>
+      </div>
+    </header>
+    <nav id="nav" aria-label="Apps"></nav>
+    <main><div class="stage" id="stage"></div></main>
+
+    <script>
+      // The four verticals, their default ports (run_demo.py's), and the two surfaces each runs.
+      const VERTICALS = [
+        { id: "retail", name: { zh: "零售 · ACME", en: "Retail · ACME" }, api: 8000, storefront: 3000, portal: 3100 },
+        { id: "travel", name: { zh: "旅行 · ACME Travel", en: "Travel · ACME Travel" }, api: 8001, storefront: 3001, portal: 3101 },
+        { id: "telecom", name: { zh: "电信 · ACME Mobile", en: "Telecom · ACME Mobile" }, api: 8002, storefront: 3002, portal: 3102 },
+        { id: "entertainment", name: { zh: "票务 · ACME Tickets", en: "Tickets · ACME Tickets" }, api: 8003, storefront: 3003, portal: 3103 },
+      ];
+      const SURFACES = ["storefront", "portal"];
+      // The overview's apps until the URL names others.
+      const DEFAULT_GRID = ["retail:storefront", "retail:portal", "travel:storefront", "telecom:portal", "entertainment:portal"];
+      const TEXT = {
+        zh: {
+          hub: "演示中心", grid: "总览", single: "单个", split: "并排", reload: "刷新", newtab: "新标签页打开",
+          storefront: "店铺", portal: "商家门户", offline: "{app} 没有在运行",
+          start: "在仓库根目录运行 <code>./start.command</code> 启动全部，或 <code>scripts/start_all.sh {id}</code> 只启动这一个。",
+          retry: "运行后这里会自动连上。", expand: "放大", back: "返回总览", open: "新标签页 ↗",
+          hint: "勾选要放进总览的应用；每格都可直接操作，点「放大」单独查看。", empty: "在左侧勾选至少一个应用。",
+          apps: "{n} 个应用",
+        },
+        en: {
+          hub: "Demo Hub", grid: "Overview", single: "One app", split: "Side by side", reload: "Reload", newtab: "Open in new tab",
+          storefront: "Storefront", portal: "Merchant portal", offline: "{app} is not running",
+          start: "Run <code>./start.command</code> at the repo root to start everything, or <code>scripts/start_all.sh {id}</code> for this one.",
+          retry: "This pane connects as soon as it is up.", expand: "Expand", back: "Back to overview", open: "New tab ↗",
+          hint: "Tick the apps for the overview; every cell works as the app does, and Expand shows one alone.", empty: "Tick at least one app on the left.",
+          apps: "{n} apps",
+        },
+      };
+
+      // The web apps read the same cookie (web-shared/locale.ts); cookies ignore the port.
+      const LOCALE_COOKIE = "acme-locale";
+      let locale = (document.cookie.match(/(?:^|; )acme-locale=([^;]*)/) || [])[1] === "en" ? "en" : "zh";
+      const t = (key, vars = {}) => TEXT[locale][key].replace(/\{(\w+)\}/g, (_, name) => vars[name] ?? "");
+
+      const ports = Object.fromEntries(VERTICALS.map((v) => [v.id, { storefront: v.storefront, portal: v.portal }]));
+      const online = {};
+      const ALL_KEYS = VERTICALS.flatMap((v) => SURFACES.map((s) => `${v.id}:${s}`));
+      const split = (key) => key.split(":");
+      const urlOf = (key) => {
+        const [vertical, surface] = split(key);
+        return `http://localhost:${ports[vertical][surface]}`;
+      };
+      const appName = (key) => {
+        const [vertical, surface] = split(key);
+        return `${VERTICALS.find((v) => v.id === vertical).name[locale]} · ${t(surface)}`;
+      };
+
+      // State lives in the hash: #grid=a,b&zoom=0.8 | #app=retail:portal | #app=retail:portal&split
+      let state = parseHash();
+      function parseHash() {
+        const raw = location.hash.replace(/^#/, "");
+        const params = new URLSearchParams(raw.includes("=") ? raw : "");
+        const zoom = ["1", "0.8", "0.67", "0.5"].includes(params.get("zoom")) ? Number(params.get("zoom")) : 0.8;
+        let grid = (params.get("grid") || "").split(",").filter((k) => ALL_KEYS.includes(k));
+        if (params.has("app")) {
+          const app = ALL_KEYS.includes(params.get("app")) ? params.get("app") : "retail:portal";
+          return { view: params.has("split") ? "split" : "single", app, grid: grid.length ? grid : [...DEFAULT_GRID], zoom };
+        }
+        // The earlier hub's form: #retail:portal or #retail:portal/split
+        const [legacy, flag] = raw.split("/");
+        if (ALL_KEYS.includes(legacy)) return { view: flag === "split" ? "split" : "single", app: legacy, grid: [...DEFAULT_GRID], zoom };
+        return { view: "grid", app: "retail:portal", grid: params.has("grid") ? grid : [...DEFAULT_GRID], zoom };
+      }
+      function writeHash() {
+        const params = new URLSearchParams();
+        if (state.view === "grid") params.set("grid", state.grid.join(","));
+        else params.set("app", state.app);
+        if (state.view === "split") params.set("split", "");
+        params.set("zoom", String(state.zoom));
+        history.replaceState(null, "", "#" + params.toString().replace(/split=(&|$)/, "split$1").replace(/%3A/g, ":").replace(/%2C/g, ","));
+      }
+      function shownKeys() {
+        if (state.view === "grid") return state.grid;
+        if (state.view === "split") return SURFACES.map((s) => `${split(state.app)[0]}:${s}`);
+        return [state.app];
+      }
+
+      // Cell widths on a 12-column grid for n panes: rows of 3, or of 2 for an even 4.
+      function layout(n) {
+        const spans = { 1: [12], 2: [6, 6], 3: [4, 4, 4], 4: [6, 6, 6, 6], 5: [4, 4, 4, 6, 6], 6: [4, 4, 4, 4, 4, 4],
+                        7: [3, 3, 3, 3, 4, 4, 4], 8: [3, 3, 3, 3, 3, 3, 3, 3] }[n] || [];
+        const rows = { 1: 1, 2: 1, 3: 1, 4: 2, 5: 2, 6: 2, 7: 2, 8: 2 }[n] || 1;
+        return { spans, rows };
+      }
+
+      // One pane per app, created on first view and never moved (a moved iframe reloads):
+      // views only show, hide, order, and size panes, so each app keeps its session and state.
+      const panes = {};
+      function paneFor(key) {
+        if (panes[key]) return panes[key];
+        const pane = document.createElement("div");
+        pane.className = "pane";
+        const label = document.createElement("div");
+        label.className = "label";
+        const notice = document.createElement("div");
+        notice.className = "offline";
+        const frame = document.createElement("iframe");
+        frame.allow = "clipboard-read; clipboard-write";
+        frame.src = urlOf(key) + "/";
+        pane.append(label, notice, frame);
+        document.getElementById("stage").appendChild(pane);
+        panes[key] = pane;
+        return pane;
+      }
+
+      function renderNav() {
+        const nav = document.getElementById("nav");
+        nav.innerHTML = `<p class="hint" ${state.view === "grid" ? "" : "hidden"}>${t("hint")}</p>`;
+        const shown = shownKeys();
+        for (const vertical of VERTICALS) {
+          const group = document.createElement("div");
+          group.className = "group";
+          group.innerHTML = `<h2>${vertical.name[locale]}</h2>`;
+          for (const surface of SURFACES) {
+            const key = `${vertical.id}:${surface}`;
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "app";
+            const inGrid = state.grid.includes(key);
+            button.setAttribute("aria-current", String(state.view !== "grid" && shown.includes(key)));
+            if (state.view === "grid") button.setAttribute("aria-pressed", String(inGrid));
+            const narrow = window.innerWidth <= 860;
+            button.innerHTML =
+              (state.view === "grid" ? `<span class="check ${inGrid ? "on" : ""}">${inGrid ? "✓" : ""}</span>` : "") +
+              `<span class="dot ${online[key] ? "on" : ""}"></span>` +
+              `<span>${narrow ? appName(key) : t(surface)}</span>` +
+              `<span class="port">:${ports[vertical.id][surface]}</span>`;
+            button.onclick = () => {
+              if (state.view === "grid") {
+                state.grid = inGrid ? state.grid.filter((k) => k !== key) : [...state.grid, key].slice(-8);
+              } else {
+                state.app = key;
+              }
+              writeHash();
+              render();
+            };
+            button.ondblclick = () => {
+              state = { ...state, view: "single", app: key };
+              writeHash();
+              render();
+            };
+            group.appendChild(button);
+          }
+          nav.appendChild(group);
+        }
+      }
+
+      function render() {
+        document.documentElement.lang = locale === "zh" ? "zh-CN" : "en";
+        document.querySelectorAll("[data-t]").forEach((node) => (node.textContent = t(node.dataset.t)));
+        document.querySelectorAll("[data-view]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.view === state.view)));
+        document.getElementById("lang").textContent = locale === "zh" ? "EN" : "中文";
+        const zoom = document.getElementById("zoom");
+        zoom.hidden = state.view !== "grid";
+        zoom.value = String(state.zoom);
+        const newtab = document.getElementById("newtab");
+        newtab.hidden = state.view === "grid";
+        newtab.href = urlOf(state.app);
+
+        const shown = shownKeys();
+        document.getElementById("current").textContent =
+          state.view === "grid" ? t("apps", { n: shown.length }) : shown.map(appName).join("  |  ");
+        const stage = document.getElementById("stage");
+        const { spans, rows } = layout(shown.length);
+        stage.className = "stage " + state.view;
+        stage.style.setProperty("--z", state.view === "grid" ? String(state.zoom) : "1");
+        stage.style.gridTemplateRows = `repeat(${rows}, minmax(0, 1fr))`;
+        shown.forEach(paneFor);
+
+        for (const [key, pane] of Object.entries(panes)) {
+          const index = shown.indexOf(key);
+          pane.hidden = index < 0;
+          if (index < 0) continue;
+          pane.style.order = String(index);
+          pane.style.gridColumn = `span ${spans[index] || 12}`;
+          pane.classList.toggle("titled", state.view !== "single");
+          const [label, notice, frame] = pane.children;
+          const toggle = state.view === "grid" ? t("expand") : t("back");
+          label.innerHTML =
+            `<span class="name">${state.view === "split" ? t(split(key)[1]) : appName(key)}</span>` +
+            `<span class="actions"><a data-act="toggle">${toggle}</a>` +
+            `<a href="${urlOf(key)}" target="_blank" rel="noopener">${t("open")}</a></span>`;
+          label.querySelector("[data-act=toggle]").onclick = () => {
+            state = state.view === "grid" ? { ...state, view: "single", app: key } : { ...state, view: "grid" };
+            writeHash();
+            render();
+          };
+          frame.title = appName(key);
+          if (!frame.src.startsWith(urlOf(key))) frame.src = urlOf(key) + "/";
+          notice.hidden = online[key] !== false;
+          const [vertical] = split(key);
+          notice.innerHTML =
+            `<div><p><strong>${t("offline", { app: appName(key) })}</strong></p>` +
+            `<p>${t("start", { id: vertical })}</p><p>${t("retry")}</p></div>`;
+        }
+        let empty = document.getElementById("empty");
+        if (!shown.length) {
+          if (!empty) {
+            empty = Object.assign(document.createElement("div"), { id: "empty", className: "pane" });
+            empty.style.cssText = "grid-column: span 12; display: grid; place-items: center; color: var(--ink-soft)";
+            stage.appendChild(empty);
+          }
+          empty.textContent = t("empty");
+          empty.hidden = false;
+        } else if (empty) {
+          empty.hidden = true;
+        }
+        renderNav();
+      }
+
+      // Liveness: a no-cors fetch resolves when the server answers and rejects when the port is closed.
+      async function probe(key) {
+        try {
+          await fetch(urlOf(key) + "/favicon.ico", { mode: "no-cors", cache: "no-store" });
+          return true;
+        } catch {
+          return false;
+        }
+      }
+      async function refresh() {
+        await Promise.all(
+          VERTICALS.map(async (vertical) => {
+            try {
+              const response = await fetch(`runtime/${vertical.id}.json?ts=${Date.now()}`, { cache: "no-store" });
+              if (response.ok) {
+                const live = await response.json();
+                for (const surface of SURFACES) if (live[surface]) ports[vertical.id][surface] = live[surface];
+              }
+            } catch {}
+          }),
+        );
+        let changed = false;
+        await Promise.all(
+          ALL_KEYS.map(async (key) => {
+            const up = await probe(key);
+            if (online[key] !== up) {
+              // A frame that loaded while its server was down reloads once it answers.
+              const frame = panes[key]?.querySelector("iframe");
+              if (up && online[key] === false && frame) frame.src = urlOf(key) + "/";
+              online[key] = up;
+              changed = true;
+            }
+          }),
+        );
+        if (changed) render();
+      }
+
+      document.querySelectorAll("[data-view]").forEach((button) => {
+        button.onclick = () => {
+          const view = button.dataset.view;
+          // From the overview, One app and Side by side start on its first app.
+          const app = state.view === "grid" && state.grid.length ? state.grid[0] : state.app;
+          state = { ...state, view, app };
+          writeHash();
+          render();
+        };
+      });
+      document.getElementById("zoom").onchange = (event) => {
+        state = { ...state, zoom: Number(event.target.value) };
+        writeHash();
+        render();
+      };
+      document.getElementById("reload").onclick = () => {
+        for (const key of shownKeys()) {
+          const frame = panes[key]?.querySelector("iframe");
+          if (frame) frame.src = urlOf(key) + "/";
+        }
+      };
+      document.getElementById("lang").onclick = () => {
+        locale = locale === "zh" ? "en" : "zh";
+        document.cookie = `${LOCALE_COOKIE}=${locale}; path=/; max-age=31536000; samesite=lax`;
+        // Every app reads the cookie when it loads, so the open frames reload in the new language.
+        for (const [key, pane] of Object.entries(panes)) pane.querySelector("iframe").src = urlOf(key) + "/";
+        render();
+      };
+      window.addEventListener("hashchange", () => {
+        state = parseHash();
+        render();
+      });
+      window.addEventListener("resize", renderNav);
+
+      writeHash();
+      render();
+      refresh();
+      setInterval(refresh, 4000);
+    </script>
+  </body>
+</html>

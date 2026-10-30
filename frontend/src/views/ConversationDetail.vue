@@ -89,6 +89,13 @@
         <el-divider />
 
         <el-button
+          type="primary"
+          :loading="converting"
+          @click="convertToOpportunity"
+        >
+          {{ $t('Create opportunity') }}
+        </el-button>
+        <el-button
           v-if="conversation?.ai_handled"
           type="warning"
           @click="takeover"
@@ -108,18 +115,21 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { api } from '@/api'
+import { fulfillmentApi } from '@/api/fulfillment'
 import { translate } from '@/i18n'
 
 const route = useRoute()
+const router = useRouter()
 
 const conversationId = route.params.id as string
 const conversation = ref<any>(null)
 const messages = ref<any[]>([])
 const newMessage = ref('')
 const sending = ref(false)
+const converting = ref(false)
 
 async function fetchConversation() {
   try {
@@ -146,6 +156,16 @@ async function sendMessage() {
     ElMessage.error(translate('Failed to send message'))
   } finally {
     sending.value = false
+  }
+}
+
+async function convertToOpportunity() {
+  converting.value = true
+  try {
+    const opportunity = await fulfillmentApi.createOpportunityFromConversation(conversationId)
+    await router.push({ path: '/fulfillment', query: { opportunity: opportunity.id } })
+  } finally {
+    converting.value = false
   }
 }
 

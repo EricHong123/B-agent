@@ -1,0 +1,48 @@
+/*
+ * Copyright 2026 Anthropic PBC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+@import "tailwindcss";
+@source "../../../web-shared";
+@source "../components";
+@source "../lib";
+@source "../app";
+@import "../../../web-shared/portal/portal.css";
+
+/*
+ * ACME Mobile design system: the shared light ground, cards, and ink (web-shared/theme.css),
+ * signal green for the assistant and approvals, amber for warnings, tabular mono numerals.
+ */
+
+:root {
+  /* Page, card, text, rule, and shadow tokens: web-shared/theme.css. */
+  --accent: #00b86b; /* signal green: the assistant's mark, hover, focus, live */
+  --accent-strong: #00a35f; /* approve buttons */
+  --accent-soft: #def3e8;
+  --accent-ink: #00663c; /* text on accent-soft */
+  --on-accent: #0e1116; /* text on accent and accent-strong */
+  --ok: #138254; /* positive change, applied */
+  --ok-soft: #dcf1e6;
+  --warn: #b87a00; /* low stock, results held by a safety gate */
+  --warn-soft: #fdf0d7;
+  --danger: #b3382c; /* errors, negative change */
+  --danger-soft: #f7dedb;
+  --info: #2563a6; /* customer messages, shipped */
+  --info-soft: #e1ecf8;
+  --violet: #6547c9; /* awaiting approval, quoted-as-data */
+  --violet-soft: #ebe7fa;
+  --radius: 12px;
+}
+
+body {
+  font-family: var(--font-body), "Barlow", ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Prices, counts, ids, and percentages. */
+.am-mono {
+  font-family: var(--font-mono), "Spline Sans Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}

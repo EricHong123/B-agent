@@ -107,6 +107,33 @@
               {{ $t('Conversations') }}
             </template>
           </el-menu-item>
+          <el-menu-item index="/fulfillment">
+            <el-icon><Box /></el-icon>
+            <template #title>
+              {{ $t('Fulfillment') }}
+            </template>
+          </el-menu-item>
+        </el-menu-item-group>
+
+        <el-menu-item-group :title="$t('Commerce assistants')">
+          <el-menu-item index="/buyer-assistant">
+            <el-icon><ShoppingCart /></el-icon>
+            <template #title>
+              {{ $t('Buyer assistant') }}
+            </template>
+          </el-menu-item>
+          <el-menu-item index="/operations-assistant">
+            <el-icon><DataAnalysis /></el-icon>
+            <template #title>
+              {{ $t('Operations assistant') }}
+            </template>
+          </el-menu-item>
+          <el-menu-item index="/commerce">
+            <el-icon><Goods /></el-icon>
+            <template #title>
+              {{ $t('Catalog and assistant quality') }}
+            </template>
+          </el-menu-item>
         </el-menu-item-group>
 
         <el-menu-item index="/analytics">
@@ -258,7 +285,7 @@ const themeStore = useThemeStore()
 const isCollapsed = ref(false)
 const mobileOpen = ref(false)
 
-const activeMenu = computed(() => route.path)
+const activeMenu = computed(() => route.path.startsWith('/orders/') ? '/fulfillment' : route.path)
 const currentTitle = computed(() => translate(String(route.meta.title || 'B-agent')))
 const isDark = computed(() => themeStore.isDark)
 const userInitial = computed(() => authStore.user?.username?.charAt(0).toUpperCase() || 'U')

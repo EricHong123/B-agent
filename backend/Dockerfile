@@ -18,7 +18,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Set work directory
 WORKDIR /app
 
-# Install Python dependencies
+# Install Python dependencies. The vendored commerce packages arrive through the
+# `commerce` build context (docker-compose `additional_contexts`) at /commerce, which
+# is ../commerce from /app, as requirements.txt names them.
+COPY --from=commerce . /commerce
 COPY requirements.txt .
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt

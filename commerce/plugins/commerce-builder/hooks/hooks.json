@@ -1,0 +1,21 @@
+{
+  "description": "commerce-builder: refuse writes that hardcode a live credential, and remind after edits to the bytes the prompt cache and evals depend on. COMMERCE_BUILDER_HOOKS=0 turns both off.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {"type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/secret_guard.py\"", "timeout": 10}
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {"type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/prompt_bytes.py\"", "timeout": 10}
+        ]
+      }
+    ]
+  }
+}

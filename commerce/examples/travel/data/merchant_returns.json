@@ -1,0 +1,31 @@
+{
+  "_comment": "returned_on is shifted forward by whole weeks at load time, relative to dates_anchored_to (demo_common.merchant_fixtures.load_returns), the same shift merchant_messages.json gets. reason is a merchant_agent.types.ReturnReason code; note is the buyer's own text. Author the dates as if dates_anchored_to were today.",
+  "dates_anchored_to": "2026-06-26",
+  "returns": [
+    {"return_id": "TRT-501", "order_id": "AL-29101", "listing_id": "AL-STAY-110", "returned_on": "2026-06-20", "reason": "booking_cancelled", "note": "Shifting the trip to a weekend later in the autumn."},
+    {"return_id": "TRT-502", "order_id": "AL-29108", "listing_id": "AL-STAY-110", "returned_on": "2026-06-22", "reason": "booking_cancelled", "note": "Flights are not settled; we will rebook."},
+    {"return_id": "TRT-503", "order_id": "AL-29115", "listing_id": "AL-STAY-110", "returned_on": "2026-06-23", "reason": "booking_cancelled"},
+    {"return_id": "TRT-504", "order_id": "AL-29122", "listing_id": "AL-STAY-110", "returned_on": "2026-06-05", "reason": "booking_cancelled"},
+    {"return_id": "TRT-505", "order_id": "AL-29129", "listing_id": "AL-STAY-104", "returned_on": "2026-06-07", "reason": "access_issue", "note": "The door code never arrived, so we booked elsewhere for the first night."},
+    {"return_id": "TRT-506", "order_id": "AL-29136", "listing_id": "AL-STAY-104", "returned_on": "2026-06-16", "reason": "access_issue", "note": "Check-in instructions came the morning we landed."},
+    {"return_id": "TRT-507", "order_id": "AL-29143", "listing_id": "AL-STAY-104", "returned_on": "2026-06-21", "reason": "access_issue"},
+    {"return_id": "TRT-508", "order_id": "AL-29150", "listing_id": "AL-STAY-104", "returned_on": "2026-06-11", "reason": "not_as_described", "note": "The rooftop terrace in the photos was closed for the season."},
+    {"return_id": "TRT-509", "order_id": "AL-29157", "listing_id": "AL-STAY-104", "returned_on": "2026-05-30", "reason": "not_as_described", "note": "No view from our suite despite the rooftop photos."},
+    {"return_id": "TRT-510", "order_id": "AL-29164", "listing_id": "AL-STAY-101", "returned_on": "2026-06-22", "reason": "defective", "note": "Ceiling leak over the wardrobe; we left a night early."},
+    {"return_id": "TRT-511", "order_id": "AL-29171", "listing_id": "AL-STAY-101", "returned_on": "2026-06-02", "reason": "unexpected_charge", "note": "City tax at check-in was not in the price shown."},
+    {"return_id": "TRT-512", "order_id": "AL-29178", "listing_id": "AL-STAY-101", "returned_on": "2026-06-14", "reason": "unexpected_charge", "note": "A cleaning fee appeared after booking."},
+    {"return_id": "TRT-513", "order_id": "AL-29185", "listing_id": "AL-FLT-204", "returned_on": "2026-06-01", "reason": "schedule_changed", "note": "The connection was retimed to a 40-minute layover; we could not risk it."},
+    {"return_id": "TRT-514", "order_id": "AL-29192", "listing_id": "AL-FLT-204", "returned_on": "2026-06-09", "reason": "schedule_changed", "note": "Departure moved by six hours."},
+    {"return_id": "TRT-515", "order_id": "AL-29199", "listing_id": "AL-FLT-204", "returned_on": "2026-06-15", "reason": "schedule_changed"},
+    {"return_id": "TRT-516", "order_id": "AL-29206", "listing_id": "AL-FLT-204", "returned_on": "2026-06-24", "reason": "schedule_changed", "note": "Second schedule change on this booking."},
+    {"return_id": "TRT-517", "order_id": "AL-29213", "listing_id": "AL-EXP-311", "returned_on": "2026-06-12", "reason": "schedule_changed", "note": "The tour moved to the night we fly home."},
+    {"return_id": "TRT-518", "order_id": "AL-29220", "listing_id": "AL-EXP-311", "returned_on": "2026-06-19", "reason": "booking_cancelled"},
+    {"return_id": "TRT-519", "order_id": "AL-29227", "listing_id": "AL-EXP-302", "returned_on": "2026-06-08", "reason": "booking_cancelled"},
+    {"return_id": "TRT-520", "order_id": "AL-29234", "listing_id": "AL-FLT-201", "returned_on": "2026-06-03", "reason": "booking_cancelled"},
+    {"return_id": "TRT-521", "order_id": "AL-29241", "listing_id": "AL-FLT-201", "returned_on": "2026-06-18", "reason": "booking_cancelled", "note": "Work trip cancelled."},
+    {"return_id": "TRT-522", "order_id": "AL-29248", "listing_id": "AL-STAY-105", "returned_on": "2026-06-10", "reason": "access_issue", "note": "No one at the desk for our late arrival; we called three times."},
+    {"return_id": "TRT-523", "order_id": "AL-29255", "listing_id": "AL-STAY-104", "returned_on": "2026-04-15", "reason": "not_as_described", "note": "The rooftop was not open to guests."},
+    {"return_id": "TRT-524", "order_id": "AL-29262", "listing_id": "AL-FLT-204", "returned_on": "2026-05-10", "reason": "schedule_changed"},
+    {"return_id": "TRT-525", "order_id": "AL-29269", "listing_id": "AL-STAY-110", "returned_on": "2026-04-30", "reason": "booking_cancelled"}
+  ]
+}

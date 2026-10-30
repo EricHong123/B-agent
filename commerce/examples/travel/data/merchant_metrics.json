@@ -1,0 +1,725 @@
+{
+  "currency": "USD",
+  "daily": [
+    {
+      "date": "2026-03-28",
+      "bookings": 25,
+      "room_nights": 64,
+      "revenue": 13824.0,
+      "traffic": 1482,
+      "lisbon_revenue": 10575.36
+    },
+    {
+      "date": "2026-03-29",
+      "bookings": 22,
+      "room_nights": 57,
+      "revenue": 12367.06,
+      "traffic": 1162,
+      "lisbon_revenue": 9489.17
+    },
+    {
+      "date": "2026-03-30",
+      "bookings": 20,
+      "room_nights": 52,
+      "revenue": 11123.87,
+      "traffic": 1020,
+      "lisbon_revenue": 8560.46
+    },
+    {
+      "date": "2026-03-31",
+      "bookings": 20,
+      "room_nights": 53,
+      "revenue": 11387.22,
+      "traffic": 983,
+      "lisbon_revenue": 8788.21
+    },
+    {
+      "date": "2026-04-01",
+      "bookings": 20,
+      "room_nights": 53,
+      "revenue": 11434.89,
+      "traffic": 1008,
+      "lisbon_revenue": 8849.17
+    },
+    {
+      "date": "2026-04-02",
+      "bookings": 22,
+      "room_nights": 59,
+      "revenue": 12779.93,
+      "traffic": 1195,
+      "lisbon_revenue": 9915.59
+    },
+    {
+      "date": "2026-04-03",
+      "bookings": 25,
+      "room_nights": 67,
+      "revenue": 14834.6,
+      "traffic": 1469,
+      "lisbon_revenue": 11537.25
+    },
+    {
+      "date": "2026-04-04",
+      "bookings": 27,
+      "room_nights": 73,
+      "revenue": 16217.13,
+      "traffic": 1647,
+      "lisbon_revenue": 12639.81
+    },
+    {
+      "date": "2026-04-05",
+      "bookings": 24,
+      "room_nights": 65,
+      "revenue": 14483.42,
+      "traffic": 1298,
+      "lisbon_revenue": 11310.2
+    },
+    {
+      "date": "2026-04-06",
+      "bookings": 21,
+      "room_nights": 57,
+      "revenue": 12506.51,
+      "traffic": 1091,
+      "lisbon_revenue": 9782.49
+    },
+    {
+      "date": "2026-04-07",
+      "bookings": 21,
+      "room_nights": 57,
+      "revenue": 12535.3,
+      "traffic": 1045,
+      "lisbon_revenue": 9818.28
+    },
+    {
+      "date": "2026-04-08",
+      "bookings": 21,
+      "room_nights": 57,
+      "revenue": 12558.87,
+      "traffic": 1065,
+      "lisbon_revenue": 9847.01
+    },
+    {
+      "date": "2026-04-09",
+      "bookings": 23,
+      "room_nights": 62,
+      "revenue": 13680.2,
+      "traffic": 1248,
+      "lisbon_revenue": 10733.96
+    },
+    {
+      "date": "2026-04-10",
+      "bookings": 25,
+      "room_nights": 68,
+      "revenue": 15290.87,
+      "traffic": 1457,
+      "lisbon_revenue": 12002.44
+    },
+    {
+      "date": "2026-04-11",
+      "bookings": 26,
+      "room_nights": 70,
+      "revenue": 15748.65,
+      "traffic": 1563,
+      "lisbon_revenue": 12362.46
+    },
+    {
+      "date": "2026-04-12",
+      "bookings": 23,
+      "room_nights": 61,
+      "revenue": 13724.51,
+      "traffic": 1219,
+      "lisbon_revenue": 10770.52
+    },
+    {
+      "date": "2026-04-13",
+      "bookings": 21,
+      "room_nights": 55,
+      "revenue": 12149.47,
+      "traffic": 1063,
+      "lisbon_revenue": 9528.64
+    },
+    {
+      "date": "2026-04-14",
+      "bookings": 20,
+      "room_nights": 52,
+      "revenue": 11476.61,
+      "traffic": 965,
+      "lisbon_revenue": 8992.49
+    },
+    {
+      "date": "2026-04-15",
+      "bookings": 20,
+      "room_nights": 52,
+      "revenue": 11461.22,
+      "traffic": 981,
+      "lisbon_revenue": 8969.2
+    },
+    {
+      "date": "2026-04-16",
+      "bookings": 22,
+      "room_nights": 56,
+      "revenue": 12320.84,
+      "traffic": 1152,
+      "lisbon_revenue": 9626.98
+    },
+    {
+      "date": "2026-04-17",
+      "bookings": 24,
+      "room_nights": 61,
+      "revenue": 13635.3,
+      "traffic": 1348,
+      "lisbon_revenue": 10634.57
+    },
+    {
+      "date": "2026-04-18",
+      "bookings": 26,
+      "room_nights": 65,
+      "revenue": 14492.19,
+      "traffic": 1507,
+      "lisbon_revenue": 11279.34
+    },
+    {
+      "date": "2026-04-19",
+      "bookings": 23,
+      "room_nights": 57,
+      "revenue": 12671.32,
+      "traffic": 1177,
+      "lisbon_revenue": 9839.33
+    },
+    {
+      "date": "2026-04-20",
+      "bookings": 20,
+      "room_nights": 49,
+      "revenue": 10661.33,
+      "traffic": 981,
+      "lisbon_revenue": 8257.75
+    },
+    {
+      "date": "2026-04-21",
+      "bookings": 20,
+      "room_nights": 48,
+      "revenue": 10405.82,
+      "traffic": 939,
+      "lisbon_revenue": 8038.22
+    },
+    {
+      "date": "2026-04-22",
+      "bookings": 20,
+      "room_nights": 48,
+      "revenue": 10365.23,
+      "traffic": 958,
+      "lisbon_revenue": 7984.3
+    },
+    {
+      "date": "2026-04-23",
+      "bookings": 22,
+      "room_nights": 53,
+      "revenue": 11397.72,
+      "traffic": 1133,
+      "lisbon_revenue": 8754.02
+    },
+    {
+      "date": "2026-04-24",
+      "bookings": 25,
+      "room_nights": 59,
+      "revenue": 12869.38,
+      "traffic": 1390,
+      "lisbon_revenue": 9854.89
+    },
+    {
+      "date": "2026-04-25",
+      "bookings": 26,
+      "room_nights": 62,
+      "revenue": 13464.8,
+      "traffic": 1502,
+      "lisbon_revenue": 10279.91
+    },
+    {
+      "date": "2026-04-26",
+      "bookings": 23,
+      "room_nights": 55,
+      "revenue": 11891.54,
+      "traffic": 1182,
+      "lisbon_revenue": 9051.71
+    },
+    {
+      "date": "2026-04-27",
+      "bookings": 21,
+      "room_nights": 50,
+      "revenue": 10562.15,
+      "traffic": 1041,
+      "lisbon_revenue": 8016.27
+    },
+    {
+      "date": "2026-04-28",
+      "bookings": 21,
+      "room_nights": 50,
+      "revenue": 10514.24,
+      "traffic": 1003,
+      "lisbon_revenue": 7957.34
+    },
+    {
+      "date": "2026-04-29",
+      "bookings": 21,
+      "room_nights": 50,
+      "revenue": 10467.33,
+      "traffic": 1030,
+      "lisbon_revenue": 7900.49
+    },
+    {
+      "date": "2026-04-30",
+      "bookings": 23,
+      "room_nights": 55,
+      "revenue": 11464.14,
+      "traffic": 1218,
+      "lisbon_revenue": 8631.03
+    },
+    {
+      "date": "2026-05-01",
+      "bookings": 26,
+      "room_nights": 63,
+      "revenue": 13329.07,
+      "traffic": 1493,
+      "lisbon_revenue": 10011.84
+    },
+    {
+      "date": "2026-05-02",
+      "bookings": 28,
+      "room_nights": 69,
+      "revenue": 14542.24,
+      "traffic": 1676,
+      "lisbon_revenue": 10900.39
+    },
+    {
+      "date": "2026-05-03",
+      "bookings": 25,
+      "room_nights": 62,
+      "revenue": 13020.15,
+      "traffic": 1332,
+      "lisbon_revenue": 9741.81
+    },
+    {
+      "date": "2026-05-04",
+      "bookings": 22,
+      "room_nights": 55,
+      "revenue": 11292.43,
+      "traffic": 1131,
+      "lisbon_revenue": 8436.29
+    },
+    {
+      "date": "2026-05-05",
+      "bookings": 21,
+      "room_nights": 53,
+      "revenue": 10849.55,
+      "traffic": 1039,
+      "lisbon_revenue": 8095.67
+    },
+    {
+      "date": "2026-05-06",
+      "bookings": 22,
+      "room_nights": 57,
+      "revenue": 11638.51,
+      "traffic": 1115,
+      "lisbon_revenue": 8676.8
+    },
+    {
+      "date": "2026-05-07",
+      "bookings": 23,
+      "room_nights": 60,
+      "revenue": 12225.04,
+      "traffic": 1255,
+      "lisbon_revenue": 9109.26
+    },
+    {
+      "date": "2026-05-08",
+      "bookings": 26,
+      "room_nights": 68,
+      "revenue": 14104.02,
+      "traffic": 1532,
+      "lisbon_revenue": 10507.49
+    },
+    {
+      "date": "2026-05-09",
+      "bookings": 27,
+      "room_nights": 72,
+      "revenue": 14916.44,
+      "traffic": 1648,
+      "lisbon_revenue": 11114.73
+    },
+    {
+      "date": "2026-05-10",
+      "bookings": 24,
+      "room_nights": 64,
+      "revenue": 13250.27,
+      "traffic": 1297,
+      "lisbon_revenue": 9878.44
+    },
+    {
+      "date": "2026-05-11",
+      "bookings": 21,
+      "room_nights": 57,
+      "revenue": 11571.09,
+      "traffic": 1088,
+      "lisbon_revenue": 8634.1
+    },
+    {
+      "date": "2026-05-12",
+      "bookings": 20,
+      "room_nights": 54,
+      "revenue": 10965.87,
+      "traffic": 991,
+      "lisbon_revenue": 8192.37
+    },
+    {
+      "date": "2026-05-13",
+      "bookings": 20,
+      "room_nights": 54,
+      "revenue": 10975.23,
+      "traffic": 1008,
+      "lisbon_revenue": 8211.84
+    },
+    {
+      "date": "2026-05-14",
+      "bookings": 22,
+      "room_nights": 60,
+      "revenue": 12211.16,
+      "traffic": 1185,
+      "lisbon_revenue": 9153.17
+    },
+    {
+      "date": "2026-05-15",
+      "bookings": 24,
+      "room_nights": 66,
+      "revenue": 13720.85,
+      "traffic": 1388,
+      "lisbon_revenue": 10306.22
+    },
+    {
+      "date": "2026-05-16",
+      "bookings": 26,
+      "room_nights": 71,
+      "revenue": 14793.4,
+      "traffic": 1550,
+      "lisbon_revenue": 11137.66
+    },
+    {
+      "date": "2026-05-17",
+      "bookings": 23,
+      "room_nights": 63,
+      "revenue": 13161.45,
+      "traffic": 1208,
+      "lisbon_revenue": 9934.06
+    },
+    {
+      "date": "2026-05-18",
+      "bookings": 20,
+      "room_nights": 54,
+      "revenue": 11099.6,
+      "traffic": 1003,
+      "lisbon_revenue": 8400.45
+    },
+    {
+      "date": "2026-05-19",
+      "bookings": 19,
+      "room_nights": 51,
+      "revenue": 10519.2,
+      "traffic": 908,
+      "lisbon_revenue": 7983.78
+    },
+    {
+      "date": "2026-05-20",
+      "bookings": 20,
+      "room_nights": 53,
+      "revenue": 10972.9,
+      "traffic": 972,
+      "lisbon_revenue": 8352.56
+    },
+    {
+      "date": "2026-05-21",
+      "bookings": 22,
+      "room_nights": 58,
+      "revenue": 12056.46,
+      "traffic": 1143,
+      "lisbon_revenue": 9204.81
+    },
+    {
+      "date": "2026-05-22",
+      "bookings": 25,
+      "room_nights": 66,
+      "revenue": 14041.64,
+      "traffic": 1395,
+      "lisbon_revenue": 10752.71
+    },
+    {
+      "date": "2026-05-23",
+      "bookings": 26,
+      "room_nights": 67,
+      "revenue": 14316.0,
+      "traffic": 1499,
+      "lisbon_revenue": 10995.54
+    },
+    {
+      "date": "2026-05-24",
+      "bookings": 23,
+      "room_nights": 59,
+      "revenue": 12662.47,
+      "traffic": 1173,
+      "lisbon_revenue": 9753.98
+    },
+    {
+      "date": "2026-05-25",
+      "bookings": 21,
+      "room_nights": 53,
+      "revenue": 11213.77,
+      "traffic": 1028,
+      "lisbon_revenue": 8662.45
+    },
+    {
+      "date": "2026-05-26",
+      "bookings": 21,
+      "room_nights": 53,
+      "revenue": 11265.03,
+      "traffic": 985,
+      "lisbon_revenue": 8725.45
+    },
+    {
+      "date": "2026-05-27",
+      "bookings": 22,
+      "room_nights": 55,
+      "revenue": 11742.98,
+      "traffic": 1056,
+      "lisbon_revenue": 9118.57
+    },
+    {
+      "date": "2026-05-28",
+      "bookings": 24,
+      "room_nights": 59,
+      "revenue": 12652.68,
+      "traffic": 1240,
+      "lisbon_revenue": 9847.73
+    },
+    {
+      "date": "2026-05-29",
+      "bookings": 27,
+      "room_nights": 66,
+      "revenue": 14478.25,
+      "traffic": 1509,
+      "lisbon_revenue": 11292.11
+    },
+    {
+      "date": "2026-05-30",
+      "bookings": 29,
+      "room_nights": 70,
+      "revenue": 15417.05,
+      "traffic": 1687,
+      "lisbon_revenue": 12046.31
+    },
+    {
+      "date": "2026-05-31",
+      "bookings": 25,
+      "room_nights": 60,
+      "revenue": 13264.25,
+      "traffic": 1294,
+      "lisbon_revenue": 10380.26
+    },
+    {
+      "date": "2026-06-01",
+      "bookings": 23,
+      "room_nights": 55,
+      "revenue": 11981.18,
+      "traffic": 1150,
+      "lisbon_revenue": 9387.89
+    },
+    {
+      "date": "2026-06-02",
+      "bookings": 22,
+      "room_nights": 52,
+      "revenue": 11364.12,
+      "traffic": 1060,
+      "lisbon_revenue": 8912.73
+    },
+    {
+      "date": "2026-06-03",
+      "bookings": 23,
+      "room_nights": 55,
+      "revenue": 12054.16,
+      "traffic": 1139,
+      "lisbon_revenue": 9459.71
+    },
+    {
+      "date": "2026-06-04",
+      "bookings": 25,
+      "room_nights": 59,
+      "revenue": 12962.85,
+      "traffic": 1336,
+      "lisbon_revenue": 10175.65
+    },
+    {
+      "date": "2026-06-05",
+      "bookings": 28,
+      "room_nights": 67,
+      "revenue": 15018.94,
+      "traffic": 1623,
+      "lisbon_revenue": 11788.98
+    },
+    {
+      "date": "2026-06-06",
+      "bookings": 29,
+      "room_nights": 69,
+      "revenue": 15492.07,
+      "traffic": 1750,
+      "lisbon_revenue": 12155.58
+    },
+    {
+      "date": "2026-06-07",
+      "bookings": 26,
+      "room_nights": 63,
+      "revenue": 14161.39,
+      "traffic": 1396,
+      "lisbon_revenue": 11103.45
+    },
+    {
+      "date": "2026-06-08",
+      "bookings": 23,
+      "room_nights": 56,
+      "revenue": 12372.84,
+      "traffic": 1190,
+      "lisbon_revenue": 9690.98
+    },
+    {
+      "date": "2026-06-09",
+      "bookings": 22,
+      "room_nights": 54,
+      "revenue": 11934.0,
+      "traffic": 1094,
+      "lisbon_revenue": 9334.62
+    },
+    {
+      "date": "2026-06-10",
+      "bookings": 23,
+      "room_nights": 57,
+      "revenue": 12594.28,
+      "traffic": 1170,
+      "lisbon_revenue": 9834.88
+    },
+    {
+      "date": "2026-06-11",
+      "bookings": 24,
+      "room_nights": 60,
+      "revenue": 13248.08,
+      "traffic": 1311,
+      "lisbon_revenue": 10325.61
+    },
+    {
+      "date": "2026-06-12",
+      "bookings": 27,
+      "room_nights": 68,
+      "revenue": 15269.3,
+      "traffic": 1590,
+      "lisbon_revenue": 11875.2
+    },
+    {
+      "date": "2026-06-13",
+      "bookings": 29,
+      "room_nights": 74,
+      "revenue": 16590.59,
+      "traffic": 1767,
+      "lisbon_revenue": 12872.03
+    },
+    {
+      "date": "2026-06-14",
+      "bookings": 25,
+      "room_nights": 65,
+      "revenue": 14543.82,
+      "traffic": 1346,
+      "lisbon_revenue": 11254.96
+    },
+    {
+      "date": "2026-06-15",
+      "bookings": 23,
+      "room_nights": 60,
+      "revenue": 13152.92,
+      "traffic": 1185,
+      "lisbon_revenue": 10150.78
+    },
+    {
+      "date": "2026-06-16",
+      "bookings": 22,
+      "room_nights": 58,
+      "revenue": 12678.59,
+      "traffic": 1082,
+      "lisbon_revenue": 9756.78
+    },
+    {
+      "date": "2026-06-17",
+      "bookings": 22,
+      "room_nights": 59,
+      "revenue": 12856.17,
+      "traffic": 1100,
+      "lisbon_revenue": 9864.33
+    },
+    {
+      "date": "2026-06-18",
+      "bookings": 24,
+      "room_nights": 65,
+      "revenue": 14113.96,
+      "traffic": 1282,
+      "lisbon_revenue": 10797.04
+    },
+    {
+      "date": "2026-06-19",
+      "bookings": 27,
+      "room_nights": 73,
+      "revenue": 16083.01,
+      "traffic": 1547,
+      "lisbon_revenue": 12266.45
+    },
+    {
+      "date": "2026-06-20",
+      "bookings": 29,
+      "room_nights": 79,
+      "revenue": 17335.97,
+      "traffic": 1712,
+      "lisbon_revenue": 13182.84
+    },
+    {
+      "date": "2026-06-21",
+      "bookings": 26,
+      "room_nights": 71,
+      "revenue": 15515.66,
+      "traffic": 1352,
+      "lisbon_revenue": 11764.43
+    },
+    {
+      "date": "2026-06-22",
+      "bookings": 24,
+      "room_nights": 66,
+      "revenue": 14096.86,
+      "traffic": 1193,
+      "lisbon_revenue": 10658.86
+    },
+    {
+      "date": "2026-06-23",
+      "bookings": 23,
+      "room_nights": 63,
+      "revenue": 13395.62,
+      "traffic": 1091,
+      "lisbon_revenue": 10101.9
+    },
+    {
+      "date": "2026-06-24",
+      "bookings": 24,
+      "room_nights": 65,
+      "revenue": 13758.02,
+      "traffic": 1158,
+      "lisbon_revenue": 10349.7
+    },
+    {
+      "date": "2026-06-25",
+      "bookings": 26,
+      "room_nights": 71,
+      "revenue": 14959.6,
+      "traffic": 1342,
+      "lisbon_revenue": 11228.41
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+# ACME merchant agent: Managed Agent manifest source. scripts/deploy_managed_agent.sh resolves
+# it into a POST /v1/agents body: `system_file` is inlined, each `skills[].path` is uploaded through
+# the Skills API and replaced with its skill_id, and ${VAR} placeholders come from the
+# environment. Everything else maps onto Agents API fields as written.
+
+name: ACME Merchant Agent
+model: claude-opus-5
+description: >-
+  Merchant agent for the fictional ACME store's back office: performance insights,
+  catalog and inventory operations, pricing and promotions, and campaign drafting, with
+  every write staged for the operator's approval and the UI rendered by the host portal
+  from presentation tool calls.
+
+# Derived from merchant-agent/core/merchant_agent/prompt.py; see the note at its top.
+system_file: system.md
+
+# The skill directories are the source of truth shared by every path in this repo.
+skills:
+  - path: ../../skills/performance-insights
+  - path: ../../skills/catalog-listings
+  - path: ../../skills/inventory-operations
+  - path: ../../skills/pricing-promotions
+  - path: ../../skills/marketing-campaigns
+
+# The store's back-office systems, reached over MCP (see ../merchant-mcp-server). No
+# credentials here: register the server's credential in a vault and pass vault_ids at
+# session creation; it is matched to this entry by exact URL.
+mcp_servers:
+  - type: url
+    name: merchant
+    url: ${MERCHANT_MCP_URL} # e.g. https://merchant-mcp.store.example/mcp
+
+tools:
+  # Skills load through the built-in `read` tool, so it is the one built-in left on;
+  # session creation is rejected without it.
+  - type: agent_toolset_20260401
+    default_config:
+      enabled: false
+    configs:
+      - name: read
+        enabled: true
+        permission_policy: { type: always_allow }
+
+  # Merchant tools are denied unless listed here, so a new tool on the server is
+  # unusable until this manifest is reviewed. Reads and staging run without
+  # confirmation; apply_change is the one always_ask tool, because it is the only call
+  # that changes live state, and the pause is where the operator approves the change.
+  - type: mcp_toolset
+    mcp_server_name: merchant
+    default_config:
+      enabled: false
+    configs:
+      # Reads run without confirmation.
+      - name: get_business_snapshot
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: query_metrics
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: get_campaign_performance
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: search_listings
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: get_listing
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: get_inventory_alerts
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: get_order_issues
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: get_return_reasons
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: get_pricing_context
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: get_pending_changes
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: recall_memories
+        enabled: true
+        permission_policy: { type: always_allow }
+      # Staging records a proposal; the server checks provenance and guardrails.
+      - name: stage_listing_update
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: stage_price_update
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: stage_inventory_action
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: stage_promotion
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: stage_campaign
+        enabled: true
+        permission_policy: { type: always_allow }
+      - name: discard_change
+        enabled: true
+        permission_policy: { type: always_allow }
+      # Memory writes pause for confirmation.
+      - name: save_memory
+        enabled: true
+        permission_policy: { type: always_ask }
+      # The only live mutation; the pause is the operator's approval on the preview card.
+      - name: apply_change
+        enabled: true
+        permission_policy: { type: always_ask }
+
+
+  # Presentation tools are executed by the host portal: it validates the payload, fills
+  # in metric values, alert records, and change diffs by id, renders the component, and
+  # returns a user.custom_tool_result event. Descriptions and schemas are copied from
+  # merchant-agent/core/merchant_agent/tools/registry.py; scripts/check.py compares the
+  # descriptions.
+  - type: custom
+    name: present_metrics
+    description: >-
+      Show measures the tools returned as tiles and trend lines; the portal fills in
+      the values. Name each pick as the tool spelled it, or as a campaign id plus
+      one measure ('<campaign_id> spend', revenue, budget, or roas).
+    input_schema:
+      type: object
+      properties:
+        title: { type: string, maxLength: 80, description: "Short heading for the card." }
+        period:
+          type: string
+          maxLength: 80
+          description: "Period the figures cover, as queried."
+        picks:
+          type: array
+          minItems: 1
+          maxItems: 8
+          description: "Measures to show, takeaway first."
+          items:
+            type: object
+            properties:
+              metric:
+                type: string
+                maxLength: 60
+                description: "Measure name as a tool returned it."
+              note:
+                type: string
+                maxLength: 140
+                description: "One clause on why this measure matters."
+            required: [metric]
+            additionalProperties: false
+      required: [picks]
+      additionalProperties: false
+
+  - type: custom
+    name: present_digest
+    description: >-
+      Show the needs-attention digest: alerts, order issues, metric movements, and
+      pending changes, ranked, each with why it matters. Use it when the operator
+      asks for a briefing or what needs attention; refer to items by their ids.
+    input_schema:
+      type: object
+      properties:
+        title: { type: string, maxLength: 80, description: "Short heading for the digest." }
+        items:
+          type: array
+          minItems: 1
+          maxItems: 8
+          description: "Entries in priority order."
+          items:
+            type: object
+            properties:
+              kind:
+                type: string
+                enum: [low_stock, slow_mover, order_issue, metric, pending_change, note]
+                description: "Entry type; note for a closing summary line."
+              ref_id:
+                type: string
+                maxLength: 64
+                description: "Id of the listing, issue, or change concerned."
+              headline:
+                type: string
+                maxLength: 120
+                description: "What is wrong, with the payload's figure."
+              why_it_matters:
+                type: string
+                maxLength: 160
+                description: "Cost or deadline, and the next action."
+            required: [kind, headline]
+            additionalProperties: false
+      required: [items]
+      additionalProperties: false
+
+  - type: custom
+    name: present_change_preview
+    description: >-
+      Show the before-and-after card for one staged change; the portal fills in the
+      diff, guardrail notes, and margin impact. Show every staged change with it
+      before anything is applied.
+    input_schema:
+      type: object
+      properties:
+        change_id:
+          type: string
+          description: "change_id staged this conversation or listed by get_pending_changes."
+        headline:
+          type: string
+          maxLength: 120
+          description: "What the change does, in one line."
+        note:
+          type: string
+          maxLength: 200
+          description: "One sentence on why it is safe or worth making."
+      required: [change_id]
+      additionalProperties: false
+
+  - type: custom
+    name: present_suggestions
+    description: >-
+      Give the turn its 1-4 chips; it ends the reply. Call it in the same round as
+      the turn's last present_* call, without waiting for that call's result. Alone,
+      after the text, only on a turn with no other present_* call (a guardrail
+      explanation, a clarifying question, a listing read-back).
+    input_schema:
+      type: object
+      properties:
+        suggestions:
+          type: array
+          items: { type: string }
+          maxItems: 4
+          description: "1-4 chips, each a brief imperative that takes the work a step further; leave out anything this turn already showed."
+          minItems: 1
+      required: [suggestions]
+      additionalProperties: false
+
+metadata:
+  agent: merchant-agent
+  source: commerce-agents/merchant-agent/managed-agents

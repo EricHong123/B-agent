@@ -1,0 +1,71 @@
+{
+  "_comment": "Campaign windows are shifted forward by whole weeks at load time, relative to dates_anchored_to (demo_common.merchant_fixtures.load_campaigns), the same shift merchant_metrics.json gets. Author the dates as if dates_anchored_to were today.",
+  "dates_anchored_to": "2026-06-26",
+  "campaigns": [
+    {
+      "campaign_id": "C-201",
+      "name": "Under-the-sea room refresh",
+      "status": "active",
+      "objective": "Lift attach rate across the kids-room decor line during the summer refresh season",
+      "channel": "storefront search placements",
+      "budget": 500.0,
+      "spend": 314.0,
+      "revenue": 1890.0,
+      "currency": "USD",
+      "starts": "2026-06-10",
+      "ends": "2026-07-08"
+    },
+    {
+      "campaign_id": "C-202",
+      "name": "Summer travel essentials",
+      "status": "active",
+      "objective": "Move carry-on luggage and travel accessories before peak season",
+      "channel": "social ads",
+      "budget": 600.0,
+      "spend": 542.0,
+      "revenue": 1310.0,
+      "currency": "USD",
+      "starts": "2026-06-01",
+      "ends": "2026-07-15"
+    },
+    {
+      "campaign_id": "C-203",
+      "name": "Spring kitchen refresh",
+      "status": "ended",
+      "objective": "Clear winter cookware inventory",
+      "channel": "email to past buyers",
+      "budget": 400.0,
+      "spend": 400.0,
+      "revenue": null,
+      "currency": "USD",
+      "starts": "2026-04-05",
+      "ends": "2026-05-05"
+    },
+    {
+      "campaign_id": "C-204",
+      "name": "Beauty bestsellers retargeting",
+      "status": "paused",
+      "objective": "Re-engage shoppers who browsed beauty in the last 60 days",
+      "channel": "social ads",
+      "budget": 250.0,
+      "spend": 117.0,
+      "revenue": 402.0,
+      "currency": "USD",
+      "starts": "2026-05-20",
+      "ends": "2026-06-20"
+    },
+    {
+      "campaign_id": "C-205",
+      "name": "Outdoor season opener",
+      "status": "ended",
+      "objective": "Launch the camping range for the season",
+      "channel": "storefront search placements",
+      "budget": 350.0,
+      "spend": 350.0,
+      "revenue": 1245.0,
+      "currency": "USD",
+      "starts": "2026-04-20",
+      "ends": "2026-05-25"
+    }
+  ]
+}

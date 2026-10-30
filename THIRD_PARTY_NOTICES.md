@@ -27,6 +27,18 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+## Claude Commerce Agents
+
+Source: https://github.com/Mdz-Bigdata/commerce-agents (vendored under `commerce/`
+at commit `511eb51a76904630522806866162f1090d6524da`)
+
+Copyright 2026 Anthropic PBC
+
+Licensed under the Apache License, Version 2.0. The full license text is kept at
+`commerce/LICENSE`, and every vendored source file keeps its own copyright and
+SPDX header. B-agent's adapters under `backend/app/commerce/` are B-agent code
+that calls these packages.
+
 ## B-agent project license
 
 B-agent is licensed under the MIT License:

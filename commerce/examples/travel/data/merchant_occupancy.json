@@ -1,0 +1,797 @@
+{
+  "_comment": "The window and every week_start are shifted forward by whole weeks at load time, relative to dates_anchored_to (load_occupancy in api/mock_travel.py), the same shift catalog.json gets. Author the dates as if dates_anchored_to were today.",
+  "dates_anchored_to": "2026-08-24",
+  "supplier": "ACME Travel \u2014 city stays portfolio",
+  "window": {
+    "from": "2026-08-01",
+    "to": "2026-12-20"
+  },
+  "today": {
+    "_comment": "Today's calendar motion for the supplier home page, authored as of the fixtures' demo day: guests checking in (arrivals), guests checking out (departures), and bookings placed today (new_bookings), per property.",
+    "arrivals": [
+      {"listing_id": "AL-STAY-101", "count": 1},
+      {"listing_id": "AL-STAY-102", "count": 2},
+      {"listing_id": "AL-STAY-104", "count": 1}
+    ],
+    "departures": [
+      {"listing_id": "AL-STAY-102", "count": 1},
+      {"listing_id": "AL-STAY-110", "count": 1}
+    ],
+    "new_bookings": [
+      {"listing_id": "AL-STAY-102", "count": 2},
+      {"listing_id": "AL-STAY-103", "count": 1}
+    ]
+  },
+  "listings": [
+    {
+      "listing_id": "AL-STAY-101",
+      "rooms": 8,
+      "bookings_last_30d": 96,
+      "weeks": [
+        {
+          "week_start": "2026-07-27",
+          "occupancy_pct": 89,
+          "midweek_occupancy_pct": 86,
+          "weekend_occupancy_pct": 95,
+          "on_the_books_pace_pct": 6
+        },
+        {
+          "week_start": "2026-08-03",
+          "occupancy_pct": 89,
+          "midweek_occupancy_pct": 86,
+          "weekend_occupancy_pct": 95,
+          "on_the_books_pace_pct": 6
+        },
+        {
+          "week_start": "2026-08-10",
+          "occupancy_pct": 89,
+          "midweek_occupancy_pct": 86,
+          "weekend_occupancy_pct": 95,
+          "on_the_books_pace_pct": 6
+        },
+        {
+          "week_start": "2026-08-17",
+          "occupancy_pct": 94,
+          "midweek_occupancy_pct": 93,
+          "weekend_occupancy_pct": 98,
+          "on_the_books_pace_pct": 9
+        },
+        {
+          "week_start": "2026-08-24",
+          "occupancy_pct": 94,
+          "midweek_occupancy_pct": 93,
+          "weekend_occupancy_pct": 98,
+          "on_the_books_pace_pct": 9
+        },
+        {
+          "week_start": "2026-08-31",
+          "occupancy_pct": 92,
+          "midweek_occupancy_pct": 89,
+          "weekend_occupancy_pct": 98,
+          "on_the_books_pace_pct": 7
+        },
+        {
+          "week_start": "2026-09-07",
+          "occupancy_pct": 87,
+          "midweek_occupancy_pct": 84,
+          "weekend_occupancy_pct": 95,
+          "on_the_books_pace_pct": 5
+        },
+        {
+          "week_start": "2026-09-14",
+          "occupancy_pct": 87,
+          "midweek_occupancy_pct": 84,
+          "weekend_occupancy_pct": 95,
+          "on_the_books_pace_pct": 5
+        },
+        {
+          "week_start": "2026-09-21",
+          "occupancy_pct": 87,
+          "midweek_occupancy_pct": 84,
+          "weekend_occupancy_pct": 95,
+          "on_the_books_pace_pct": 5
+        },
+        {
+          "week_start": "2026-09-28",
+          "occupancy_pct": 86,
+          "midweek_occupancy_pct": 83,
+          "weekend_occupancy_pct": 94,
+          "on_the_books_pace_pct": 6
+        },
+        {
+          "week_start": "2026-10-05",
+          "occupancy_pct": 83,
+          "midweek_occupancy_pct": 80,
+          "weekend_occupancy_pct": 92,
+          "on_the_books_pace_pct": 4
+        },
+        {
+          "week_start": "2026-10-12",
+          "occupancy_pct": 82,
+          "midweek_occupancy_pct": 79,
+          "weekend_occupancy_pct": 91,
+          "on_the_books_pace_pct": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "occupancy_pct": 81,
+          "midweek_occupancy_pct": 78,
+          "weekend_occupancy_pct": 90,
+          "on_the_books_pace_pct": 4
+        },
+        {
+          "week_start": "2026-10-26",
+          "occupancy_pct": 81,
+          "midweek_occupancy_pct": 78,
+          "weekend_occupancy_pct": 90,
+          "on_the_books_pace_pct": 4
+        },
+        {
+          "week_start": "2026-11-02",
+          "occupancy_pct": 70,
+          "midweek_occupancy_pct": 66,
+          "weekend_occupancy_pct": 80,
+          "on_the_books_pace_pct": 1
+        },
+        {
+          "week_start": "2026-11-09",
+          "occupancy_pct": 71,
+          "midweek_occupancy_pct": 67,
+          "weekend_occupancy_pct": 81,
+          "on_the_books_pace_pct": 0
+        },
+        {
+          "week_start": "2026-11-16",
+          "occupancy_pct": 72,
+          "midweek_occupancy_pct": 68,
+          "weekend_occupancy_pct": 82,
+          "on_the_books_pace_pct": 1
+        },
+        {
+          "week_start": "2026-11-23",
+          "occupancy_pct": 73,
+          "midweek_occupancy_pct": 69,
+          "weekend_occupancy_pct": 83,
+          "on_the_books_pace_pct": 2
+        },
+        {
+          "week_start": "2026-11-30",
+          "occupancy_pct": 74,
+          "midweek_occupancy_pct": 70,
+          "weekend_occupancy_pct": 84,
+          "on_the_books_pace_pct": 1
+        },
+        {
+          "week_start": "2026-12-07",
+          "occupancy_pct": 94,
+          "midweek_occupancy_pct": 93,
+          "weekend_occupancy_pct": 98,
+          "on_the_books_pace_pct": 9
+        },
+        {
+          "week_start": "2026-12-14",
+          "occupancy_pct": 94,
+          "midweek_occupancy_pct": 93,
+          "weekend_occupancy_pct": 98,
+          "on_the_books_pace_pct": 9
+        }
+      ]
+    },
+    {
+      "listing_id": "AL-STAY-102",
+      "rooms": 38,
+      "bookings_last_30d": 412,
+      "weeks": [
+        {
+          "week_start": "2026-07-27",
+          "occupancy_pct": 90,
+          "midweek_occupancy_pct": 87,
+          "weekend_occupancy_pct": 97,
+          "on_the_books_pace_pct": 6
+        },
+        {
+          "week_start": "2026-08-03",
+          "occupancy_pct": 90,
+          "midweek_occupancy_pct": 87,
+          "weekend_occupancy_pct": 97,
+          "on_the_books_pace_pct": 6
+        },
+        {
+          "week_start": "2026-08-10",
+          "occupancy_pct": 90,
+          "midweek_occupancy_pct": 87,
+          "weekend_occupancy_pct": 97,
+          "on_the_books_pace_pct": 6
+        },
+        {
+          "week_start": "2026-08-17",
+          "occupancy_pct": 89,
+          "midweek_occupancy_pct": 86,
+          "weekend_occupancy_pct": 96,
+          "on_the_books_pace_pct": 7
+        },
+        {
+          "week_start": "2026-08-24",
+          "occupancy_pct": 88,
+          "midweek_occupancy_pct": 85,
+          "weekend_occupancy_pct": 95,
+          "on_the_books_pace_pct": 6
+        },
+        {
+          "week_start": "2026-08-31",
+          "occupancy_pct": 87,
+          "midweek_occupancy_pct": 84,
+          "weekend_occupancy_pct": 94,
+          "on_the_books_pace_pct": 5
+        },
+        {
+          "week_start": "2026-09-07",
+          "occupancy_pct": 80,
+          "midweek_occupancy_pct": 77,
+          "weekend_occupancy_pct": 89,
+          "on_the_books_pace_pct": 5
+        },
+        {
+          "week_start": "2026-09-14",
+          "occupancy_pct": 80,
+          "midweek_occupancy_pct": 77,
+          "weekend_occupancy_pct": 89,
+          "on_the_books_pace_pct": 5
+        },
+        {
+          "week_start": "2026-09-21",
+          "occupancy_pct": 80,
+          "midweek_occupancy_pct": 77,
+          "weekend_occupancy_pct": 89,
+          "on_the_books_pace_pct": 5
+        },
+        {
+          "week_start": "2026-09-28",
+          "occupancy_pct": 81,
+          "midweek_occupancy_pct": 78,
+          "weekend_occupancy_pct": 90,
+          "on_the_books_pace_pct": 4
+        },
+        {
+          "week_start": "2026-10-05",
+          "occupancy_pct": 81,
+          "midweek_occupancy_pct": 77,
+          "weekend_occupancy_pct": 90,
+          "on_the_books_pace_pct": 4
+        },
+        {
+          "week_start": "2026-10-12",
+          "occupancy_pct": 82,
+          "midweek_occupancy_pct": 78,
+          "weekend_occupancy_pct": 91,
+          "on_the_books_pace_pct": 5
+        },
+        {
+          "week_start": "2026-10-19",
+          "occupancy_pct": 83,
+          "midweek_occupancy_pct": 79,
+          "weekend_occupancy_pct": 92,
+          "on_the_books_pace_pct": 4
+        },
+        {
+          "week_start": "2026-10-26",
+          "occupancy_pct": 83,
+          "midweek_occupancy_pct": 79,
+          "weekend_occupancy_pct": 92,
+          "on_the_books_pace_pct": 4
+        },
+        {
+          "week_start": "2026-11-02",
+          "occupancy_pct": 71,
+          "midweek_occupancy_pct": 67,
+          "weekend_occupancy_pct": 82,
+          "on_the_books_pace_pct": 1
+        },
+        {
+          "week_start": "2026-11-09",
+          "occupancy_pct": 70,
+          "midweek_occupancy_pct": 66,
+          "weekend_occupancy_pct": 81,
+          "on_the_books_pace_pct": 2
+        },
+        {
+          "week_start": "2026-11-16",
+          "occupancy_pct": 69,
+          "midweek_occupancy_pct": 65,
+          "weekend_occupancy_pct": 80,
+          "on_the_books_pace_pct": 1
+        },
+        {
+          "week_start": "2026-11-23",
+          "occupancy_pct": 68,
+          "midweek_occupancy_pct": 64,
+          "weekend_occupancy_pct": 79,
+          "on_the_books_pace_pct": 0
+        },
+        {
+          "week_start": "2026-11-30",
+          "occupancy_pct": 67,
+          "midweek_occupancy_pct": 63,
+          "weekend_occupancy_pct": 78,
+          "on_the_books_pace_pct": 1
+        },
+        {
+          "week_start": "2026-12-07",
+          "occupancy_pct": 75,
+          "midweek_occupancy_pct": 71,
+          "weekend_occupancy_pct": 84,
+          "on_the_books_pace_pct": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "occupancy_pct": 75,
+          "midweek_occupancy_pct": 71,
+          "weekend_occupancy_pct": 84,
+          "on_the_books_pace_pct": 3
+        }
+      ]
+    },
+    {
+      "listing_id": "AL-STAY-103",
+      "rooms": 18,
+      "bookings_last_30d": 151,
+      "weeks": [
+        {
+          "week_start": "2026-07-27",
+          "occupancy_pct": 80,
+          "midweek_occupancy_pct": 76,
+          "weekend_occupancy_pct": 90,
+          "on_the_books_pace_pct": 3
+        },
+        {
+          "week_start": "2026-08-03",
+          "occupancy_pct": 80,
+          "midweek_occupancy_pct": 76,
+          "weekend_occupancy_pct": 90,
+          "on_the_books_pace_pct": 3
+        },
+        {
+          "week_start": "2026-08-10",
+          "occupancy_pct": 80,
+          "midweek_occupancy_pct": 76,
+          "weekend_occupancy_pct": 90,
+          "on_the_books_pace_pct": 3
+        },
+        {
+          "week_start": "2026-08-17",
+          "occupancy_pct": 81,
+          "midweek_occupancy_pct": 77,
+          "weekend_occupancy_pct": 91,
+          "on_the_books_pace_pct": 2
+        },
+        {
+          "week_start": "2026-08-24",
+          "occupancy_pct": 82,
+          "midweek_occupancy_pct": 78,
+          "weekend_occupancy_pct": 92,
+          "on_the_books_pace_pct": 3
+        },
+        {
+          "week_start": "2026-08-31",
+          "occupancy_pct": 83,
+          "midweek_occupancy_pct": 79,
+          "weekend_occupancy_pct": 93,
+          "on_the_books_pace_pct": 4
+        },
+        {
+          "week_start": "2026-09-07",
+          "occupancy_pct": 77,
+          "midweek_occupancy_pct": 72,
+          "weekend_occupancy_pct": 89,
+          "on_the_books_pace_pct": 1
+        },
+        {
+          "week_start": "2026-09-14",
+          "occupancy_pct": 77,
+          "midweek_occupancy_pct": 72,
+          "weekend_occupancy_pct": 89,
+          "on_the_books_pace_pct": 1
+        },
+        {
+          "week_start": "2026-09-21",
+          "occupancy_pct": 77,
+          "midweek_occupancy_pct": 72,
+          "weekend_occupancy_pct": 89,
+          "on_the_books_pace_pct": 1
+        },
+        {
+          "week_start": "2026-09-28",
+          "occupancy_pct": 76,
+          "midweek_occupancy_pct": 71,
+          "weekend_occupancy_pct": 88,
+          "on_the_books_pace_pct": 2
+        },
+        {
+          "week_start": "2026-10-05",
+          "occupancy_pct": 51,
+          "midweek_occupancy_pct": 39,
+          "weekend_occupancy_pct": 81,
+          "on_the_books_pace_pct": -22
+        },
+        {
+          "week_start": "2026-10-12",
+          "occupancy_pct": 50,
+          "midweek_occupancy_pct": 38,
+          "weekend_occupancy_pct": 80,
+          "on_the_books_pace_pct": -23
+        },
+        {
+          "week_start": "2026-10-19",
+          "occupancy_pct": 49,
+          "midweek_occupancy_pct": 37,
+          "weekend_occupancy_pct": 79,
+          "on_the_books_pace_pct": -22
+        },
+        {
+          "week_start": "2026-10-26",
+          "occupancy_pct": 49,
+          "midweek_occupancy_pct": 37,
+          "weekend_occupancy_pct": 79,
+          "on_the_books_pace_pct": -22
+        },
+        {
+          "week_start": "2026-11-02",
+          "occupancy_pct": 60,
+          "midweek_occupancy_pct": 54,
+          "weekend_occupancy_pct": 75,
+          "on_the_books_pace_pct": -6
+        },
+        {
+          "week_start": "2026-11-09",
+          "occupancy_pct": 61,
+          "midweek_occupancy_pct": 55,
+          "weekend_occupancy_pct": 76,
+          "on_the_books_pace_pct": -7
+        },
+        {
+          "week_start": "2026-11-16",
+          "occupancy_pct": 62,
+          "midweek_occupancy_pct": 56,
+          "weekend_occupancy_pct": 77,
+          "on_the_books_pace_pct": -6
+        },
+        {
+          "week_start": "2026-11-23",
+          "occupancy_pct": 63,
+          "midweek_occupancy_pct": 57,
+          "weekend_occupancy_pct": 78,
+          "on_the_books_pace_pct": -5
+        },
+        {
+          "week_start": "2026-11-30",
+          "occupancy_pct": 64,
+          "midweek_occupancy_pct": 58,
+          "weekend_occupancy_pct": 79,
+          "on_the_books_pace_pct": -6
+        },
+        {
+          "week_start": "2026-12-07",
+          "occupancy_pct": 73,
+          "midweek_occupancy_pct": 68,
+          "weekend_occupancy_pct": 85,
+          "on_the_books_pace_pct": 0
+        },
+        {
+          "week_start": "2026-12-14",
+          "occupancy_pct": 73,
+          "midweek_occupancy_pct": 68,
+          "weekend_occupancy_pct": 85,
+          "on_the_books_pace_pct": 0
+        }
+      ]
+    },
+    {
+      "listing_id": "AL-STAY-104",
+      "rooms": 6,
+      "bookings_last_30d": 57,
+      "weeks": [
+        {
+          "week_start": "2026-07-27",
+          "occupancy_pct": 91,
+          "midweek_occupancy_pct": 88,
+          "weekend_occupancy_pct": 98,
+          "on_the_books_pace_pct": 6
+        },
+        {
+          "week_start": "2026-08-03",
+          "occupancy_pct": 90,
+          "midweek_occupancy_pct": 87,
+          "weekend_occupancy_pct": 97,
+          "on_the_books_pace_pct": 7
+        },
+        {
+          "week_start": "2026-08-10",
+          "occupancy_pct": 89,
+          "midweek_occupancy_pct": 86,
+          "weekend_occupancy_pct": 96,
+          "on_the_books_pace_pct": 6
+        },
+        {
+          "week_start": "2026-08-17",
+          "occupancy_pct": 88,
+          "midweek_occupancy_pct": 85,
+          "weekend_occupancy_pct": 95,
+          "on_the_books_pace_pct": 5
+        },
+        {
+          "week_start": "2026-08-24",
+          "occupancy_pct": 87,
+          "midweek_occupancy_pct": 84,
+          "weekend_occupancy_pct": 94,
+          "on_the_books_pace_pct": 6
+        },
+        {
+          "week_start": "2026-08-31",
+          "occupancy_pct": 87,
+          "midweek_occupancy_pct": 84,
+          "weekend_occupancy_pct": 94,
+          "on_the_books_pace_pct": 6
+        },
+        {
+          "week_start": "2026-09-07",
+          "occupancy_pct": 81,
+          "midweek_occupancy_pct": 78,
+          "weekend_occupancy_pct": 90,
+          "on_the_books_pace_pct": 5
+        },
+        {
+          "week_start": "2026-09-14",
+          "occupancy_pct": 82,
+          "midweek_occupancy_pct": 79,
+          "weekend_occupancy_pct": 91,
+          "on_the_books_pace_pct": 4
+        },
+        {
+          "week_start": "2026-09-21",
+          "occupancy_pct": 83,
+          "midweek_occupancy_pct": 80,
+          "weekend_occupancy_pct": 92,
+          "on_the_books_pace_pct": 5
+        },
+        {
+          "week_start": "2026-09-28",
+          "occupancy_pct": 84,
+          "midweek_occupancy_pct": 81,
+          "weekend_occupancy_pct": 93,
+          "on_the_books_pace_pct": 6
+        },
+        {
+          "week_start": "2026-10-05",
+          "occupancy_pct": 84,
+          "midweek_occupancy_pct": 80,
+          "weekend_occupancy_pct": 93,
+          "on_the_books_pace_pct": 4
+        },
+        {
+          "week_start": "2026-10-12",
+          "occupancy_pct": 84,
+          "midweek_occupancy_pct": 80,
+          "weekend_occupancy_pct": 93,
+          "on_the_books_pace_pct": 4
+        },
+        {
+          "week_start": "2026-10-19",
+          "occupancy_pct": 84,
+          "midweek_occupancy_pct": 80,
+          "weekend_occupancy_pct": 93,
+          "on_the_books_pace_pct": 4
+        },
+        {
+          "week_start": "2026-10-26",
+          "occupancy_pct": 83,
+          "midweek_occupancy_pct": 79,
+          "weekend_occupancy_pct": 92,
+          "on_the_books_pace_pct": 5
+        },
+        {
+          "week_start": "2026-11-02",
+          "occupancy_pct": 70,
+          "midweek_occupancy_pct": 66,
+          "weekend_occupancy_pct": 81,
+          "on_the_books_pace_pct": 1
+        },
+        {
+          "week_start": "2026-11-09",
+          "occupancy_pct": 69,
+          "midweek_occupancy_pct": 65,
+          "weekend_occupancy_pct": 80,
+          "on_the_books_pace_pct": 0
+        },
+        {
+          "week_start": "2026-11-16",
+          "occupancy_pct": 68,
+          "midweek_occupancy_pct": 64,
+          "weekend_occupancy_pct": 79,
+          "on_the_books_pace_pct": 1
+        },
+        {
+          "week_start": "2026-11-23",
+          "occupancy_pct": 68,
+          "midweek_occupancy_pct": 64,
+          "weekend_occupancy_pct": 79,
+          "on_the_books_pace_pct": 1
+        },
+        {
+          "week_start": "2026-11-30",
+          "occupancy_pct": 68,
+          "midweek_occupancy_pct": 64,
+          "weekend_occupancy_pct": 79,
+          "on_the_books_pace_pct": 1
+        },
+        {
+          "week_start": "2026-12-07",
+          "occupancy_pct": 77,
+          "midweek_occupancy_pct": 73,
+          "weekend_occupancy_pct": 86,
+          "on_the_books_pace_pct": 2
+        },
+        {
+          "week_start": "2026-12-14",
+          "occupancy_pct": 78,
+          "midweek_occupancy_pct": 74,
+          "weekend_occupancy_pct": 87,
+          "on_the_books_pace_pct": 3
+        }
+      ]
+    },
+    {
+      "listing_id": "AL-STAY-110",
+      "rooms": 10,
+      "bookings_last_30d": 88,
+      "weeks": [
+        {
+          "week_start": "2026-07-27",
+          "occupancy_pct": 84,
+          "midweek_occupancy_pct": 80,
+          "weekend_occupancy_pct": 93,
+          "on_the_books_pace_pct": 3
+        },
+        {
+          "week_start": "2026-08-03",
+          "occupancy_pct": 85,
+          "midweek_occupancy_pct": 81,
+          "weekend_occupancy_pct": 94,
+          "on_the_books_pace_pct": 4
+        },
+        {
+          "week_start": "2026-08-10",
+          "occupancy_pct": 86,
+          "midweek_occupancy_pct": 82,
+          "weekend_occupancy_pct": 95,
+          "on_the_books_pace_pct": 3
+        },
+        {
+          "week_start": "2026-08-17",
+          "occupancy_pct": 86,
+          "midweek_occupancy_pct": 82,
+          "weekend_occupancy_pct": 95,
+          "on_the_books_pace_pct": 3
+        },
+        {
+          "week_start": "2026-08-24",
+          "occupancy_pct": 86,
+          "midweek_occupancy_pct": 82,
+          "weekend_occupancy_pct": 95,
+          "on_the_books_pace_pct": 3
+        },
+        {
+          "week_start": "2026-08-31",
+          "occupancy_pct": 85,
+          "midweek_occupancy_pct": 81,
+          "weekend_occupancy_pct": 94,
+          "on_the_books_pace_pct": 4
+        },
+        {
+          "week_start": "2026-09-07",
+          "occupancy_pct": 77,
+          "midweek_occupancy_pct": 72,
+          "weekend_occupancy_pct": 88,
+          "on_the_books_pace_pct": 1
+        },
+        {
+          "week_start": "2026-09-14",
+          "occupancy_pct": 76,
+          "midweek_occupancy_pct": 71,
+          "weekend_occupancy_pct": 87,
+          "on_the_books_pace_pct": 0
+        },
+        {
+          "week_start": "2026-09-21",
+          "occupancy_pct": 75,
+          "midweek_occupancy_pct": 70,
+          "weekend_occupancy_pct": 86,
+          "on_the_books_pace_pct": 1
+        },
+        {
+          "week_start": "2026-09-28",
+          "occupancy_pct": 75,
+          "midweek_occupancy_pct": 70,
+          "weekend_occupancy_pct": 86,
+          "on_the_books_pace_pct": 1
+        },
+        {
+          "week_start": "2026-10-05",
+          "occupancy_pct": 51,
+          "midweek_occupancy_pct": 39,
+          "weekend_occupancy_pct": 80,
+          "on_the_books_pace_pct": -22
+        },
+        {
+          "week_start": "2026-10-12",
+          "occupancy_pct": 52,
+          "midweek_occupancy_pct": 40,
+          "weekend_occupancy_pct": 81,
+          "on_the_books_pace_pct": -23
+        },
+        {
+          "week_start": "2026-10-19",
+          "occupancy_pct": 53,
+          "midweek_occupancy_pct": 41,
+          "weekend_occupancy_pct": 82,
+          "on_the_books_pace_pct": -22
+        },
+        {
+          "week_start": "2026-10-26",
+          "occupancy_pct": 54,
+          "midweek_occupancy_pct": 42,
+          "weekend_occupancy_pct": 83,
+          "on_the_books_pace_pct": -21
+        },
+        {
+          "week_start": "2026-11-02",
+          "occupancy_pct": 66,
+          "midweek_occupancy_pct": 60,
+          "weekend_occupancy_pct": 80,
+          "on_the_books_pace_pct": -6
+        },
+        {
+          "week_start": "2026-11-09",
+          "occupancy_pct": 66,
+          "midweek_occupancy_pct": 60,
+          "weekend_occupancy_pct": 80,
+          "on_the_books_pace_pct": -6
+        },
+        {
+          "week_start": "2026-11-16",
+          "occupancy_pct": 66,
+          "midweek_occupancy_pct": 60,
+          "weekend_occupancy_pct": 80,
+          "on_the_books_pace_pct": -6
+        },
+        {
+          "week_start": "2026-11-23",
+          "occupancy_pct": 65,
+          "midweek_occupancy_pct": 59,
+          "weekend_occupancy_pct": 79,
+          "on_the_books_pace_pct": -5
+        },
+        {
+          "week_start": "2026-11-30",
+          "occupancy_pct": 64,
+          "midweek_occupancy_pct": 58,
+          "weekend_occupancy_pct": 78,
+          "on_the_books_pace_pct": -6
+        },
+        {
+          "week_start": "2026-12-07",
+          "occupancy_pct": 72,
+          "midweek_occupancy_pct": 67,
+          "weekend_occupancy_pct": 83,
+          "on_the_books_pace_pct": -1
+        },
+        {
+          "week_start": "2026-12-14",
+          "occupancy_pct": 71,
+          "midweek_occupancy_pct": 66,
+          "weekend_occupancy_pct": 82,
+          "on_the_books_pace_pct": 0
+        }
+      ]
+    }
+  ]
+}

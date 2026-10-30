@@ -1,0 +1,33 @@
+{
+  "_comment": "returned_on is shifted forward by whole weeks at load time, relative to dates_anchored_to (demo_common.merchant_fixtures.load_returns), the same shift merchant_messages.json gets. reason is a merchant_agent.types.ReturnReason code; note is the buyer's own text. Author the dates as if dates_anchored_to were today.",
+  "dates_anchored_to": "2026-07-27",
+  "returns": [
+    {"return_id": "MRT-501", "order_id": "AM-916101", "listing_id": "AM-DEV-206", "returned_on": "2026-07-20", "reason": "defective", "note": "Goes from 60% to dead overnight with nothing running."},
+    {"return_id": "MRT-502", "order_id": "AM-916108", "listing_id": "AM-DEV-206", "returned_on": "2026-07-21", "reason": "defective", "note": "Battery drains overnight."},
+    {"return_id": "MRT-503", "order_id": "AM-916115", "listing_id": "AM-DEV-206", "returned_on": "2026-07-22", "reason": "defective"},
+    {"return_id": "MRT-504", "order_id": "AM-916122", "listing_id": "AM-DEV-206", "returned_on": "2026-07-24", "reason": "defective", "note": "Third night in a row the battery died by morning."},
+    {"return_id": "MRT-505", "order_id": "AM-916129", "listing_id": "AM-DEV-206", "returned_on": "2026-07-08", "reason": "defective", "note": "Battery will not last a day."},
+    {"return_id": "MRT-506", "order_id": "AM-916136", "listing_id": "AM-DEV-202", "returned_on": "2026-07-23", "reason": "arrived_late", "note": "Two-day shipping took six days; cancelled and bought in a store."},
+    {"return_id": "MRT-507", "order_id": "AM-916143", "listing_id": "AM-DEV-202", "returned_on": "2026-07-25", "reason": "arrived_late"},
+    {"return_id": "MRT-508", "order_id": "AM-916150", "listing_id": "AM-DEV-202", "returned_on": "2026-07-02", "reason": "changed_mind"},
+    {"return_id": "MRT-509", "order_id": "AM-916157", "listing_id": "AM-DEV-208", "returned_on": "2026-07-05", "reason": "not_as_described", "note": "It needs a separate Smartwatch Line to make calls; the page does not say so."},
+    {"return_id": "MRT-510", "order_id": "AM-916164", "listing_id": "AM-DEV-208", "returned_on": "2026-07-12", "reason": "not_as_described", "note": "I thought it would run on my phone's plan."},
+    {"return_id": "MRT-511", "order_id": "AM-916171", "listing_id": "AM-DEV-208", "returned_on": "2026-07-19", "reason": "not_as_described"},
+    {"return_id": "MRT-512", "order_id": "AM-916178", "listing_id": "AM-PLAN-101", "returned_on": "2026-07-03", "reason": "unexpected_charge", "note": "My bill went up $30 in top-ups nobody mentioned."},
+    {"return_id": "MRT-513", "order_id": "AM-916185", "listing_id": "AM-PLAN-101", "returned_on": "2026-07-14", "reason": "unexpected_charge"},
+    {"return_id": "MRT-514", "order_id": "AM-916192", "listing_id": "AM-PLAN-101", "returned_on": "2026-07-25", "reason": "unexpected_charge", "note": "Three data top-ups in one month on a plan sold as enough."},
+    {"return_id": "MRT-515", "order_id": "AM-916199", "listing_id": "AM-PLAN-103", "returned_on": "2026-07-09", "reason": "coverage_issue", "note": "No signal inside my building."},
+    {"return_id": "MRT-516", "order_id": "AM-916206", "listing_id": "AM-PLAN-103", "returned_on": "2026-07-18", "reason": "coverage_issue"},
+    {"return_id": "MRT-517", "order_id": "AM-916213", "listing_id": "AM-NET-302", "returned_on": "2026-07-01", "reason": "arrived_late", "note": "The install slot was pushed back twice."},
+    {"return_id": "MRT-518", "order_id": "AM-916220", "listing_id": "AM-NET-302", "returned_on": "2026-07-16", "reason": "arrived_late"},
+    {"return_id": "MRT-519", "order_id": "AM-916227", "listing_id": "AM-NET-302", "returned_on": "2026-07-11", "reason": "coverage_issue", "note": "Peak-hour speeds are closer to 300 than to 1 gig."},
+    {"return_id": "MRT-520", "order_id": "AM-916234", "listing_id": "AM-DEV-209", "returned_on": "2026-07-06", "reason": "missing_part", "note": "No charging cable in the box."},
+    {"return_id": "MRT-521", "order_id": "AM-916241", "listing_id": "AM-DEV-209", "returned_on": "2026-07-21", "reason": "missing_part", "note": "The SIM tray tool was missing."},
+    {"return_id": "MRT-522", "order_id": "AM-916248", "listing_id": "AM-DEV-203-256-GLACIER", "returned_on": "2026-07-13", "reason": "damaged_in_transit", "note": "Screen scratched out of the box; the outer carton was crushed."},
+    {"return_id": "MRT-523", "order_id": "AM-916255", "listing_id": "AM-DEV-203-512-GRAPHITE", "returned_on": "2026-07-17", "reason": "changed_mind"},
+    {"return_id": "MRT-524", "order_id": "AM-916262", "listing_id": "AM-ADD-405", "returned_on": "2026-07-04", "reason": "changed_mind"},
+    {"return_id": "MRT-525", "order_id": "AM-916269", "listing_id": "AM-ADD-405", "returned_on": "2026-07-22", "reason": "changed_mind", "note": "Not watching enough to keep it."},
+    {"return_id": "MRT-526", "order_id": "AM-916276", "listing_id": "AM-DEV-206", "returned_on": "2026-06-10", "reason": "defective"},
+    {"return_id": "MRT-527", "order_id": "AM-916283", "listing_id": "AM-DEV-208", "returned_on": "2026-05-20", "reason": "not_as_described", "note": "Did not know it needed its own line."}
+  ]
+}

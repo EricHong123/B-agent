@@ -1,0 +1,56 @@
+{
+  "venues": [
+    {
+      "venue_id": "AT-VEN-01",
+      "name": "ACME Amphitheater",
+      "city": "Springfield",
+      "viewbox": {"width": 100, "height": 62},
+      "sections": [
+        {"section_id": "STAGE", "label": "Stage", "tier_code": null, "kind": "stage", "x": 30, "y": 2, "w": 40, "h": 8},
+        {"section_id": "PIT", "label": "GA Pit", "tier_code": "PIT", "kind": "floor", "x": 32, "y": 12, "w": 36, "h": 10},
+        {"section_id": "LOWER-L", "label": "Lower Bowl 101–103", "short_label": "101–103", "tier_code": "LOWER", "kind": "bowl", "x": 8, "y": 14, "w": 20, "h": 16},
+        {"section_id": "LOWER-C", "label": "Lower Bowl 104–105", "tier_code": "LOWER", "kind": "bowl", "x": 30, "y": 26, "w": 40, "h": 10},
+        {"section_id": "LOWER-R", "label": "Lower Bowl 106–108", "short_label": "106–108", "tier_code": "LOWER", "kind": "bowl", "x": 72, "y": 14, "w": 20, "h": 16},
+        {"section_id": "TERRACE", "label": "Upper Terrace", "tier_code": "TERRACE", "kind": "terrace", "x": 10, "y": 40, "w": 80, "h": 16}
+      ]
+    },
+    {
+      "venue_id": "AT-VEN-02",
+      "name": "ACME Hall",
+      "city": "Springfield",
+      "viewbox": {"width": 100, "height": 62},
+      "sections": [
+        {"section_id": "STAGE", "label": "Center Stage", "tier_code": null, "kind": "stage", "x": 40, "y": 24, "w": 20, "h": 14},
+        {"section_id": "FLOOR", "label": "GA Floor", "tier_code": "GAFLOOR", "kind": "floor", "x": 18, "y": 10, "w": 64, "h": 42},
+        {"section_id": "MEZZ-L", "label": "Mezzanine West", "tier_code": "MEZZ", "kind": "mezzanine", "x": 4, "y": 10, "w": 10, "h": 42},
+        {"section_id": "MEZZ-R", "label": "Mezzanine East", "tier_code": "MEZZ", "kind": "mezzanine", "x": 86, "y": 10, "w": 10, "h": 42},
+        {"section_id": "MEZZ-B", "label": "Mezzanine South", "tier_code": "MEZZ", "kind": "mezzanine", "x": 18, "y": 54, "w": 64, "h": 6}
+      ]
+    },
+    {
+      "venue_id": "AT-VEN-03",
+      "name": "ACME Playhouse",
+      "city": "Springfield",
+      "viewbox": {"width": 100, "height": 62},
+      "sections": [
+        {"section_id": "STAGE", "label": "Stage", "tier_code": null, "kind": "stage", "x": 25, "y": 2, "w": 50, "h": 10},
+        {"section_id": "ORCH", "label": "Orchestra", "tier_code": "ORCH", "kind": "floor", "x": 15, "y": 16, "w": 70, "h": 24},
+        {"section_id": "BALC", "label": "Balcony", "tier_code": "BALC", "kind": "balcony", "x": 20, "y": 44, "w": 60, "h": 14}
+      ]
+    },
+    {
+      "venue_id": "AT-VEN-04",
+      "name": "ACME Concert Hall",
+      "city": "Springfield",
+      "viewbox": {"width": 100, "height": 62},
+      "sections": [
+        {"section_id": "STAGE", "label": "Stage", "tier_code": null, "kind": "stage", "x": 28, "y": 2, "w": 44, "h": 10},
+        {"section_id": "PREMORCH", "label": "Premium Orchestra D–J", "tier_code": "PREMORCH", "kind": "floor", "x": 30, "y": 14, "w": 40, "h": 12},
+        {"section_id": "ORCH-L", "label": "Orchestra West", "short_label": "West", "tier_code": "ORCH", "kind": "floor", "x": 10, "y": 14, "w": 18, "h": 26},
+        {"section_id": "ORCH-C", "label": "Orchestra K–T", "tier_code": "ORCH", "kind": "floor", "x": 30, "y": 28, "w": 40, "h": 12},
+        {"section_id": "ORCH-R", "label": "Orchestra East", "short_label": "East", "tier_code": "ORCH", "kind": "floor", "x": 72, "y": 14, "w": 18, "h": 26},
+        {"section_id": "BALC", "label": "Balcony", "tier_code": "BALC", "kind": "balcony", "x": 16, "y": 44, "w": 68, "h": 14}
+      ]
+    }
+  ]
+}

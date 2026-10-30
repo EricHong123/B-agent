@@ -1,0 +1,7 @@
+{
+  "demo-user": [
+    {"key": "pair_habit", "value": "always buys two tickets — goes to shows with partner Sam", "category": "context", "updated_at": "2026-06-14T22:15:00Z"},
+    {"key": "seating_preference", "value": "prefers GA rail spots when standing and aisle seats when reserved", "category": "preference", "updated_at": "2026-07-01T18:33:00Z"},
+    {"key": "budget_ceiling", "value": "wants to stay under $120 all-in per ticket", "category": "constraint", "updated_at": "2026-07-22T16:07:00Z"}
+  ]
+}

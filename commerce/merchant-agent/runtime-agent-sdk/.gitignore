@@ -1,0 +1,4 @@
+# Materialized at runtime by merchant_agent_sdk.agent.ensure_project_skills():
+# symlinks (or copies) of the repo's merchant-agent/skills/ dirs so the Agent SDK can discover
+# them as project Agent Skills. Never edit these — edit merchant-agent/skills/ instead.
+.claude/

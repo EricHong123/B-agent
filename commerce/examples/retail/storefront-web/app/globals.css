@@ -1,0 +1,87 @@
+/*
+ * Copyright 2026 Anthropic PBC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+@import "tailwindcss";
+@source "../../../web-shared";
+@source "../components";
+@source "../lib";
+@source "../app";
+@import "../../../web-shared/base.css";
+
+/*
+ * ACME retail design system: the shared light ground, cards, and ink (web-shared/theme.css),
+ * terracotta for the assistant and primary actions, red for sale tags and errors, gold stars.
+ */
+
+:root {
+  /* Page, card, text, rule, and shadow tokens: web-shared/theme.css. */
+  --accent: #d97f5f; /* terracotta: the assistant's mark, primary actions, focus */
+  --accent-strong: #c4643f; /* filled buttons */
+  --accent-soft: #f9e8e0;
+  --accent-ink: #8a3f22; /* text on accent-soft */
+  --on-accent: #ffffff;
+  --ok: #1f8f5f; /* delivery promises, delivered */
+  --ok-soft: #e3f4ec;
+  --warn: #b06a00; /* low stock, delays, results held by a safety gate */
+  --warn-soft: #fdf1da;
+  --danger: #c9252d; /* sale tags and errors */
+  --danger-soft: #fdecec;
+  --info: #2c6fa8; /* shipped */
+  --info-soft: #e5f0fa;
+  --violet: #6b4fd6; /* returns in progress */
+  --violet-soft: #eeeafd;
+  --star: #f0a500; /* rating stars */
+  --radius: 12px;
+}
+
+body {
+  font-family:
+    var(--font-body), "Instrument Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, sans-serif;
+  /* Unhinted web fonts otherwise get their advances rounded by FreeType, which eats spaces. */
+  text-rendering: geometricPrecision;
+}
+
+/* Conversation chrome the shared components render. */
+.user-bubble {
+  border-radius: 16px 16px 5px 16px;
+  background: var(--ink);
+  color: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+.chip {
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: var(--card);
+  padding: 6px 13px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: border-color 150ms, background-color 150ms, color 150ms;
+}
+.chip:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+}
+.chip:disabled {
+  opacity: 0.5;
+}
+.btn-primary {
+  border-radius: var(--radius);
+  background: var(--accent-strong);
+  padding: 10px 16px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--on-accent);
+  transition: filter 150ms;
+}
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(0.95);
+}
+.btn-primary:disabled {
+  background: var(--well);
+  color: var(--ink-soft);
+}

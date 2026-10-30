@@ -1,0 +1,60 @@
+{
+  "_comment": "In-flight orders (processing/shipped/delayed) are re-dated at load time relative to dates_anchored_to (demo_common.storefront_fixtures.redate_in_flight_orders), so estimates always read current. Author their dates as if dates_anchored_to were today.",
+  "dates_anchored_to": "2026-06-24",
+  "orders": [
+    {
+      "order_id": "AL-30342",
+      "user_id": "demo-user",
+      "status": "shipped",
+      "placed_at": "2026-06-14T19:08:00Z",
+      "items": [
+        {"product_id": "AL-FLT-210", "title": "New York to Reykjavik Nonstop — Economy", "quantity": 2, "price": 462.0},
+        {"product_id": "AL-STAY-113", "title": "ACME Stays Harbourfront Lofts", "quantity": 3, "price": 232.0},
+        {"product_id": "AL-EXP-312", "title": "Lava Fields Hike & Hot Spring Soak", "quantity": 2, "price": 96.0}
+      ],
+      "total": 1812.0,
+      "estimated_delivery": "2026-07-18",
+      "tracking_url": "https://trips.example.com/AL-30342"
+    },
+    {
+      "order_id": "AL-30418",
+      "user_id": "demo-user",
+      "status": "processing",
+      "placed_at": "2026-06-23T22:41:00Z",
+      "items": [
+        {"product_id": "AL-FLT-204", "title": "San Francisco to Kyoto — Economy, One Stop", "quantity": 1, "price": 812.0},
+        {"product_id": "AL-STAY-108", "title": "ACME Ryokan Higashiyama Annex", "quantity": 3, "price": 358.0}
+      ],
+      "total": 1886.0,
+      "estimated_delivery": "2026-11-06",
+      "tracking_url": "https://trips.example.com/AL-30418"
+    },
+    {
+      "order_id": "AL-29881",
+      "user_id": "demo-user",
+      "status": "delivered",
+      "placed_at": "2026-04-01T16:24:00Z",
+      "items": [
+        {"product_id": "AL-FLT-201", "title": "New York to Lisbon Nonstop — Economy", "quantity": 2, "price": 498.0},
+        {"product_id": "AL-STAY-101", "title": "ACME Guesthouses Alfama", "quantity": 4, "price": 214.0},
+        {"product_id": "AL-EXP-301", "title": "Alfama at Dusk: Fado & Petiscos Evening Walk", "quantity": 2, "price": 86.0}
+      ],
+      "total": 2024.0,
+      "estimated_delivery": "2026-04-14",
+      "tracking_url": "https://trips.example.com/AL-29881"
+    },
+    {
+      "order_id": "AL-30067",
+      "user_id": "demo-user",
+      "status": "refunded",
+      "placed_at": "2026-04-26T11:52:00Z",
+      "items": [
+        {"product_id": "AL-STAY-117", "title": "ACME Riads Medina Courtyard", "quantity": 3, "price": 142.0},
+        {"product_id": "AL-EXP-313", "title": "Souks and Artisan Workshops Walk", "quantity": 2, "price": 48.0}
+      ],
+      "total": 522.0,
+      "estimated_delivery": "2026-09-10",
+      "tracking_url": "https://trips.example.com/AL-30067"
+    }
+  ]
+}

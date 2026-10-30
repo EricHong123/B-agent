@@ -58,6 +58,16 @@ google-api-python-client==2.108.0
 google-auth-oauthlib==1.1.0
 google-auth-httplib2==0.2.0
 
+# Commerce agents, vendored under ../commerce (Apache-2.0). Installed together so each
+# package's exact sibling pin resolves to the local copy, never to the public index.
+-e ../commerce/commerce-common
+-e ../commerce/shopping-agent/core
+-e ../commerce/shopping-agent/runtime-messages-api
+-e ../commerce/merchant-agent/core
+-e ../commerce/merchant-agent/runtime-messages-api
+anthropic==0.122.0
+pyyaml>=6.0
+
 # Testing
 pytest==7.4.4
 pytest-asyncio==0.23.3

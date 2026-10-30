@@ -1,0 +1,212 @@
+{
+  "policies": [
+    {
+      "policy_id": "plan-pricing-disclosures",
+      "title": "How plan pricing works",
+      "category": "pricing",
+      "content": "All advertised plan prices include the $5/month AutoPay and paperless billing discount; without AutoPay, add $5/month per line. Taxes and government fees are not included in the advertised price and vary by location. Every line carries a $1.45/month Network Compliance Surcharge, which is an ACME Mobile charge, not a government tax. A one-time $35 activation fee applies per new line and is waived when you activate online or in the app. Plans with a price guarantee keep their monthly price for the stated period from activation; taxes, fees, and add-ons are not covered by the guarantee.",
+      "source_id": "telecom/plan-pricing-disclosures",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "upgrade-eligibility",
+      "title": "Device upgrade eligibility",
+      "category": "upgrades",
+      "content": "On a 24-month device agreement, you qualify for an early upgrade at month 22 when you trade in your current device in qualifying condition; at month 24 you can upgrade outright with no trade-in required. With an early upgrade and a tier-A trade-in, ACME Mobile waives your remaining device installments up to $350. Your account page shows your exact eligibility date. Upgrading restarts the device agreement with the new phone's installment schedule.",
+      "source_id": "telecom/upgrade-eligibility",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "trade-in-program",
+      "title": "Trade-in values and conditions",
+      "category": "upgrades",
+      "content": "Trade-in credits by device tier: tier A devices earn $350, tier B earns $200, tier C earns $80. Qualifying condition means the device powers on, the screen is intact, and activation lock is removed; devices that don't qualify receive a recycling credit of $20. Credit is applied as 24 equal monthly bill credits starting within 2 bill cycles. If you leave ACME Mobile before the 24 months end, remaining trade-in credits are forfeited. You have 30 days from accepting an estimate to send the device; estimates re-run on arrival if the condition differs.",
+      "source_id": "telecom/trade-in-program",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "device-financing",
+      "title": "Device installment plans",
+      "category": "payments",
+      "content": "Phones, tablets, and accessories over $150 can be financed at 0% APR over 24 monthly installments with a credit check; prepaid plans are not eligible for financing. There is no penalty for paying a device off early — the remaining balance can be settled any time in the app. The full remaining device balance becomes due if your service is cancelled. Promotional device offers are delivered as monthly bill credits over the credit period and end if the financed line is cancelled.",
+      "source_id": "telecom/device-financing",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "plan-changes",
+      "title": "Changing plans",
+      "category": "changes",
+      "content": "You can change plans at any time, and there is no fee to change plans. Moving to a higher-priced plan takes effect immediately with a prorated charge for the rest of the cycle; moving to a lower-priced plan takes effect at the start of your next bill cycle. Plan perks (included streaming, roaming) switch with the plan. Changing plans does not affect your device agreement or its installments, and a plan's price guarantee starts over when you change onto a guaranteed plan.",
+      "source_id": "telecom/plan-changes",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "data-top-ups-and-overage",
+      "title": "Data allowances, top-ups, and overage",
+      "category": "data",
+      "content": "ACME Mobile never charges overage fees. When a capped plan reaches its high-speed allowance, data continues at reduced speed (512 Kbps on postpaid plans, 256 Kbps on prepaid) until the cycle resets. A Data Top-Up adds 5GB of full-speed data for $10, applies instantly, and expires at the end of the current billing cycle without rollover. Optional auto top-up can add one top-up automatically per cycle when you hit your allowance; it is off by default.",
+      "source_id": "telecom/data-top-ups-and-overage",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "network-management-disclosure",
+      "title": "Network management disclosure",
+      "category": "network",
+      "content": "ACME Mobile manages network congestion using plan priority. On the Unlimited plan, usage beyond 35GB in a billing cycle may be temporarily deprioritized during congestion; on Unlimited Plus the threshold is 60GB at premium priority; capped plans are deprioritized past their allowance as part of reduced-speed data. Video streams default to the plan's resolution tier (480p, 1080p, or 4K). Deprioritization never blocks traffic, and typical speeds are published for each home internet tier on its plan page. This disclosure is provided so customers can compare plans on how they actually behave under load.",
+      "source_id": "telecom/network-management-disclosure",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "early-termination",
+      "title": "Cancelling service",
+      "category": "cancellation",
+      "content": "Month-to-month plans can be cancelled any time, effective at the end of the current bill cycle, with no early termination fee. Lines with a service contract carry a $175 early termination fee that decreases by $10 for each completed month of the contract and never drops below $0: the fee is $175 minus $10 per completed month, or $0 if that would be negative, so it reaches $0 at 18 completed months (for example, at month 23 the fee is $0 — not a credit). Cancelling a line with a financed device makes the remaining device balance due on the final bill, and any remaining promotional or trade-in bill credits are forfeited. Your number can be ported out at any time; porting out completes the cancellation.",
+      "source_id": "telecom/early-termination",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "bundle-discounts",
+      "title": "Bundle and multi-line discounts",
+      "category": "bundles",
+      "content": "Customers with any postpaid phone plan get $20/month off any Home Fiber tier, applied to the internet line within one bill cycle of activating both. Multi-line phone discounts: the second voice line is $10/month off, and the third and each additional line are $15/month off. Bundle and multi-line discounts stack with plan price guarantees but not with other promotional internet pricing. If the qualifying phone plan is cancelled, the internet bundle discount ends the following cycle.",
+      "source_id": "telecom/bundle-discounts",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "returns-and-cancellation",
+      "title": "Device returns and remorse period",
+      "category": "returns",
+      "content": "Devices can be returned within 14 days of delivery or purchase in like-new condition with all accessories; a $55 restocking fee applies to phones and tablets (waived for defective units). Service activated with a returned device is cancelled without early termination charges, though used service (plan days, top-ups, day passes) is not refunded. Home Fiber has a 30-day guarantee: cancel within 30 days of installation and the first month and any install charges are refunded in full; return the gateway within 21 days of cancelling to avoid a $99 equipment charge.",
+      "source_id": "telecom/returns-and-cancellation",
+      "version": "2",
+      "effective_at": "2026-03-01"
+    },
+    {
+      "policy_id": "returns-and-cancellation-v1",
+      "title": "Returns and cancelling new service",
+      "category": "returns",
+      "content": "Devices can be returned within 30 days of delivery or purchase in like-new condition with all accessories; a $35 restocking fee applies to phones and tablets (waived for defective units). Service activated with a returned device is cancelled with it, and the activation fee is refunded.",
+      "source_id": "telecom/returns-and-cancellation",
+      "version": "1",
+      "effective_at": "2025-06-01",
+      "expires_at": "2026-03-01"
+    },
+    {
+      "policy_id": "device-protection-terms",
+      "title": "Device Protection terms",
+      "category": "protection",
+      "content": "Device Protection covers accidental damage, loss, theft, and post-warranty mechanical failure, with up to 3 claims per rolling 12 months. Deductibles by device tier: tier A $99 (screen-only repair $29), tier B $79 (screen-only $29), tier C $49 (screen-only $19). Same-day screen repair is available in most metro areas; replacements ship next business day. Coverage must be added within 30 days of device purchase or during an open enrollment window, and ends if removed from the line — re-adding later requires a new eligibility check.",
+      "source_id": "telecom/device-protection-terms",
+      "version": "1",
+      "effective_at": "2025-06-01"
+    },
+    {
+      "policy_id": "switcher-credit",
+      "title": "Switcher credit",
+      "category": "pricing",
+      "content": "Customers who bring their number from another carrier get a $200 bill credit per line, applied over the first two bill cycles, when they activate a postpaid plan.",
+      "source_id": "telecom/switcher-credit",
+      "version": "1",
+      "effective_at": "2026-01-15",
+      "expires_at": "2026-07-01"
+    }
+  ],
+  "synonyms": {
+    "go over": [
+      "overage",
+      "allowance"
+    ],
+    "throttle": [
+      "reduced speed",
+      "deprioritized"
+    ],
+    "extra data": [
+      "data top-up"
+    ],
+    "more data": [
+      "data top-up"
+    ],
+    "ditch": [
+      "without"
+    ],
+    "cracked": [
+      "screen",
+      "damage",
+      "protection"
+    ],
+    "smashed": [
+      "screen",
+      "damage",
+      "protection"
+    ],
+    "insurance": [
+      "device protection"
+    ],
+    "quit": [
+      "cancelling",
+      "service",
+      "early termination"
+    ],
+    "etf": [
+      "early termination fee"
+    ],
+    "pay off": [
+      "installment",
+      "paying off"
+    ],
+    "old phone": [
+      "trade-in"
+    ],
+    "downgrade": [
+      "change",
+      "plan",
+      "lower-priced"
+    ],
+    "home internet": [
+      "home fiber"
+    ],
+    "wifi": [
+      "home fiber"
+    ],
+    "流量": [
+      "data"
+    ],
+    "流量包": [
+      "data top-up"
+    ],
+    "解约": [
+      "cancelling",
+      "early termination"
+    ],
+    "套餐": [
+      "plan"
+    ],
+    "换机": [
+      "upgrade"
+    ],
+    "以旧换新": [
+      "trade-in"
+    ],
+    "碎屏": [
+      "screen",
+      "damage"
+    ],
+    "宽带": [
+      "home fiber",
+      "internet"
+    ],
+    "多少钱": [
+      "fee",
+      "price"
+    ]
+  }
+}

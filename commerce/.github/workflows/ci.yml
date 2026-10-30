@@ -1,0 +1,83 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install
+        run: pip install -r requirements-dev.txt
+      - name: Lint
+        run: ruff check .
+      - name: Format
+        run: ruff format --check .
+      - name: Unit tests
+        run: pytest -q
+      - name: Repo consistency checks
+        run: python scripts/check.py
+
+  no-pypi-fallback:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.12"
+      - name: Package names are unregistered on the public index
+        # Metadata-only tripwire, checked BEFORE any resolution below: if one of
+        # these names ever appears on the index, fail here — without downloading
+        # or building anything a squatter uploaded.
+        run: |
+          for name in commerce-common shopping-agent-core shopping-agent-runtime shopping-agent-sdk merchant-agent-core merchant-agent-runtime merchant-agent-sdk; do
+            if pip index versions "$name" > idx.log 2>&1; then
+              echo "ALERT: $name is registered on the public index"; cat idx.log; exit 1
+            fi
+            grep -q "No matching distribution found" idx.log || { cat idx.log; exit 1; }
+          done
+      - name: Cross-package resolution fails loudly outside the editable flow
+        # Sibling deps are exact dev pins that no public index carries:
+        # installing a package alone must error with "No matching
+        # distribution found", never resolve a same-named public package.
+        # Safe to resolve here: the step above already proved the names are
+        # unregistered, and --only-binary forbids building any remote sdist
+        # even in the window between the two steps (local dirs still build).
+        run: |
+          for pkg in ./shopping-agent/core ./shopping-agent/runtime-messages-api ./shopping-agent/runtime-agent-sdk ./merchant-agent/core ./merchant-agent/runtime-messages-api ./merchant-agent/runtime-agent-sdk; do
+            if pip install --dry-run --only-binary=:all: "$pkg" > out.log 2>&1; then
+              echo "UNEXPECTED: $pkg resolved without sibling installs"; cat out.log; exit 1
+            fi
+            grep -q "No matching distribution found" out.log || { cat out.log; exit 1; }
+          done
+
+  web:
+    # The eight example apps are one npm workspace (examples/); install once, build each.
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: examples
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: examples/package-lock.json
+      - name: Install
+        run: npm ci
+      - name: Build every app
+        run: npm run build

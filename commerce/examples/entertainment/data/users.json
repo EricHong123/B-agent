@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "user_id": "demo-user",
+      "display_name": "Riley",
+      "loyalty_tier": "Member",
+      "default_location": "Springfield",
+      "preferences": {
+        "music": "indie folk and synth pop; goes to a show most months",
+        "company": "goes with partner Sam — always buys pairs",
+        "seating": "GA rail when standing, aisle seats when reserved",
+        "budget": "keeps ticket spend under $120 all-in per seat",
+        "shopping_style": "reads the fee breakdown before buying, allergic to surprise fees"
+      }
+    },
+    {
+      "user_id": "demo-user-2",
+      "display_name": "Casey",
+      "loyalty_tier": "Guest",
+      "default_location": "Springfield",
+      "preferences": {
+        "context": "first time on ACME Tickets, mostly goes to comedy shows",
+        "budget": "value-focused; balcony over orchestra when the room is small",
+        "company": "usually goes alone, single seats are fine"
+      }
+    }
+  ]
+}

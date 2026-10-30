@@ -1,0 +1,635 @@
+{
+  "currency": "USD",
+  "daily": [
+    {
+      "date": "2026-03-28",
+      "sales": 2390.0,
+      "orders": 53,
+      "traffic": 1885,
+      "kids_room_sales": 215.1
+    },
+    {
+      "date": "2026-03-29",
+      "sales": 2325.3,
+      "orders": 52,
+      "traffic": 1871,
+      "kids_room_sales": 214.44
+    },
+    {
+      "date": "2026-03-30",
+      "sales": 1959.45,
+      "orders": 44,
+      "traffic": 1706,
+      "kids_room_sales": 183.59
+    },
+    {
+      "date": "2026-03-31",
+      "sales": 1931.43,
+      "orders": 43,
+      "traffic": 1700,
+      "kids_room_sales": 181.41
+    },
+    {
+      "date": "2026-04-01",
+      "sales": 2010.43,
+      "orders": 45,
+      "traffic": 1740,
+      "kids_room_sales": 186.64
+    },
+    {
+      "date": "2026-04-02",
+      "sales": 2105.97,
+      "orders": 47,
+      "traffic": 1780,
+      "kids_room_sales": 191.21
+    },
+    {
+      "date": "2026-04-03",
+      "sales": 2237.9,
+      "orders": 50,
+      "traffic": 1831,
+      "kids_room_sales": 198.03
+    },
+    {
+      "date": "2026-04-04",
+      "sales": 2446.45,
+      "orders": 54,
+      "traffic": 1917,
+      "kids_room_sales": 212.07
+    },
+    {
+      "date": "2026-04-05",
+      "sales": 2362.22,
+      "orders": 53,
+      "traffic": 1859,
+      "kids_room_sales": 203.15
+    },
+    {
+      "date": "2026-04-06",
+      "sales": 1976.06,
+      "orders": 44,
+      "traffic": 1656,
+      "kids_room_sales": 171.24
+    },
+    {
+      "date": "2026-04-07",
+      "sales": 1929.06,
+      "orders": 43,
+      "traffic": 1623,
+      "kids_room_sales": 170.6
+    },
+    {
+      "date": "2026-04-08",
+      "sales": 1992.35,
+      "orders": 44,
+      "traffic": 1651,
+      "kids_room_sales": 180.8
+    },
+    {
+      "date": "2026-04-09",
+      "sales": 2077.08,
+      "orders": 46,
+      "traffic": 1698,
+      "kids_room_sales": 192.75
+    },
+    {
+      "date": "2026-04-10",
+      "sales": 2204.21,
+      "orders": 49,
+      "traffic": 1771,
+      "kids_room_sales": 207.01
+    },
+    {
+      "date": "2026-04-11",
+      "sales": 2414.47,
+      "orders": 54,
+      "traffic": 1889,
+      "kids_room_sales": 226.27
+    },
+    {
+      "date": "2026-04-12",
+      "sales": 2338.28,
+      "orders": 52,
+      "traffic": 1870,
+      "kids_room_sales": 215.74
+    },
+    {
+      "date": "2026-04-13",
+      "sales": 1965.67,
+      "orders": 44,
+      "traffic": 1703,
+      "kids_room_sales": 177.01
+    },
+    {
+      "date": "2026-04-14",
+      "sales": 1936.31,
+      "orders": 43,
+      "traffic": 1700,
+      "kids_room_sales": 170.05
+    },
+    {
+      "date": "2026-04-15",
+      "sales": 2019.54,
+      "orders": 45,
+      "traffic": 1745,
+      "kids_room_sales": 174.34
+    },
+    {
+      "date": "2026-04-16",
+      "sales": 2124.43,
+      "orders": 47,
+      "traffic": 1793,
+      "kids_room_sales": 182.84
+    },
+    {
+      "date": "2026-04-17",
+      "sales": 2269.87,
+      "orders": 51,
+      "traffic": 1853,
+      "kids_room_sales": 197.76
+    },
+    {
+      "date": "2026-04-18",
+      "sales": 2494.7,
+      "orders": 56,
+      "traffic": 1948,
+      "kids_room_sales": 222.41
+    },
+    {
+      "date": "2026-04-19",
+      "sales": 2427.84,
+      "orders": 54,
+      "traffic": 1898,
+      "kids_room_sales": 222.06
+    },
+    {
+      "date": "2026-04-20",
+      "sales": 2058.35,
+      "orders": 46,
+      "traffic": 1702,
+      "kids_room_sales": 192.01
+    },
+    {
+      "date": "2026-04-21",
+      "sales": 2025.58,
+      "orders": 45,
+      "traffic": 1674,
+      "kids_room_sales": 190.4
+    },
+    {
+      "date": "2026-04-22",
+      "sales": 2099.23,
+      "orders": 47,
+      "traffic": 1704,
+      "kids_room_sales": 196.01
+    },
+    {
+      "date": "2026-04-23",
+      "sales": 2189.34,
+      "orders": 49,
+      "traffic": 1749,
+      "kids_room_sales": 200.56
+    },
+    {
+      "date": "2026-04-24",
+      "sales": 2316.35,
+      "orders": 52,
+      "traffic": 1820,
+      "kids_room_sales": 206.86
+    },
+    {
+      "date": "2026-04-25",
+      "sales": 2520.99,
+      "orders": 56,
+      "traffic": 1934,
+      "kids_room_sales": 219.92
+    },
+    {
+      "date": "2026-04-26",
+      "sales": 2434.25,
+      "orders": 54,
+      "traffic": 1909,
+      "kids_room_sales": 209.58
+    },
+    {
+      "date": "2026-04-27",
+      "sales": 2047.25,
+      "orders": 46,
+      "traffic": 1737,
+      "kids_room_sales": 176.61
+    },
+    {
+      "date": "2026-04-28",
+      "sales": 2001.16,
+      "orders": 44,
+      "traffic": 1727,
+      "kids_room_sales": 175.49
+    },
+    {
+      "date": "2026-04-29",
+      "sales": 2067.03,
+      "orders": 46,
+      "traffic": 1767,
+      "kids_room_sales": 185.82
+    },
+    {
+      "date": "2026-04-30",
+      "sales": 2155.73,
+      "orders": 48,
+      "traffic": 1810,
+      "kids_room_sales": 198.61
+    },
+    {
+      "date": "2026-05-01",
+      "sales": 2287.81,
+      "orders": 51,
+      "traffic": 1867,
+      "kids_room_sales": 214.26
+    },
+    {
+      "date": "2026-05-02",
+      "sales": 2503.51,
+      "orders": 56,
+      "traffic": 1960,
+      "kids_room_sales": 235.19
+    },
+    {
+      "date": "2026-05-03",
+      "sales": 2432.66,
+      "orders": 54,
+      "traffic": 1908,
+      "kids_room_sales": 226.02
+    },
+    {
+      "date": "2026-05-04",
+      "sales": 2064.75,
+      "orders": 46,
+      "traffic": 1712,
+      "kids_room_sales": 187.68
+    },
+    {
+      "date": "2026-05-05",
+      "sales": 2038.98,
+      "orders": 45,
+      "traffic": 1685,
+      "kids_room_sales": 180.62
+    },
+    {
+      "date": "2026-05-06",
+      "sales": 2124.3,
+      "orders": 47,
+      "traffic": 1718,
+      "kids_room_sales": 184.28
+    },
+    {
+      "date": "2026-05-07",
+      "sales": 2229.57,
+      "orders": 50,
+      "traffic": 1767,
+      "kids_room_sales": 191.75
+    },
+    {
+      "date": "2026-05-08",
+      "sales": 2373.64,
+      "orders": 53,
+      "traffic": 1843,
+      "kids_room_sales": 205.56
+    },
+    {
+      "date": "2026-05-09",
+      "sales": 2595.51,
+      "orders": 58,
+      "traffic": 1963,
+      "kids_room_sales": 229.3
+    },
+    {
+      "date": "2026-05-10",
+      "sales": 2524.37,
+      "orders": 56,
+      "traffic": 1945,
+      "kids_room_sales": 228.82
+    },
+    {
+      "date": "2026-05-11",
+      "sales": 2149.75,
+      "orders": 48,
+      "traffic": 1779,
+      "kids_room_sales": 199.34
+    },
+    {
+      "date": "2026-05-12",
+      "sales": 2111.54,
+      "orders": 47,
+      "traffic": 1776,
+      "kids_room_sales": 198.26
+    },
+    {
+      "date": "2026-05-13",
+      "sales": 2180.01,
+      "orders": 48,
+      "traffic": 1819,
+      "kids_room_sales": 204.38
+    },
+    {
+      "date": "2026-05-14",
+      "sales": 2265.86,
+      "orders": 50,
+      "traffic": 1865,
+      "kids_room_sales": 209.25
+    },
+    {
+      "date": "2026-05-15",
+      "sales": 2390.23,
+      "orders": 53,
+      "traffic": 1921,
+      "kids_room_sales": 215.49
+    },
+    {
+      "date": "2026-05-16",
+      "sales": 2594.8,
+      "orders": 58,
+      "traffic": 2011,
+      "kids_room_sales": 228.11
+    },
+    {
+      "date": "2026-05-17",
+      "sales": 2511.98,
+      "orders": 56,
+      "traffic": 1955,
+      "kids_room_sales": 216.96
+    },
+    {
+      "date": "2026-05-18",
+      "sales": 2134.97,
+      "orders": 47,
+      "traffic": 1754,
+      "kids_room_sales": 183.71
+    },
+    {
+      "date": "2026-05-19",
+      "sales": 2107.54,
+      "orders": 47,
+      "traffic": 1724,
+      "kids_room_sales": 183.47
+    },
+    {
+      "date": "2026-05-20",
+      "sales": 2203.04,
+      "orders": 49,
+      "traffic": 1759,
+      "kids_room_sales": 196.18
+    },
+    {
+      "date": "2026-05-21",
+      "sales": 2332.59,
+      "orders": 52,
+      "traffic": 1817,
+      "kids_room_sales": 213.12
+    },
+    {
+      "date": "2026-05-22",
+      "sales": 2513.12,
+      "orders": 56,
+      "traffic": 1908,
+      "kids_room_sales": 234.28
+    },
+    {
+      "date": "2026-05-23",
+      "sales": 2776.62,
+      "orders": 62,
+      "traffic": 2046,
+      "kids_room_sales": 260.99
+    },
+    {
+      "date": "2026-05-24",
+      "sales": 2741.9,
+      "orders": 61,
+      "traffic": 2043,
+      "kids_room_sales": 256.16
+    },
+    {
+      "date": "2026-05-25",
+      "sales": 2388.72,
+      "orders": 53,
+      "traffic": 1888,
+      "kids_room_sales": 219.05
+    },
+    {
+      "date": "2026-05-26",
+      "sales": 2352.27,
+      "orders": 52,
+      "traffic": 1887,
+      "kids_room_sales": 210.31
+    },
+    {
+      "date": "2026-05-27",
+      "sales": 2405.1,
+      "orders": 54,
+      "traffic": 1925,
+      "kids_room_sales": 210.0
+    },
+    {
+      "date": "2026-05-28",
+      "sales": 2465.41,
+      "orders": 55,
+      "traffic": 1961,
+      "kids_room_sales": 212.32
+    },
+    {
+      "date": "2026-05-29",
+      "sales": 2562.79,
+      "orders": 57,
+      "traffic": 2008,
+      "kids_room_sales": 220.99
+    },
+    {
+      "date": "2026-05-30",
+      "sales": 2744.25,
+      "orders": 61,
+      "traffic": 2089,
+      "kids_room_sales": 240.42
+    },
+    {
+      "date": "2026-05-31",
+      "sales": 2642.46,
+      "orders": 59,
+      "traffic": 2026,
+      "kids_room_sales": 237.27
+    },
+    {
+      "date": "2026-06-01",
+      "sales": 2246.3,
+      "orders": 50,
+      "traffic": 1816,
+      "kids_room_sales": 206.76
+    },
+    {
+      "date": "2026-06-02",
+      "sales": 2192.23,
+      "orders": 49,
+      "traffic": 1773,
+      "kids_room_sales": 205.21
+    },
+    {
+      "date": "2026-06-03",
+      "sales": 2245.28,
+      "orders": 50,
+      "traffic": 1785,
+      "kids_room_sales": 210.97
+    },
+    {
+      "date": "2026-06-04",
+      "sales": 2310.13,
+      "orders": 51,
+      "traffic": 1808,
+      "kids_room_sales": 214.8
+    },
+    {
+      "date": "2026-06-05",
+      "sales": 2403.91,
+      "orders": 54,
+      "traffic": 1853,
+      "kids_room_sales": 227.5
+    },
+    {
+      "date": "2026-06-06",
+      "sales": 2570.77,
+      "orders": 57,
+      "traffic": 1940,
+      "kids_room_sales": 246.68
+    },
+    {
+      "date": "2026-06-07",
+      "sales": 2453.86,
+      "orders": 55,
+      "traffic": 1896,
+      "kids_room_sales": 239.78
+    },
+    {
+      "date": "2026-06-08",
+      "sales": 2059.36,
+      "orders": 46,
+      "traffic": 1720,
+      "kids_room_sales": 207.07
+    },
+    {
+      "date": "2026-06-09",
+      "sales": 2034.93,
+      "orders": 45,
+      "traffic": 1725,
+      "kids_room_sales": 213.12
+    },
+    {
+      "date": "2026-06-10",
+      "sales": 2143.61,
+      "orders": 48,
+      "traffic": 1793,
+      "kids_room_sales": 235.94
+    },
+    {
+      "date": "2026-06-11",
+      "sales": 2279.83,
+      "orders": 51,
+      "traffic": 1869,
+      "kids_room_sales": 264.45
+    },
+    {
+      "date": "2026-06-12",
+      "sales": 2450.69,
+      "orders": 55,
+      "traffic": 1955,
+      "kids_room_sales": 298.35
+    },
+    {
+      "date": "2026-06-13",
+      "sales": 2691.76,
+      "orders": 60,
+      "traffic": 2068,
+      "kids_room_sales": 340.76
+    },
+    {
+      "date": "2026-06-14",
+      "sales": 2634.77,
+      "orders": 59,
+      "traffic": 2029,
+      "kids_room_sales": 342.91
+    },
+    {
+      "date": "2026-06-15",
+      "sales": 2272.8,
+      "orders": 51,
+      "traffic": 1837,
+      "kids_room_sales": 300.99
+    },
+    {
+      "date": "2026-06-16",
+      "sales": 2247.6,
+      "orders": 50,
+      "traffic": 1807,
+      "kids_room_sales": 300.95
+    },
+    {
+      "date": "2026-06-17",
+      "sales": 2329.54,
+      "orders": 52,
+      "traffic": 1831,
+      "kids_room_sales": 315.13
+    },
+    {
+      "date": "2026-06-18",
+      "sales": 2428.29,
+      "orders": 54,
+      "traffic": 1868,
+      "kids_room_sales": 333.46
+    },
+    {
+      "date": "2026-06-19",
+      "sales": 2563.51,
+      "orders": 57,
+      "traffic": 1930,
+      "kids_room_sales": 360.37
+    },
+    {
+      "date": "2026-06-20",
+      "sales": 2775.13,
+      "orders": 62,
+      "traffic": 2036,
+      "kids_room_sales": 402.86
+    },
+    {
+      "date": "2026-06-21",
+      "sales": 2693.41,
+      "orders": 60,
+      "traffic": 2006,
+      "kids_room_sales": 406.08
+    },
+    {
+      "date": "2026-06-22",
+      "sales": 2308.97,
+      "orders": 51,
+      "traffic": 1834,
+      "kids_room_sales": 361.87
+    },
+    {
+      "date": "2026-06-23",
+      "sales": 2262.69,
+      "orders": 50,
+      "traffic": 1828,
+      "kids_room_sales": 367.12
+    },
+    {
+      "date": "2026-06-24",
+      "sales": 2325.66,
+      "orders": 52,
+      "traffic": 1875,
+      "kids_room_sales": 387.73
+    },
+    {
+      "date": "2026-06-25",
+      "sales": 2409.04,
+      "orders": 54,
+      "traffic": 1928,
+      "kids_room_sales": 409.16
+    }
+  ]
+}

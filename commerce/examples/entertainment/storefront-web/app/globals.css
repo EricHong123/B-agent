@@ -1,0 +1,477 @@
+/*
+ * Copyright 2026 Anthropic PBC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+@import "tailwindcss";
+@source "../../../web-shared";
+@source "../components";
+@source "../lib";
+@source "../app";
+@import "../../../web-shared/base.css";
+
+/* ACME Tickets storefront: the shared light ground (web-shared/theme.css), condensed
+   display type, mono tabular numerals.
+   Magenta marks actions and selection; amber and red mark timers and scarcity; the tier
+   palette is separate from both. Cards are framed as ticket stubs. */
+
+:root {
+  /* Page, card, text, rule, and shadow tokens: web-shared/theme.css. */
+  --rule: rgba(29, 36, 51, 0.35); /* disclosure rules */
+  --accent: #ff4d8d; /* limelight: the assistant's mark, actions, selection */
+  --accent-strong: #ff4d8d; /* filled buttons */
+  --accent-soft: rgba(255, 77, 141, 0.12);
+  --accent-ink: #b8155a; /* text on accent-soft */
+  --on-accent: #17060d; /* text on accent */
+  --ok: #128a5e; /* good value, completed steps, on sale */
+  --ok-soft: rgba(18, 138, 94, 0.11);
+  --warn: #b36b00; /* live time and scarcity states; results held by a safety gate */
+  --warn-soft: rgba(230, 150, 20, 0.15);
+  --danger: #d23a3a; /* expiring, sold out, errors */
+  --danger-soft: rgba(210, 58, 58, 0.1);
+  --info: #0a7fbd; /* issued, transfers */
+  --info-soft: rgba(10, 127, 189, 0.1);
+  --violet: #6a54d6; /* refund in progress */
+  --violet-soft: rgba(106, 84, 214, 0.11);
+  /* Tier legend palette, disjoint from the urgency hues above. */
+  --tier-1: #7b66f0;
+  --tier-2: #2fa3e0;
+  --tier-3: #1ab0a3;
+  --tier-4: #bd66e4;
+  --tier-muted: #d6d4de; /* sold-out sections */
+  --radius: 7px;
+  --radius-lg: 10px;
+}
+
+body {
+  font-family: var(--font-body), "Archivo", ui-sans-serif, system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+/* ---------------------------------------------------------------- type kit */
+
+/* Display face: event names, tier names, headings. */
+.at-display {
+  font-family: var(--font-display), "Big Shoulders", ui-sans-serif, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.015em;
+  line-height: 1.02;
+}
+
+/* Prices, counts, seat ids, and countdown digits. */
+.at-mono {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Uppercase label above a value. 11px is the smallest size in the app. */
+.at-eyebrow {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* Caption above each card ("◉ ADMIT A1 · ..."). */
+.at-stub-caption {
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.at-stub-caption b {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------------- cards */
+
+.at-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+/* Perforation line under a card's header strip, notched at both edges. */
+.at-perf {
+  position: relative;
+  border-top: 1.5px dashed rgba(29, 36, 51, 0.18);
+}
+.at-perf::before,
+.at-perf::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--ground);
+  border: 1px solid var(--line);
+}
+.at-perf::before {
+  left: -7px;
+  clip-path: inset(0 0 0 50%);
+}
+.at-perf::after {
+  right: -7px;
+  clip-path: inset(0 50% 0 0);
+}
+
+/* ------------------------------------------------------------------- chips */
+
+/* Status pill; tone modifiers below. */
+.at-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px 9px;
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.at-pill--calm {
+  border-color: rgba(61, 219, 160, 0.4);
+  color: var(--ok);
+  background: var(--ok-soft);
+}
+.at-pill--scarce {
+  border-color: rgba(255, 184, 77, 0.45);
+  color: var(--warn);
+  background: var(--warn-soft);
+}
+.at-pill--out {
+  border-color: rgba(255, 107, 107, 0.4);
+  color: var(--danger);
+  background: var(--danger-soft);
+}
+.at-pill--accent {
+  border-color: rgba(255, 77, 141, 0.5);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* Suggestion chips (class hook used by web-shared). */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 1.5px dashed rgba(29, 36, 51, 0.24);
+  border-radius: var(--radius);
+  padding: 7px 13px;
+  font-family: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  transition:
+    border-color 160ms ease-out,
+    background-color 160ms ease-out,
+    transform 100ms ease-out;
+}
+.chip:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.chip:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.chip:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* User turn in the transcript (class hook used by web-shared). */
+.user-bubble {
+  border-radius: 16px 16px 6px 16px;
+  border: 1px solid var(--line);
+  background: var(--well);
+  color: var(--ink);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* ----------------------------------------------------------------- buttons */
+
+/* Primary action: the panel's Check out, the banner's Claim seats. */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--accent);
+  color: #17060d;
+  border-radius: var(--radius);
+  padding: 9px 16px;
+  font-family: var(--font-body), "Archivo", ui-sans-serif, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    filter 160ms ease-out,
+    transform 100ms ease-out;
+}
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+.btn-primary:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.btn-primary:disabled {
+  background: var(--well);
+  color: var(--ink-faint);
+  box-shadow: none;
+  cursor: default;
+}
+
+.at-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease-out,
+    color 160ms ease-out;
+}
+.at-btn-ghost:hover:not(:disabled) {
+  border-color: var(--ink-soft);
+  color: var(--ink);
+}
+.at-btn-ghost:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* ------------------------------------------------------------------ motion */
+
+@keyframes at-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.at-reveal {
+  animation: at-reveal 340ms cubic-bezier(0.25, 0.8, 0.3, 1) both;
+}
+.at-reveal-item {
+  animation: at-reveal 340ms cubic-bezier(0.25, 0.8, 0.3, 1) both;
+}
+
+@keyframes at-shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+/* Skeleton for a pending card slot. */
+.at-skeleton {
+  border-radius: var(--radius);
+  background: linear-gradient(
+    100deg,
+    var(--well) 35%,
+    rgba(29, 36, 51, 0.07) 50%,
+    var(--well) 65%
+  );
+  background-size: 200% 100%;
+  animation: at-shimmer 1.5s linear infinite;
+}
+
+/* Pulsing dot in the wordmark. */
+@keyframes at-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+.at-live {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 8px rgba(255, 77, 141, 0.7);
+  animation: at-pulse 1.9s ease-in-out infinite;
+  transition:
+    background-color 600ms ease,
+    box-shadow 600ms ease;
+}
+/* Amber while a hold is running. */
+.at-live--warm {
+  background: var(--warn);
+  box-shadow: 0 0 9px rgba(255, 184, 77, 0.85);
+}
+
+/* Final-minute countdown pulse. */
+@keyframes at-breathe {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+.at-urgent {
+  animation: at-breathe 1.2s ease-in-out infinite;
+}
+
+/* -------------------------------------------------------------- disclosure */
+
+.at-rule {
+  border-top: 1px solid var(--line);
+}
+
+/* ------------------------------------------------------------------- misc */
+
+.streaming-caret::after {
+  color: var(--accent);
+}
+
+/* Receipt tape behind the fee breakdown, with torn ends. */
+.at-tape {
+  position: relative;
+  margin: 8px auto 10px;
+  background: var(--well);
+  border-inline: 1px solid var(--line);
+  padding: 16px 16px 12px;
+}
+.at-tape::before,
+.at-tape::after {
+  content: "";
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  height: 7px;
+  background-image: radial-gradient(circle at 7px 0, var(--card) 4.6px, var(--well) 5.2px);
+  background-size: 14px 7px;
+  background-repeat: repeat-x;
+}
+.at-tape::before {
+  top: -1px;
+}
+.at-tape::after {
+  bottom: -1px;
+  transform: scaleY(-1);
+}
+.at-dots {
+  flex: 1;
+  min-width: 16px;
+  border-bottom: 2px dotted rgba(29, 36, 51, 0.22);
+  transform: translateY(-4px);
+}
+
+/* All-in total landing on the tape. */
+@keyframes at-stamp {
+  0% {
+    opacity: 0;
+    transform: scale(1.35) rotate(-7deg);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(0.96) rotate(1.4deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-1.2deg);
+  }
+}
+.at-stamp {
+  animation: at-stamp 460ms cubic-bezier(0.2, 0.9, 0.3, 1.15) both;
+}
+
+/* New wallet entry code arriving. */
+@keyframes at-code-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+.at-code-in {
+  animation: at-code-in 420ms cubic-bezier(0.25, 0.8, 0.3, 1) both;
+}
+
+/* Voided pass code fading out. */
+@keyframes at-dissolve {
+  from {
+    opacity: 1;
+    filter: blur(0);
+  }
+  to {
+    opacity: 0.3;
+    filter: blur(1.5px);
+  }
+}
+.at-dissolve {
+  animation: at-dissolve 1.4s ease-out both;
+}
+
+/* Return-offer banner sliding in under the header. */
+@keyframes at-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.at-slide-down {
+  animation: at-slide-down 360ms cubic-bezier(0.25, 0.8, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .at-reveal,
+  .at-reveal-item,
+  .at-stamp,
+  .at-code-in,
+  .at-dissolve,
+  .at-slide-down,
+  .at-skeleton,
+  .at-live,
+  .at-urgent {
+    animation: none;
+  }
+}
+

@@ -1,0 +1,408 @@
+/*
+ * Copyright 2026 Anthropic PBC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+@import "tailwindcss";
+@source "../../../web-shared";
+@source "../components";
+@source "../lib";
+@source "../app";
+@import "../../../web-shared/base.css";
+
+/* ACME Mobile design system: the shared light ground, cards, and ink
+   (web-shared/theme.css), green for live/recommended/verified states, amber for contract and overage warnings.
+   Data renders in mono with tabular numerals. */
+
+:root {
+  /* Page, card, text, rule, and shadow tokens: web-shared/theme.css. */
+  --rule: rgba(14, 17, 22, 0.82); /* spec-sheet rules */
+  --accent: #00b86b; /* signal green: the assistant's mark, recommended, verified, live */
+  --accent-strong: #00a35f; /* filled accent */
+  --accent-soft: #def3e8;
+  --accent-ink: #00663c; /* text on accent-soft */
+  --on-accent: #0e1116; /* text on accent */
+  --ok: #138254; /* device shipped or delivered, savings */
+  --ok-soft: #dcf1e6;
+  --warn: #b87a00; /* contract and overage warnings; results held by a safety gate */
+  --warn-soft: #fdf0d7;
+  --danger: #b3382c; /* errors */
+  --danger-soft: #f7dedb;
+  --info: #2563a6; /* order in transit */
+  --info-soft: #e1ecf8;
+  --violet: #6547c9; /* return in progress */
+  --violet-soft: #ebe7fa;
+  --radius: 6px;
+  --radius-lg: 10px;
+}
+
+body {
+  font-family: var(--font-body), "Barlow", ui-sans-serif, system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+/* ---------------------------------------------------------------- type kit */
+
+.am-mono {
+  font-family: var(--font-mono), "Spline Sans Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Metadata line. */
+.am-meta {
+  font-family: var(--font-body), "Barlow", ui-sans-serif, system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* Hero greeting. */
+.am-hero {
+  font-family: var(--font-body), "Barlow", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 100;
+  font-size: clamp(42px, 6.5vw, 68px);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.am-hero strong {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Figure caption above each card ("FIG 01 · PLAN MATRIX"). */
+.am-fig {
+  font-family: var(--font-mono), "Spline Sans Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.am-fig b {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------------ motion */
+
+@keyframes am-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mount reveal; children using am-reveal-item stagger on an inline animation-delay. */
+.am-reveal {
+  animation: am-reveal 360ms cubic-bezier(0.25, 0.8, 0.3, 1) both;
+}
+.am-reveal-item {
+  animation: am-reveal 360ms cubic-bezier(0.25, 0.8, 0.3, 1) both;
+}
+
+@keyframes am-shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* Skeleton shimmer for pending turns. */
+.am-shimmer {
+  border-radius: var(--radius);
+  background: linear-gradient(
+    100deg,
+    var(--well) 35%,
+    rgba(255, 255, 255, 0.6) 50%,
+    var(--well) 65%
+  );
+  background-size: 200% 100%;
+  animation: am-shimmer 1.5s linear infinite;
+}
+
+/* Live indicator pulse. */
+@keyframes am-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+.am-live {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  animation: am-pulse 1.8s ease-in-out infinite;
+}
+
+/* The NOT CHARGED stamp landing on the activation ticket. */
+@keyframes am-stamp {
+  0% {
+    opacity: 0;
+    transform: scale(1.35) rotate(-7deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.97) rotate(1.5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+.am-stamp {
+  animation: am-stamp 420ms cubic-bezier(0.25, 0.8, 0.3, 1) both;
+}
+
+/* eSIM QR dots; each dot carries its own inline delay. */
+@keyframes am-dot {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.am-dot {
+  animation: am-dot 120ms linear both;
+}
+
+/* Speed gauge on the facts box; fill width is set inline. */
+.am-gauge {
+  position: relative;
+  height: 3px;
+  margin-top: 4px;
+  background: var(--well);
+  overflow: hidden;
+}
+.am-gauge > span {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--accent);
+  transition: width 600ms cubic-bezier(0.25, 0.8, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .am-stamp,
+  .am-dot,
+  .am-reveal,
+  .am-reveal-item,
+  .chip {
+    animation-duration: 0.01ms;
+    animation-delay: 0ms !important;
+  }
+  .am-gauge > span {
+    transition-duration: 0.01ms;
+  }
+}
+
+/* Card hover: the border darkens. */
+.am-sharpen {
+  transition:
+    border-color 160ms ease-out,
+    box-shadow 160ms ease-out;
+}
+.am-sharpen:hover {
+  border-color: rgba(14, 17, 22, 0.4);
+  box-shadow: var(--shadow);
+}
+
+/* ------------------------------------------------------------------- cards */
+
+.am-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.am-card-sm {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.user-bubble {
+  background: var(--ink);
+  color: var(--surface);
+  border-radius: var(--radius-lg);
+  border-bottom-right-radius: 3px;
+}
+
+/* ------------------------------------------------------------------- chips */
+
+/* Suggestion chips; each staggers in on its inline animation-delay. */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: var(--radius);
+  padding: 7px 12px;
+  font-family: var(--font-mono), "Spline Sans Mono", ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  animation: am-reveal 360ms cubic-bezier(0.25, 0.8, 0.3, 1) both;
+  transition:
+    border-color 160ms ease-out,
+    color 160ms ease-out,
+    transform 100ms ease-out;
+}
+.chip::before {
+  content: "▸";
+  font-size: 11px;
+  color: var(--accent);
+}
+.chip:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+.chip:active:not(:disabled) {
+  transform: translateY(1px);
+  border-bottom-width: 1px;
+}
+.chip:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* Status tag. */
+.am-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 2px 7px;
+  font-family: var(--font-mono), "Spline Sans Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: var(--surface);
+}
+.am-tag--accent {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+.am-tag--warn {
+  border-color: var(--warn);
+  color: var(--warn);
+  background: var(--warn-soft);
+}
+.am-tag--ink {
+  border-color: var(--ink);
+  color: var(--surface);
+  background: var(--ink);
+}
+
+.am-tick {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ----------------------------------------------------------------- buttons */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--ink);
+  color: var(--surface);
+  border-radius: var(--radius);
+  padding: 10px 18px;
+  font-family: var(--font-body), "Barlow", ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease-out,
+    transform 100ms ease-out;
+}
+.btn-primary:hover:not(:disabled) {
+  background: #1d232c;
+}
+.btn-primary:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.btn-primary:disabled {
+  background: var(--well);
+  color: var(--ink-faint);
+  cursor: default;
+}
+
+/* -------------------------------------------------------------- spec sheet */
+
+/* Rules for the facts box. */
+.am-rule-heavy {
+  border-top: 3px solid var(--rule);
+}
+.am-rule-bold {
+  border-top: 2px solid var(--rule);
+}
+.am-rule {
+  border-top: 1px solid var(--line);
+}
+
+/* Device plate, used in place of a product photo; the gradient comes inline. */
+.am-plate {
+  position: relative;
+  overflow: hidden;
+  border-radius: calc(var(--radius-lg) - 4px);
+  background:
+    linear-gradient(to right, rgba(14, 17, 22, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 17, 22, 0.04) 1px, transparent 1px);
+  background-size: 12px 12px;
+  background-color: var(--well);
+}
+.am-plate-id {
+  position: absolute;
+  left: 10px;
+  bottom: 6px;
+  font-family: var(--font-mono), "Spline Sans Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: rgba(14, 17, 22, 0.4);
+  user-select: none;
+}
+.am-plate-glyph {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -52%);
+  font-family: var(--font-body), "Barlow", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 100;
+  line-height: 1;
+  white-space: nowrap;
+  letter-spacing: -0.03em;
+  color: rgba(14, 17, 22, 0.22);
+  user-select: none;
+}
+
+/* ------------------------------------------------------------------- misc */
+
+.streaming-caret::after {
+  color: var(--accent);
+}

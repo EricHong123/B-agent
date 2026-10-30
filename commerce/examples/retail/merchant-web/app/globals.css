@@ -1,0 +1,45 @@
+/*
+ * Copyright 2026 Anthropic PBC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+@import "tailwindcss";
+@source "../../../web-shared";
+@source "../components";
+@source "../lib";
+@source "../app";
+@import "../../../web-shared/portal/portal.css";
+
+/*
+ * ACME Merchant design system: the shared light ground, cards, and ink (web-shared/theme.css),
+ * terracotta for the assistant and approvals, tabular numerals on data.
+ */
+
+:root {
+  /* Page, card, text, rule, and shadow tokens: web-shared/theme.css. */
+  --accent: #d97f5f; /* terracotta: the assistant's mark, hover, focus */
+  --accent-strong: #c4643f; /* approve buttons */
+  --accent-soft: #faece5;
+  --accent-ink: #8a3f22; /* text on accent-soft */
+  --on-accent: #ffffff; /* text on accent and accent-strong */
+  --brand: #f7a823; /* marigold, on the store mark only */
+  --ok: #1f8f5f; /* positive change, applied */
+  --ok-soft: #e3f4ec;
+  --warn: #b06a00; /* low stock, results held by a safety gate */
+  --warn-soft: #fdf1da;
+  --danger: #c9252d; /* errors, sold out, negative change */
+  --danger-soft: #fce9ea;
+  --info: #2c6fa8; /* buyer messages, shipped */
+  --info-soft: #e5f0fa;
+  --violet: #6b4fd6; /* awaiting approval, quoted-as-data */
+  --violet-soft: #eeeafd;
+  --radius: 12px;
+}
+
+body {
+  font-family:
+    var(--font-body), "Instrument Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}

@@ -1,0 +1,42 @@
+/*
+ * Copyright 2026 Anthropic PBC
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * The merchant portals' component styles over `../base.css`. Each portal's globals.css defines
+ * the tokens these read, imports this file after Tailwind, and may put its display face on
+ * `.page-title`.
+ */
+
+@import "../base.css";
+
+body {
+  /* Unhinted web fonts otherwise get their advances rounded by FreeType, which eats spaces. */
+  text-rendering: geometricPrecision;
+}
+
+/* Class hooks the shared conversation components render */
+.user-bubble {
+  border-radius: 16px 16px 5px 16px;
+  background: var(--ink);
+  color: var(--surface);
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: var(--card);
+  padding: 4px 11px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+  transition: border-color 150ms, background-color 150ms, color 150ms;
+}
+.chip:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+}
+.chip:disabled {
+  opacity: 0.5;
+}

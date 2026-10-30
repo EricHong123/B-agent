@@ -48,6 +48,23 @@ class Settings(BaseSettings):
     AGENT_FAST_PATH_MAX_HISTORY_MESSAGES: int = Field(default=6, ge=1, le=20)
     AGENT_FAST_PATH_MAX_OUTPUT_TOKENS: int = Field(default=800, ge=256, le=1600)
 
+    # Quotations above this total or below this margin need a second, admin approver.
+    FULFILLMENT_QUOTE_APPROVAL_THRESHOLD: float = Field(default=50_000, ge=0)
+    FULFILLMENT_QUOTE_MIN_MARGIN_PERCENT: float = Field(default=15, ge=0, le=100)
+    FULFILLMENT_QUOTE_EXPIRY_WARNING_DAYS: int = Field(default=3, ge=0, le=90)
+
+    # Commerce agents (commerce/): buyer and operations assistants.
+    COMMERCE_ENABLED: bool = True
+    COMMERCE_MODEL_PROVIDER: Literal["auto", "anthropic", "openai-compatible"] = "auto"
+    COMMERCE_MODEL_NAME: str = ""
+    COMMERCE_MODEL_FAST_NAME: str = ""
+    COMMERCE_MODEL_BASE_URL: str = ""
+    COMMERCE_MODEL_API_KEY: str = ""
+    COMMERCE_BRAND_NAME: str = "B-agent Trade"
+    COMMERCE_REPORTING_CURRENCY: str = Field(default="USD", pattern=r"^[A-Z]{3}$")
+    COMMERCE_BUYER_INVITE_DAYS: int = Field(default=30, ge=1, le=365)
+    COMMERCE_ANALYSIS_ENABLED: bool = True
+
     # Media production remains fail-closed until each plane is explicitly enabled.
     MEDIA_UPLOAD_ENABLED: bool = False
     MEDIA_PLANNING_ENABLED: bool = False

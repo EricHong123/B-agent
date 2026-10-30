@@ -41,6 +41,24 @@ jobs:
       - run: PYTHONPATH=. pytest -q
       - run: alembic check
 
+  commerce:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: commerce
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: commerce/requirements-dev.txt
+      - run: pip install -r requirements-dev.txt
+      - run: ruff check .
+      - run: ruff format --check .
+      - run: pytest -q
+      - run: python scripts/check.py
+
   frontend:
     runs-on: ubuntu-latest
     defaults:

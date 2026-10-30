@@ -13,6 +13,15 @@
         <h1>{{ customer?.username || $t('Customer Detail') }}</h1>
         <p>{{ $t('Identity, contact details and current engagement classification.') }}</p>
       </div>
+      <el-button
+        v-if="customer"
+        type="primary"
+        plain
+        @click="$router.push({ path: '/buyer-assistant', query: { customer: customer.id } })"
+      >
+        <el-icon><ShoppingCart /></el-icon>
+        {{ $t('Open buyer assistant') }}
+      </el-button>
     </header>
 
     <el-descriptions

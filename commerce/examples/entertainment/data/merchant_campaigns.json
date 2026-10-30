@@ -1,0 +1,71 @@
+{
+  "_comment": "Campaign windows are shifted forward by whole weeks at load time, relative to dates_anchored_to (demo_common.merchant_fixtures.load_campaigns), the same shift merchant_metrics.json gets. Author the dates as if dates_anchored_to were today.",
+  "dates_anchored_to": "2026-07-27",
+  "campaigns": [
+    {
+      "campaign_id": "EC-701",
+      "name": "Summer Tour announce",
+      "status": "ended",
+      "objective": "Announce-day push for both Headliner nights at ACME Amphitheater",
+      "channel": "email + social",
+      "budget": 2400.0,
+      "spend": 2400.0,
+      "revenue": 96400.0,
+      "currency": "USD",
+      "starts": "2026-05-04",
+      "ends": "2026-05-15"
+    },
+    {
+      "campaign_id": "EC-702",
+      "name": "Registered presale \u2014 Fall Tour",
+      "status": "ended",
+      "objective": "Presale registration for The Synth-Pop Act to keep the on-sale human-heavy",
+      "channel": "presale registration + email",
+      "budget": 1800.0,
+      "spend": 1800.0,
+      "revenue": 152300.0,
+      "currency": "USD",
+      "starts": "2026-05-12",
+      "ends": "2026-05-22"
+    },
+    {
+      "campaign_id": "EC-703",
+      "name": "Headliner closeout \u2014 three weeks out",
+      "status": "active",
+      "objective": "Closeout retargeting for the upper tiers on both ACME Amphitheater nights; urgency copy only on real milestones",
+      "channel": "social retargeting + email",
+      "budget": 1500.0,
+      "spend": 430.0,
+      "revenue": 12800.0,
+      "currency": "USD",
+      "starts": "2026-07-20",
+      "ends": "2026-08-14"
+    },
+    {
+      "campaign_id": "EC-704",
+      "name": "Stand-Up Taping balcony push",
+      "status": "active",
+      "objective": "Fill the ACME Playhouse balcony for Jane Doe before the final week",
+      "channel": "email to past attendees",
+      "budget": 900.0,
+      "spend": 260.0,
+      "revenue": 4300.0,
+      "currency": "USD",
+      "starts": "2026-07-13",
+      "ends": "2026-08-21"
+    },
+    {
+      "campaign_id": "EC-705",
+      "name": "Season Opener early-bird",
+      "status": "draft",
+      "objective": "Early-bird window on the Philharmonic balcony before the price step in September",
+      "channel": "email",
+      "budget": 700.0,
+      "spend": 0.0,
+      "revenue": 0.0,
+      "currency": "USD",
+      "starts": null,
+      "ends": null
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+/*
+ * Copyright 2026 Anthropic PBC
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * The shell only: the rail and the stage. Each hosted app brings its own stylesheet, confined to
+ * its frame (postcss-scope.cjs); these values match web-shared/theme.css.
+ */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #f4f5f7;
+  color: #1d2433;
+  font-family: ui-sans-serif, -apple-system, "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.unified {
+  display: flex;
+  height: 100dvh;
+}
+
+.unified-rail {
+  flex: none;
+  width: 76px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  padding: 12px 8px;
+  background: #ffffff;
+  border-right: 1px solid rgba(29, 36, 51, 0.12);
+  overflow-y: auto;
+}
+
+.unified-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin: 0 auto 10px;
+  border-radius: 10px;
+  background: #1d2433;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.unified-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 2px 7px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #5d6577;
+  font: inherit;
+  cursor: pointer;
+}
+
+.unified-tab:hover {
+  background: #eef0f3;
+  color: #1d2433;
+}
+
+.unified-tab[aria-current="page"] {
+  background: #1d2433;
+  color: #ffffff;
+}
+
+.unified-tab-vertical {
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.15;
+}
+
+.unified-tab-surface {
+  font-size: 10.5px;
+  line-height: 1.15;
+  opacity: 0.8;
+}
+
+.unified-stage {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+/* A frame fills the stage; its app's shell sizes itself to the viewport height. */
+.unified-frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.unified-frame[hidden] {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .unified {
+    flex-direction: column-reverse;
+  }
+
+  .unified-rail {
+    width: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 4px 6px;
+    border-right: 0;
+    border-top: 1px solid rgba(29, 36, 51, 0.12);
+  }
+
+  .unified-mark {
+    display: none;
+  }
+
+  .unified-tab {
+    flex: 1;
+  }
+}
